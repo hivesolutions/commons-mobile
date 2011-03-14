@@ -24,13 +24,24 @@
 // __license__   = GNU General Public License (GPL), Version 3
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface MBItem : NSObject {
-    @private NSString *_name;
+#import "HMItem.h"
+
+@interface HMButtonItem : HMItem {
+    @private NSString *_icon;
+    @private int _accessoryType;
+    @private UIView *_accessoryView;
+    @private id _scope;
+    @private SEL _handler;
 }
 
-@property (retain) NSString *name;
+@property (retain) NSString *icon;
+@property int accessoryType;
+@property (retain) UIView *accessoryView;
+@property (retain) id scope;
+@property SEL handler;
 
-- (id)initWithName:(NSString *)aName;
+- (id)initWithName:(NSString *)name icon:(NSString *)icon accessoryType:(int)accessoryType accessoryView:(UIView *)accessoryView scope:(id)scope handler:(SEL)handler;
 
 @end

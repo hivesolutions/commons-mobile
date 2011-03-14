@@ -23,9 +23,9 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "MBItemGroup.h"
+#import "HMItemGroup.h"
 
-@implementation MBItemGroup
+@implementation HMItemGroup
 
 @synthesize items = _items;
 
@@ -40,12 +40,12 @@
     return self;
 }
 
-- (void)addItem:(MBItem *)item {
+- (void)addItem:(HMItem *)item {
     // adds the item to the items list
     [self.items addObject:item];
 }
 
-- (MBItem *)getItem:(NSIndexPath *)indexPath {
+- (HMItem *)getItem:(NSIndexPath *)indexPath {
     
 }
 

@@ -25,15 +25,15 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MBItem.h"
+#import "HMItem.h"
 
-@interface MBItemGroup : MBItem {
+@interface HMItemGroup : HMItem {
     @private NSMutableArray *_items;
 }
 
 @property (retain) NSMutableArray *items;
 
-- (void)addItem:(MBItem *)item;
-- (MBItem *)getItem:(NSIndexPath *)indexPath;
+- (void)addItem:(HMItem *)item;
+- (HMItem *)getItem:(NSIndexPath *)indexPath;
 
 @end
