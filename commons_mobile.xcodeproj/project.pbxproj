@@ -10,6 +10,8 @@
 		C23F3D30132E332E003155EE /* MBItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D2E132E332E003155EE /* MBItem.h */; };
 		C23F3D31132E332E003155EE /* MBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C23F3D2F132E332E003155EE /* MBItem.m */; };
 		C23F3D34132E3384003155EE /* commons_mobile.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D33132E3384003155EE /* commons_mobile.h */; };
+		C23F3D3B132E3411003155EE /* MBButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D39132E3411003155EE /* MBButtonItem.h */; };
+		C23F3D3C132E3411003155EE /* MBButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C23F3D3A132E3411003155EE /* MBButtonItem.m */; };
 		C295F928132E265A00BC1B93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C295F927132E265A00BC1B93 /* Foundation.framework */; };
 		C2FCCA14132E30580060A586 /* commons_mobile-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = C2FCCA13132E30580060A586 /* commons_mobile-Prefix.pch */; };
 /* End PBXBuildFile section */
@@ -18,6 +20,8 @@
 		C23F3D2E132E332E003155EE /* MBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBItem.h; path = classes/MBItem.h; sourceTree = "<group>"; };
 		C23F3D2F132E332E003155EE /* MBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBItem.m; path = classes/MBItem.m; sourceTree = "<group>"; };
 		C23F3D33132E3384003155EE /* commons_mobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = commons_mobile.h; path = headers/commons_mobile.h; sourceTree = "<group>"; };
+		C23F3D39132E3411003155EE /* MBButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBButtonItem.h; path = classes/MBButtonItem.h; sourceTree = "<group>"; };
+		C23F3D3A132E3411003155EE /* MBButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBButtonItem.m; path = classes/MBButtonItem.m; sourceTree = "<group>"; };
 		C295F924132E265A00BC1B93 /* libcommons_mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcommons_mobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C295F927132E265A00BC1B93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C2FCCA13132E30580060A586 /* commons_mobile-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "commons_mobile-Prefix.pch"; path = "support/commons_mobile-Prefix.pch"; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		C295F938132E269F00BC1B93 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C23F3D39132E3411003155EE /* MBButtonItem.h */,
+				C23F3D3A132E3411003155EE /* MBButtonItem.m */,
 				C23F3D2E132E332E003155EE /* MBItem.h */,
 				C23F3D2F132E332E003155EE /* MBItem.m */,
 			);
@@ -106,6 +112,7 @@
 				C2FCCA14132E30580060A586 /* commons_mobile-Prefix.pch in Headers */,
 				C23F3D30132E332E003155EE /* MBItem.h in Headers */,
 				C23F3D34132E3384003155EE /* commons_mobile.h in Headers */,
+				C23F3D3B132E3411003155EE /* MBButtonItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C23F3D31132E332E003155EE /* MBItem.m in Sources */,
+				C23F3D3C132E3411003155EE /* MBButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
