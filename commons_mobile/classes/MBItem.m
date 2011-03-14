@@ -23,8 +23,24 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "Item.h"
+#import "MBItem.h"
 
-@implementation Item
+@implementation MBItem
+
+@synthesize name = _name;
+
+- (id)init {
+    
+    return self;
+}
+
+- (id)initWithName:(NSString *)aName {
+    [self init];
+    
+    // sets the attributes
+    self.name = aName;
+    
+    return self;
+}
 
 @end
