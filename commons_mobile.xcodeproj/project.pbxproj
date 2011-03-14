@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5B3412B132E3866009021FE /* MBItemGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B34129132E3866009021FE /* MBItemGroup.h */; };
+		A5B3412C132E3866009021FE /* MBItemGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B3412A132E3866009021FE /* MBItemGroup.m */; };
 		C23F3D30132E332E003155EE /* MBItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D2E132E332E003155EE /* MBItem.h */; };
 		C23F3D31132E332E003155EE /* MBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C23F3D2F132E332E003155EE /* MBItem.m */; };
 		C23F3D34132E3384003155EE /* commons_mobile.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D33132E3384003155EE /* commons_mobile.h */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5B34129132E3866009021FE /* MBItemGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBItemGroup.h; path = classes/MBItemGroup.h; sourceTree = "<group>"; };
+		A5B3412A132E3866009021FE /* MBItemGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBItemGroup.m; path = classes/MBItemGroup.m; sourceTree = "<group>"; };
 		C23F3D2E132E332E003155EE /* MBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBItem.h; path = classes/MBItem.h; sourceTree = "<group>"; };
 		C23F3D2F132E332E003155EE /* MBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBItem.m; path = classes/MBItem.m; sourceTree = "<group>"; };
 		C23F3D33132E3384003155EE /* commons_mobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = commons_mobile.h; path = headers/commons_mobile.h; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		C295F938132E269F00BC1B93 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A5B34129132E3866009021FE /* MBItemGroup.h */,
+				A5B3412A132E3866009021FE /* MBItemGroup.m */,
 				C23F3D39132E3411003155EE /* MBButtonItem.h */,
 				C23F3D3A132E3411003155EE /* MBButtonItem.m */,
 				C23F3D2E132E332E003155EE /* MBItem.h */,
@@ -113,6 +119,7 @@
 				C23F3D30132E332E003155EE /* MBItem.h in Headers */,
 				C23F3D34132E3384003155EE /* commons_mobile.h in Headers */,
 				C23F3D3B132E3411003155EE /* MBButtonItem.h in Headers */,
+				A5B3412B132E3866009021FE /* MBItemGroup.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +172,7 @@
 			files = (
 				C23F3D31132E332E003155EE /* MBItem.m in Sources */,
 				C23F3D3C132E3411003155EE /* MBButtonItem.m in Sources */,
+				A5B3412C132E3866009021FE /* MBItemGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

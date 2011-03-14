@@ -30,16 +30,18 @@
 @synthesize name = _name;
 
 - (id)init {
-    
+    // returns the instance
     return self;
 }
 
 - (id)initWithName:(NSString *)aName {
+    // invokes the parent constructor
     [self init];
     
     // sets the attributes
     self.name = aName;
     
+    // returns the instance
     return self;
 }
 
