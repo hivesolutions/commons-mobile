@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C295F928132E265A00BC1B93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C295F927132E265A00BC1B93 /* Foundation.framework */; };
+		C2FCCA11132E2F820060A586 /* Item.h in Headers */ = {isa = PBXBuildFile; fileRef = C2FCCA0F132E2F820060A586 /* Item.h */; };
+		C2FCCA12132E2F820060A586 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FCCA10132E2F820060A586 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C295F924132E265A00BC1B93 /* libcommons_mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcommons_mobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C295F927132E265A00BC1B93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C2FCCA0F132E2F820060A586 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		C2FCCA10132E2F820060A586 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 		C295F938132E269F00BC1B93 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C2FCCA0F132E2F820060A586 /* Item.h */,
+				C2FCCA10132E2F820060A586 /* Item.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -83,6 +89,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2FCCA11132E2F820060A586 /* Item.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2FCCA12132E2F820060A586 /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +219,7 @@
 				C295F930132E265A00BC1B93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
