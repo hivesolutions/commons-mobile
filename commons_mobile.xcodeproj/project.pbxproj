@@ -10,6 +10,7 @@
 		C295F928132E265A00BC1B93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C295F927132E265A00BC1B93 /* Foundation.framework */; };
 		C2FCCA11132E2F820060A586 /* Item.h in Headers */ = {isa = PBXBuildFile; fileRef = C2FCCA0F132E2F820060A586 /* Item.h */; };
 		C2FCCA12132E2F820060A586 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FCCA10132E2F820060A586 /* Item.m */; };
+		C2FCCA14132E30580060A586 /* commons_mobile-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = C2FCCA13132E30580060A586 /* commons_mobile-Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		C295F927132E265A00BC1B93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C2FCCA0F132E2F820060A586 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		C2FCCA10132E2F820060A586 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		C2FCCA13132E30580060A586 /* commons_mobile-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "commons_mobile-Prefix.pch"; path = "support/commons_mobile-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		C295F92A132E265A00BC1B93 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				C2FCCA13132E30580060A586 /* commons_mobile-Prefix.pch */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -90,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2FCCA11132E2F820060A586 /* Item.h in Headers */,
+				C2FCCA14132E30580060A586 /* commons_mobile-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +186,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DSTROOT = /tmp/commons_mobile.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "commons_mobile/commons_mobile-Prefix.pch";
+				GCC_PREFIX_HEADER = "commons_mobile/support/commons_mobile-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -194,7 +198,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DSTROOT = /tmp/commons_mobile.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "commons_mobile/commons_mobile-Prefix.pch";
+				GCC_PREFIX_HEADER = "commons_mobile/support/commons_mobile-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
