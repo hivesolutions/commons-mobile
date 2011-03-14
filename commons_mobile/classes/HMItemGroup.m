@@ -46,7 +46,7 @@
 }
 
 - (HMItem *)getItem:(NSIndexPath *)indexPath {
-    
+    return nil;
 }
 
 @end
