@@ -30,7 +30,6 @@
 @synthesize name = _name;
 
 - (id)init {
-    
     return self;
 }
 
