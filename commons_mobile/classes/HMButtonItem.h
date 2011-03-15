@@ -30,18 +30,29 @@
 
 @interface HMButtonItem : HMItem {
     @private NSString *_icon;
-    @private int _accessoryType;
-    @private UIView *_accessoryView;
-    @private id _scope;
+    @private NSString *_selectedIcon;
     @private SEL _handler;
+    @private id _scope;
 }
 
 @property (retain) NSString *icon;
-@property int accessoryType;
-@property (retain) UIView *accessoryView;
-@property (retain) id scope;
+@property (retain) NSString *selectedIcon;
 @property SEL handler;
+@property (retain) id scope;
 
-- (id)initWithName:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon accessoryType:(int)accessoryType accessoryView:(UIView *)accessoryView scope:(id)scope handler:(SEL)handler;
+/**
+* Constructor of the class.
+*
+* @param name The name of the button item.
+* @param icon The path to the button item's icon.
+* @param selectedIcon The path to the button item's
+* icon when it is highlighted.
+* @param handler The handler to invoke when the button
+* item is interacted with.
+* @param scope The scope in which the handler must
+* be called.
+* @return The button item instance.
+*/
+- (id)initWithName:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope;
 
 @end

@@ -46,7 +46,35 @@
 }
 
 - (HMItem *)getItem:(NSIndexPath *)indexPath {
-    return nil;
+    // retrieves the item in the first index
+    NSUInteger index = [indexPath indexAtPosition:0];
+    HMItem *item = [self.items objectAtIndex:index];
+
+    // retrieves the item in the index
+    if(indexPath.length > 1) {
+        // retrieves the indexes
+        NSUInteger numberIndexes = indexPath.length;
+        NSUInteger *indexes = malloc(sizeof(NSUInteger) * numberIndexes);
+        [indexPath getIndexes:indexes];
+
+        // creates the new index path
+        NSUInteger *newIndexPointer = indexes + 1;
+        NSUInteger newNumberIndexes = numberIndexes - 1;
+        NSIndexPath *newIndexPath = [[NSIndexPath alloc] initWithIndexes:newIndexPointer length:newNumberIndexes];
+
+        // retrieves the next item in the path
+        HMItemGroup *itemGroup = (HMItemGroup *) item;
+        item = [itemGroup getItem:newIndexPath];
+
+        // frees the indexes
+        free(indexes);
+
+        // releases the new index path
+        [newIndexPath release];
+    }
+
+    // returns the item
+    return item;
 }
 
 @end

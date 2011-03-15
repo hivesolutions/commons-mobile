@@ -27,11 +27,10 @@
 
 @implementation HMButtonItem
 
-@synthesize accessoryType = _accessoryType;
-@synthesize accessoryView = _accessoryView;
 @synthesize icon = _icon;
-@synthesize scope = _scope;
+@synthesize selectedIcon = _selectedIcon;
 @synthesize handler = _handler;
+@synthesize scope = _scope;
 
 - (id)init {
     // invokes the parent constructor
@@ -41,16 +40,15 @@
     return self;
 }
 
-- (id)initWithName:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon accessoryType:(int)accessoryType accessoryView:(UIView *)accessoryView scope:(id)scope handler:(SEL)handler {
+- (id)initWithName:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope {
     // invokes the parent constructor
     self = [super initWithName:name];
 
     // sets the attributes
-    self.accessoryType = accessoryType;
-    self.accessoryView = accessoryView;
     self.icon = icon;
-    self.scope = scope;
+    self.selectedIcon = selectedIcon;
     self.handler = handler;
+    self.scope = scope;
 
     // returns the instance
     return self;

@@ -31,6 +31,12 @@
 
 @property (retain) NSString *name;
 
+/**
+ * Constructor of the class.
+ *
+ * @param name The name of the item.
+ * @return The item instance.
+ */
 - (id)initWithName:(NSString *)name;
 
 @end

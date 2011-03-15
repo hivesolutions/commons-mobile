@@ -33,7 +33,22 @@
 
 @property (retain) NSMutableArray *items;
 
+/**
+* Adds an item to the item group.
+*
+* @param item The item to add to the group.
+*/
 - (void)addItem:(HMItem *)item;
+
+
+/**
+ * Retrieves an item from the item group.
+ *
+ * @param indexPath The index path that points
+ * to the desired item.
+ * @return Returns the item at the specified
+ * index path.
+ */
 - (HMItem *)getItem:(NSIndexPath *)indexPath;
 
 @end
