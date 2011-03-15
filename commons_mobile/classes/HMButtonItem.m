@@ -30,13 +30,13 @@
 @synthesize accessoryType = _accessoryType;
 @synthesize accessoryView = _accessoryView;
 @synthesize icon = _icon;
-@synthesize scope = _scope; 
+@synthesize scope = _scope;
 @synthesize handler = _handler;
 
 - (id)init {
     // invokes the parent constructor
     self = [super init];
-    
+
     // returns the instance
     return self;
 }
@@ -44,14 +44,14 @@
 - (id)initWithName:(NSString *)name icon:(NSString *)icon accessoryType:(int)accessoryType accessoryView:(UIView *)accessoryView scope:(id)scope handler:(SEL)handler {
     // invokes the parent constructor
     self = [super initWithName:name];
-    
-    // sets the attributes 
-    self.accessoryType = accessoryType; 
+
+    // sets the attributes
+    self.accessoryType = accessoryType;
     self.accessoryView = accessoryView;
     self.icon = icon;
     self.scope = scope;
     self.handler = handler;
-    
+
     // returns the instance
     return self;
 }

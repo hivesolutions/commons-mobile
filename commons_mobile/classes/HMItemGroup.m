@@ -32,10 +32,10 @@
 - (id)init {
     // invokes the super
     self = [super init];
-    
+
     // sets the attributes
     self.items = [[NSMutableArray alloc] init];
-    
+
     // returns the instance
     return self;
 }
