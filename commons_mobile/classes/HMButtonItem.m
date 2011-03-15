@@ -42,7 +42,7 @@
 
 - (id)initWithName:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope {
     // invokes the parent constructor
-    self = [super initWithName:name];
+    self = [super initWithName:name description:nil];
 
     // sets the attributes
     self.icon = icon;

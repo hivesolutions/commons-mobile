@@ -27,16 +27,19 @@
 
 @interface HMItem : NSObject {
     @private NSString *_name;
+    @private NSString *_description;
 }
 
 @property (retain) NSString *name;
+@property (retain) NSString *description;
 
 /**
  * Constructor of the class.
  *
  * @param name The name of the item.
+ * @param description The description of the item.
  * @return The item instance.
  */
-- (id)initWithName:(NSString *)name;
+- (id)initWithName:(NSString *)name description:(NSString *) description;
 
 @end

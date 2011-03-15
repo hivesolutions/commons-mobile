@@ -28,21 +28,15 @@
 @implementation HMItem
 
 @synthesize name = _name;
+@synthesize description = _description;
 
-- (id)init {
-    // calls the super
-    self = [super init];
-
-    // returns self
-    return self;
-}
-
-- (id)initWithName:(NSString *)name {
+- (id)initWithName:(NSString *)name description:(NSString *)description {
     // invokes the parent constructor
     [self init];
 
     // sets the attributes
     self.name = name;
+    self.description = description;
 
     // returns the instance
     return self;

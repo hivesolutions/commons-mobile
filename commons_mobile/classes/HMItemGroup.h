@@ -40,7 +40,6 @@
 */
 - (void)addItem:(HMItem *)item;
 
-
 /**
  * Retrieves an item from the item group.
  *

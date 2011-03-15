@@ -29,9 +29,9 @@
 
 @synthesize items = _items;
 
-- (id)init {
-    // invokes the super
-    self = [super init];
+- (id)initWithName:(NSString *)name description:(NSString *)description {
+    // invokes the parent constructor
+    self = [super initWithName:name description:description];
 
     // sets the attributes
     self.items = [[NSMutableArray alloc] init];
