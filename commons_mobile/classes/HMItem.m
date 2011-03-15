@@ -30,10 +30,10 @@
 @synthesize name = _name;
 
 - (id)init {
-<<<<<<< HEAD
-=======
-    // returns the instance
->>>>>>> c2e06cd87d76922fa23239dd187fb8aa794d28b0
+    // calls the super
+    self = [super init];
+    
+    // returns self
     return self;
 }
 
