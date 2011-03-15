@@ -37,12 +37,12 @@
     return self;
 }
 
-- (id)initWithName:(NSString *)aName {
+- (id)initWithName:(NSString *)name {
     // invokes the parent constructor
     [self init];
     
     // sets the attributes
-    self.name = aName;
+    self.name = name;
     
     // returns the instance
     return self;

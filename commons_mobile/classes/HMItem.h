@@ -31,6 +31,6 @@
 
 @property (retain) NSString *name;
 
-- (id)initWithName:(NSString *)aName;
+- (id)initWithName:(NSString *)name;
 
 @end
