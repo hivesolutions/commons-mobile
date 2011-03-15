@@ -23,14 +23,29 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import <Foundation/Foundation.h>
+#import "HMItem.h"
 
-@interface MBItem : NSObject {
-    @private NSString *_name;
+@implementation HMItem
+
+@synthesize name = _name;
+
+- (id)init {
+<<<<<<< HEAD
+=======
+    // returns the instance
+>>>>>>> c2e06cd87d76922fa23239dd187fb8aa794d28b0
+    return self;
 }
 
-@property (retain) NSString *name;
-
-- (id)initWithName:(NSString *)aName;
+- (id)initWithName:(NSString *)aName {
+    // invokes the parent constructor
+    [self init];
+    
+    // sets the attributes
+    self.name = aName;
+    
+    // returns the instance
+    return self;
+}
 
 @end

@@ -23,29 +23,25 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "MBItem.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@implementation MBItem
+#import "HMItem.h"
 
-@synthesize name = _name;
-
-- (id)init {
-<<<<<<< HEAD
-=======
-    // returns the instance
->>>>>>> c2e06cd87d76922fa23239dd187fb8aa794d28b0
-    return self;
+@interface HMButtonItem : HMItem {
+    @private NSString *_icon;
+    @private int _accessoryType;
+    @private UIView *_accessoryView;
+    @private id _scope;
+    @private SEL _handler;
 }
 
-- (id)initWithName:(NSString *)aName {
-    // invokes the parent constructor
-    [self init];
-    
-    // sets the attributes
-    self.name = aName;
-    
-    // returns the instance
-    return self;
-}
+@property (retain) NSString *icon;
+@property int accessoryType;
+@property (retain) UIView *accessoryView;
+@property (retain) id scope;
+@property SEL handler;
+
+- (id)initWithName:(NSString *)name icon:(NSString *)icon accessoryType:(int)accessoryType accessoryView:(UIView *)accessoryView scope:(id)scope handler:(SEL)handler;
 
 @end

@@ -16,37 +16,21 @@
 // You should have received a copy of the GNU General Public License
 // along with Hive Mobile. If not, see <http://www.gnu.org/licenses/>.
 
-// __author__    = Tiago Silva <tsilva@hive.pt>
+// __author__    = João Magalhães <joamag@hive.pt>
 // __version__   = 1.0.0
 // __revision__  = $LastChangedRevision: 2390 $
 // __date__      = $LastChangedDate: 2009-04-02 08:36:50 +0100 (qui, 02 Abr 2009) $
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "MBItemGroup.h"
+#import <Foundation/Foundation.h>
 
-@implementation MBItemGroup
-
-@synthesize items = _items;
-
-- (id)init {
-    // invokes the super
-    self = [super init];
-    
-    // sets the attributes
-    self.items = [[NSMutableArray alloc] init];
-    
-    // returns the instance
-    return self;
+@interface HMItem : NSObject {
+    @private NSString *_name;
 }
 
-- (void)addItem:(MBItem *)item {
-    // adds the item to the items list
-    [self.items addObject:item];
-}
+@property (retain) NSString *name;
 
-- (MBItem *)getItem:(NSIndexPath *)indexPath {
-    
-}
+- (id)initWithName:(NSString *)aName;
 
 @end
