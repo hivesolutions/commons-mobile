@@ -44,4 +44,18 @@
     return self;
 }
 
+- (void)dealloc {
+    // releases the identifier
+    [_identifier release];
+
+    // releases the name
+    [_name release];
+
+    // releases the description
+    [_description release];
+    
+    // calls the super
+    [super dealloc];
+}
+
 @end

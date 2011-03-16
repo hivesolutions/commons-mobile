@@ -33,11 +33,25 @@
     // invokes the parent constructor
     self = [super initWithIdentifier:identifier name:name description:description];
 
+    // creates teh items
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
     // sets the attributes
-    self.items = [[NSMutableArray alloc] init];
+    self.items = items;
+    
+    // releases the objects
+    [items release];
 
     // returns the instance
     return self;
+}
+
+- (void)dealloc {
+    // releases the items
+    [_items release];
+    
+    // calls the super
+    [super dealloc];
 }
 
 - (void)addItem:(HMItem *)item {

@@ -50,4 +50,15 @@
     return self;
 }
 
+- (void)dealloc {
+    // releases the icon
+    [_icon release];
+    
+    // releases the highlighted icon
+    [_highlightedIcon release];
+    
+    // calls the super
+    [super dealloc];
+}
+
 @end
