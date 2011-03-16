@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Hive Mobile. If not, see <http://www.gnu.org/licenses/>.
 
-// __author__    = João Magalhães <joamag@hive.pt>
+// __author__    = João Magalhães <joamag@hive.pt> & Tiago Silva <tsilva@hive.pt>
 // __version__   = 1.0.0
 // __revision__  = $LastChangedRevision: 2390 $
 // __date__      = $LastChangedDate: 2009-04-02 08:36:50 +0100 (qui, 02 Abr 2009) $
@@ -28,9 +28,7 @@
 @implementation HMButtonItem
 
 @synthesize icon = _icon;
-@synthesize selectedIcon = _selectedIcon;
-@synthesize handler = _handler;
-@synthesize scope = _scope;
+@synthesize highlightedIcon = _highlightedIcon;
 
 - (id)init {
     // invokes the parent constructor
@@ -40,15 +38,13 @@
     return self;
 }
 
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope {
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon {
     // invokes the parent constructor
     self = [super initWithIdentifier:identifier name:name description:nil];
 
     // sets the attributes
     self.icon = icon;
-    self.selectedIcon = selectedIcon;
-    self.handler = handler;
-    self.scope = scope;
+    self.highlightedIcon = highlightedIcon;
 
     // returns the instance
     return self;

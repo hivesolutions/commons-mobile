@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Hive Mobile. If not, see <http://www.gnu.org/licenses/>.
 
-// __author__    = João Magalhães <joamag@hive.pt>
+// __author__    = João Magalhães <joamag@hive.pt> & Tiago Silva <tsilva@hive.pt>
 // __version__   = 1.0.0
 // __revision__  = $LastChangedRevision: 2390 $
 // __date__      = $LastChangedDate: 2009-04-02 08:36:50 +0100 (qui, 02 Abr 2009) $
@@ -30,15 +30,11 @@
 
 @interface HMButtonItem : HMItem {
     @private NSString *_icon;
-    @private NSString *_selectedIcon;
-    @private SEL _handler;
-    @private id _scope;
+    @private NSString *_highlightedIcon;
 }
 
 @property (retain) NSString *icon;
-@property (retain) NSString *selectedIcon;
-@property SEL handler;
-@property (retain) id scope;
+@property (retain) NSString *highlightedIcon;
 
 /**
 * Constructor of the class.
@@ -46,14 +42,10 @@
 * @param identifier The identifier of the button item.
 * @param name The name of the button item.
 * @param icon The path to the button item's icon.
-* @param selectedIcon The path to the button item's
+* @param highlightedIcon The path to the button item's
 * icon when it is highlighted.
-* @param handler The handler to invoke when the button
-* item is interacted with.
-* @param scope The scope in which the handler must
-* be called.
 * @return The button item instance.
 */
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope;
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon;
 
 @end
