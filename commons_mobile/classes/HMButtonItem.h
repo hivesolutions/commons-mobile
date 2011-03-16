@@ -36,11 +36,8 @@
 
 @property (retain) NSString *icon;
 @property (retain) NSString *highlightedIcon;
-<<<<<<< HEAD
 @property (assign) BOOL selectable;
-=======
-@property BOOL highlightable;
->>>>>>> 55c6c5addd05ee45a4c7eae51398329680bea097
+@property (assign) BOOL highlightable;
 
 /**
 * Constructor of the class.
