@@ -31,12 +31,16 @@
 @interface HMButtonItem : HMItem {
     @private NSString *_icon;
     @private NSString *_highlightedIcon;
-    @private BOOL _selectable;
+    @private BOOL _highlightable;
 }
 
 @property (retain) NSString *icon;
 @property (retain) NSString *highlightedIcon;
+<<<<<<< HEAD
 @property (assign) BOOL selectable;
+=======
+@property BOOL highlightable;
+>>>>>>> 55c6c5addd05ee45a4c7eae51398329680bea097
 
 /**
 * Constructor of the class.
@@ -46,10 +50,10 @@
 * @param icon The path to the button item's icon.
 * @param highlightedIcon The path to the button item's
 * icon when it is highlighted.
-* @param selectable Indicates if the button item is
-* selectable.
+* @param highlightable Indicates if the button item is
+* highlightable.
 * @return The button item instance.
 */
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon selectable:(BOOL)selectable;
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon highlightable:(BOOL)highlightable;
 
 @end

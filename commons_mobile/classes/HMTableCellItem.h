@@ -45,10 +45,10 @@
 * table cell item's icon when it is highlighted.
 * @param accessoryType The desired type of
 * accessory view.
-* @param selectable Indicates if the table cell
-* item is selectable.
+* @param highlightable Indicates if the table cell
+* item is highlightable.
 * @return The table cell item instance.
 */
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon selectable:(BOOL)selectable accessoryType:(NSString *)accessoryType;
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon highlightable:(BOOL)highlightable accessoryType:(NSString *)accessoryType;
 
 @end
