@@ -48,4 +48,12 @@
     return self;
 }
 
+- (void)dealloc {
+    // releases the acessory type
+    [_accessoryType release];
+
+    // calls the super
+    [super dealloc];
+}
+
 @end
