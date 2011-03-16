@@ -53,7 +53,7 @@
 
     // releases the description
     [_description release];
-    
+
     // calls the super
     [super dealloc];
 }

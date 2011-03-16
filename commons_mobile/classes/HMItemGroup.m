@@ -35,10 +35,10 @@
 
     // creates teh items
     NSMutableArray *items = [[NSMutableArray alloc] init];
-    
+
     // sets the attributes
     self.items = items;
-    
+
     // releases the objects
     [items release];
 
@@ -49,7 +49,7 @@
 - (void)dealloc {
     // releases the items
     [_items release];
-    
+
     // calls the super
     [super dealloc];
 }
