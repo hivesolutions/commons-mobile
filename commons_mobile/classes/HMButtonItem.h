@@ -36,7 +36,7 @@
 
 @property (retain) NSString *icon;
 @property (retain) NSString *highlightedIcon;
-@property BOOL selectable;
+@property (assign) BOOL selectable;
 
 /**
 * Constructor of the class.
