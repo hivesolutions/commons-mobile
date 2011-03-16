@@ -29,6 +29,7 @@
 
 @synthesize icon = _icon;
 @synthesize highlightedIcon = _highlightedIcon;
+@synthesize selectable = _selectable;
 
 - (id)init {
     // invokes the parent constructor
@@ -38,13 +39,14 @@
     return self;
 }
 
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon {
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon selectable:(BOOL)selectable {
     // invokes the parent constructor
     self = [super initWithIdentifier:identifier name:name description:nil];
 
     // sets the attributes
     self.icon = icon;
     self.highlightedIcon = highlightedIcon;
+    self.selectable = selectable;
 
     // returns the instance
     return self;

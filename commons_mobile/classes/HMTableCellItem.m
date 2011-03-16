@@ -16,40 +16,36 @@
 // You should have received a copy of the GNU General Public License
 // along with Hive Mobile. If not, see <http://www.gnu.org/licenses/>.
 
-// __author__    = João Magalhães <joamag@hive.pt> & Tiago Silva <tsilva@hive.pt>
+// __author__    = Tiago Silva <tsilva@hive.pt>
 // __version__   = 1.0.0
 // __revision__  = $LastChangedRevision: 2390 $
 // __date__      = $LastChangedDate: 2009-04-02 08:36:50 +0100 (qui, 02 Abr 2009) $
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "HMTableCellItem.h"
 
-#import "HMItem.h"
+@implementation HMTableCellItem
 
-@interface HMButtonItem : HMItem {
-    @private NSString *_icon;
-    @private NSString *_highlightedIcon;
-    @private BOOL _selectable;
+@synthesize accessoryType = _accessoryType;
+
+- (id)init {
+    // invokes the parent constructor
+    self = [super init];
+
+    // returns the instance
+    return self;
 }
 
-@property (retain) NSString *icon;
-@property (retain) NSString *highlightedIcon;
-@property BOOL selectable;
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon selectable:(BOOL)selectable accessoryType:(NSString *)accessoryType {
+    // invokes the parent constructor
+    self = [super initWithIdentifier:identifier name:name icon:icon highlightedIcon:highlightedIcon selectable:selectable];
 
-/**
-* Constructor of the class.
-*
-* @param identifier The identifier of the button item.
-* @param name The name of the button item.
-* @param icon The path to the button item's icon.
-* @param highlightedIcon The path to the button item's
-* icon when it is highlighted.
-* @param selectable Indicates if the button item is
-* selectable.
-* @return The button item instance.
-*/
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon selectable:(BOOL)selectable;
+    // sets the attributes
+    self.accessoryType = accessoryType;
+
+    // returns the instance
+    return self;
+}
 
 @end
