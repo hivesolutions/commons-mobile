@@ -40,9 +40,9 @@
     return self;
 }
 
-- (id)initWithName:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope {
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope {
     // invokes the parent constructor
-    self = [super initWithName:name description:nil];
+    self = [super initWithIdentifier:identifier name:name description:nil];
 
     // sets the attributes
     self.icon = icon;

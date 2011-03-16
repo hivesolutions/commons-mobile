@@ -43,6 +43,7 @@
 /**
 * Constructor of the class.
 *
+* @param identifier The identifier of the button item.
 * @param name The name of the button item.
 * @param icon The path to the button item's icon.
 * @param selectedIcon The path to the button item's
@@ -53,6 +54,6 @@
 * be called.
 * @return The button item instance.
 */
-- (id)initWithName:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope;
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon handler:(SEL)handler scope:(id)scope;
 
 @end

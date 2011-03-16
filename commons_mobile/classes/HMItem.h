@@ -26,20 +26,23 @@
 #import <Foundation/Foundation.h>
 
 @interface HMItem : NSObject {
+    @private NSString *_identifier;
     @private NSString *_name;
     @private NSString *_description;
 }
 
+@property (retain) NSString *identifier;
 @property (retain) NSString *name;
 @property (retain) NSString *description;
 
 /**
  * Constructor of the class.
  *
+ * @param identifier The identifier of the item.
  * @param name The name of the item.
  * @param description The description of the item.
  * @return The item instance.
  */
-- (id)initWithName:(NSString *)name description:(NSString *) description;
+- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name description:(NSString *)description;
 
 @end
