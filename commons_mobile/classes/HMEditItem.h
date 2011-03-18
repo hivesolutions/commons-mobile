@@ -27,6 +27,8 @@
 
 @protocol HMEditItem<NSObject>
 
+@required
+
 /**
  * Property defining if an item is editable or not.
  */
