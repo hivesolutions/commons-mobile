@@ -44,10 +44,10 @@
 - (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name description:(NSString *)description;
 
 /**
-* Adds an item to the item group.
-*
-* @param item The item to add to the group.
-*/
+ * Adds an item to the item group.
+ *
+ * @param item The item to add to the group.
+ */
 - (void)addItem:(HMItem *)item;
 
 /**

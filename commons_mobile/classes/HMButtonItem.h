@@ -39,17 +39,17 @@
 @property (assign) BOOL highlightable;
 
 /**
-* Constructor of the class.
-*
-* @param identifier The identifier of the button item.
-* @param name The name of the button item.
-* @param icon The path to the button item's icon.
-* @param highlightedIcon The path to the button item's
-* icon when it is highlighted.
-* @param highlightable Indicates if the button item is
-* highlightable.
-* @return The button item instance.
-*/
+ * Constructor of the class.
+ *
+ * @param identifier The identifier of the button item.
+ * @param name The name of the button item.
+ * @param icon The path to the button item's icon.
+ * @param highlightedIcon The path to the button item's
+ * icon when it is highlighted.
+ * @param highlightable Indicates if the button item is
+ * highlightable.
+ * @return The button item instance.
+ */
 - (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon highlightable:(BOOL)highlightable;
 
 @end
