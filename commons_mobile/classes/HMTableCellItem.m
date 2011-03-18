@@ -54,4 +54,8 @@
     [super dealloc];
 }
 
+- (BOOL)editable {
+    return NO;
+}
+
 @end

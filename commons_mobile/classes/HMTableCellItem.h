@@ -29,7 +29,6 @@
 #import "HMEditItem.h"
 
 @interface HMTableCellItem : HMButtonItem<HMEditItem> {
-    @private BOOL _editable;
     @private NSString *_accessoryType;
 }
 
