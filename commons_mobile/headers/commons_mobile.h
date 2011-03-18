@@ -30,4 +30,5 @@
 #import "../classes/HMTableCellItem.h"
 #import "../classes/HMButtonItem.h"
 #import "../classes/HMItemGroup.h"
+#import "../classes/HMEditItem.h"
 #import "../classes/HMItem.h"

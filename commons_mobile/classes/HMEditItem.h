@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Hive Mobile. If not, see <http://www.gnu.org/licenses/>.
 
-// __author__    = Tiago Silva <tsilva@hive.pt>
+// __author__    = João Magalhães <joamag@hive.pt>
 // __version__   = 1.0.0
 // __revision__  = $LastChangedRevision: 2390 $
 // __date__      = $LastChangedDate: 2009-04-02 08:36:50 +0100 (qui, 02 Abr 2009) $
@@ -25,31 +25,11 @@
 
 #import "Dependencies.h"
 
-#import "HMButtonItem.h"
-#import "HMEditItem.h"
-
-@interface HMTableCellItem : HMButtonItem<HMEditItem> {
-    @private BOOL _editable;
-    @private NSString *_accessoryType;
-}
-
-@property (retain) NSString *accessoryType;
+@protocol HMEditItem<NSObject>
 
 /**
- * Constructor of the class.
- *
- * @param identifier The identifier of the
- * table cell item.
- * @param name The name of the table cell item.
- * @param icon The path to the table cell item's icon.
- * @param highlightedIcon The path to the
- * table cell item's icon when it is highlighted.
- * @param accessoryType The desired type of
- * accessory view.
- * @param highlightable Indicates if the table cell
- * item is highlightable.
- * @return The table cell item instance.
+ * Property defining if an item is editable or not.
  */
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon highlightable:(BOOL)highlightable accessoryType:(NSString *)accessoryType;
+@property (assign) BOOL editable;
 
 @end

@@ -27,6 +27,7 @@
 
 @implementation HMTableCellItem
 
+@synthesize editable = _editable;
 @synthesize accessoryType = _accessoryType;
 
 - (id)init {
