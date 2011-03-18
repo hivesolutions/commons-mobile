@@ -11,6 +11,7 @@
 		A5B3412C132E3866009021FE /* HMItemGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B3412A132E3866009021FE /* HMItemGroup.m */; };
 		A5D25F391330EE1B00340936 /* HMTableCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A5D25F371330EE1B00340936 /* HMTableCellItem.h */; };
 		A5D25F3A1330EE1B00340936 /* HMTableCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D25F381330EE1B00340936 /* HMTableCellItem.m */; };
+		C20CDB7F133375CE008A4FE3 /* Dependencies.h in Headers */ = {isa = PBXBuildFile; fileRef = C20CDB7E133375CE008A4FE3 /* Dependencies.h */; };
 		C23F3D30132E332E003155EE /* HMItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D2E132E332E003155EE /* HMItem.h */; };
 		C23F3D31132E332E003155EE /* HMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C23F3D2F132E332E003155EE /* HMItem.m */; };
 		C23F3D34132E3384003155EE /* commons_mobile.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D33132E3384003155EE /* commons_mobile.h */; };
@@ -25,6 +26,7 @@
 		A5B3412A132E3866009021FE /* HMItemGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMItemGroup.m; path = classes/HMItemGroup.m; sourceTree = "<group>"; };
 		A5D25F371330EE1B00340936 /* HMTableCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMTableCellItem.h; path = classes/HMTableCellItem.h; sourceTree = "<group>"; };
 		A5D25F381330EE1B00340936 /* HMTableCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMTableCellItem.m; path = classes/HMTableCellItem.m; sourceTree = "<group>"; };
+		C20CDB7E133375CE008A4FE3 /* Dependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dependencies.h; path = classes/Dependencies.h; sourceTree = "<group>"; };
 		C23F3D2E132E332E003155EE /* HMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMItem.h; path = classes/HMItem.h; sourceTree = "<group>"; };
 		C23F3D2F132E332E003155EE /* HMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMItem.m; path = classes/HMItem.m; sourceTree = "<group>"; };
 		C23F3D33132E3384003155EE /* commons_mobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = commons_mobile.h; path = headers/commons_mobile.h; sourceTree = "<group>"; };
@@ -47,6 +49,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C20CDB7B133375B5008A4FE3 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				A5D25F371330EE1B00340936 /* HMTableCellItem.h */,
+				A5D25F381330EE1B00340936 /* HMTableCellItem.m */,
+				A5B34129132E3866009021FE /* HMItemGroup.h */,
+				A5B3412A132E3866009021FE /* HMItemGroup.m */,
+				C23F3D39132E3411003155EE /* HMButtonItem.h */,
+				C23F3D3A132E3411003155EE /* HMButtonItem.m */,
+				C23F3D2E132E332E003155EE /* HMItem.h */,
+				C23F3D2F132E332E003155EE /* HMItem.m */,
+			);
+			name = Structures;
+			sourceTree = "<group>";
+		};
+		C20CDB7D133375C0008A4FE3 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				C20CDB7E133375CE008A4FE3 /* Dependencies.h */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
 		C23F3D32132E3368003155EE /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,14 +127,8 @@
 		C295F938132E269F00BC1B93 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A5D25F371330EE1B00340936 /* HMTableCellItem.h */,
-				A5D25F381330EE1B00340936 /* HMTableCellItem.m */,
-				A5B34129132E3866009021FE /* HMItemGroup.h */,
-				A5B3412A132E3866009021FE /* HMItemGroup.m */,
-				C23F3D39132E3411003155EE /* HMButtonItem.h */,
-				C23F3D3A132E3411003155EE /* HMButtonItem.m */,
-				C23F3D2E132E332E003155EE /* HMItem.h */,
-				C23F3D2F132E332E003155EE /* HMItem.m */,
+				C20CDB7D133375C0008A4FE3 /* Dependencies */,
+				C20CDB7B133375B5008A4FE3 /* Structures */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -127,6 +146,7 @@
 				C23F3D3B132E3411003155EE /* HMButtonItem.h in Headers */,
 				A5B3412B132E3866009021FE /* HMItemGroup.h in Headers */,
 				A5D25F391330EE1B00340936 /* HMTableCellItem.h in Headers */,
+				C20CDB7F133375CE008A4FE3 /* Dependencies.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

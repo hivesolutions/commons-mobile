@@ -16,48 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Hive Mobile. If not, see <http://www.gnu.org/licenses/>.
 
-// __author__    = Tiago Silva <tsilva@hive.pt>
+// __author__    = João Magalhães <joamag@hive.pt>
 // __version__   = 1.0.0
 // __revision__  = $LastChangedRevision: 2390 $
 // __date__      = $LastChangedDate: 2009-04-02 08:36:50 +0100 (qui, 02 Abr 2009) $
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "Dependencies.h"
-
-#import "HMItem.h"
-
-@interface HMItemGroup : HMItem {
-    @private NSMutableArray *_items;
-}
-
-@property (retain) NSMutableArray *items;
-
-/**
- * Constructor of the class.
- *
- * @param identifier The identifier of the item.
- * @param name The name of the item.
- * @param description The description of the item.
- * @return The item instance.
- */
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name description:(NSString *)description;
-
-/**
- * Adds an item to the item group.
- *
- * @param item The item to add to the group.
- */
-- (void)addItem:(HMItem *)item;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param indexPath The index path that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItem:(NSIndexPath *)indexPath;
-
-@end
+// framework dependency includes
+#import <Foundation/Foundation.h>
