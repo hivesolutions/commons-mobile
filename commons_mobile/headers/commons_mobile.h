@@ -23,6 +23,7 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
+// class includes
 #import "../classes/HMTableCellItem.h"
 #import "../classes/HMButtonItem.h"
 #import "../classes/HMItemGroup.h"
