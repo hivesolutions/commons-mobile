@@ -33,22 +33,19 @@
     @private BOOL _highlightable;
 }
 
+/**
+ * The icon to be drawn in the button.
+ */
 @property (retain) NSString *icon;
-@property (retain) NSString *highlightedIcon;
-@property (assign) BOOL highlightable;
 
 /**
- * Constructor of the class.
- *
- * @param identifier The identifier of the button item.
- * @param name The name of the button item.
- * @param icon The path to the button item's icon.
- * @param highlightedIcon The path to the button item's
- * icon when it is highlighted.
- * @param highlightable Indicates if the button item is
- * highlightable.
- * @return The button item instance.
+ * The color for highlighted button.
  */
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon highlightable:(BOOL)highlightable;
+@property (retain) NSString *highlightedIcon;
+
+/**
+ * If the button is highlightable.
+ */
+@property (assign) BOOL highlightable;
 
 @end

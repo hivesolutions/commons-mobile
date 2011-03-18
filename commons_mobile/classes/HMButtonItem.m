@@ -39,14 +39,9 @@
     return self;
 }
 
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon highlightable:(BOOL)highlightable {
+- (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
-    self = [super initWithIdentifier:identifier name:name description:nil];
-
-    // sets the attributes
-    self.icon = icon;
-    self.highlightedIcon = highlightedIcon;
-    self.highlightable = highlightable;
+    self = [super initWithIdentifier:identifier];
 
     // returns the instance
     return self;

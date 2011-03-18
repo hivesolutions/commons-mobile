@@ -34,16 +34,6 @@
 @property (retain) NSMutableArray *items;
 
 /**
- * Constructor of the class.
- *
- * @param identifier The identifier of the item.
- * @param name The name of the item.
- * @param description The description of the item.
- * @return The item instance.
- */
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name description:(NSString *)description;
-
-/**
  * Adds an item to the item group.
  *
  * @param item The item to add to the group.

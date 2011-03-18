@@ -29,11 +29,28 @@
 
 @synthesize items = _items;
 
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name description:(NSString *)description {
+- (id)init {
     // invokes the parent constructor
-    self = [super initWithIdentifier:identifier name:name description:description];
+    self = [super init];
 
-    // creates teh items
+    // creates the items
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+
+    // sets the attributes
+    self.items = items;
+
+    // releases the objects
+    [items release];
+
+    // returns the instance
+    return self;
+}
+
+- (id)initWithIdentifier:(NSString *)identifier {
+    // invokes the parent constructor
+    self = [super initWithIdentifier:identifier];
+
+    // creates the items
     NSMutableArray *items = [[NSMutableArray alloc] init];
 
     // sets the attributes

@@ -31,14 +31,12 @@
 @synthesize name = _name;
 @synthesize description = _description;
 
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name description:(NSString *)description {
+- (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
     [self init];
 
     // sets the attributes
     self.identifier = identifier;
-    self.name = name;
-    self.description = description;
 
     // returns the instance
     return self;

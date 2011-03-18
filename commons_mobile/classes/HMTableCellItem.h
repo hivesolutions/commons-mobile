@@ -33,23 +33,9 @@
     @private NSString *_accessoryType;
 }
 
-@property (retain) NSString *accessoryType;
-
 /**
- * Constructor of the class.
- *
- * @param identifier The identifier of the
- * table cell item.
- * @param name The name of the table cell item.
- * @param icon The path to the table cell item's icon.
- * @param highlightedIcon The path to the
- * table cell item's icon when it is highlighted.
- * @param accessoryType The desired type of
- * accessory view.
- * @param highlightable Indicates if the table cell
- * item is highlightable.
- * @return The table cell item instance.
+ * The acessory type to be used in the table cell.
  */
-- (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name icon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon highlightable:(BOOL)highlightable accessoryType:(NSString *)accessoryType;
+@property (retain) NSString *accessoryType;
 
 @end
