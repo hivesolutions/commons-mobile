@@ -20,6 +20,8 @@
 		C23F3D34132E3384003155EE /* commons_mobile.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D33132E3384003155EE /* commons_mobile.h */; };
 		C23F3D3B132E3411003155EE /* HMButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D39132E3411003155EE /* HMButtonItem.h */; };
 		C23F3D3C132E3411003155EE /* HMButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C23F3D3A132E3411003155EE /* HMButtonItem.m */; };
+		C281BC2213380B0B0055E771 /* HMHttpUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C281BC2013380B0B0055E771 /* HMHttpUtil.h */; };
+		C281BC2313380B0B0055E771 /* HMHttpUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C281BC2113380B0B0055E771 /* HMHttpUtil.m */; };
 		C295F928132E265A00BC1B93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C295F927132E265A00BC1B93 /* Foundation.framework */; };
 		C29E100B13339F3800E9F77A /* HMStringTableCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C29E100913339F3800E9F77A /* HMStringTableCellItem.h */; };
 		C29E100C13339F3800E9F77A /* HMStringTableCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C29E100A13339F3800E9F77A /* HMStringTableCellItem.m */; };
@@ -40,6 +42,8 @@
 		C23F3D33132E3384003155EE /* commons_mobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = commons_mobile.h; path = headers/commons_mobile.h; sourceTree = "<group>"; };
 		C23F3D39132E3411003155EE /* HMButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMButtonItem.h; path = classes/HMButtonItem.h; sourceTree = "<group>"; };
 		C23F3D3A132E3411003155EE /* HMButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMButtonItem.m; path = classes/HMButtonItem.m; sourceTree = "<group>"; };
+		C281BC2013380B0B0055E771 /* HMHttpUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMHttpUtil.h; path = classes/HMHttpUtil.h; sourceTree = "<group>"; };
+		C281BC2113380B0B0055E771 /* HMHttpUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMHttpUtil.m; path = classes/HMHttpUtil.m; sourceTree = "<group>"; };
 		C295F924132E265A00BC1B93 /* libcommons_mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcommons_mobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C295F927132E265A00BC1B93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C29E100913339F3800E9F77A /* HMStringTableCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMStringTableCellItem.h; path = classes/HMStringTableCellItem.h; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 			name = Headers;
 			sourceTree = "<group>";
 		};
+		C281BC1E13380ADA0055E771 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C281BC2013380B0B0055E771 /* HMHttpUtil.h */,
+				C281BC2113380B0B0055E771 /* HMHttpUtil.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		C295F919132E265900BC1B93 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 		C295F938132E269F00BC1B93 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C281BC1E13380ADA0055E771 /* Util */,
 				C20CDB9613338697008A4FE3 /* Protocols */,
 				C20CDB7D133375C0008A4FE3 /* Dependencies */,
 				C20CDB7B133375B5008A4FE3 /* Structures */,
@@ -173,6 +187,7 @@
 				C20CDB941333863B008A4FE3 /* HMEditItem.h in Headers */,
 				C29E100B13339F3800E9F77A /* HMStringTableCellItem.h in Headers */,
 				C23B5E5A1333BD8800CFC9AF /* HMNamedItemGroup.h in Headers */,
+				C281BC2213380B0B0055E771 /* HMHttpUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +244,7 @@
 				A5D25F3A1330EE1B00340936 /* HMTableCellItem.m in Sources */,
 				C29E100C13339F3800E9F77A /* HMStringTableCellItem.m in Sources */,
 				C23B5E5B1333BD8800CFC9AF /* HMNamedItemGroup.m in Sources */,
+				C281BC2313380B0B0055E771 /* HMHttpUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,15 +23,11 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-// dependencies includes
-#import "../classes/Dependencies.h"
+#import "Dependencies.h"
 
-// class includes
-#import "../classes/HMHttpUtil.h"
-#import "../classes/HMStringTableCellItem.h"
-#import "../classes/HMNamedItemGroup.h"
-#import "../classes/HMTableCellItem.h"
-#import "../classes/HMButtonItem.h"
-#import "../classes/HMItemGroup.h"
-#import "../classes/HMEditItem.h"
-#import "../classes/HMItem.h"
+@interface HMHttpUtil : NSObject {
+}
+
++ (NSData *)createHttpData:(NSDictionary *)remoteData;
+
+@end
