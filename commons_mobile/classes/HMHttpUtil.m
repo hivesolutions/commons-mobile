@@ -79,6 +79,9 @@
     // creates the http data from the http string
     NSData *httpData = [escapedHttpString dataUsingEncoding:NSUTF8StringEncoding];
 
+    // releases the objects
+    [stringBuffer release];
+
     // returns the http data
     return httpData;
 }
