@@ -28,6 +28,10 @@
 #import "HMTableCellItem.h"
 
 @interface HMStringTableCellItem : HMTableCellItem {
+    @private
+    BOOL _secure;
 }
+
+@property (assign) BOOL secure;
 
 @end

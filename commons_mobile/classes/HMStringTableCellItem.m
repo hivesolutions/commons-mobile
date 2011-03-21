@@ -27,6 +27,8 @@
 
 @implementation HMStringTableCellItem
 
+@synthesize secure = _secure;
+
 - (id)init {
     // invokes the parent constructor
     self = [super init];
