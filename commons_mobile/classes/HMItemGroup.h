@@ -30,9 +30,13 @@
 @interface HMItemGroup : HMItem {
     @private
     NSMutableArray *_items;
+    NSString *_header;
+    NSString *_footer;
 }
 
 @property (retain) NSMutableArray *items;
+@property (retain) NSString *header;
+@property (retain) NSString *footer;
 
 /**
  * Adds an item to the item group.
