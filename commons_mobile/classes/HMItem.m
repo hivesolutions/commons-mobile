@@ -30,6 +30,7 @@
 @synthesize identifier = _identifier;
 @synthesize name = _name;
 @synthesize description = _description;
+@synthesize defaultValue = _defaultValue;
 
 - (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
@@ -51,6 +52,9 @@
 
     // releases the description
     [_description release];
+
+    // releases the default value
+    [_defaultValue release];
 
     // calls the super
     [super dealloc];
