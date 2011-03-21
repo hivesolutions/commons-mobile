@@ -26,9 +26,10 @@
 #import "Dependencies.h"
 
 @interface HMItem : NSObject {
-    @private NSString *_identifier;
-    @private NSString *_name;
-    @private NSString *_description;
+    @private
+    NSString *_identifier;
+    NSString *_name;
+    NSString *_description;
 }
 
 @property (retain) NSString *identifier;

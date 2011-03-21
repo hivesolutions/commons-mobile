@@ -29,7 +29,8 @@
 #import "HMEditItem.h"
 
 @interface HMTableCellItem : HMButtonItem<HMEditItem> {
-    @private NSString *_accessoryType;
+    @private
+    NSString *_accessoryType;
 }
 
 /**

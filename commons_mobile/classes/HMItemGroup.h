@@ -28,7 +28,8 @@
 #import "HMItem.h"
 
 @interface HMItemGroup : HMItem {
-    @private NSMutableArray *_items;
+    @private
+    NSMutableArray *_items;
 }
 
 @property (retain) NSMutableArray *items;

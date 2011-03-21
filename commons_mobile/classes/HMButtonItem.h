@@ -28,9 +28,10 @@
 #import "HMItem.h"
 
 @interface HMButtonItem : HMItem {
-    @private NSString *_icon;
-    @private NSString *_highlightedIcon;
-    @private BOOL _highlightable;
+    @private
+    NSString *_icon;
+    NSString *_highlightedIcon;
+    BOOL _highlightable;
 }
 
 /**
