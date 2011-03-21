@@ -76,7 +76,15 @@
     [self.items addObject:item];
 }
 
-- (HMItem *)getItem:(NSIndexPath *)indexPath {
+- (HMItem *)getItem:(NSInteger) index {
+    // retrieves the item for the index
+    HMItem *item = [self.items objectAtIndex:index];
+
+    // returns the item
+    return item;
+}
+
+- (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath {
     // retrieves the item in the first index
     NSUInteger index = [indexPath indexAtPosition:0];
     HMItem *item = [self.items objectAtIndex:index];
@@ -95,7 +103,7 @@
 
         // retrieves the next item in the path
         HMItemGroup *itemGroup = (HMItemGroup *) item;
-        item = [itemGroup getItem:newIndexPath];
+        item = [itemGroup getItemAtIndexPath:newIndexPath];
 
         // frees the indexes
         free(indexes);

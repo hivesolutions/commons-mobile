@@ -44,11 +44,21 @@
 /**
  * Retrieves an item from the item group.
  *
+ * @param index The index that points
+ * to the desired item.
+ * @return Returns the item at the specified
+ * index path.
+ */
+- (HMItem *)getItem:(NSInteger)index;
+
+/**
+ * Retrieves an item from the item group.
+ *
  * @param indexPath The index path that points
  * to the desired item.
  * @return Returns the item at the specified
  * index path.
  */
-- (HMItem *)getItem:(NSIndexPath *)indexPath;
+- (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
