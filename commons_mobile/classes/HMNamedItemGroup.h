@@ -28,7 +28,8 @@
 #import "HMItem.h"
 
 @interface HMNamedItemGroup : HMItem {
-    @private NSMutableDictionary *_items;
+    @private
+    NSMutableDictionary *_items;
 }
 
 @property (retain) NSMutableDictionary *items;
