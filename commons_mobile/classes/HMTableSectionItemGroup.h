@@ -25,40 +25,15 @@
 
 #import "Dependencies.h"
 
-#import "HMItem.h"
+#import "HMItemGroup.h"
 
-@interface HMItemGroup : HMItem {
+@interface HMTableSectionItemGroup : HMItemGroup {
     @private
-    NSMutableArray *_items;
+    NSString *_header;
+    NSString *_footer;
 }
 
-@property (retain) NSMutableArray *items;
-
-/**
- * Adds an item to the item group.
- *
- * @param item The item to add to the group.
- */
-- (void)addItem:(HMItem *)item;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param index The index that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItem:(NSInteger)index;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param indexPath The index path that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath;
+@property (retain) NSString *header;
+@property (retain) NSString *footer;
 
 @end

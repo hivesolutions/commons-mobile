@@ -23,42 +23,22 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "Dependencies.h"
+#import "HMTableSectionItemGroup.h"
 
-#import "HMItem.h"
+@implementation HMTableSectionItemGroup
 
-@interface HMItemGroup : HMItem {
-    @private
-    NSMutableArray *_items;
+@synthesize header = _header;
+@synthesize footer = _footer;
+
+- (void)dealloc {
+    // releases the header
+    [_header release];
+
+    // releases the footer
+    [_footer release];
+
+    // calls the super
+    [super dealloc];
 }
-
-@property (retain) NSMutableArray *items;
-
-/**
- * Adds an item to the item group.
- *
- * @param item The item to add to the group.
- */
-- (void)addItem:(HMItem *)item;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param index The index that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItem:(NSInteger)index;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param indexPath The index path that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

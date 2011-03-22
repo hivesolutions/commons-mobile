@@ -28,8 +28,6 @@
 @implementation HMItemGroup
 
 @synthesize items = _items;
-@synthesize header = _header;
-@synthesize footer = _footer;
 
 - (id)init {
     // invokes the parent constructor

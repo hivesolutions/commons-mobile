@@ -31,6 +31,7 @@
 #import "../classes/HMStringTableCellItem.h"
 #import "../classes/HMNamedItemGroup.h"
 #import "../classes/HMTableCellItem.h"
+#import "../classes/HMTableSectionItemGroup.h"
 #import "../classes/HMButtonItem.h"
 #import "../classes/HMItemGroup.h"
 #import "../classes/HMEditItem.h"
