@@ -33,6 +33,9 @@
     // invokes the parent constructor
     self = [super init];
 
+    // sets the default attributes
+    self.secure = NO;
+
     // returns the instance
     return self;
 }

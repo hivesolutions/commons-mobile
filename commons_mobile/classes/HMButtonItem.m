@@ -35,6 +35,9 @@
     // invokes the parent constructor
     self = [super init];
 
+    // sets the default attributes
+    self.highlightable = YES;
+
     // returns the instance
     return self;
 }
