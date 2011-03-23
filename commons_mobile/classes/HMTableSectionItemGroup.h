@@ -33,7 +33,14 @@
     NSString *_footer;
 }
 
+/**
+ * The header text value for the table section.
+ */
 @property (retain) NSString *header;
+
+/**
+ * The footer text value fot the table section.
+ */
 @property (retain) NSString *footer;
 
 @end
