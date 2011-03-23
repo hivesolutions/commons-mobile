@@ -31,7 +31,7 @@
 /**
  * Creates the http get or post data string from the
  * given map of remote data.
- * 
+ *
  * @param remoteData The remote data map to be converted
  * to get or post string.
  * @return The data structure with the post data.
