@@ -29,18 +29,18 @@
 
 @interface HMTableSectionItemGroup : HMItemGroup {
     @private
-    NSString *_header;
-    NSString *_footer;
+    HMTableCellItem *_header;
+    HMTableCellItem *_footer;
 }
 
 /**
- * The header text value for the table section.
+ * The header for the table section.
  */
-@property (retain) NSString *header;
+@property (retain) HMTableCellItem *header;
 
 /**
- * The footer text value fot the table section.
+ * The footer for the table section.
  */
-@property (retain) NSString *footer;
+@property (retain) HMTableCellItem *footer;
 
 @end
