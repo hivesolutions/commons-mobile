@@ -29,10 +29,14 @@
 
 @synthesize editable = _editable;
 @synthesize accessoryType = _accessoryType;
+@synthesize indentable = _indentable;
 
 - (id)init {
     // invokes the parent constructor
     self = [super init];
+
+    // sets the cell as indentable
+    self.indentable = YES;
 
     // returns the instance
     return self;
@@ -41,6 +45,9 @@
 - (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
     self = [super initWithIdentifier:identifier];
+
+    // sets the cell as indentable
+    self.indentable = YES;
 
     // returns the instance
     return self;

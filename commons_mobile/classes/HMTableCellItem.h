@@ -31,11 +31,18 @@
 @interface HMTableCellItem : HMButtonItem<HMEditItem> {
     @private
     NSString *_accessoryType;
+    BOOL _indentable;
 }
 
 /**
  * The acessory type to be used in the table cell.
  */
 @property (retain) NSString *accessoryType;
+
+
+/**
+ * Specifies if the cell is indentable.
+ */
+@property (assign) BOOL indentable;
 
 @end
