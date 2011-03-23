@@ -16,24 +16,41 @@
 // You should have received a copy of the GNU General Public License
 // along with Hive Mobile. If not, see <http://www.gnu.org/licenses/>.
 
-// __author__    = João Magalhães <joamag@hive.pt>
+// __author__    = Tiago Silva <tsilva@hive.pt>
 // __version__   = 1.0.0
 // __revision__  = $LastChangedRevision: 2390 $
 // __date__      = $LastChangedDate: 2009-04-02 08:36:50 +0100 (qui, 02 Abr 2009) $
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-// dependencies includes
-#import "../classes/Dependencies.h"
+#import "HMLabelItem.h"
 
-// class includes
-#import "../classes/HMHttpUtil.h"
-#import "../classes/HMStringTableCellItem.h"
-#import "../classes/HMNamedItemGroup.h"
-#import "../classes/HMTableCellItem.h"
-#import "../classes/HMTableSectionItemGroup.h"
-#import "../classes/HMButtonItem.h"
-#import "../classes/HMItemGroup.h"
-#import "../classes/HMEditItem.h"
-#import "../classes/HMItem.h"
-#import "../classes/HMLabelItem.h"
+@implementation HMLabelItem
+
+@synthesize fontName = _fontName;
+@synthesize fontSize = _fontSize;
+@synthesize textColor = _textColor;
+@synthesize shadowColor = _shadowColor;
+@synthesize shadowOffset = _shadowOffset;
+
+- (void)dealloc {
+    // releases the font name
+    [_fontName release];
+
+    // releases the font size
+    [_fontSize release];
+
+    // releases the text color
+    [_textColor release];
+
+    // releases the shadow color
+    [_shadowColor release];
+
+    // releases the shadow offset
+    [_shadowOffset release];
+
+    // calls the super
+    [super dealloc];
+}
+
+@end
