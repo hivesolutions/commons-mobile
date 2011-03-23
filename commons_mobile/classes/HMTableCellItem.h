@@ -32,6 +32,7 @@
     @private
     NSString *_accessoryType;
     BOOL _indentable;
+    BOOL _clearable;
 }
 
 /**
@@ -44,5 +45,10 @@
  * Specifies if the cell is indentable.
  */
 @property (assign) BOOL indentable;
+
+/**
+ * Specifies if the cell is clearable.
+ */
+@property (assign) BOOL clearable;
 
 @end

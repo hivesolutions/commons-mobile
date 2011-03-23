@@ -30,13 +30,15 @@
 @synthesize editable = _editable;
 @synthesize accessoryType = _accessoryType;
 @synthesize indentable = _indentable;
+@synthesize clearable = _clearable;
 
 - (id)init {
     // invokes the parent constructor
     self = [super init];
 
-    // sets the cell as indentable
+    // sets the default attributes
     self.indentable = YES;
+    self.clearable = YES;
 
     // returns the instance
     return self;
@@ -46,8 +48,9 @@
     // invokes the parent constructor
     self = [super initWithIdentifier:identifier];
 
-    // sets the cell as indentable
+    // sets the default attributes
     self.indentable = YES;
+    self.clearable = YES;
 
     // returns the instance
     return self;
