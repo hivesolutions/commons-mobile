@@ -26,21 +26,22 @@
 #import "Dependencies.h"
 
 #import "HMItemGroup.h"
+#import "HMLabelItem.h"
 
 @interface HMTableSectionItemGroup : HMItemGroup {
     @private
-    HMTableCellItem *_header;
-    HMTableCellItem *_footer;
+    HMLabelItem *_header;
+    HMLabelItem *_footer;
 }
 
 /**
  * The header for the table section.
  */
-@property (retain) HMTableCellItem *header;
+@property (retain) HMLabelItem *header;
 
 /**
  * The footer for the table section.
  */
-@property (retain) HMTableCellItem *footer;
+@property (retain) HMLabelItem *footer;
 
 @end

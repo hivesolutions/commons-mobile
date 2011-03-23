@@ -25,34 +25,32 @@
 
 #import "Dependencies.h"
 
-#import "HMItem.h"
-
-@interface HMLabelItem : HMItem {
+@interface HMColor : NSObject {
     @private
-    NSString *_fontName;
-    NSUInteger _fontSize;
-    HMColor *_textColor;
-    HMColor *_shadowColor;
+    float _red;
+    float _green;
+    float _blue;
+    float _alpha;
 }
 
-/**
- * The label font's name.
- */
-@property (retain) NSString *fontName;
+@property (assign) float red;
+@property (assign) float green;
+@property (assign) float blue;
+@property (assign) float alpha;
 
 /**
- * The label font's size.
+ * Constructor of the class.
+ *
+ * @param red A number from zero to
+ * one representing the red component.
+ * @param green A number from zero to
+ * one representing the green component.
+ * @param blue A number from zero to
+ * one representing the blue component.
+ * @param alpha A number from zero to
+ * one representing the alpha component.
+ * @return The constructed instance.
  */
-@property (assign) NSUInteger fontSize;
-
-/**
- * The label's text color.
- */
-@property (retain) HMColor *textColor;
-
-/**
- * The label's shadow color.
- */
-@property (retain) HMColor *shadowColor;
+- (id)initRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
 
 @end

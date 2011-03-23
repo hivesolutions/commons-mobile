@@ -23,36 +23,24 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "Dependencies.h"
+#import "HMColor.h"
 
-#import "HMItem.h"
+@implementation HMColor
 
-@interface HMLabelItem : HMItem {
-    @private
-    NSString *_fontName;
-    NSUInteger _fontSize;
-    HMColor *_textColor;
-    HMColor *_shadowColor;
+@synthesize red = _red;
+@synthesize green = _green;
+@synthesize blue = _blue;
+@synthesize alpha = _alpha;
+
+- (id)initRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
+    // sets the attributes
+    self.red = red;
+    self.green = green;
+    self.blue = blue;
+    self.alpha = alpha;
+
+    // returns the self
+    return self;
 }
-
-/**
- * The label font's name.
- */
-@property (retain) NSString *fontName;
-
-/**
- * The label font's size.
- */
-@property (assign) NSUInteger fontSize;
-
-/**
- * The label's text color.
- */
-@property (retain) HMColor *textColor;
-
-/**
- * The label's shadow color.
- */
-@property (retain) HMColor *shadowColor;
 
 @end

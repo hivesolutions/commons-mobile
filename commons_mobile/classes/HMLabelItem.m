@@ -31,23 +31,16 @@
 @synthesize fontSize = _fontSize;
 @synthesize textColor = _textColor;
 @synthesize shadowColor = _shadowColor;
-@synthesize shadowOffset = _shadowOffset;
 
 - (void)dealloc {
     // releases the font name
     [_fontName release];
-
-    // releases the font size
-    [_fontSize release];
 
     // releases the text color
     [_textColor release];
 
     // releases the shadow color
     [_shadowColor release];
-
-    // releases the shadow offset
-    [_shadowOffset release];
 
     // calls the super
     [super dealloc];

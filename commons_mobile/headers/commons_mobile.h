@@ -27,6 +27,7 @@
 #import "../classes/Dependencies.h"
 
 // class includes
+#import "../classes/HMColor.h"
 #import "../classes/HMHttpUtil.h"
 #import "../classes/HMStringTableCellItem.h"
 #import "../classes/HMNamedItemGroup.h"
