@@ -30,8 +30,10 @@
 @interface HMStringTableCellItem : HMTableCellItem {
     @private
     BOOL _secure;
+    NSString *_returnType;
 }
 
 @property (assign) BOOL secure;
+@property (retain) NSString *returnType;
 
 @end

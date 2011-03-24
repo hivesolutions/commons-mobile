@@ -28,6 +28,7 @@
 @implementation HMStringTableCellItem
 
 @synthesize secure = _secure;
+@synthesize returnType = _returnType;
 
 - (id)init {
     // invokes the parent constructor
@@ -49,6 +50,9 @@
 }
 
 - (void)dealloc {
+    // releases the return type
+    [_returnType release];
+
     // calls the super
     [super dealloc];
 }
