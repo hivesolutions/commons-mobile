@@ -31,9 +31,23 @@
     @private
     BOOL _secure;
     NSString *_returnType;
+    BOOL _returnDisablesEdit;
 }
 
+/**
+ * Indicates if the value should be secured.
+ */
 @property (assign) BOOL secure;
+
+/**
+ * The cell's return type.
+ */
 @property (retain) NSString *returnType;
+
+/**
+ * Indicates if the edit mode should
+ * be disabled on return.
+ */
+@property (assign) BOOL returnDisablesEdit;
 
 @end

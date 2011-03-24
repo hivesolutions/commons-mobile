@@ -29,6 +29,7 @@
 
 @synthesize secure = _secure;
 @synthesize returnType = _returnType;
+@synthesize returnDisablesEdit = _returnDisablesEdit;
 
 - (id)init {
     // invokes the parent constructor
@@ -36,6 +37,7 @@
 
     // sets the default attributes
     self.secure = NO;
+    self.returnDisablesEdit = NO;
 
     // returns the instance
     return self;
