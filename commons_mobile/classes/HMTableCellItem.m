@@ -27,8 +27,8 @@
 
 @implementation HMTableCellItem
 
-@synthesize editable = _editable;
 @synthesize accessoryType = _accessoryType;
+@synthesize accessoryValue = _accessoryValue;
 @synthesize indentable = _indentable;
 @synthesize clearable = _clearable;
 
