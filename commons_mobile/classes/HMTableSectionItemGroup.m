@@ -65,7 +65,7 @@
     labelItem.shadowColor = labelItemShadowColor;
 
     // sets the attributes
-    self.headerString = headerString;
+    _headerString = headerString;
     self.header = labelItem;
 
     // releases the objects
@@ -92,7 +92,7 @@
     labelItem.shadowColor = labelItemShadowColor;
 
     // sets the attributes
-    self.footerString = footerString;
+    _footerString = footerString;
     self.footer = labelItem;
 
     // releases the objects
