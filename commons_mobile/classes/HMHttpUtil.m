@@ -86,4 +86,15 @@
     return httpData;
 }
 
++ (NSString *)createHttpDataString:(NSDictionary *)remoteDataString {
+    // creates the http data
+    NSData *data = [HMHttpUtil createHttpData:remoteDataString];
+
+    // initializes the data string with the contents of the data
+    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+    // returns the data string
+    return [dataString autorelease];
+}
+
 @end

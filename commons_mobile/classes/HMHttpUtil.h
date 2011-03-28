@@ -29,13 +29,23 @@
 }
 
 /**
+ * Creates the http get or post data from the
+ * given map of remote data.
+ *
+ * @param remoteData The remote data map to be converted
+ * to get or post string.
+ * @return The data structure with the get or post data.
+ */
++ (NSData *)createHttpData:(NSDictionary *)remoteData;
+
+/**
  * Creates the http get or post data string from the
  * given map of remote data.
  *
  * @param remoteData The remote data map to be converted
  * to get or post string.
- * @return The data structure with the post data.
+ * @return The data structure with the get or post data string.
  */
-+ (NSData *)createHttpData:(NSDictionary *)remoteData;
++ (NSString *)createHttpDataString:(NSDictionary *)remoteDataString;
 
 @end
