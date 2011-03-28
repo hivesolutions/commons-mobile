@@ -37,8 +37,9 @@
     self = [super init];
 
     // sets the default attributes
-    self.indentable = YES;
-    self.clearable = YES;
+    self.indentable = NO;
+    self.clearable = NO;
+    self.editable = NO;
 
     // returns the instance
     return self;
@@ -49,8 +50,9 @@
     self = [super initWithIdentifier:identifier];
 
     // sets the default attributes
-    self.indentable = YES;
-    self.clearable = YES;
+    self.indentable = NO;
+    self.clearable = NO;
+    self.editable = NO;
 
     // returns the instance
     return self;
@@ -65,7 +67,19 @@
 }
 
 - (BOOL)editable {
-    return NO;
+    return _editable;
+}
+
+- (void)setEditable:(BOOL)editable {
+    // sets the editable attribute
+    _editable = editable;
+
+    // changes the indentable
+    // and clearable attributes
+    // to be coherent with the
+    // editable property
+    _indentable = editable;
+    _clearable = editable;
 }
 
 @end

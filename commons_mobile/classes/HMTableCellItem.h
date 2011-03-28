@@ -34,6 +34,7 @@
     NSString *_accessoryValue;
     BOOL _indentable;
     BOOL _clearable;
+    BOOL _editable;
 }
 
 /**
@@ -55,5 +56,10 @@
  * Specifies if the cell is clearable.
  */
 @property (assign) BOOL clearable;
+
+/**
+ * Specifies if the cell is editable.
+ */
+@property (assign) BOOL editable;
 
 @end

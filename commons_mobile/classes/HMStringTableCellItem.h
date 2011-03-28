@@ -32,6 +32,7 @@
     BOOL _secure;
     NSString *_returnType;
     BOOL _returnDisablesEdit;
+    BOOL _multipleLines;
 }
 
 /**
@@ -49,5 +50,11 @@
  * be disabled on return.
  */
 @property (assign) BOOL returnDisablesEdit;
+
+/**
+ * Indicates if the table cell item
+ * should accept more than one line.
+ */
+@property (assign) BOOL multipleLines;
 
 @end

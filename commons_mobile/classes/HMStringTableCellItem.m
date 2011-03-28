@@ -30,14 +30,17 @@
 @synthesize secure = _secure;
 @synthesize returnType = _returnType;
 @synthesize returnDisablesEdit = _returnDisablesEdit;
+@synthesize multipleLines = _multipleLines;
 
 - (id)init {
     // invokes the parent constructor
     self = [super init];
 
     // sets the default attributes
+    self.editable = YES;
     self.secure = NO;
     self.returnDisablesEdit = NO;
+    self.multipleLines = NO;
 
     // returns the instance
     return self;
@@ -46,6 +49,12 @@
 - (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
     self = [super initWithIdentifier:identifier];
+
+    // sets the default attributes
+    self.editable = YES;
+    self.secure = NO;
+    self.returnDisablesEdit = NO;
+    self.multipleLines = NO;
 
     // returns the instance
     return self;
@@ -57,10 +66,6 @@
 
     // calls the super
     [super dealloc];
-}
-
-- (BOOL)editable {
-    return YES;
 }
 
 @end
