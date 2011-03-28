@@ -31,6 +31,8 @@
 @synthesize name = _name;
 @synthesize description = _description;
 @synthesize defaultValue = _defaultValue;
+@synthesize backgroundColor = _backgroundColor;
+@synthesize selectedBackgroundColor = _selectedBackgroundColor;
 
 - (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
@@ -38,6 +40,18 @@
 
     // sets the attributes
     self.identifier = identifier;
+
+    // initializes the default colors
+    HMColor *backgroundColor = [[HMColor alloc] initRed:0.96 green:0.96 blue:0.96 alpha:1];
+    HMColor *selectedBackgroundColor = [[HMColor alloc] initRed:0.96 green:0.96 blue:0.96 alpha:1];
+
+    // sets the attributes
+    self.backgroundColor = backgroundColor;
+    self.selectedBackgroundColor = selectedBackgroundColor;
+
+    // releases the objects
+    [backgroundColor release];
+    [selectedBackgroundColor release];
 
     // returns the instance
     return self;
@@ -55,6 +69,12 @@
 
     // releases the default value
     [_defaultValue release];
+
+    // releases the background color
+    [_backgroundColor release];
+
+    // releases the selected background color
+    [_selectedBackgroundColor release];
 
     // calls the super
     [super dealloc];

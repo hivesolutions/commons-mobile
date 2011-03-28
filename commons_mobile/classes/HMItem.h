@@ -31,12 +31,39 @@
     NSString *_name;
     NSString *_description;
     NSString *_defaultValue;
+    HMColor *_backgroundColor;
+    HMColor *_selectedBackgroundColor;
 }
 
+/**
+ * The item's identifier.
+ */
 @property (retain) NSString *identifier;
+
+/**
+ * The item's name.
+ */
 @property (retain) NSString *name;
+
+/**
+ * The item's description.
+ */
 @property (retain) NSString *description;
+
+/**
+ * The item's default value.
+ */
 @property (retain) NSString *defaultValue;
+
+/**
+ * The item's background color.
+ */
+@property (retain) HMColor *backgroundColor;
+
+/**
+ * The item's selected background color.
+ */
+@property (retain) HMColor *selectedBackgroundColor;
 
 /**
  * Constructor of the class.
