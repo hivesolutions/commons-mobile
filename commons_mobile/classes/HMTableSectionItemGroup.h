@@ -30,9 +30,21 @@
 
 @interface HMTableSectionItemGroup : HMItemGroup {
     @private
+    NSString *_headerString;
+    NSString *_footerString;
     HMLabelItem *_header;
     HMLabelItem *_footer;
 }
+
+/**
+ * The string representation of the header.
+ */
+@property (retain) NSString *headerString;
+
+/**
+ * The footer representation of the footer.
+ */
+@property (retain) NSString *footerString;
 
 /**
  * The header for the table section.

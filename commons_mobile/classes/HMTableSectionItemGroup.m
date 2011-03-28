@@ -31,6 +31,12 @@
 @synthesize footer = _footer;
 
 - (void)dealloc {
+    // releases the header string
+    [_headerString release];
+
+    // releases the footer string
+    [_footerString release];
+
     // releases the header
     [_header release];
 
@@ -39,6 +45,60 @@
 
     // calls the super
     [super dealloc];
+}
+
+- (NSString *)headerString {
+    return _headerString;
+}
+
+- (void)setHeaderString:(NSString *)headerString {
+    // creates the default colors
+    HMColor *labelItemTextColor = [[HMColor alloc] initRed:0.29 green:0.34 blue:0.42 alpha:1.0];
+    HMColor *labelItemShadowColor = [[HMColor alloc] initRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+
+    // creates the label item
+    HMLabelItem *labelItem = [[HMLabelItem alloc] init];
+    labelItem.description = headerString;
+    labelItem.fontName = @"Helvetica";
+    labelItem.fontSize = 13;
+    labelItem.textColor = labelItemTextColor;
+    labelItem.shadowColor = labelItemShadowColor;
+
+    // sets the attributes
+    self.headerString = headerString;
+    self.header = labelItem;
+
+    // releases the objects
+    [labelItemTextColor release];
+    [labelItemShadowColor release];
+    [labelItem release];
+}
+
+- (NSString *)footerString {
+    return _footerString;
+}
+
+- (void)setFooterString:(NSString *)footerString {
+    // creates the default colors
+    HMColor *labelItemTextColor = [[HMColor alloc] initRed:0.29 green:0.34 blue:0.42 alpha:1.0];
+    HMColor *labelItemShadowColor = [[HMColor alloc] initRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+
+    // creates the label item
+    HMLabelItem *labelItem = [[HMLabelItem alloc] init];
+    labelItem.description = footerString;
+    labelItem.fontName = @"Helvetica";
+    labelItem.fontSize = 13;
+    labelItem.textColor = labelItemTextColor;
+    labelItem.shadowColor = labelItemShadowColor;
+
+    // sets the attributes
+    self.footerString = footerString;
+    self.footer = labelItem;
+
+    // releases the objects
+    [labelItemTextColor release];
+    [labelItemShadowColor release];
+    [labelItem release];
 }
 
 @end
