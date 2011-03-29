@@ -23,7 +23,7 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "HMItem.h"
+#import "HMHttpUtil.h"
 
 @implementation HMHttpUtil
 
@@ -58,7 +58,7 @@
 
         // in case the value is not defined or it's
         // an empty string
-        if(value == nil || [value length] < 1) {
+        if(value == nil || (NSNull *) value == [NSNull null] || [value length] < 1) {
             // continues the loop
             continue;
         }
