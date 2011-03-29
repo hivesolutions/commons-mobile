@@ -27,6 +27,16 @@
 
 #import "HMTableCellItem.h"
 
+/**
+ * The height of a cell with a single line.
+ */
+#define HM_STRING_TABLE_CELL_ITEM_SINGLE_LINE_HEIGHT 50
+
+/**
+ * The height of a cell with multiple lines.
+ */
+#define HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT 100
+
 @interface HMStringTableCellItem : HMTableCellItem {
     @private
     BOOL _secure;
@@ -52,8 +62,8 @@
 @property (assign) BOOL returnDisablesEdit;
 
 /**
- * Indicates if the table cell item
- * should accept more than one line.
+ * Indicates if the cell can hold
+ * multiple lines.
  */
 @property (assign) BOOL multipleLines;
 

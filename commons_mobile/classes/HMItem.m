@@ -33,6 +33,7 @@
 @synthesize defaultValue = _defaultValue;
 @synthesize backgroundColor = _backgroundColor;
 @synthesize selectedBackgroundColor = _selectedBackgroundColor;
+@synthesize height = _height;
 
 - (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
@@ -40,6 +41,7 @@
 
     // sets the attributes
     self.identifier = identifier;
+    self.height = HM_ITEM_HEIGHT;
 
     // initializes the default colors
     HMColor *backgroundColor = [[HMColor alloc] initRed:0.96 green:0.96 blue:0.96 alpha:1];

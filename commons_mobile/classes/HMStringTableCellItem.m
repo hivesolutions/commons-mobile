@@ -30,7 +30,6 @@
 @synthesize secure = _secure;
 @synthesize returnType = _returnType;
 @synthesize returnDisablesEdit = _returnDisablesEdit;
-@synthesize multipleLines = _multipleLines;
 
 - (id)init {
     // invokes the parent constructor
@@ -66,6 +65,22 @@
 
     // calls the super
     [super dealloc];
+}
+
+- (BOOL)multipleLines {
+    return _multipleLines;
+}
+
+- (void)setMultipleLines:(BOOL)multipleLines {
+    // sets the attribute
+    _multipleLines = multipleLines;
+
+    // sets the cell's height to adapt to the number of lines
+    if(multipleLines == YES) {
+        self.height = HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT;
+    } else {
+        self.height = HM_STRING_TABLE_CELL_ITEM_SINGLE_LINE_HEIGHT;
+    }
 }
 
 @end

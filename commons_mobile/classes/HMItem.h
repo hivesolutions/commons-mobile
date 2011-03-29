@@ -25,6 +25,11 @@
 
 #import "Dependencies.h"
 
+/**
+ * The item's height.
+ */
+#define HM_ITEM_HEIGHT 50
+
 @interface HMItem : NSObject {
     @private
     NSString *_identifier;
@@ -33,6 +38,7 @@
     NSString *_defaultValue;
     HMColor *_backgroundColor;
     HMColor *_selectedBackgroundColor;
+    float _height;
 }
 
 /**
@@ -64,6 +70,11 @@
  * The item's selected background color.
  */
 @property (retain) HMColor *selectedBackgroundColor;
+
+/**
+ * The item's height.
+ */
+@property (assign) float height;
 
 /**
  * Constructor of the class.
