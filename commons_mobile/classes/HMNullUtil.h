@@ -23,19 +23,29 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-// dependencies includes
-#import "../classes/Dependencies.h"
+#import "Dependencies.h"
 
-// class includes
-#import "../classes/HMColor.h"
-#import "../classes/HMHttpUtil.h"
-#import "../classes/HMNullUtil.h"
-#import "../classes/HMStringTableCellItem.h"
-#import "../classes/HMNamedItemGroup.h"
-#import "../classes/HMTableCellItem.h"
-#import "../classes/HMTableSectionItemGroup.h"
-#import "../classes/HMButtonItem.h"
-#import "../classes/HMItemGroup.h"
-#import "../classes/HMEditItem.h"
-#import "../classes/HMItem.h"
-#import "../classes/HMLabelItem.h"
+/**
+ * Avoids the definition of a null object value.
+ *
+ * @param nullValue The value than may contain a null
+ * object value.
+ * @return The object value or nil in case a null is
+ * defined.
+ */
+#define AVOID_NULL(nullValue) (NSNull *) nullValue == [NSNull null] ? nil : nullValue
+
+/**
+ * Avoids the definition of a nil value.
+ *
+ * @param nullValue The value than may contain a nil
+ * value
+ * @return The object value or nunll object in case
+ * nil is defined.
+ */
+#define AVOID_NIL(nilValue, nillType) nilValue == nil ? (nillType *) [NSNull null] : nilValue
+
+@interface HMNullUtil : NSObject {
+}
+
+@end
