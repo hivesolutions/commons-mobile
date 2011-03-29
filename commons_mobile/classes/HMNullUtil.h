@@ -55,7 +55,7 @@
  * @return The object value or zero number in case a null
  * object is defined.
  */
-#define AVOID_NULL_NUMBER(nullValue) (NSNull *) nullValue == [NSNull null] ? [[NSNumber numberWithInt:0] autorelease] : nullValue
+#define AVOID_NULL_NUMBER(nullValue) (NSNull *) nullValue == [NSNull null] ? [NSNumber numberWithInt:0] : nullValue
 
 /**
  * Avoids the definition of a null object value.
