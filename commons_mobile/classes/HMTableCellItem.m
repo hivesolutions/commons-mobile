@@ -62,6 +62,9 @@
     // releases the acessory type
     [_accessoryType release];
 
+    // releases the acessory value
+    [_accessoryValue release];
+
     // calls the super
     [super dealloc];
 }
