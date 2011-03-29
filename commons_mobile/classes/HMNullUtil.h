@@ -30,8 +30,8 @@
  *
  * @param nullValue The value than may contain a null
  * object value.
- * @return The object value or nil in case a null is
- * defined.
+ * @return The object value or nil in case a null object
+ * is defined.
  */
 #define AVOID_NULL(nullValue) (NSNull *) nullValue == [NSNull null] ? nil : nullValue
 
@@ -44,6 +44,42 @@
  * nil is defined.
  */
 #define AVOID_NIL(nilValue, nillType) nilValue == nil ? (nillType *) [NSNull null] : nilValue
+
+/**
+ * Avoids the definition of a null object value.
+ * This macro assumes that the value is a number
+ * and so the default returned value is is a number.
+ *
+ * @param nullValue The value than may contain a null
+ * object value.
+ * @return The object value or zero number in case a null
+ * object is defined.
+ */
+#define AVOID_NULL_NUMBER(nullValue) (NSNull *) nullValue == [NSNull null] ? [[NSNumber numberWithInt:0] autorelease] : nullValue
+
+/**
+ * Avoids the definition of a null object value.
+ * This macro assumes that the value is a array
+ * and so the default returned value is is a array.
+ *
+ * @param nullValue The value than may contain a null
+ * object value.
+ * @return The object value or empty array in case a null
+ * object is defined.
+ */
+#define AVOID_NULL_ARRAY(nullValue) (NSNull *) nullValue == [NSNull null] ? [[[NSArray alloc] init] autorelease] : nullValue
+
+/**
+ * Avoids the definition of a null object value.
+ * This macro assumes that the value is a dictionary
+ * and so the default returned value is is a dictionary.
+ *
+ * @param nullValue The value than may contain a null
+ * object value.
+ * @return The object value or empty dictionary in case a null
+ * object is defined.
+ */
+#define AVOID_NULL_DICTIONARY(nullValue) (NSNull *) nullValue == [NSNull null] ? [[[NSDictionary alloc] init] autorelease] : nullValue
 
 @interface HMNullUtil : NSObject {
 }
