@@ -35,7 +35,7 @@
 /**
  * The height of a cell with multiple lines.
  */
-#define HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT 100
+#define HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT 50
 
 @interface HMStringTableCellItem : HMTableCellItem {
     @private

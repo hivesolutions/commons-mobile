@@ -35,7 +35,9 @@
  *
  * @param enumerable The enumerable to be "mapped".
  * @param block The block to be used in the map operation.
+ * @param copyEnumerable If the enumerable should be copied in
+ * order to provide extra safety in "mapping".
  */
-+ (void)map:(NSArray *)enumerable block:(void (^)(id value))block;
++ (void)map:(NSArray *)enumerable block:(void (^)(id value))block copyEnumerable:(BOOL)copyEnumerable;
 
 @end

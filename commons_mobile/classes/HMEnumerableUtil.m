@@ -27,7 +27,13 @@
 
 @implementation HMEnumerableUtil
 
-+ (void)map:(NSArray *)enumerable block:(void (^)(id value))block {
++ (void)map:(NSArray *)enumerable block:(void (^)(id value))block copyEnumerable:(BOOL)copyEnumerable {
+    // in case the enumerable should be copied
+    if(copyEnumerable) {
+        // initializes the new enumerable with the copy
+        enumerable = [[NSArray alloc] initWithArray:enumerable];
+    }
+
     // retrives the enumerable enumerator
     NSEnumerator *enumerableEnumerator = [enumerable objectEnumerator];
 
@@ -35,9 +41,15 @@
     id value;
 
     // iterates over the enumerable
-    while ((value = [enumerableEnumerator nextObject])) {
+    while((value = [enumerableEnumerator nextObject])) {
         // calls the block with the value
         block(value);
+    }
+
+    // in case the enumerable should be copied
+    if(copyEnumerable) {
+        // releases the enumerable
+        [enumerable release];
     }
 }
 
