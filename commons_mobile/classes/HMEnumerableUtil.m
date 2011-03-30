@@ -23,20 +23,22 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-// dependencies includes
-#import "../classes/Dependencies.h"
+#import "HMEnumerableUtil.h"
 
-// class includes
-#import "../classes/HMColor.h"
-#import "../classes/HMHttpUtil.h"
-#import "../classes/HMNullUtil.h"
-#import "../classes/HMEnumerableUtil.h"
-#import "../classes/HMStringTableCellItem.h"
-#import "../classes/HMNamedItemGroup.h"
-#import "../classes/HMTableCellItem.h"
-#import "../classes/HMTableSectionItemGroup.h"
-#import "../classes/HMButtonItem.h"
-#import "../classes/HMItemGroup.h"
-#import "../classes/HMEditItem.h"
-#import "../classes/HMItem.h"
-#import "../classes/HMLabelItem.h"
+@implementation HMEnumerableUtil
+
++ (void)map:(NSArray *)enumerable block:(void (^)(id value))block {
+    // retrives the enumerable enumerator
+    NSEnumerator *enumerableEnumerator = [enumerable objectEnumerator];
+
+    // allocates the value
+    id value;
+
+    // iterates over the enumerable
+    while ((value = [enumerableEnumerator nextObject])) {
+        // calls the block with the value
+        block(value);
+    }
+}
+
+@end

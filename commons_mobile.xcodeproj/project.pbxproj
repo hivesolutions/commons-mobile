@@ -33,6 +33,8 @@
 		C29E100C13339F3800E9F77A /* HMStringTableCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C29E100A13339F3800E9F77A /* HMStringTableCellItem.m */; };
 		C2C4983E1342548000541D4C /* HMNullUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C4983C1342547F00541D4C /* HMNullUtil.h */; };
 		C2C4983F1342548000541D4C /* HMNullUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C4983D1342547F00541D4C /* HMNullUtil.m */; };
+		C2C49843134349B200541D4C /* HMEnumerableUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C49841134349B100541D4C /* HMEnumerableUtil.h */; };
+		C2C49844134349B200541D4C /* HMEnumerableUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C49842134349B100541D4C /* HMEnumerableUtil.m */; };
 		C2FCCA14132E30580060A586 /* commons_mobile-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = C2FCCA13132E30580060A586 /* commons_mobile-Prefix.pch */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		C29E100A13339F3800E9F77A /* HMStringTableCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMStringTableCellItem.m; path = classes/HMStringTableCellItem.m; sourceTree = "<group>"; };
 		C2C4983C1342547F00541D4C /* HMNullUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMNullUtil.h; path = classes/HMNullUtil.h; sourceTree = "<group>"; };
 		C2C4983D1342547F00541D4C /* HMNullUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMNullUtil.m; path = classes/HMNullUtil.m; sourceTree = "<group>"; };
+		C2C49841134349B100541D4C /* HMEnumerableUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMEnumerableUtil.h; path = classes/HMEnumerableUtil.h; sourceTree = "<group>"; };
+		C2C49842134349B100541D4C /* HMEnumerableUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMEnumerableUtil.m; path = classes/HMEnumerableUtil.m; sourceTree = "<group>"; };
 		C2FCCA13132E30580060A586 /* commons_mobile-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "commons_mobile-Prefix.pch"; path = "support/commons_mobile-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,8 @@
 		C281BC1E13380ADA0055E771 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				C2C49841134349B100541D4C /* HMEnumerableUtil.h */,
+				C2C49842134349B100541D4C /* HMEnumerableUtil.m */,
 				C2C4983C1342547F00541D4C /* HMNullUtil.h */,
 				C2C4983D1342547F00541D4C /* HMNullUtil.m */,
 				C281BC2013380B0B0055E771 /* HMHttpUtil.h */,
@@ -216,6 +222,7 @@
 				A5C2705D133A2DB500AF1267 /* HMLabelItem.h in Headers */,
 				A5C27062133A3A3600AF1267 /* HMColor.h in Headers */,
 				C2C4983E1342548000541D4C /* HMNullUtil.h in Headers */,
+				C2C49843134349B200541D4C /* HMEnumerableUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +284,7 @@
 				A5C2705E133A2DB500AF1267 /* HMLabelItem.m in Sources */,
 				A5C27063133A3A3600AF1267 /* HMColor.m in Sources */,
 				C2C4983F1342548000541D4C /* HMNullUtil.m in Sources */,
+				C2C49844134349B200541D4C /* HMEnumerableUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

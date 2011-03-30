@@ -23,20 +23,19 @@
 // __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-// dependencies includes
-#import "../classes/Dependencies.h"
+#import "Dependencies.h"
 
-// class includes
-#import "../classes/HMColor.h"
-#import "../classes/HMHttpUtil.h"
-#import "../classes/HMNullUtil.h"
-#import "../classes/HMEnumerableUtil.h"
-#import "../classes/HMStringTableCellItem.h"
-#import "../classes/HMNamedItemGroup.h"
-#import "../classes/HMTableCellItem.h"
-#import "../classes/HMTableSectionItemGroup.h"
-#import "../classes/HMButtonItem.h"
-#import "../classes/HMItemGroup.h"
-#import "../classes/HMEditItem.h"
-#import "../classes/HMItem.h"
-#import "../classes/HMLabelItem.h"
+@interface HMEnumerableUtil : NSObject {
+}
+
+/**
+ * Maps the given enumerable in the given block.
+ * The mapping function is part of the functional programming
+ * tools.
+ *
+ * @param enumerable The enumerable to be "mapped".
+ * @param block The block to be used in the map operation.
+ */
++ (void)map:(NSArray *)enumerable block:(void (^)(id value))block;
+
+@end
