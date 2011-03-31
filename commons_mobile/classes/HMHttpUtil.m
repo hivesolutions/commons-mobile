@@ -41,7 +41,7 @@
     BOOL isFirst = YES;
 
     // iterates over the remote data
-    while ((key = [remoteDataEnumerator nextObject])) {
+    while((key = [remoteDataEnumerator nextObject])) {
         // retrieves the current value
         NSString *value = (NSString *) [remoteData objectForKey:key];
 
