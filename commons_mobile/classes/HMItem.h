@@ -25,6 +25,8 @@
 
 #import "Dependencies.h"
 
+#import "HMColor.h"
+
 /**
  * The item's height.
  */

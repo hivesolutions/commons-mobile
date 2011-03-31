@@ -32,6 +32,8 @@
     NSString *_icon;
     NSString *_highlightedIcon;
     BOOL _highlightable;
+    Class _selectViewController;
+    NSString *_selectNibName;
 }
 
 /**
@@ -48,5 +50,18 @@
  * If the button is highlightable.
  */
 @property (assign) BOOL highlightable;
+
+/**
+ * The view controller to use when the
+ * item is selected.
+ */
+@property (assign) Class selectViewController;
+
+/**
+ * The name of the nib for the view
+ * controller that will be used when
+ * the item is selected.
+ */
+@property (retain) NSString *selectNibName;
 
 @end

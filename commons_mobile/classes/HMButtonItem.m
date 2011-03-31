@@ -30,6 +30,8 @@
 @synthesize icon = _icon;
 @synthesize highlightedIcon = _highlightedIcon;
 @synthesize highlightable = _highlightable;
+@synthesize selectViewController = _selectViewController;
+@synthesize selectNibName = _selectNibName;
 
 - (id)init {
     // invokes the parent constructor
@@ -56,6 +58,9 @@
 
     // releases the highlighted icon
     [_highlightedIcon release];
+
+    // releases the select nib name
+    [_selectNibName release];
 
     // calls the super
     [super dealloc];
