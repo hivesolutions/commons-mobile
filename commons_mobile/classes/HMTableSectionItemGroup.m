@@ -52,6 +52,18 @@
 }
 
 - (void)setHeaderString:(NSString *)headerString {
+    // in case the object is the same
+    if(headerString == _headerString) {
+        // returns immediately
+        return;
+    }
+
+    // releases the object
+    [_headerString release];
+
+    // sets and retains the object
+    _headerString = [headerString retain];
+
     // creates the default colors
     HMColor *labelItemTextColor = [[HMColor alloc] initRed:0.29 green:0.34 blue:0.42 alpha:1.0];
     HMColor *labelItemShadowColor = [[HMColor alloc] initRed:1.0 green:1.0 blue:1.0 alpha:1.0];
@@ -65,7 +77,6 @@
     labelItem.shadowColor = labelItemShadowColor;
 
     // sets the attributes
-    _headerString = headerString;
     self.header = labelItem;
 
     // releases the objects
@@ -79,6 +90,18 @@
 }
 
 - (void)setFooterString:(NSString *)footerString {
+    // in case the object is the same
+    if(footerString == _footerString) {
+        // returns immediately
+        return;
+    }
+
+    // releases the object
+    [_footerString release];
+
+    // sets and retains the object
+    _footerString = [footerString retain];
+
     // creates the default colors
     HMColor *labelItemTextColor = [[HMColor alloc] initRed:0.29 green:0.34 blue:0.42 alpha:1.0];
     HMColor *labelItemShadowColor = [[HMColor alloc] initRed:1.0 green:1.0 blue:1.0 alpha:1.0];
@@ -92,7 +115,6 @@
     labelItem.shadowColor = labelItemShadowColor;
 
     // sets the attributes
-    _footerString = footerString;
     self.footer = labelItem;
 
     // releases the objects
