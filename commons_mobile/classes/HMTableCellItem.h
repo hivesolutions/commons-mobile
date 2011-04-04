@@ -32,9 +32,12 @@
     @private
     NSString *_accessoryType;
     NSString *_accessoryValue;
+    NSString *_editingAccessoryType;
+    NSString *_editingAccessoryValue;
     BOOL _indentable;
     BOOL _clearable;
-    BOOL _editable;
+    BOOL _editableRow;
+    BOOL _editableCell;
 }
 
 /**
@@ -48,6 +51,17 @@
 @property (retain) NSString *accessoryValue;
 
 /**
+ * The accessory type to be used in the table cell
+ * while in edit mode.
+ */
+@property (retain) NSString *editingAccessoryType;
+
+/**
+ * The value displayed in the editing accessory.
+ */
+@property (retain) NSString *editingAccessoryValue;
+
+/**
  * Specifies if the cell is indentable.
  */
 @property (assign) BOOL indentable;
@@ -58,8 +72,13 @@
 @property (assign) BOOL clearable;
 
 /**
+ * Specifies if the row is editable.
+ */
+@property (assign) BOOL editableRow;
+
+/**
  * Specifies if the cell is editable.
  */
-@property (assign) BOOL editable;
+@property (assign) BOOL editableCell;
 
 @end

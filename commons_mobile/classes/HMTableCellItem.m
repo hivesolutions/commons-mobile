@@ -29,9 +29,12 @@
 
 @synthesize accessoryType = _accessoryType;
 @synthesize accessoryValue = _accessoryValue;
+@synthesize editingAccessoryType = _editingAccessoryType;
+@synthesize editingAccessoryValue = _editingAccessoryValue;
 @synthesize indentable = _indentable;
 @synthesize clearable = _clearable;
-@synthesize editable = _editable;
+@synthesize editableCell = _editableCell;
+@synthesize editableRow = _editableRow;
 
 - (id)init {
     // invokes the parent constructor
@@ -42,7 +45,8 @@
     self.selectableEdit = NO;
     self.indentable = NO;
     self.clearable = NO;
-    self.editable = NO;
+    self.editableRow = NO;
+    self.editableCell = NO;
 
     // returns the instance
     return self;
@@ -57,7 +61,8 @@
     self.selectableEdit = NO;
     self.indentable = NO;
     self.clearable = NO;
-    self.editable = NO;
+    self.editableRow = NO;
+    self.editableCell = NO;
 
     // returns the instance
     return self;
@@ -69,6 +74,12 @@
 
     // releases the acessory value
     [_accessoryValue release];
+
+    // releases the editing accessory type
+    [_editingAccessoryType release];
+
+    // releases the editing accessory value
+    [_editingAccessoryValue release];
 
     // calls the super
     [super dealloc];
