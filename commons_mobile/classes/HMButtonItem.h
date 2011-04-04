@@ -31,7 +31,8 @@
     @private
     NSString *_icon;
     NSString *_highlightedIcon;
-    BOOL _highlightable;
+    BOOL _selectable;
+    BOOL _selectableEdit;
     Class _selectViewController;
     NSString *_selectNibName;
 }
@@ -47,9 +48,16 @@
 @property (retain) NSString *highlightedIcon;
 
 /**
- * If the button is highlightable.
+ * Indicates if the button is
+ * selectable in the normal mode.
  */
-@property (assign) BOOL highlightable;
+@property (assign) BOOL selectable;
+
+/**
+ * Indicates if the button is
+ * selectable in the edit mode.
+ */
+@property (assign) BOOL selectableEdit;
 
 /**
  * The view controller to use when the

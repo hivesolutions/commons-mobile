@@ -31,12 +31,15 @@
 @synthesize accessoryValue = _accessoryValue;
 @synthesize indentable = _indentable;
 @synthesize clearable = _clearable;
+@synthesize editable = _editable;
 
 - (id)init {
     // invokes the parent constructor
     self = [super init];
 
     // sets the default attributes
+    self.selectable = NO;
+    self.selectableEdit = NO;
     self.indentable = NO;
     self.clearable = NO;
     self.editable = NO;
@@ -50,6 +53,8 @@
     self = [super initWithIdentifier:identifier];
 
     // sets the default attributes
+    self.selectable = NO;
+    self.selectableEdit = NO;
     self.indentable = NO;
     self.clearable = NO;
     self.editable = NO;
@@ -67,22 +72,6 @@
 
     // calls the super
     [super dealloc];
-}
-
-- (BOOL)editable {
-    return _editable;
-}
-
-- (void)setEditable:(BOOL)editable {
-    // sets the editable attribute
-    _editable = editable;
-
-    // changes the indentable
-    // and clearable attributes
-    // to be coherent with the
-    // editable property
-    _indentable = editable;
-    _clearable = editable;
 }
 
 @end

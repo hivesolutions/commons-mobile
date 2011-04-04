@@ -37,6 +37,8 @@
 
     // sets the default attributes
     self.editable = YES;
+    self.indentable = YES;
+    self.clearable = YES;
     self.secure = NO;
     self.returnDisablesEdit = NO;
     self.multipleLines = NO;
@@ -51,6 +53,8 @@
 
     // sets the default attributes
     self.editable = YES;
+    self.indentable = YES;
+    self.clearable = YES;
     self.secure = NO;
     self.returnDisablesEdit = NO;
     self.multipleLines = NO;

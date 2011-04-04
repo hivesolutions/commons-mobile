@@ -29,7 +29,8 @@
 
 @synthesize icon = _icon;
 @synthesize highlightedIcon = _highlightedIcon;
-@synthesize highlightable = _highlightable;
+@synthesize selectable = _selectable;
+@synthesize selectableEdit = _selectableEdit;
 @synthesize selectViewController = _selectViewController;
 @synthesize selectNibName = _selectNibName;
 
@@ -38,7 +39,8 @@
     self = [super init];
 
     // sets the default attributes
-    self.highlightable = YES;
+    self.selectable = YES;
+    self.selectableEdit = NO;
 
     // returns the instance
     return self;
@@ -47,6 +49,10 @@
 - (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
     self = [super initWithIdentifier:identifier];
+
+    // sets the default attributes
+    self.selectable = YES;
+    self.selectableEdit = NO;
 
     // returns the instance
     return self;
