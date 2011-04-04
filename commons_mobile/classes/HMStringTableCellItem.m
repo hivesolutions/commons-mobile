@@ -36,7 +36,7 @@
     self = [super init];
 
     // sets the default attributes
-    self.editableRow = YES;
+    self.editableRow = NO;
     self.editableCell = YES;
     self.indentable = YES;
     self.clearable = YES;
@@ -53,7 +53,7 @@
     self = [super initWithIdentifier:identifier];
 
     // sets the default attributes
-    self.editableRow = YES;
+    self.editableRow = NO;
     self.editableCell = YES;
     self.indentable = YES;
     self.clearable = YES;

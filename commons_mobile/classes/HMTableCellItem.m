@@ -29,8 +29,6 @@
 
 @synthesize accessoryType = _accessoryType;
 @synthesize accessoryValue = _accessoryValue;
-@synthesize editingAccessoryType = _editingAccessoryType;
-@synthesize editingAccessoryValue = _editingAccessoryValue;
 @synthesize indentable = _indentable;
 @synthesize clearable = _clearable;
 @synthesize editableCell = _editableCell;
@@ -74,12 +72,6 @@
 
     // releases the acessory value
     [_accessoryValue release];
-
-    // releases the editing accessory type
-    [_editingAccessoryType release];
-
-    // releases the editing accessory value
-    [_editingAccessoryValue release];
 
     // calls the super
     [super dealloc];
