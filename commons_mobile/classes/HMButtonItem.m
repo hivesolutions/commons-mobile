@@ -31,6 +31,7 @@
 @synthesize highlightedIcon = _highlightedIcon;
 @synthesize selectable = _selectable;
 @synthesize selectableEdit = _selectableEdit;
+@synthesize selectableName = _selectableName;
 @synthesize selectViewController = _selectViewController;
 @synthesize selectNibName = _selectNibName;
 
@@ -41,6 +42,7 @@
     // sets the default attributes
     self.selectable = YES;
     self.selectableEdit = NO;
+    self.selectableName = NO;
 
     // returns the instance
     return self;
@@ -53,6 +55,7 @@
     // sets the default attributes
     self.selectable = YES;
     self.selectableEdit = NO;
+    self.selectableName = NO;
 
     // returns the instance
     return self;

@@ -33,6 +33,7 @@
     NSString *_highlightedIcon;
     BOOL _selectable;
     BOOL _selectableEdit;
+    BOOL _selectableName;
     Class _selectViewController;
     NSString *_selectNibName;
 }
@@ -58,6 +59,11 @@
  * selectable in the edit mode.
  */
 @property (assign) BOOL selectableEdit;
+
+/**
+ * Indicates if the name is selectable.
+ */
+@property (assign) BOOL selectableName;
 
 /**
  * The view controller to use when the
