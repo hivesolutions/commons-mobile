@@ -41,6 +41,7 @@
     HMColor *_backgroundColor;
     HMColor *_selectedBackgroundColor;
     float _height;
+    BOOL _focusEdit;
 }
 
 /**
@@ -77,6 +78,12 @@
  * The item's height.
  */
 @property (assign) float height;
+
+/**
+ * Indicates if the item should focus
+ * when entering edit mode.
+ */
+@property (assign) BOOL focusEdit;
 
 /**
  * Constructor of the class.
