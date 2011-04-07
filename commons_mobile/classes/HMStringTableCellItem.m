@@ -44,6 +44,7 @@
     self.secure = NO;
     self.returnDisablesEdit = NO;
     self.multipleLines = NO;
+    self.autocapitalizationType = @"sentences";
 
     // returns the instance
     return self;
@@ -61,6 +62,7 @@
     self.secure = NO;
     self.returnDisablesEdit = NO;
     self.multipleLines = NO;
+    self.autocapitalizationType = @"sentences";
 
     // returns the instance
     return self;
