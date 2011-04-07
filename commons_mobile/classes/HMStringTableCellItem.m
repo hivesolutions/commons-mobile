@@ -29,6 +29,7 @@
 
 @synthesize secure = _secure;
 @synthesize returnType = _returnType;
+@synthesize autocapitalizationType = _autocapitalizationType;
 @synthesize returnDisablesEdit = _returnDisablesEdit;
 
 - (id)init {
@@ -68,6 +69,9 @@
 - (void)dealloc {
     // releases the return type
     [_returnType release];
+
+    // releases the auto capitalization type
+    [_autocapitalizationType release];
 
     // calls the super
     [super dealloc];

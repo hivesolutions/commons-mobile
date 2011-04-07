@@ -41,6 +41,7 @@
     @private
     BOOL _secure;
     NSString *_returnType;
+    NSString *_autocapitalizationType;
     BOOL _returnDisablesEdit;
     BOOL _multipleLines;
 }
@@ -54,6 +55,11 @@
  * The cell's return type.
  */
 @property (retain) NSString *returnType;
+
+/**
+ * The cell's auto capitalization type.
+ */
+@property (retain) NSString *autocapitalizationType;
 
 /**
  * Indicates if the edit mode should
