@@ -28,6 +28,13 @@
 @implementation HMHttpUtil
 
 + (NSData *)createHttpData:(NSDictionary *)remoteData {
+    // in case the remote date is invalid
+    if(remoteData == nil) {
+        // returns an empty string with
+        // autorelease support
+        return [[[NSData alloc] init] autorelease];
+    }
+
     // retrives the remote data enumerator
     NSEnumerator *remoteDataEnumerator = [remoteData keyEnumerator];
 
