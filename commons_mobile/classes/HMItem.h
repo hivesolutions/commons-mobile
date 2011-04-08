@@ -42,6 +42,7 @@
     HMColor *_selectedBackgroundColor;
     float _height;
     BOOL _focusEdit;
+    NSDictionary *_data;
 }
 
 /**
@@ -84,6 +85,11 @@
  * when entering edit mode.
  */
 @property (assign) BOOL focusEdit;
+
+/**
+ * Stores data associated with item.
+ */
+@property (retain) NSDictionary *data;
 
 /**
  * Constructor of the class.

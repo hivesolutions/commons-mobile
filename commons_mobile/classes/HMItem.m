@@ -35,6 +35,7 @@
 @synthesize selectedBackgroundColor = _selectedBackgroundColor;
 @synthesize height = _height;
 @synthesize focusEdit = _focusEdit;
+@synthesize data = _data;
 
 - (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
@@ -79,6 +80,9 @@
 
     // releases the selected background color
     [_selectedBackgroundColor release];
+
+    // releases the data
+    [_data release];
 
     // calls the super
     [super dealloc];
