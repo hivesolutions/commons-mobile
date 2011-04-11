@@ -39,6 +39,16 @@
 + (NSData *)createHttpData:(NSDictionary *)remoteData;
 
 /**
+ * Creates the http get or post data from the
+ * given sequence of tuples for remote data.
+ *
+ * @param remoteData The remote data sequence of tuples
+ * to be converted to get or post string.
+ * @return The data structure with the get or post data.
+ */
++ (NSData *)createHttpSequenceData:(NSArray *)remoteSequenceData;
+
+/**
  * Creates the http get or post data string from the
  * given map of remote data.
  *

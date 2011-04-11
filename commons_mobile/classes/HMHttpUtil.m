@@ -52,6 +52,13 @@
         // retrieves the current value
         NSString *value = (NSString *) [remoteData objectForKey:key];
 
+        // in case the value is not defined or it's
+        // an empty string
+        if(value == nil || (NSNull *) value == [NSNull null] || [value length] < 1) {
+            // continues the loop
+            continue;
+        }
+
         // in case it's the first iteration
         if(isFirst) {
             // unsets the is first flag
@@ -63,11 +70,76 @@
             [stringBuffer addObject:@"&"];
         }
 
+        // creates the line value
+        NSString *lineValue = [NSString stringWithFormat:@"%@=%@", key, value];
+
+        // adds the line value to the string buffer
+        [stringBuffer addObject:lineValue];
+    }
+
+    // joins the http string buffer retrieving the string
+    NSString *httpString = [stringBuffer componentsJoinedByString:@""];
+
+    // escapes the http string
+    NSString *escapedHttpString = [httpString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+
+    // creates the http data from the http string
+    NSData *httpData = [escapedHttpString dataUsingEncoding:NSUTF8StringEncoding];
+
+    // releases the objects
+    [stringBuffer release];
+
+    // returns the http data
+    return httpData;
+}
+
++ (NSData *)createHttpSequenceData:(NSArray *)remoteSequenceData {
+    // in case the remote sequence date is invalid
+    if(remoteSequenceData == nil) {
+        // returns an empty string with
+        // autorelease support
+        return [[[NSData alloc] init] autorelease];
+    }
+
+    // retrives the remote sequence data enumerator
+    NSEnumerator *remoteSequenceDataEnumerator = [remoteSequenceData objectEnumerator];
+
+    // allocates the object value
+    id object;
+
+    // creats the buffer to hold the string
+    NSMutableArray *stringBuffer = [[NSMutableArray alloc] init];
+
+    // sets the is first flag
+    BOOL isFirst = YES;
+
+    // iterates over the remote data
+    while((object = [remoteSequenceDataEnumerator nextObject])) {
+        // casts the object as an array (tuple)
+        NSArray *tuple = (NSArray *) object;
+
+        // retrieves the key value
+        NSString *key = [tuple objectAtIndex:0];
+
+        // retrieves the value value
+        NSString *value = [tuple objectAtIndex:1];
+
         // in case the value is not defined or it's
         // an empty string
         if(value == nil || (NSNull *) value == [NSNull null] || [value length] < 1) {
             // continues the loop
             continue;
+        }
+
+        // in case it's the first iteration
+        if(isFirst) {
+            // unsets the is first flag
+            isFirst = NO;
+        }
+        // otherwise it must be a different iteration
+        else {
+            // adds the "and" value
+            [stringBuffer addObject:@"&"];
         }
 
         // creates the line value
