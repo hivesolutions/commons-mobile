@@ -34,8 +34,10 @@
     BOOL _selectable;
     BOOL _selectableEdit;
     BOOL _selectableName;
-    Class _selectViewController;
-    NSString *_selectNibName;
+    Class _readViewController;
+    NSString *_readNibName;
+    Class _editViewController;
+    NSString *_editNibName;
 }
 
 /**
@@ -67,15 +69,28 @@
 
 /**
  * The view controller to use when the
- * item is selected.
+ * item is selected for reading.
  */
-@property (assign) Class selectViewController;
+@property (assign) Class readViewController;
 
 /**
  * The name of the nib for the view
  * controller that will be used when
- * the item is selected.
+ * the item is selected for reading.
  */
-@property (retain) NSString *selectNibName;
+@property (retain) NSString *readNibName;
+
+/**
+ * The view controller to use when the
+ * item is selected for editing.
+ */
+@property (assign) Class editViewController;
+
+/**
+ * The name of the nib for the view
+ * controller that will be used when
+ * the item is selected for ediiting.
+ */
+@property (retain) NSString *editNibName;
 
 @end

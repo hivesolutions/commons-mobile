@@ -32,8 +32,10 @@
 @synthesize selectable = _selectable;
 @synthesize selectableEdit = _selectableEdit;
 @synthesize selectableName = _selectableName;
-@synthesize selectViewController = _selectViewController;
-@synthesize selectNibName = _selectNibName;
+@synthesize readViewController = _readViewController;
+@synthesize readNibName = _readNibName;
+@synthesize editViewController = _editViewController;
+@synthesize editNibName = _editNibName;
 
 - (id)init {
     // invokes the parent constructor
@@ -68,8 +70,11 @@
     // releases the highlighted icon
     [_highlightedIcon release];
 
-    // releases the select nib name
-    [_selectNibName release];
+    // releases the read nib name
+    [_readNibName release];
+
+    // releases the edit nib name
+    [_editNibName release];
 
     // calls the super
     [super dealloc];
