@@ -28,31 +28,6 @@
 #import "HMItem.h"
 
 @interface HMLabelItem : HMItem {
-    @private
-    NSString *_fontName;
-    NSUInteger _fontSize;
-    HMColor *_textColor;
-    HMColor *_shadowColor;
 }
-
-/**
- * The label font's name.
- */
-@property (retain) NSString *fontName;
-
-/**
- * The label font's size.
- */
-@property (assign) NSUInteger fontSize;
-
-/**
- * The label's text color.
- */
-@property (retain) HMColor *textColor;
-
-/**
- * The label's shadow color.
- */
-@property (retain) HMColor *shadowColor;
 
 @end

@@ -26,40 +26,19 @@
 #import "Dependencies.h"
 
 #import "HMItem.h"
-#import "HMSearchItem.h"
 
-@interface HMItemGroup : HMItem<HMSearchItem> {
-    @private
-    NSMutableArray *_items;
-}
+@protocol HMSearchItem<NSObject>
 
-@property (retain) NSMutableArray *items;
+@required
 
 /**
- * Adds an item to the item group.
+ * Searches for an item with the specified
+ * identifier.
  *
- * @param item The item to add to the group.
+ * @param identifier The item's identifier.
+ * @return Returns the item in case it was
+ * found, otherwise returns nil.
  */
-- (void)addItem:(HMItem *)item;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param index The index that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItem:(NSInteger)index;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param indexPath The index path that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath;
+- (HMItem *)search:(NSString *)identifier;
 
 @end

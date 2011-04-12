@@ -26,8 +26,9 @@
 #import "Dependencies.h"
 
 #import "HMItem.h"
+#import "HMSearchItem.h"
 
-@interface HMNamedItemGroup : HMItem {
+@interface HMNamedItemGroup : HMItem<HMSearchItem> {
     @private
     NSMutableDictionary *_items;
 }

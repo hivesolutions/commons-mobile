@@ -27,23 +27,4 @@
 
 @implementation HMLabelItem
 
-@synthesize fontName = _fontName;
-@synthesize fontSize = _fontSize;
-@synthesize textColor = _textColor;
-@synthesize shadowColor = _shadowColor;
-
-- (void)dealloc {
-    // releases the font name
-    [_fontName release];
-
-    // releases the text color
-    [_textColor release];
-
-    // releases the shadow color
-    [_shadowColor release];
-
-    // calls the super
-    [super dealloc];
-}
-
 @end

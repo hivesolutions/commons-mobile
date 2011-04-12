@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A57A09A61354B15C0098A56A /* HMTableCellItemCreationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A57A09A51354B15C0098A56A /* HMTableCellItemCreationDelegate.h */; };
+		A5AC2ABF1353436C00BF05B9 /* HMTableMutableSectionItemGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = A5AC2ABD1353436C00BF05B9 /* HMTableMutableSectionItemGroup.h */; };
+		A5AC2AC01353436C00BF05B9 /* HMTableMutableSectionItemGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AC2ABE1353436C00BF05B9 /* HMTableMutableSectionItemGroup.m */; };
+		A5AC2AC513535BA500BF05B9 /* HMSearchItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A5AC2AC413535BA500BF05B9 /* HMSearchItem.h */; };
 		A5B3412B132E3866009021FE /* HMItemGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B34129132E3866009021FE /* HMItemGroup.h */; };
 		A5B3412C132E3866009021FE /* HMItemGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B3412A132E3866009021FE /* HMItemGroup.m */; };
 		A5C2705D133A2DB500AF1267 /* HMLabelItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C2705B133A2DB000AF1267 /* HMLabelItem.h */; };
@@ -39,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A57A09A51354B15C0098A56A /* HMTableCellItemCreationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMTableCellItemCreationDelegate.h; path = classes/HMTableCellItemCreationDelegate.h; sourceTree = "<group>"; };
+		A5AC2ABD1353436C00BF05B9 /* HMTableMutableSectionItemGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMTableMutableSectionItemGroup.h; path = classes/HMTableMutableSectionItemGroup.h; sourceTree = "<group>"; };
+		A5AC2ABE1353436C00BF05B9 /* HMTableMutableSectionItemGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMTableMutableSectionItemGroup.m; path = classes/HMTableMutableSectionItemGroup.m; sourceTree = "<group>"; };
+		A5AC2AC413535BA500BF05B9 /* HMSearchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMSearchItem.h; path = classes/HMSearchItem.h; sourceTree = "<group>"; };
 		A5B34129132E3866009021FE /* HMItemGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMItemGroup.h; path = classes/HMItemGroup.h; sourceTree = "<group>"; };
 		A5B3412A132E3866009021FE /* HMItemGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMItemGroup.m; path = classes/HMItemGroup.m; sourceTree = "<group>"; };
 		A5C2705B133A2DB000AF1267 /* HMLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMLabelItem.h; path = classes/HMLabelItem.h; sourceTree = "<group>"; };
@@ -86,6 +94,8 @@
 		C20CDB7B133375B5008A4FE3 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				A5AC2ABD1353436C00BF05B9 /* HMTableMutableSectionItemGroup.h */,
+				A5AC2ABE1353436C00BF05B9 /* HMTableMutableSectionItemGroup.m */,
 				A5C27060133A3A3100AF1267 /* HMColor.h */,
 				A5C27061133A3A3200AF1267 /* HMColor.m */,
 				A5C2705B133A2DB000AF1267 /* HMLabelItem.h */,
@@ -119,6 +129,8 @@
 		C20CDB9613338697008A4FE3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				A57A09A51354B15C0098A56A /* HMTableCellItemCreationDelegate.h */,
+				A5AC2AC413535BA500BF05B9 /* HMSearchItem.h */,
 				C20CDB9213338636008A4FE3 /* HMEditItem.h */,
 			);
 			name = Protocols;
@@ -223,6 +235,9 @@
 				A5C27062133A3A3600AF1267 /* HMColor.h in Headers */,
 				C2C4983E1342548000541D4C /* HMNullUtil.h in Headers */,
 				C2C49843134349B200541D4C /* HMEnumerableUtil.h in Headers */,
+				A5AC2ABF1353436C00BF05B9 /* HMTableMutableSectionItemGroup.h in Headers */,
+				A5AC2AC513535BA500BF05B9 /* HMSearchItem.h in Headers */,
+				A57A09A61354B15C0098A56A /* HMTableCellItemCreationDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +300,7 @@
 				A5C27063133A3A3600AF1267 /* HMColor.m in Sources */,
 				C2C4983F1342548000541D4C /* HMNullUtil.m in Sources */,
 				C2C49844134349B200541D4C /* HMEnumerableUtil.m in Sources */,
+				A5AC2AC01353436C00BF05B9 /* HMTableMutableSectionItemGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,21 @@
 @property (assign) float alpha;
 
 /**
+ * Creates and returns a color object.
+ *
+ * @param red A number from zero to
+ * one representing the red component.
+ * @param green A number from zero to
+ * one representing the green component.
+ * @param blue A number from zero to
+ * one representing the blue component.
+ * @param alpha A number from zero to
+ * one representing the alpha component.
+ * @return The constructed instance.
+ */
++ (id)colorWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
+
+/**
  * Constructor of the class.
  *
  * @param red A number from zero to
@@ -51,6 +66,6 @@
  * one representing the alpha component.
  * @return The constructed instance.
  */
-- (id)initRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
+- (id)initWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
 
 @end

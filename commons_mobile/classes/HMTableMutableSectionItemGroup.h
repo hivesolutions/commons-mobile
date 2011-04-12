@@ -25,41 +25,47 @@
 
 #import "Dependencies.h"
 
-#import "HMItem.h"
-#import "HMSearchItem.h"
+#import "HMTableSectionItemGroup.h"
+#import "HMTableCellItem.h"
+#import "HMTableCellItemCreationDelegate.h"
 
-@interface HMItemGroup : HMItem<HMSearchItem> {
+@interface HMTableMutableSectionItemGroup : HMTableSectionItemGroup {
     @private
-    NSMutableArray *_items;
+    Class _addViewController;
+    NSString *_addNibName;
+    HMTableCellItem *_addTableCellItem;
+    NSObject<HMTableCellItemCreationDelegate> *_tableCellItemCreationDelegate;
 }
 
-@property (retain) NSMutableArray *items;
+/**
+ * The view controller to use
+ * for adding a new item.
+ */
+@property (assign) Class addViewController;
 
 /**
- * Adds an item to the item group.
- *
- * @param item The item to add to the group.
+ * The name of the nib for the view
+ * controller that will be used
+ * for adding an item.
  */
-- (void)addItem:(HMItem *)item;
+@property (retain) NSString *addNibName;
 
 /**
- * Retrieves an item from the item group.
- *
- * @param index The index that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
+ * The add table cell item.
  */
-- (HMItem *)getItem:(NSInteger)index;
+@property (retain) HMTableCellItem *addTableCellItem;
 
 /**
- * Retrieves an item from the item group.
- *
- * @param indexPath The index path that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
+ * The table cell item creation delegate.
  */
-- (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath;
+@property (retain) NSObject<HMTableCellItemCreationDelegate> *tableCellItemCreationDelegate;
+
+/**
+ * Returns a list with all items
+ * that represent data.
+ *
+ * @return List with the data items.
+ */
+- (NSMutableArray *)dataItems;
 
 @end

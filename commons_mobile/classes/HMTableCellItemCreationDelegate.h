@@ -25,41 +25,18 @@
 
 #import "Dependencies.h"
 
-#import "HMItem.h"
-#import "HMSearchItem.h"
+@protocol HMTableCellItemCreationDelegate<NSObject>
 
-@interface HMItemGroup : HMItem<HMSearchItem> {
-    @private
-    NSMutableArray *_items;
-}
-
-@property (retain) NSMutableArray *items;
+@required
 
 /**
- * Adds an item to the item group.
+ * Creates and returns the a table cell item
+ * representing the dictionary.
  *
- * @param item The item to add to the group.
+ * @param data The dictionary with the data
+ * that will be represented in the table cell item.
+ * @return The table cell item.
  */
-- (void)addItem:(HMItem *)item;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param index The index that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItem:(NSInteger)index;
-
-/**
- * Retrieves an item from the item group.
- *
- * @param indexPath The index path that points
- * to the desired item.
- * @return Returns the item at the specified
- * index path.
- */
-- (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath;
+- (HMTableCellItem *)createTableCellItem:(NSDictionary *)data;
 
 @end

@@ -40,3 +40,6 @@
 #import "../classes/HMEditItem.h"
 #import "../classes/HMItem.h"
 #import "../classes/HMLabelItem.h"
+#import "../classes/HMTableMutableSectionItemGroup.h"
+#import "../classes/HMTableCellItemCreationDelegate.h"
+#import "../classes/HMSearchItem.h"

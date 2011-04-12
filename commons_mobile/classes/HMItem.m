@@ -33,6 +33,14 @@
 @synthesize defaultValue = _defaultValue;
 @synthesize backgroundColor = _backgroundColor;
 @synthesize selectedBackgroundColor = _selectedBackgroundColor;
+@synthesize nameColor = _nameColor;
+@synthesize nameShadowColor = _nameShadowColor;
+@synthesize descriptionColor = _descriptionColor;
+@synthesize descriptionShadowColor = _descriptionShadowColor;
+@synthesize nameFont = _nameFont;
+@synthesize descriptionFont = _descriptionFont;
+@synthesize nameFontSize = _nameFontSize;
+@synthesize descriptionFontSize = _descriptionFontSize;
 @synthesize height = _height;
 @synthesize focusEdit = _focusEdit;
 @synthesize data = _data;
@@ -43,20 +51,16 @@
 
     // sets the attributes
     self.identifier = identifier;
+    self.nameFont = @"Helvetica-Bold";
+    self.nameFontSize = HM_ITEM_NAME_FONT_SIZE;
+    self.descriptionFont = @"Helvetica-Bold";
+    self.descriptionFontSize = HM_ITEM_DESCRIPTION_FONT_SIZE;
     self.height = HM_ITEM_HEIGHT;
     self.focusEdit = NO;
-
-    // initializes the default colors
-    HMColor *backgroundColor = [[HMColor alloc] initRed:0.96 green:0.96 blue:0.96 alpha:1];
-    HMColor *selectedBackgroundColor = [[HMColor alloc] initRed:0.96 green:0.96 blue:0.96 alpha:1];
-
-    // sets the attributes
-    self.backgroundColor = backgroundColor;
-    self.selectedBackgroundColor = selectedBackgroundColor;
-
-    // releases the objects
-    [backgroundColor release];
-    [selectedBackgroundColor release];
+    self.backgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+    self.selectedBackgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+    self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
+    self.descriptionColor = [HMColor colorWithRed:0 green:0 blue:0 alpha:1.0];
 
     // returns the instance
     return self;
@@ -77,6 +81,24 @@
 
     // releases the background color
     [_backgroundColor release];
+
+    // releases the name color
+    [_nameColor release];
+
+    // releases the name shadow color
+    [_nameShadowColor release];
+
+    // releases the description color
+    [_descriptionColor release];
+
+    // releases the description shadow color
+    [_descriptionShadowColor release];
+
+    // releases the name font
+    [_nameFont release];
+
+    // releases the description font
+    [_descriptionFont release];
 
     // releases the selected background color
     [_selectedBackgroundColor release];

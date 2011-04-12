@@ -30,11 +30,6 @@
 @required
 
 /**
- * Property defining if a row is editable.
- */
-@property (readonly) BOOL editableRow;
-
-/**
  * Property defining if a cell is editable.
  */
 @property (readonly) BOOL editableCell;

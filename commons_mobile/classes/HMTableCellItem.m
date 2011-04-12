@@ -31,8 +31,9 @@
 @synthesize accessoryValue = _accessoryValue;
 @synthesize indentable = _indentable;
 @synthesize clearable = _clearable;
+@synthesize insertableRow = _insertableRow;
+@synthesize deletableRow = _deletableRow;
 @synthesize editableCell = _editableCell;
-@synthesize editableRow = _editableRow;
 
 - (id)init {
     // invokes the parent constructor
@@ -43,7 +44,8 @@
     self.selectableEdit = NO;
     self.indentable = NO;
     self.clearable = NO;
-    self.editableRow = NO;
+    self.insertableRow = NO;
+    self.deletableRow = NO;
     self.editableCell = NO;
 
     // returns the instance
@@ -59,7 +61,8 @@
     self.selectableEdit = NO;
     self.indentable = NO;
     self.clearable = NO;
-    self.editableRow = NO;
+    self.insertableRow = NO;
+    self.deletableRow = NO;
     self.editableCell = NO;
 
     // returns the instance

@@ -64,24 +64,18 @@
     // sets and retains the object
     _headerString = [headerString retain];
 
-    // creates the default colors
-    HMColor *labelItemTextColor = [[HMColor alloc] initRed:0.29 green:0.34 blue:0.42 alpha:1.0];
-    HMColor *labelItemShadowColor = [[HMColor alloc] initRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-
     // creates the label item
     HMLabelItem *labelItem = [[HMLabelItem alloc] init];
     labelItem.description = headerString;
-    labelItem.fontName = @"Helvetica";
-    labelItem.fontSize = 13;
-    labelItem.textColor = labelItemTextColor;
-    labelItem.shadowColor = labelItemShadowColor;
+    labelItem.descriptionFont = @"Helvetica";
+    labelItem.descriptionFontSize = 13;
+    labelItem.descriptionColor = [HMColor colorWithRed:0.29 green:0.34 blue:0.42 alpha:1.0];
+    labelItem.descriptionShadowColor = [HMColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 
     // sets the attributes
     self.header = labelItem;
 
     // releases the objects
-    [labelItemTextColor release];
-    [labelItemShadowColor release];
     [labelItem release];
 }
 
@@ -102,24 +96,18 @@
     // sets and retains the object
     _footerString = [footerString retain];
 
-    // creates the default colors
-    HMColor *labelItemTextColor = [[HMColor alloc] initRed:0.29 green:0.34 blue:0.42 alpha:1.0];
-    HMColor *labelItemShadowColor = [[HMColor alloc] initRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-
     // creates the label item
     HMLabelItem *labelItem = [[HMLabelItem alloc] init];
     labelItem.description = footerString;
-    labelItem.fontName = @"Helvetica";
-    labelItem.fontSize = 13;
-    labelItem.textColor = labelItemTextColor;
-    labelItem.shadowColor = labelItemShadowColor;
+    labelItem.descriptionFont = @"Helvetica";
+    labelItem.descriptionFontSize = 13;
+    labelItem.descriptionColor = [HMColor colorWithRed:0.29 green:0.34 blue:0.42 alpha:1.0];
+    labelItem.descriptionShadowColor = [HMColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 
     // sets the attributes
     self.footer = labelItem;
 
     // releases the objects
-    [labelItemTextColor release];
-    [labelItemShadowColor release];
     [labelItem release];
 }
 

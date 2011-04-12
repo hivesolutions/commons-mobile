@@ -28,6 +28,16 @@
 #import "HMColor.h"
 
 /**
+ * The name font size.
+ */
+#define HM_ITEM_NAME_FONT_SIZE 12
+
+/**
+ * The description font size.
+ */
+#define HM_ITEM_DESCRIPTION_FONT_SIZE 15
+
+/**
  * The item's height.
  */
 #define HM_ITEM_HEIGHT 50
@@ -40,6 +50,14 @@
     NSString *_defaultValue;
     HMColor *_backgroundColor;
     HMColor *_selectedBackgroundColor;
+    HMColor *_nameColor;
+    HMColor *_descriptionColor;
+    HMColor *_nameShadowColor;
+    HMColor *_descriptionShadowColor;
+    NSString *_nameFont;
+    NSString *_descriptionFont;
+    NSUInteger _nameFontSize;
+    NSUInteger _descriptionFontSize;
     float _height;
     BOOL _focusEdit;
     NSDictionary *_data;
@@ -74,6 +92,46 @@
  * The item's selected background color.
  */
 @property (retain) HMColor *selectedBackgroundColor;
+
+/**
+ * The item's name color.
+ */
+@property (retain) HMColor *nameColor;
+
+/**
+ * The item's name shadow color.
+ */
+@property (retain) HMColor *nameShadowColor;
+
+/**
+ * The item's description color.
+ */
+@property (retain) HMColor *descriptionColor;
+
+/**
+ * The item's description shadow color.
+ */
+@property (retain) HMColor *descriptionShadowColor;
+
+/**
+ * The item's name font.
+ */
+@property (retain) NSString *nameFont;
+
+/**
+ * The item's description font.
+ */
+@property (retain) NSString *descriptionFont;
+
+/**
+ * The item's name font size.
+ */
+@property (assign) NSUInteger nameFontSize;
+
+/**
+ * The item's description font size.
+ */
+@property (assign) NSUInteger descriptionFontSize;
 
 /**
  * The item's height.

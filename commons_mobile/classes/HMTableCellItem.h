@@ -34,7 +34,8 @@
     NSString *_accessoryValue;
     BOOL _indentable;
     BOOL _clearable;
-    BOOL _editableRow;
+    BOOL _insertableRow;
+    BOOL _deletableRow;
     BOOL _editableCell;
 }
 
@@ -59,9 +60,14 @@
 @property (assign) BOOL clearable;
 
 /**
- * Specifies if the row is editable.
+ * Specifies if the row is insertable.
  */
-@property (assign) BOOL editableRow;
+@property (assign) BOOL insertableRow;
+
+/**
+ * Specifies if the row is deletable.
+ */
+@property (assign) BOOL deletableRow;
 
 /**
  * Specifies if the cell is editable.

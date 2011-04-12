@@ -84,4 +84,43 @@
     return item;
 }
 
+- (HMItem *)search:(NSString *)identifier {
+    // retrieves the item group enumerator
+    NSEnumerator *itemGroupEnumerator = [self.items objectEnumerator];
+
+    // allocates the object
+    id object;
+
+    // searches for the item with the
+    // specified identifier in the item group
+    while((object = [itemGroupEnumerator nextObject])) {
+        // casts the object to an item
+        HMItem *item = (HMItem *) object;
+
+        // returns the item in case it
+        // matches the specified identifier
+        if([item.identifier isEqualToString:identifier]) {
+            return item;
+        }
+
+        // searches inside the object in case it
+        // responds to the search selector
+        if([object respondsToSelector:@selector(search:)]) {
+            // searches for the item
+            // in the object
+            item = [object search:identifier];
+
+            // in case the item
+            // was found
+            if(item != nil) {
+                // returns the item
+                return item;
+            }
+        }
+    }
+
+    // returns default value
+    return nil;
+}
+
 @end
