@@ -55,8 +55,8 @@
         // in case the value is not defined or it's
         // an empty string
         if(value == nil || (NSNull *) value == [NSNull null] || [value length] < 1) {
-            // continues the loop
-            continue;
+            // sets the value as an empty string
+            value = @"";
         }
 
         // in case it's the first iteration
@@ -127,8 +127,8 @@
         // in case the value is not defined or it's
         // an empty string
         if(value == nil || (NSNull *) value == [NSNull null] || [value length] < 1) {
-            // continues the loop
-            continue;
+            // sets the value as an empty string
+            value = @"";
         }
 
         // in case it's the first iteration
