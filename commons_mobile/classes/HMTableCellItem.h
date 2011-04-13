@@ -28,6 +28,16 @@
 #import "HMButtonItem.h"
 #import "HMEditItem.h"
 
+/**
+ * Enumeration defining the various
+ * delete action types.
+ */
+typedef enum {
+    HMTableCellItemDeleteActionTypeNone = 1,
+    HMTableCellItemDeleteActionTypeClear,
+    HMTableCellItemDeleteActionTypeDelete
+} HMTableCellItemDeleteActionType;
+
 @interface HMTableCellItem : HMButtonItem<HMEditItem> {
     @private
     NSString *_accessoryType;
@@ -37,6 +47,7 @@
     BOOL _insertableRow;
     BOOL _deletableRow;
     BOOL _editableCell;
+    HMTableCellItemDeleteActionType _deleteActionType;
 }
 
 /**
@@ -73,5 +84,12 @@
  * Specifies if the cell is editable.
  */
 @property (assign) BOOL editableCell;
+
+/**
+ * Specifies the action that will be
+ * performed when a row deletion action
+ * is performed over this table cell.
+ */
+@property (assign) HMTableCellItemDeleteActionType deleteActionType;
 
 @end

@@ -156,4 +156,9 @@
  */
 - (id)initWithIdentifier:(NSString *)identifier;
 
+/**
+ * Initializes the structures.
+ */
+- (void)initStructures;
+
 @end

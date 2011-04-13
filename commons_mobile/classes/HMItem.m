@@ -45,22 +45,26 @@
 @synthesize focusEdit = _focusEdit;
 @synthesize data = _data;
 
+- (id)init {
+    // invokes the parent constructor
+    self = [super init];
+
+    // initializes the structures
+    [self initStructures];
+
+    // returns the instance
+    return self;
+}
+
 - (id)initWithIdentifier:(NSString *)identifier {
     // invokes the parent constructor
-    [self init];
+    self = [super init];
 
-    // sets the attributes
+    // sets the identifier
     self.identifier = identifier;
-    self.nameFont = @"Helvetica-Bold";
-    self.nameFontSize = HM_ITEM_NAME_FONT_SIZE;
-    self.descriptionFont = @"Helvetica-Bold";
-    self.descriptionFontSize = HM_ITEM_DESCRIPTION_FONT_SIZE;
-    self.height = HM_ITEM_HEIGHT;
-    self.focusEdit = NO;
-    self.backgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
-    self.selectedBackgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
-    self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
-    self.descriptionColor = [HMColor colorWithRed:0 green:0 blue:0 alpha:1.0];
+
+    // initializes the structures
+    [self initStructures];
 
     // returns the instance
     return self;
@@ -108,6 +112,20 @@
 
     // calls the super
     [super dealloc];
+}
+
+- (void)initStructures {
+    // sets the default attributes
+    self.backgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+    self.selectedBackgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+    self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
+    self.descriptionColor = [HMColor colorWithRed:0 green:0 blue:0 alpha:1.0];
+    self.nameFont = @"Helvetica-Bold";
+    self.descriptionFont = @"Helvetica-Bold";
+    self.nameFontSize = HM_ITEM_NAME_FONT_SIZE;
+    self.descriptionFontSize = HM_ITEM_DESCRIPTION_FONT_SIZE;
+    self.height = HM_ITEM_HEIGHT;
+    self.focusEdit = NO;
 }
 
 @end

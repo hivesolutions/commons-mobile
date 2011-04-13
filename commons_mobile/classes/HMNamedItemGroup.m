@@ -29,46 +29,26 @@
 
 @synthesize items = _items;
 
-- (id)init {
-    // invokes the parent constructor
-    self = [super init];
-
-    // creates the items
-    NSMutableDictionary *items = [[NSMutableDictionary alloc] init];
-
-    // sets the attributes
-    self.items = items;
-
-    // releases the objects
-    [items release];
-
-    // returns the instance
-    return self;
-}
-
-- (id)initWithIdentifier:(NSString *)identifier {
-    // invokes the parent constructor
-    self = [super initWithIdentifier:identifier];
-
-    // creates the items
-    NSMutableDictionary *items = [[NSMutableDictionary alloc] init];
-
-    // sets the attributes
-    self.items = items;
-
-    // releases the objects
-    [items release];
-
-    // returns the instance
-    return self;
-}
-
 - (void)dealloc {
     // releases the items
     [_items release];
 
     // calls the super
     [super dealloc];
+}
+
+- (void)initStructures {
+    // calls the super
+    [super initStructures];
+
+    // creates the items
+    NSMutableDictionary *items = [[NSMutableDictionary alloc] init];
+
+    // sets the attributes
+    self.items = items;
+
+    // releases the objects
+    [items release];
 }
 
 - (void)addItem:(NSString *)key item:(HMItem *)item {

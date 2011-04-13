@@ -33,41 +33,8 @@
 @synthesize clearable = _clearable;
 @synthesize insertableRow = _insertableRow;
 @synthesize deletableRow = _deletableRow;
+@synthesize deleteActionType = _deletableActionType;
 @synthesize editableCell = _editableCell;
-
-- (id)init {
-    // invokes the parent constructor
-    self = [super init];
-
-    // sets the default attributes
-    self.selectable = NO;
-    self.selectableEdit = NO;
-    self.indentable = NO;
-    self.clearable = NO;
-    self.insertableRow = NO;
-    self.deletableRow = NO;
-    self.editableCell = NO;
-
-    // returns the instance
-    return self;
-}
-
-- (id)initWithIdentifier:(NSString *)identifier {
-    // invokes the parent constructor
-    self = [super initWithIdentifier:identifier];
-
-    // sets the default attributes
-    self.selectable = NO;
-    self.selectableEdit = NO;
-    self.indentable = NO;
-    self.clearable = NO;
-    self.insertableRow = NO;
-    self.deletableRow = NO;
-    self.editableCell = NO;
-
-    // returns the instance
-    return self;
-}
 
 - (void)dealloc {
     // releases the acessory type
@@ -78,6 +45,21 @@
 
     // calls the super
     [super dealloc];
+}
+
+- (void)initStructures {
+    // calls the super
+    [super initStructures];
+
+    // sets the default attributes
+    self.selectable = NO;
+    self.selectableEdit = NO;
+    self.indentable = NO;
+    self.clearable = NO;
+    self.insertableRow = NO;
+    self.deletableRow = NO;
+    self.editableCell = NO;
+    self.deleteActionType = HMTableCellItemDeleteActionTypeNone;
 }
 
 @end

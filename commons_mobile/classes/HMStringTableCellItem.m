@@ -32,44 +32,6 @@
 @synthesize autocapitalizationType = _autocapitalizationType;
 @synthesize returnDisablesEdit = _returnDisablesEdit;
 
-- (id)init {
-    // invokes the parent constructor
-    self = [super init];
-
-    // sets the default attributes
-    self.insertableRow = NO;
-    self.deletableRow = NO;
-    self.editableCell = YES;
-    self.indentable = YES;
-    self.clearable = YES;
-    self.secure = NO;
-    self.returnDisablesEdit = NO;
-    self.multipleLines = NO;
-    self.autocapitalizationType = @"sentences";
-
-    // returns the instance
-    return self;
-}
-
-- (id)initWithIdentifier:(NSString *)identifier {
-    // invokes the parent constructor
-    self = [super initWithIdentifier:identifier];
-
-    // sets the default attributes
-    self.insertableRow = NO;
-    self.deletableRow = NO;
-    self.editableCell = YES;
-    self.indentable = YES;
-    self.clearable = YES;
-    self.secure = NO;
-    self.returnDisablesEdit = NO;
-    self.multipleLines = NO;
-    self.autocapitalizationType = @"sentences";
-
-    // returns the instance
-    return self;
-}
-
 - (void)dealloc {
     // releases the return type
     [_returnType release];
@@ -79,6 +41,22 @@
 
     // calls the super
     [super dealloc];
+}
+
+- (void)initStructures {
+    // calls the super
+    [super initStructures];
+
+    // sets the default attributes
+    self.insertableRow = NO;
+    self.deletableRow = NO;
+    self.editableCell = YES;
+    self.indentable = YES;
+    self.clearable = YES;
+    self.secure = NO;
+    self.returnDisablesEdit = NO;
+    self.multipleLines = NO;
+    self.autocapitalizationType = @"sentences";
 }
 
 - (BOOL)multipleLines {

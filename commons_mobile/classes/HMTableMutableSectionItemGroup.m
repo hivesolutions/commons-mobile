@@ -32,12 +32,26 @@
 @synthesize addTableCellItem = _addTableCellItem;
 @synthesize tableCellItemCreationDelegate = _tableCellItemCreationDelegate;
 
-- (id)initWithIdentifier:(NSString *)identifier {
-    // invokes the parent constructor
-    self = [super initWithIdentifier:identifier];
+- (void)dealloc {
+    // releases the add nib name
+    [_addNibName release];
+
+    // releases the add table cell item
+    [_addTableCellItem release];
+
+    // releases the table cell item creation delegate
+    [_tableCellItemCreationDelegate release];
+
+    // calls the super
+    [super dealloc];
+}
+
+- (void)initStructures {
+    // calls the super
+    [super initStructures];
 
     // creates the add table cell item
-    HMStringTableCellItem *addTableCellItem = [[HMStringTableCellItem alloc] initWithIdentifier:[NSString stringWithFormat:@"%@_add_item", identifier]];
+    HMStringTableCellItem *addTableCellItem = [[HMStringTableCellItem alloc] initWithIdentifier:[NSString stringWithFormat:@"%@_add_item", self.identifier]];
     addTableCellItem.descriptionColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
     addTableCellItem.descriptionFontSize = 13;
     addTableCellItem.editableCell = NO;
@@ -55,23 +69,6 @@
 
     // releases the objects
     [addTableCellItem release];
-
-    // returns the instance
-    return self;
-}
-
-- (void)dealloc {
-    // releases the add nib name
-    [_addNibName release];
-
-    // releases the add table cell item
-    [_addTableCellItem release];
-
-    // releases the table cell item creation delegate
-    [_tableCellItemCreationDelegate release];
-
-    // calls the super
-    [super dealloc];
 }
 
 - (Class)addViewController {

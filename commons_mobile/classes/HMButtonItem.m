@@ -37,32 +37,6 @@
 @synthesize editViewController = _editViewController;
 @synthesize editNibName = _editNibName;
 
-- (id)init {
-    // invokes the parent constructor
-    self = [super init];
-
-    // sets the default attributes
-    self.selectable = YES;
-    self.selectableEdit = NO;
-    self.selectableName = NO;
-
-    // returns the instance
-    return self;
-}
-
-- (id)initWithIdentifier:(NSString *)identifier {
-    // invokes the parent constructor
-    self = [super initWithIdentifier:identifier];
-
-    // sets the default attributes
-    self.selectable = YES;
-    self.selectableEdit = NO;
-    self.selectableName = NO;
-
-    // returns the instance
-    return self;
-}
-
 - (void)dealloc {
     // releases the icon
     [_icon release];
@@ -78,6 +52,16 @@
 
     // calls the super
     [super dealloc];
+}
+
+- (void)initStructures {
+    // calls the super
+    [super initStructures];
+
+    // sets the default attributes
+    self.selectable = YES;
+    self.selectableEdit = NO;
+    self.selectableName = NO;
 }
 
 @end

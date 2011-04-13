@@ -29,46 +29,26 @@
 
 @synthesize items = _items;
 
-- (id)init {
-    // invokes the parent constructor
-    self = [super init];
-
-    // creates the items
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-
-    // sets the attributes
-    self.items = items;
-
-    // releases the objects
-    [items release];
-
-    // returns the instance
-    return self;
-}
-
-- (id)initWithIdentifier:(NSString *)identifier {
-    // invokes the parent constructor
-    self = [super initWithIdentifier:identifier];
-
-    // creates the items
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-
-    // sets the attributes
-    self.items = items;
-
-    // releases the objects
-    [items release];
-
-    // returns the instance
-    return self;
-}
-
 - (void)dealloc {
     // releases the items
     [_items release];
 
     // calls the super
     [super dealloc];
+}
+
+- (void)initStructures {
+    // calls the super
+    [super initStructures];
+
+    // creates the items
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+
+    // sets the attributes
+    self.items = items;
+
+    // releases the objects
+    [items release];
 }
 
 - (void)addItem:(HMItem *)item {
@@ -114,6 +94,24 @@
 
     // returns the item
     return item;
+}
+
+- (void)removeItemAtIndexPath:(NSIndexPath *)indexPath {
+    // retrieves the index path without the last index
+    NSIndexPath *lastItemGroupIndexPath = [indexPath indexPathByRemovingLastIndex];
+
+    // retrieves the last index path index
+    int lastIndexPathIndex = [indexPath length] - 1;
+
+    // retrieves the index of the
+    // item that will be removed
+    NSUInteger removeIndex = [indexPath indexAtPosition:lastIndexPathIndex];
+
+    // retrieves the last item group
+    HMItemGroup *itemGroup = (HMItemGroup *) [self getItemAtIndexPath:lastItemGroupIndexPath];
+
+    // removes the item from the item group
+    [itemGroup.items removeObjectAtIndex:removeIndex];
 }
 
 - (HMItem *)search:(NSString *)identifier {

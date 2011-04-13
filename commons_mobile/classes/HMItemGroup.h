@@ -62,4 +62,12 @@
  */
 - (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath;
 
+/**
+ * Removes an item from the item group.
+ *
+ * @param indexPath The index path that points
+ * to the desired item.
+ */
+- (void)removeItemAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
