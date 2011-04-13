@@ -30,6 +30,7 @@
 #import "../classes/HMColor.h"
 #import "../classes/HMHttpUtil.h"
 #import "../classes/HMNullUtil.h"
+#import "../classes/HMBase64Util.h"
 #import "../classes/HMEnumerableUtil.h"
 #import "../classes/HMStringTableCellItem.h"
 #import "../classes/HMNamedItemGroup.h"
