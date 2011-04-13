@@ -81,7 +81,7 @@
     NSString *httpString = [stringBuffer componentsJoinedByString:@""];
 
     // escapes the http string
-    NSString *escapedHttpString = [httpString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSString *escapedHttpString = [httpString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
     // creates the http data from the http string
     NSData *httpData = [escapedHttpString dataUsingEncoding:NSUTF8StringEncoding];
@@ -153,7 +153,7 @@
     NSString *httpString = [stringBuffer componentsJoinedByString:@""];
 
     // escapes the http string
-    NSString *escapedHttpString = [httpString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSString *escapedHttpString = [httpString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
     // creates the http data from the http string
     NSData *httpData = [escapedHttpString dataUsingEncoding:NSUTF8StringEncoding];
