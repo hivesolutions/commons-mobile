@@ -67,8 +67,6 @@
     // creates the label item
     HMLabelItem *labelItem = [[HMLabelItem alloc] init];
     labelItem.description = headerString;
-    labelItem.descriptionFont = @"Helvetica";
-    labelItem.descriptionFontSize = 13;
     labelItem.descriptionColor = [HMColor colorWithRed:0.29 green:0.34 blue:0.42 alpha:1.0];
     labelItem.descriptionShadowColor = [HMColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 

@@ -27,7 +27,24 @@
 
 #import "HMItem.h"
 
+/**
+ * Enumeration defining the various
+ * delete action types.
+ */
+typedef enum {
+    HMLabelItemTextAlignmentLeft = 1,
+    HMLabelItemTextAlignmentRight,
+    HMLabelItemTextAlignmentCenter
+} HMLabelItemTextAlignment;
+
 @interface HMLabelItem : HMItem {
+    @private
+    HMLabelItemTextAlignment _textAlignment;
 }
+
+/**
+ * Defines the label's text alignment.
+ */
+@property (assign) HMLabelItemTextAlignment textAlignment;
 
 @end

@@ -27,4 +27,14 @@
 
 @implementation HMLabelItem
 
+@synthesize textAlignment = _textAlignment;
+
+- (void)initStructures {
+    // calls the super
+    [super initStructures];
+
+    // sets the default attributes
+    self.textAlignment = HMLabelItemTextAlignmentLeft;
+}
+
 @end
