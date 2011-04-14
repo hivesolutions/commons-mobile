@@ -43,6 +43,7 @@
 @synthesize descriptionFontSize = _descriptionFontSize;
 @synthesize height = _height;
 @synthesize focusEdit = _focusEdit;
+@synthesize mutableParent = _mutableParent;
 @synthesize data = _data;
 
 - (id)init {
@@ -126,6 +127,7 @@
     self.descriptionFontSize = HM_ITEM_DESCRIPTION_FONT_SIZE;
     self.height = HM_ITEM_HEIGHT;
     self.focusEdit = NO;
+    self.mutableParent = NO;
 }
 
 @end

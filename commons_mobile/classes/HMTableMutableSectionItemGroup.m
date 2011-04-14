@@ -65,6 +65,7 @@
     [self addItem:addTableCellItem];
 
     // sets the attributes
+    self.mutableParent = YES;
     self.addTableCellItem = addTableCellItem;
 
     // releases the objects

@@ -60,6 +60,7 @@
     NSUInteger _descriptionFontSize;
     float _height;
     BOOL _focusEdit;
+    BOOL _mutableParent;
     NSDictionary *_data;
 }
 
@@ -143,6 +144,12 @@
  * when entering edit mode.
  */
 @property (assign) BOOL focusEdit;
+
+/**
+ * Indicates if the item is a
+ * mutable parent.
+ */
+@property (assign) BOOL mutableParent;
 
 /**
  * Stores data associated with item.
