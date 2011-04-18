@@ -74,7 +74,7 @@ typedef enum {
     float _height;
     BOOL _focusEdit;
     BOOL _mutableParent;
-    NSDictionary *_data;
+    NSObject *_data;
 }
 
 /**
@@ -177,7 +177,7 @@ typedef enum {
 /**
  * Stores data associated with item.
  */
-@property (retain) NSDictionary *data;
+@property (retain) NSObject *data;
 
 /**
  * Constructor of the class.
