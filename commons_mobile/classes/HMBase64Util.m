@@ -112,6 +112,13 @@
 }
 
 + (NSData *)decodeBase64WithString:(NSString *)base64Value {
+    // in case the base 64 value
+    // is invalid
+    if(base64Value == nil) {
+        // returns immediately (error)
+        return nil;
+    }
+
     // retrieves the intial c string object pointer from the base 64 value
     const char *objectPointer = [base64Value cStringUsingEncoding:NSASCIIStringEncoding];
 
