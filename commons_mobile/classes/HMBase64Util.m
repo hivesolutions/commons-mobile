@@ -60,7 +60,7 @@
 
     // allocates the space for the string result (according to the
     // predicted space for base 64)
-    stringResult = (char *) calloc(((dataValueLength + 2) / 3) * 4, sizeof(char));
+    stringResult = (char *) calloc((((dataValueLength + 2) / 3) * 4) + 1, sizeof(char));
 
     // sets the current pointer as the string result
     currentPointer = stringResult;
