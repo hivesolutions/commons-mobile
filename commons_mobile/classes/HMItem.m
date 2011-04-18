@@ -27,6 +27,8 @@
 
 @implementation HMItem
 
+@synthesize state = _state;
+@synthesize transientState = _transientState;
 @synthesize identifier = _identifier;
 @synthesize name = _name;
 @synthesize description = _description;
@@ -117,6 +119,8 @@
 
 - (void)initStructures {
     // sets the default attributes
+    self.state = HMItemStateExistent;
+    self.transientState = HMItemStateExistent;
     self.backgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     self.selectedBackgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];

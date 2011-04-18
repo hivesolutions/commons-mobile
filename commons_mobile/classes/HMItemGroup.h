@@ -70,4 +70,23 @@
  */
 - (void)removeItemAtIndexPath:(NSIndexPath *)indexPath;
 
+/**
+ * Flushes the item group, updating
+ * the items' state.
+ *
+ * @param transient Indicates if the
+ * transient state should be flushed.
+ */
+- (void)flush:(BOOL)transient;
+
+/**
+ * Rollsback the item group.
+ */
+- (void)rollback;
+
+/**
+ * Commits the item group.
+ */
+- (void)commit;
+
 @end

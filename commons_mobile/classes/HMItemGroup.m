@@ -56,18 +56,49 @@
     [self.items addObject:item];
 }
 
-- (HMItem *)getItem:(NSInteger) index {
-    // retrieves the item for the index
-    HMItem *item = [self.items objectAtIndex:index];
+- (HMItem *)getItem:(NSInteger)index {
+    // initializes the item index
+    int itemIndex = -1;
 
-    // returns the item
-    return item;
+    // for each item in the items list
+    for(HMItem *item in self.items) {
+        // in case the item is in a
+        // deleted transient state
+        if(item.transientState == HMItemStateOld) {
+            // continues to exclude
+            // the item from the count
+            continue;
+        }
+
+        // increases the item index
+        itemIndex++;
+
+        // in case the item index
+        // matches the specified index
+        if(itemIndex == index) {
+            // returns the item
+            // since it was found
+            return item;
+        }
+
+        // in case the item index
+        // surpassed the specified index
+        if(itemIndex > index) {
+            // breaks since no
+            // item was found
+            break;
+        }
+    }
+
+    // returns nil to indicate
+    // that no item was found
+    return nil;
 }
 
 - (HMItem *)getItemAtIndexPath:(NSIndexPath *)indexPath {
     // retrieves the item in the first index
     NSUInteger index = [indexPath indexAtPosition:0];
-    HMItem *item = [self.items objectAtIndex:index];
+    HMItem *item = [self getItem:index];
 
     // retrieves the item in the index
     if(indexPath.length > 1) {
@@ -114,19 +145,160 @@
     [itemGroup.items removeObjectAtIndex:removeIndex];
 }
 
+- (void)flush:(BOOL)transient {
+    // collects the transient items
+    for(HMItem *item in self.items) {
+        // in case the flush is transient
+        if(transient) {
+            // sets the state as the transient state
+            self.state = self.transientState;
+        } else {
+            // for each transient state
+            switch (self.transientState) {
+                // in case the item
+                // transient state is new
+                case HMItemStateNew:
+                    // sets the state as none
+                    self.state = HMItemStateNone;
+
+                    // breaks the switch
+                    break;
+
+                // in case the item
+                // transient state is old
+                case HMItemStateOld:
+                    // sets the state as existent
+                    self.state = HMItemStateExistent;
+
+                    // breaks the switch
+                    break;
+
+                // in case the item transient
+                // state is another state
+                default:
+                    // sets the state as existent
+                    self.state = HMItemStateExistent;
+
+                    // breaks the switch
+                    break;
+            }
+        }
+
+        // in case the item is a item group
+        if([item isKindOfClass:[HMItemGroup class]]) {
+            // casts the item to an item group
+            HMItemGroup *itemItemGroup = (HMItemGroup *) item;
+
+            // flushes the item group
+            [itemItemGroup flush:transient];
+        }
+    }
+}
+
+- (void)commit {
+    // creates an array where to
+    // store the items that will be removed
+    NSMutableArray *removeItems = [[NSMutableArray alloc] init];
+
+    // for each item in the item group
+    for(HMItem *item in self.items) {
+        // for each item transient state
+        switch(item.transientState) {
+            // in case the item transient
+            // state is old
+            case HMItemStateOld:
+                // adds the item to the list of
+                // items that will be removed
+                [removeItems addObject:item];
+
+                // breaks the switch
+                break;
+
+            // in case the item transient
+            // state is another state
+            default:
+                // breaks the switch
+                break;
+        }
+
+        // resets the item states
+        item.state = HMItemStateExistent;
+        item.transientState = HMItemStateExistent;
+
+        // in case the item is a item group
+        if([item isKindOfClass:[HMItemGroup class]]) {
+            // casts the item to an item group
+            HMItemGroup *itemItemGroup = (HMItemGroup *) item;
+
+            // commits the item group
+            [itemItemGroup commit];
+        }
+    }
+
+    // for each item in the remove items list
+    for(HMItem *item in removeItems) {
+        // removes the items from the items list
+        [self.items removeObject:item];
+    }
+
+    // releases the objects
+    [removeItems release];
+}
+
+- (void)rollback {
+    // creates an array where to
+    // store the items that will be removed
+    NSMutableArray *removeItems = [[NSMutableArray alloc] init];
+
+    // for each item in the item group
+    for(HMItem *item in self.items) {
+        // for each item transient state
+        switch(item.transientState) {
+            // in case the item transient
+            // state is new
+            case HMItemStateNew:
+                // adds the item to the list of
+                // items that will be removed
+                [removeItems addObject:item];
+
+                // breaks the switch
+                break;
+
+                // in case the item transient
+                // state is another state
+            default:
+                // breaks the switch
+                break;
+        }
+
+        // resets the item states
+        item.state = HMItemStateExistent;
+        item.transientState = HMItemStateExistent;
+
+        // in case the item is a item group
+        if([item isKindOfClass:[HMItemGroup class]]) {
+            // casts the item to an item group
+            HMItemGroup *itemItemGroup = (HMItemGroup *) item;
+
+            // rollsback the item group
+            [itemItemGroup rollback];
+        }
+    }
+
+    // for each item in the remove items list
+    for(HMItem *item in removeItems) {
+        // removes the items from the items list
+        [self.items removeObject:item];
+    }
+
+    // releases the objects
+    [removeItems release];
+}
+
 - (HMItem *)search:(NSString *)identifier {
-    // retrieves the item group enumerator
-    NSEnumerator *itemGroupEnumerator = [self.items objectEnumerator];
-
-    // allocates the object
-    id object;
-
     // searches for the item with the
     // specified identifier in the item group
-    while((object = [itemGroupEnumerator nextObject])) {
-        // casts the object to an item
-        HMItem *item = (HMItem *) object;
-
+    for(HMItem *item in self.items) {
         // returns the item in case it
         // matches the specified identifier
         if([item.identifier isEqualToString:identifier]) {
@@ -135,10 +307,13 @@
 
         // searches inside the object in case it
         // responds to the search selector
-        if([object respondsToSelector:@selector(search:)]) {
+        if([item respondsToSelector:@selector(search:)]) {
+            // casts the item to an item group
+            HMItemGroup *itemGroup = (HMItemGroup *)item;
+
             // searches for the item
             // in the object
-            item = [object search:identifier];
+            item = [itemGroup search:identifier];
 
             // in case the item
             // was found

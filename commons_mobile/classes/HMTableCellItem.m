@@ -33,7 +33,7 @@
 @synthesize clearable = _clearable;
 @synthesize insertableRow = _insertableRow;
 @synthesize deletableRow = _deletableRow;
-@synthesize deleteActionType = _deletableActionType;
+@synthesize deleteActionType = _deleteActionType;
 @synthesize editableCell = _editableCell;
 
 - (void)dealloc {

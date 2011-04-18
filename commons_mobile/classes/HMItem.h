@@ -42,8 +42,21 @@
  */
 #define HM_ITEM_HEIGHT 50
 
+/**
+ * Enumeration defining the
+ * various item states.
+ */
+typedef enum {
+    HMItemStateNone = 1,
+    HMItemStateNew,
+    HMItemStateExistent,
+    HMItemStateOld
+} HMItemState;
+
 @interface HMItem : NSObject {
     @private
+    HMItemState _state;
+    HMItemState _transientState;
     NSString *_identifier;
     NSString *_name;
     NSString *_description;
@@ -63,6 +76,16 @@
     BOOL _mutableParent;
     NSDictionary *_data;
 }
+
+/**
+ * The item's state.
+ */
+@property (assign) HMItemState state;
+
+/**
+ * The item's transient state.
+ */
+@property (assign) HMItemState transientState;
 
 /**
  * The item's identifier.

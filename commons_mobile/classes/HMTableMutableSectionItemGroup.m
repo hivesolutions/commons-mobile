@@ -135,6 +135,14 @@
         // retrieves the item
         HMItem *item = [self.items objectAtIndex:index];
 
+        // in case the item's transient state is old
+        // no need to include this element in the
+        // data items
+        if(item.transientState == HMItemStateOld) {
+            // continues loop
+            continue;
+        }
+
         // adds the item to the data items
         [dataItems addObject:item];
     }
