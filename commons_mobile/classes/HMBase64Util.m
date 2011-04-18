@@ -60,7 +60,7 @@
 
     // allocates the space for the string result (according to the
     // predicted space for base 64)
-    stringResult = (char *) calloc(((dataValueLength + 2) / 3) * 4, sizeof(char));
+    stringResult = (char *) calloc((((dataValueLength + 2) / 3) * 4) + 1, sizeof(char));
 
     // sets the current pointer as the string result
     currentPointer = stringResult;
@@ -112,6 +112,13 @@
 }
 
 + (NSData *)decodeBase64WithString:(NSString *)base64Value {
+    // in case the base 64 value
+    // is invalid
+    if(base64Value == nil) {
+        // returns immediately (error)
+        return nil;
+    }
+
     // retrieves the intial c string object pointer from the base 64 value
     const char *objectPointer = [base64Value cStringUsingEncoding:NSASCIIStringEncoding];
 
