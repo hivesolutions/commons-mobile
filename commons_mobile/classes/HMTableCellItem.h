@@ -46,7 +46,6 @@ typedef enum {
     BOOL _clearable;
     BOOL _insertableRow;
     BOOL _deletableRow;
-    BOOL _editableCell;
     HMTableCellItemDeleteActionType _deleteActionType;
 }
 
@@ -79,11 +78,6 @@ typedef enum {
  * Specifies if the row is deletable.
  */
 @property (assign) BOOL deletableRow;
-
-/**
- * Specifies if the cell is editable.
- */
-@property (assign) BOOL editableCell;
 
 /**
  * Specifies the action that will be

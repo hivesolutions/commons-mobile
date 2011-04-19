@@ -107,6 +107,9 @@
     // encodes the c string to string
     NSString *stringValue = [NSString stringWithCString:stringResult encoding:NSASCIIStringEncoding];
 
+    // releases the string result
+    free(stringResult);
+
     // returns the string value
     return stringValue;
 }

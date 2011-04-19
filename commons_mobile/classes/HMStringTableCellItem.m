@@ -50,7 +50,6 @@
     // sets the default attributes
     self.insertableRow = NO;
     self.deletableRow = NO;
-    self.editableCell = YES;
     self.indentable = YES;
     self.clearable = YES;
     self.secure = NO;

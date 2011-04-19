@@ -34,7 +34,6 @@
 @synthesize insertableRow = _insertableRow;
 @synthesize deletableRow = _deletableRow;
 @synthesize deleteActionType = _deleteActionType;
-@synthesize editableCell = _editableCell;
 
 - (void)dealloc {
     // releases the acessory type
@@ -58,7 +57,6 @@
     self.clearable = NO;
     self.insertableRow = NO;
     self.deletableRow = NO;
-    self.editableCell = NO;
     self.deleteActionType = HMTableCellItemDeleteActionTypeNone;
 }
 

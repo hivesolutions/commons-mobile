@@ -51,10 +51,9 @@
     [super initStructures];
 
     // creates the add table cell item
-    HMStringTableCellItem *addTableCellItem = [[HMStringTableCellItem alloc] initWithIdentifier:[NSString stringWithFormat:@"%@_add_item", self.identifier]];
+    HMConstantStringTableCellItem *addTableCellItem = [[HMConstantStringTableCellItem alloc] initWithIdentifier:[NSString stringWithFormat:@"%@_add_item", self.identifier]];
     addTableCellItem.descriptionColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
     addTableCellItem.descriptionFontSize = 13;
-    addTableCellItem.editableCell = NO;
     addTableCellItem.selectable = YES;
     addTableCellItem.selectableEdit = YES;
     addTableCellItem.indentable = YES;
