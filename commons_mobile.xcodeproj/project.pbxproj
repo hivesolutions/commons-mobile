@@ -63,6 +63,7 @@
 		A5D25F381330EE1B00340936 /* HMTableCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMTableCellItem.m; path = classes/HMTableCellItem.m; sourceTree = "<group>"; };
 		A5FA27511339056700DD428A /* HMTableSectionItemGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMTableSectionItemGroup.h; path = classes/HMTableSectionItemGroup.h; sourceTree = "<group>"; };
 		A5FA27521339056700DD428A /* HMTableSectionItemGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMTableSectionItemGroup.m; path = classes/HMTableSectionItemGroup.m; sourceTree = "<group>"; };
+		C209221F139553FE00CDE3F1 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C20CDB7E133375CE008A4FE3 /* Dependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dependencies.h; path = classes/Dependencies.h; sourceTree = "<group>"; };
 		C20CDB9213338636008A4FE3 /* HMEditItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMEditItem.h; path = classes/HMEditItem.h; sourceTree = "<group>"; };
 		C23B5E581333BD8800CFC9AF /* HMNamedItemGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMNamedItemGroup.h; path = classes/HMNamedItemGroup.h; sourceTree = "<group>"; };
@@ -99,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C209222213955AB600CDE3F1 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				C209221F139553FE00CDE3F1 /* Entitlements.plist */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
 		C20CDB7B133375B5008A4FE3 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +184,7 @@
 				C295F929132E265A00BC1B93 /* Commons Mobile */,
 				C295F926132E265A00BC1B93 /* Frameworks */,
 				C295F925132E265A00BC1B93 /* Products */,
+				C209222213955AB600CDE3F1 /* Extras */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,6 +333,33 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		C209221B1395515A00CDE3F1 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = "Ad Hoc";
+		};
+		C209221C1395515A00CDE3F1 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				DSTROOT = /tmp/commons_mobile.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "commons_mobile/support/commons_mobile-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Ad Hoc";
+		};
 		C295F92C132E265A00BC1B93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -386,6 +423,7 @@
 			buildConfigurations = (
 				C295F92C132E265A00BC1B93 /* Debug */,
 				C295F92D132E265A00BC1B93 /* Release */,
+				C209221B1395515A00CDE3F1 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -395,6 +433,7 @@
 			buildConfigurations = (
 				C295F92F132E265A00BC1B93 /* Debug */,
 				C295F930132E265A00BC1B93 /* Release */,
+				C209221C1395515A00CDE3F1 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
