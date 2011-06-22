@@ -25,6 +25,8 @@
 		A5FA27541339056700DD428A /* HMTableSectionItemGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A5FA27521339056700DD428A /* HMTableSectionItemGroup.m */; };
 		C20CDB7F133375CE008A4FE3 /* Dependencies.h in Headers */ = {isa = PBXBuildFile; fileRef = C20CDB7E133375CE008A4FE3 /* Dependencies.h */; };
 		C20CDB941333863B008A4FE3 /* HMEditItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C20CDB9213338636008A4FE3 /* HMEditItem.h */; };
+		C236181213B2B149007A535B /* HMHexadecimalUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C236181113B2B149007A535B /* HMHexadecimalUtil.h */; };
+		C236181513B2B15F007A535B /* HMHexadecimalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C236181413B2B15F007A535B /* HMHexadecimalUtil.m */; };
 		C23B5E5A1333BD8800CFC9AF /* HMNamedItemGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = C23B5E581333BD8800CFC9AF /* HMNamedItemGroup.h */; };
 		C23B5E5B1333BD8800CFC9AF /* HMNamedItemGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C23B5E591333BD8800CFC9AF /* HMNamedItemGroup.m */; };
 		C23F3D30132E332E003155EE /* HMItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C23F3D2E132E332E003155EE /* HMItem.h */; };
@@ -66,6 +68,8 @@
 		C209221F139553FE00CDE3F1 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C20CDB7E133375CE008A4FE3 /* Dependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dependencies.h; path = classes/Dependencies.h; sourceTree = "<group>"; };
 		C20CDB9213338636008A4FE3 /* HMEditItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMEditItem.h; path = classes/HMEditItem.h; sourceTree = "<group>"; };
+		C236181113B2B149007A535B /* HMHexadecimalUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMHexadecimalUtil.h; path = classes/HMHexadecimalUtil.h; sourceTree = "<group>"; };
+		C236181413B2B15F007A535B /* HMHexadecimalUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMHexadecimalUtil.m; path = classes/HMHexadecimalUtil.m; sourceTree = "<group>"; };
 		C23B5E581333BD8800CFC9AF /* HMNamedItemGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMNamedItemGroup.h; path = classes/HMNamedItemGroup.h; sourceTree = "<group>"; };
 		C23B5E591333BD8800CFC9AF /* HMNamedItemGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMNamedItemGroup.m; path = classes/HMNamedItemGroup.m; sourceTree = "<group>"; };
 		C23F3D2E132E332E003155EE /* HMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMItem.h; path = classes/HMItem.h; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 			children = (
 				C2F3A9B01355F71A00C98F45 /* HMBase64Util.h */,
 				C2F3A9B11355F71A00C98F45 /* HMBase64Util.m */,
+				C236181113B2B149007A535B /* HMHexadecimalUtil.h */,
+				C236181413B2B15F007A535B /* HMHexadecimalUtil.m */,
 				C2C49841134349B100541D4C /* HMEnumerableUtil.h */,
 				C2C49842134349B100541D4C /* HMEnumerableUtil.m */,
 				C2C4983C1342547F00541D4C /* HMNullUtil.h */,
@@ -262,6 +268,7 @@
 				A57A09A61354B15C0098A56A /* HMTableCellItemCreationDelegate.h in Headers */,
 				C2F3A9B21355F71A00C98F45 /* HMBase64Util.h in Headers */,
 				56C3A0341358B40300CA92DA /* HMConstantStringTableCellItem.h in Headers */,
+				C236181213B2B149007A535B /* HMHexadecimalUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +334,7 @@
 				A5AC2AC01353436C00BF05B9 /* HMTableMutableSectionItemGroup.m in Sources */,
 				C2F3A9B31355F71A00C98F45 /* HMBase64Util.m in Sources */,
 				56C3A0351358B40300CA92DA /* HMConstantStringTableCellItem.m in Sources */,
+				C236181513B2B15F007A535B /* HMHexadecimalUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

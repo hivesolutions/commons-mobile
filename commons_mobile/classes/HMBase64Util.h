@@ -54,7 +54,7 @@ static const short _base64DecodingTable[256] = {
 
 /**
  * Defines the static functions that will provide
- * encoding of base 64 data. from string and to string.
+ * encoding of base 64 data, from string and to string.
  */
 @interface HMBase64Util : NSObject
 
