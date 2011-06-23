@@ -30,25 +30,25 @@
 + (NSString *)hexlifyData:(NSData *)data {
     // retrieves the data length
     int dataLength = [data length];
-    
+
     // allocates space for the string value taking into account
-    // the data length (double the size of it) 
+    // the data length (double the size of it)
     NSMutableString *stringValue = [NSMutableString stringWithCapacity:dataLength * 2];
-    
+
     // allocates the bytes for the bytes of the data
     char *bytes = malloc(sizeof(char) * dataLength);
-    
+
     // retrieves the bytes and the length from the (original) data
     [data getBytes:bytes length:dataLength];
-    
+
     // iterates over the length of the bytes
     for(int index = 0; index < dataLength; index++) {
         [stringValue appendFormat:@"%02.2hhX", bytes[index]];
     }
-    
+
     // releases the bytes
     free(bytes);
-    
+
     // returns the string value
     return stringValue;
 }
