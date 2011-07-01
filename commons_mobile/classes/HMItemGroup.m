@@ -132,7 +132,7 @@
     NSIndexPath *lastItemGroupIndexPath = [indexPath indexPathByRemovingLastIndex];
 
     // retrieves the last index path index
-    int lastIndexPathIndex = [indexPath length] - 1;
+    int lastIndexPathIndex = indexPath.length - 1;
 
     // retrieves the index of the
     // item that will be removed

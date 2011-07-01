@@ -54,7 +54,7 @@
 
         // in case the value is not defined or it's
         // an empty string
-        if(value == nil || (NSNull *) value == [NSNull null] || [value length] < 1) {
+        if(value == nil || (NSNull *) value == [NSNull null] || value.length < 1) {
             // sets the value as an empty string
             value = @"";
         }
@@ -127,7 +127,7 @@
 
         // in case the value is not defined or it's
         // an empty string
-        if(value == nil || (NSNull *) value == [NSNull null] || [value length] < 1) {
+        if(value == nil || (NSNull *) value == [NSNull null] || value.length < 1) {
             // sets the value as an empty string
             value = @"";
         }

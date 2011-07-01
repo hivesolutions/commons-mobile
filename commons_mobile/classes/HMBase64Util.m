@@ -49,7 +49,7 @@
     char *stringResult;
 
     // retrieves the data value length
-    int dataValueLength = [dataValue length];
+    int dataValueLength = dataValue.length;
 
     // in case the data value is empty
     if(dataValueLength == 0) {
@@ -159,13 +159,13 @@
 
         // in case the current value is a
         // "skip character"
-        if (currentValue == -1) {
+        if(currentValue == -1) {
             // continues the loop
             continue;
         }
         // in case the current value is an
         // "error character"
-        else if (currentValue == -2) {
+        else if(currentValue == -2) {
             // releases the object result
             free(objectResult);
 

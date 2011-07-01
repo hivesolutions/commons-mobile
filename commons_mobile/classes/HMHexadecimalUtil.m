@@ -29,7 +29,7 @@
 
 + (NSString *)hexlifyData:(NSData *)data {
     // retrieves the data length
-    int dataLength = [data length];
+    int dataLength = data.length;
 
     // allocates space for the string value taking into account
     // the data length (double the size of it)

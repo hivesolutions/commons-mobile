@@ -123,7 +123,7 @@
 
 - (NSArray *)dataItems {
     // retrieves the items count
-    int count = [self.items count];
+    int count = self.items.count;
 
     // creates the data items mutable arrays
     NSMutableArray *dataItems = [[[NSMutableArray alloc] init] autorelease];
@@ -153,7 +153,7 @@
 - (void)addItem:(HMItem *)item {
     // calculates the index
     // before the add item
-    int index = [self.items count];
+    int index = self.items.count;
     index = index == 0 ? index : index - 1;
 
     // adds the item to the items list
