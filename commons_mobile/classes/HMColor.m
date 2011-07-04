@@ -40,6 +40,16 @@
     return color;
 }
 
++ (id)whiteColor {
+    // returns the white color
+    return [HMColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+}
+
++ (id)blackColor {
+    // returns the black color
+    return [HMColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+}
+
 - (id)initWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
     // sets the attributes
     self.red = red;

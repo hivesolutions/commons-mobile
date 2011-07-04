@@ -51,7 +51,17 @@
  * one representing the alpha component.
  * @return The constructed instance.
  */
-+ (id)colorWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
++ (HMColor *)colorWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
+
+/**
+ * Retrieves a white color object.
+ */
++ (HMColor *)whiteColor;
+
+/**
+ * Retrieves a black color object.
+ */
++ (HMColor *)blackColor;
 
 /**
  * Constructor of the class.
