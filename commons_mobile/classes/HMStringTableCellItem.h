@@ -73,4 +73,24 @@
  */
 @property (assign) BOOL multipleLines;
 
+/**
+ * Generates a plain string table view cell component.
+ */
+- (UIView *)generateComponentPlainStringTableViewCell;
+
+/**
+ * Generates a column string table view cell component.
+ */
+- (UIView *)generateComponentColumnStringTableViewCell;
+
+/**
+ * Generates a plain multiline string table view cell component.
+ */
+- (UIView *)generateComponentPlainMultilineStringTableViewCell;
+
+/**
+ * Generates a column multiline string table view cell component.
+ */
+- (UIView *)generateComponentColumnMultilineStringTableViewCell;
+
 @end

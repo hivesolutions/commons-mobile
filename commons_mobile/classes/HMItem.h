@@ -191,4 +191,10 @@ typedef enum {
  */
 - (void)initStructures;
 
+/**
+ * Generates the component
+ * that represents this item.
+ */
+- (UIView *)generateComponent;
+
 @end

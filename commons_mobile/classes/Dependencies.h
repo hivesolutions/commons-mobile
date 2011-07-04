@@ -25,3 +25,7 @@
 
 // framework dependency includes
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+// library dependency includes
+#import "../../../commons_ui_mobile/commons_ui_mobile/headers/commons_ui_mobile.h"

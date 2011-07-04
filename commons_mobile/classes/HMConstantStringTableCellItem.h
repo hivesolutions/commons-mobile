@@ -30,4 +30,14 @@
 @interface HMConstantStringTableCellItem : HMStringTableCellItem {
 }
 
+/**
+ * Generates a column constant string table view cell component.
+ */
+- (UIView *)generateComponentColumnConstantStringTableViewCell;
+
+/**
+ * Generates a plain constant string table view cell component.
+ */
+- (UIView *)generateComponentPlainConstantStringTableViewCell;
+
 @end

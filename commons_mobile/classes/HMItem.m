@@ -134,4 +134,8 @@
     self.mutableParent = NO;
 }
 
+- (UIView *)generateComponent {
+    return nil;
+}
+
 @end

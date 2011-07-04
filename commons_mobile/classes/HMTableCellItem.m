@@ -60,4 +60,47 @@
     self.deleteActionType = HMTableCellItemDeleteActionTypeNone;
 }
 
+- (UIView *)generateComponent {
+    // creates the cell identifier
+    static NSString *cellIdentifier = @"Cell";
+
+    // creates the table view cell
+    HMTableViewCell *component = [[[HMTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+
+    // retrieves the composite properties
+    HMColor *nameColor = self.nameColor;
+    HMColor *descriptionColor = self.descriptionColor;
+    HMColor *backgroundColor = self.backgroundColor;
+
+    // converts the composite properties
+    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
+    UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
+
+    // sets the cell's attributes
+    component.item = self;
+    component.data = self.data;
+    component.height = self.height;
+    component.icon = self.icon;
+    component.highlightedIcon = self.highlightedIcon;
+    component.name = self.name;
+    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont;
+    component.nameFontSize = self.nameFontSize;
+    component.description = self.description;
+    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont;
+    component.descriptionFontSize = self.descriptionFontSize;
+    component.selectable = self.selectable;
+    component.selectableName = self.selectableName;
+    component.accessoryTypeString = self.accessoryType;
+    component.accessoryValue = self.accessoryValue;
+    component.insertableRow = self.insertableRow;
+    component.deletableRow = self.deletableRow;
+    component.backgroundColor = convertedBackgroundColor;
+
+    // returns the component
+    return component;
+}
+
 @end

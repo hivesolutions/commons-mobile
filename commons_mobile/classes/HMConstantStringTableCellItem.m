@@ -27,4 +27,125 @@
 
 @implementation HMConstantStringTableCellItem
 
+- (UIView *)generateComponent {
+    // initializes the component
+    UIView *component = nil;
+
+    // in case the name is defined
+    if(self.name) {
+        // creates a column constant string table view cell
+        component = [self generateComponentColumnConstantStringTableViewCell];
+    } else {
+        // creates a plain constant string table view cell
+        component = [self generateComponentPlainConstantStringTableViewCell];
+    }
+
+    // returns the component
+    return component;
+}
+
+- (UIView *)generateComponentColumnConstantStringTableViewCell {
+    // creates the cell identifier
+    static NSString *cellIdentifier = @"Cell";
+
+    // creates the component
+    HMColumnConstantStringTableViewCell *component = [[[HMColumnConstantStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+
+    // retrieves the composite properties
+    HMColor *nameColor = self.nameColor;
+    HMColor *descriptionColor = self.descriptionColor;
+    HMColor *backgroundColor = self.backgroundColor;
+
+    // converts the composite properties
+    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
+    UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
+
+    // sets the component's attributes
+    component.item = self;
+    component.data = self.data;
+    component.height = self.height;
+    component.icon = self.icon;
+    component.highlightedIcon = self.highlightedIcon;
+    component.name = self.name;
+    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont;
+    component.nameFontSize = self.nameFontSize;
+    component.description = self.description;
+    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont;
+    component.descriptionFontSize = self.descriptionFontSize;
+    component.selectable = self.selectable;
+    component.selectableName = self.selectableName;
+    component.accessoryTypeString = self.accessoryType;
+    component.accessoryValue = self.accessoryValue;
+    component.insertableRow = self.insertableRow;
+    component.deletableRow = self.deletableRow;
+    component.backgroundColor = convertedBackgroundColor;
+    component.selectableEdit = self.selectableEdit;
+    component.defaultValue = self.defaultValue;
+    component.clearable = self.clearable;
+    component.returnType = self.returnType;
+    component.focusEdit = self.focusEdit;
+    component.readViewController = self.readViewController;
+    component.readNibName = self.readNibName;
+    component.editViewController = self.editViewController;
+    component.editNibName = self.editNibName;
+
+    // returns the component
+    return component;
+}
+
+- (UIView *)generateComponentPlainConstantStringTableViewCell {
+    // creates the cell identifier
+    static NSString *cellIdentifier = @"Cell";
+
+    // creates the component
+    HMPlainConstantStringTableViewCell *component = [[[HMPlainConstantStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+
+    // retrieves the composite properties
+    HMColor *nameColor = self.nameColor;
+    HMColor *descriptionColor = self.descriptionColor;
+    HMColor *backgroundColor = self.backgroundColor;
+
+    // converts the composite properties
+    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
+    UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
+
+    // sets the component's attributes
+    component.item = self;
+    component.data = self.data;
+    component.height = self.height;
+    component.icon = self.icon;
+    component.highlightedIcon = self.highlightedIcon;
+    component.name = self.name;
+    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont;
+    component.nameFontSize = self.nameFontSize;
+    component.description = self.description;
+    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont;
+    component.descriptionFontSize = self.descriptionFontSize;
+    component.selectable = self.selectable;
+    component.selectableName = self.selectableName;
+    component.accessoryTypeString = self.accessoryType;
+    component.accessoryValue = self.accessoryValue;
+    component.insertableRow = self.insertableRow;
+    component.deletableRow = self.deletableRow;
+    component.backgroundColor = convertedBackgroundColor;
+    component.selectableEdit = self.selectableEdit;
+    component.defaultValue = self.defaultValue;
+    component.clearable = self.clearable;
+    component.returnType = self.returnType;
+    component.focusEdit = self.focusEdit;
+    component.readViewController = self.readViewController;
+    component.readNibName = self.readNibName;
+    component.editViewController = self.editViewController;
+    component.editNibName = self.editNibName;
+
+    // returns the component
+    return component;
+}
+
 @end

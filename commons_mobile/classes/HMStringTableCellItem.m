@@ -67,11 +67,260 @@
     _multipleLines = multipleLines;
 
     // sets the cell's height to adapt to the number of lines
-    if(multipleLines == YES) {
-        self.height = HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT;
+    self.height = multipleLines ? HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT : HM_STRING_TABLE_CELL_ITEM_SINGLE_LINE_HEIGHT;
+}
+
+- (UIView *)generateComponent {
+    // initializes the component
+    UIView *component = nil;
+
+    // in case the item has multiple lines
+    if(self.multipleLines) {
+        // in case the item has a name
+        if(self.name) {
+            // creates a column multiline string table view cell
+            component = [self generateComponentColumnMultilineStringTableViewCell];
+        }
+        // in case the item has no name
+        else {
+            // creates a plain multiline string table view cell
+            component = [self generateComponentPlainMultilineStringTableViewCell];
+        }
     } else {
-        self.height = HM_STRING_TABLE_CELL_ITEM_SINGLE_LINE_HEIGHT;
+        // in case the item has a name
+        if(self.name) {
+            // creates a column string table view cell
+            component = [self generateComponentColumnStringTableViewCell];
+        }
+        // in case the item has no name
+        else {
+            // creates a plain string table view cell
+            component = [self generateComponentPlainStringTableViewCell];
+        }
     }
+
+    // returns the component
+    return component;
+}
+
+- (UIView *)generateComponentPlainStringTableViewCell {
+    // creates the cell identifier
+    static NSString *cellIdentifier = @"Cell";
+
+    // creates the component
+    HMPlainStringTableViewCell *component = [[[HMPlainStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+
+    // retrieves the composite properties
+    HMColor *nameColor = self.nameColor;
+    HMColor *descriptionColor = self.descriptionColor;
+    HMColor *backgroundColor = self.backgroundColor;
+
+    // converts the composite properties
+    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
+    UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
+
+    // sets the component's attributes
+    component.item = self;
+    component.data = self.data;
+    component.height = self.height;
+    component.icon = self.icon;
+    component.highlightedIcon = self.highlightedIcon;
+    component.name = self.name;
+    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont;
+    component.nameFontSize = self.nameFontSize;
+    component.description = self.description;
+    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont;
+    component.descriptionFontSize = self.descriptionFontSize;
+    component.selectable = self.selectable;
+    component.selectableName = self.selectableName;
+    component.accessoryTypeString = self.accessoryType;
+    component.accessoryValue = self.accessoryValue;
+    component.insertableRow = self.insertableRow;
+    component.deletableRow = self.deletableRow;
+    component.backgroundColor = convertedBackgroundColor;
+    component.selectableEdit = self.selectableEdit;
+    component.defaultValue = self.defaultValue;
+    component.secure = self.secure;
+    component.clearable = self.clearable;
+    component.returnType = self.returnType;
+    component.autocapitalizationType = self.autocapitalizationType;
+    component.returnDisablesEdit = self.returnDisablesEdit;
+    component.focusEdit = self.focusEdit;
+    component.readViewController = self.readViewController;
+    component.readNibName = self.readNibName;
+    component.editViewController = self.editViewController;
+    component.editNibName = self.editNibName;
+
+    // returns the component
+    return component;
+}
+
+- (UIView *)generateComponentColumnStringTableViewCell {
+    // creates the cell identifier
+    static NSString *cellIdentifier = @"Cell";
+
+    // creates the component
+    HMColumnStringTableViewCell *component = [[[HMColumnStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+
+    // retrieves the composite properties
+    HMColor *nameColor = self.nameColor;
+    HMColor *descriptionColor = self.descriptionColor;
+    HMColor *backgroundColor = self.backgroundColor;
+
+    // converts the composite properties
+    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
+    UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
+
+    // sets the component's attributes
+    component.item = self;
+    component.data = self.data;
+    component.height = self.height;
+    component.icon = self.icon;
+    component.highlightedIcon = self.highlightedIcon;
+    component.name = self.name;
+    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont;
+    component.nameFontSize = self.nameFontSize;
+    component.description = self.description;
+    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont;
+    component.descriptionFontSize = self.descriptionFontSize;
+    component.selectable = self.selectable;
+    component.selectableName = self.selectableName;
+    component.accessoryTypeString = self.accessoryType;
+    component.accessoryValue = self.accessoryValue;
+    component.insertableRow = self.insertableRow;
+    component.deletableRow = self.deletableRow;
+    component.backgroundColor = convertedBackgroundColor;
+    component.selectableEdit = self.selectableEdit;
+    component.defaultValue = self.defaultValue;
+    component.secure = self.secure;
+    component.clearable = self.clearable;
+    component.returnType = self.returnType;
+    component.autocapitalizationType = self.autocapitalizationType;
+    component.returnDisablesEdit = self.returnDisablesEdit;
+    component.focusEdit = self.focusEdit;
+    component.readViewController = self.readViewController;
+    component.readNibName = self.readNibName;
+    component.editViewController = self.editViewController;
+    component.editNibName = self.editNibName;
+
+    // returns the component
+    return component;
+}
+
+- (UIView *)generateComponentPlainMultilineStringTableViewCell {
+    // creates the cell identifier
+    static NSString *cellIdentifier = @"Cell";
+
+    // creates the component
+    HMPlainMultilineStringTableViewCell *component = [[[HMPlainMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+
+    // retrieves the composite properties
+    HMColor *nameColor = self.nameColor;
+    HMColor *descriptionColor = self.descriptionColor;
+    HMColor *backgroundColor = self.backgroundColor;
+
+    // converts the composite properties
+    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
+    UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
+
+    // sets the component's attributes
+    component.item = self;
+    component.data = self.data;
+    component.height = self.height;
+    component.icon = self.icon;
+    component.highlightedIcon = self.highlightedIcon;
+    component.name = self.name;
+    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont;
+    component.nameFontSize = self.nameFontSize;
+    component.description = self.description;
+    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont;
+    component.descriptionFontSize = self.descriptionFontSize;
+    component.selectable = self.selectable;
+    component.selectableName = self.selectableName;
+    component.accessoryTypeString = self.accessoryType;
+    component.accessoryValue = self.accessoryValue;
+    component.insertableRow = self.insertableRow;
+    component.deletableRow = self.deletableRow;
+    component.backgroundColor = convertedBackgroundColor;
+    component.selectableEdit = self.selectableEdit;
+    component.defaultValue = self.defaultValue;
+    component.secure = self.secure;
+    component.clearable = self.clearable;
+    component.returnType = self.returnType;
+    component.autocapitalizationType = self.autocapitalizationType;
+    component.returnDisablesEdit = self.returnDisablesEdit;
+    component.focusEdit = self.focusEdit;
+    component.readViewController = self.readViewController;
+    component.readNibName = self.readNibName;
+    component.editViewController = self.editViewController;
+    component.editNibName = self.editNibName;
+
+    // returns the component
+    return component;
+}
+
+- (UIView *)generateComponentColumnMultilineStringTableViewCell {
+    // creates the cell identifier
+    static NSString *cellIdentifier = @"Cell";
+
+    // creates the component
+    HMColumnMultilineStringTableViewCell *component = [[[HMColumnMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+
+    // retrieves the composite properties
+    HMColor *nameColor = self.nameColor;
+    HMColor *descriptionColor = self.descriptionColor;
+    HMColor *backgroundColor = self.backgroundColor;
+
+    // converts the composite properties
+    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
+    UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
+
+    // sets the component's attributes
+    component.item = self;
+    component.data = self.data;
+    component.height = self.height;
+    component.icon = self.icon;
+    component.highlightedIcon = self.highlightedIcon;
+    component.name = self.name;
+    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont;
+    component.nameFontSize = self.nameFontSize;
+    component.description = self.description;
+    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont;
+    component.descriptionFontSize = self.descriptionFontSize;
+    component.selectable = self.selectable;
+    component.selectableName = self.selectableName;
+    component.accessoryTypeString = self.accessoryType;
+    component.accessoryValue = self.accessoryValue;
+    component.insertableRow = self.insertableRow;
+    component.deletableRow = self.deletableRow;
+    component.backgroundColor = convertedBackgroundColor;
+    component.selectableEdit = self.selectableEdit;
+    component.defaultValue = self.defaultValue;
+    component.secure = self.secure;
+    component.clearable = self.clearable;
+    component.returnType = self.returnType;
+    component.autocapitalizationType = self.autocapitalizationType;
+    component.returnDisablesEdit = self.returnDisablesEdit;
+    component.focusEdit = self.focusEdit;
+    component.readViewController = self.readViewController;
+    component.readNibName = self.readNibName;
+    component.editViewController = self.editViewController;
+    component.editNibName = self.editNibName;
+
+    // returns the component
+    return component;
 }
 
 @end
