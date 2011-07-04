@@ -73,6 +73,8 @@
     HMColor *backgroundColor = self.backgroundColor;
 
     // converts the composite properties
+    UIImage *iconImage = [UIImage imageNamed:self.icon];
+    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon];
     UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
     UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
     UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
@@ -81,8 +83,6 @@
     component.item = self;
     component.data = self.data;
     component.height = self.height;
-    component.icon = self.icon;
-    component.highlightedIcon = self.highlightedIcon;
     component.name = self.name;
     component.nameColor = convertedNameColor;
     component.nameFont = self.nameFont;
@@ -98,6 +98,8 @@
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
     component.backgroundColor = convertedBackgroundColor;
+    component.imageView.image = iconImage;
+    component.imageView.highlightedImage = highlightedIconImage;
 
     // returns the component
     return component;
