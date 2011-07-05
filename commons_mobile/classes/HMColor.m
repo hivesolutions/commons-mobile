@@ -61,4 +61,12 @@
     return self;
 }
 
+- (UIColor *)UIColor {
+    // creates a ui color object
+    UIColor *color = [UIColor colorWithRed:self.red green:self.green blue:self.blue alpha:self.alpha];
+
+    // returns the color object
+    return color;
+}
+
 @end

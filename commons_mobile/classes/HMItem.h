@@ -68,8 +68,8 @@ typedef enum {
     HMColor *_descriptionColor;
     HMColor *_descriptionShadowColor;
     NSString *_defaultValue;
-    HMColor *_backgroundColor;
-    HMColor *_selectedBackgroundColor;
+    NSArray *_backgroundColors;
+    NSArray *_selectedBackgroundColors;
     float _height;
     BOOL _focusEdit;
     BOOL _mutableParent;
@@ -137,14 +137,20 @@ typedef enum {
 @property (retain) NSString *defaultValue;
 
 /**
- * The item's background color.
+ * List of hm color objects, representing
+ * the background colors, when more than
+ * one color is present, it represents
+ * a gradient.
  */
-@property (retain) HMColor *backgroundColor;
+@property (retain) NSArray *backgroundColors;
 
 /**
- * The item's selected background color.
+ * List of hm color objects, representing
+ * the selected background colors, when
+ * more than one color is present, it
+ * represents a gradient.
  */
-@property (retain) HMColor *selectedBackgroundColor;
+@property (retain) NSArray *selectedBackgroundColors;
 
 /**
  * The item's height.

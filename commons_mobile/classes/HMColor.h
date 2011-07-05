@@ -37,6 +37,7 @@
 @property (assign) float green;
 @property (assign) float blue;
 @property (assign) float alpha;
+@property (readonly) UIColor *UIColor;
 
 /**
  * Creates and returns a color object.
