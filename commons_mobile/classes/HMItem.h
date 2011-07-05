@@ -68,6 +68,8 @@ typedef enum {
     HMColor *_descriptionColor;
     HMColor *_descriptionShadowColor;
     NSString *_defaultValue;
+    HMColor *_borderColor;
+    HMColor *_selectedBorderColor;
     NSArray *_backgroundColors;
     NSArray *_selectedBackgroundColors;
     float _height;
@@ -135,6 +137,16 @@ typedef enum {
  * The item's default value.
  */
 @property (retain) NSString *defaultValue;
+
+/**
+ * The item's border color.
+ */
+@property (retain) HMColor *borderColor;
+
+/**
+ * The item's border color when it's selected.
+ */
+@property (retain) HMColor *selectedBorderColor;
 
 /**
  * List of hm color objects, representing

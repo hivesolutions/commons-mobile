@@ -39,6 +39,8 @@
 @synthesize descriptionColor = _descriptionColor;
 @synthesize descriptionShadowColor = _descriptionShadowColor;
 @synthesize defaultValue = _defaultValue;
+@synthesize borderColor = _borderColor;
+@synthesize selectedBorderColor = _selectedBorderColor;
 @synthesize backgroundColors = _backgroundColors;
 @synthesize selectedBackgroundColors = _selectedBackgroundColors;
 @synthesize height = _height;
@@ -102,6 +104,12 @@
     // releases the default value
     [_defaultValue release];
 
+    // releases the border color
+    [_borderColor release];
+
+    // releases the selected border color
+    [_selectedBorderColor release];
+
     // releases the background colors
     [_backgroundColors release];
 
@@ -118,6 +126,7 @@
 - (void)initStructures {
     // creates the colors
     HMColor *lightGrayColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+    HMColor *darkGrayColor = [HMColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
     HMColor *lightGreenColor = [HMColor colorWithRed:0.66 green:0.85 blue:0.36 alpha:1];
     HMColor *darkGreenColor = [HMColor colorWithRed:0.23 green:0.62 blue:0.27 alpha:1];
 
@@ -132,6 +141,7 @@
     self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
     self.descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
     self.descriptionColor = [HMColor blackColor];
+    self.borderColor = darkGrayColor;
     self.backgroundColors = backgroundColors;
     self.selectedBackgroundColors = selectedBackgroundColors;
     self.height = HM_ITEM_HEIGHT;

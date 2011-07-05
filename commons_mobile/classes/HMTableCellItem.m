@@ -87,12 +87,14 @@
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
+    component.borderColor = self.borderColor.UIColor;
+    component.selectedBorderColor = self.selectedBorderColor.UIColor;
+    component.backgroundColors = convertedBackgroundColors;
+    component.selectedBackgroundColors = convertedSelectedBackgroundColors;
     component.selectable = self.selectable;
     component.selectableName = self.selectableName;
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
-    component.backgroundColors = convertedBackgroundColors;
-    component.selectedBackgroundColors = convertedSelectedBackgroundColors;
     component.imageView.image = self.icon.UIImage;
     component.imageView.highlightedImage = self.highlightedIcon.UIImage;
 
