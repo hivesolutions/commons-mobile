@@ -110,35 +110,17 @@
     // creates the component
     HMPlainStringTableViewCell *component = [[[HMPlainStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
-    // retrieves the composite properties
-    HMFont *nameFont = self.nameFont;
-    HMColor *nameColor = self.nameColor;
-    HMFont *descriptionFont = self.descriptionFont;
-    HMColor *descriptionColor = self.descriptionColor;
-    NSArray *backgroundColors = self.backgroundColors;
-    NSArray *selectedBackgroundColors = self.selectedBackgroundColors;
-
-    // converts the composite properties
-    UIImage *iconImage = [UIImage imageNamed:self.icon.imageName];
-    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon.imageName];
-    UIFont *convertedNameFont = [UIFont fontWithName:nameFont.name size:nameFont.size];
-    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
-    UIFont *convertedDescriptionFont = [UIFont fontWithName:descriptionFont.name size:descriptionFont.size];
-    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
-
-    // initializes the converted background colors array
+    // initializes the converted background color arrays
     NSMutableArray *convertedBackgroundColors = [[NSMutableArray alloc] init];
+    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
 
     // converts the background colors
-    for(HMColor *backgroundColor in backgroundColors) {
+    for(HMColor *backgroundColor in self.backgroundColors) {
         [convertedBackgroundColors addObject:backgroundColor.UIColor];
     }
 
-    // initializes the converted selected background colors
-    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
-
     // converts the selected background colors
-    for(HMColor *selectedBackgroundColor in selectedBackgroundColors) {
+    for(HMColor *selectedBackgroundColor in self.selectedBackgroundColors) {
         [convertedSelectedBackgroundColors addObject:selectedBackgroundColor.UIColor];
     }
 
@@ -148,19 +130,19 @@
     component.height = self.height;
     component.secure = self.secure;
     component.name = self.name;
-    component.nameFont = convertedNameFont;
-    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont.UIFont;
+    component.nameColor = self.nameColor.UIColor;
     component.description = self.description;
-    component.descriptionFont = convertedDescriptionFont;
-    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont.UIFont;
+    component.descriptionColor = self.descriptionColor.UIColor;
     component.selectable = self.selectable;
     component.selectableName = self.selectableName;
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
     component.backgroundColors = convertedBackgroundColors;
     component.selectedBackgroundColors = convertedSelectedBackgroundColors;
-    component.imageView.image = iconImage;
-    component.imageView.highlightedImage = highlightedIconImage;
+    component.imageView.image = self.icon.UIImage;
+    component.imageView.highlightedImage = self.highlightedIcon.UIImage;
     component.selectableEdit = self.selectableEdit;
     component.defaultValue = self.defaultValue;
     component.clearable = self.clearable;
@@ -198,35 +180,17 @@
     // creates the component
     HMColumnStringTableViewCell *component = [[[HMColumnStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
-    // retrieves the composite properties
-    HMFont *nameFont = self.nameFont;
-    HMColor *nameColor = self.nameColor;
-    HMFont *descriptionFont = self.descriptionFont;
-    HMColor *descriptionColor = self.descriptionColor;
-    NSArray *backgroundColors = self.backgroundColors;
-    NSArray *selectedBackgroundColors = self.selectedBackgroundColors;
-
-    // converts the composite properties
-    UIImage *iconImage = [UIImage imageNamed:self.icon.imageName];
-    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon.imageName];
-    UIFont *convertedNameFont = [UIFont fontWithName:nameFont.name size:nameFont.size];
-    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
-    UIFont *convertedDescriptionFont = [UIFont fontWithName:descriptionFont.name size:descriptionFont.size];
-    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
-
-    // initializes the converted background colors array
+    // initializes the converted background color arrays
     NSMutableArray *convertedBackgroundColors = [[NSMutableArray alloc] init];
+    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
 
     // converts the background colors
-    for(HMColor *backgroundColor in backgroundColors) {
+    for(HMColor *backgroundColor in self.backgroundColors) {
         [convertedBackgroundColors addObject:backgroundColor.UIColor];
     }
 
-    // initializes the converted selected background colors
-    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
-
     // converts the selected background colors
-    for(HMColor *selectedBackgroundColor in selectedBackgroundColors) {
+    for(HMColor *selectedBackgroundColor in self.selectedBackgroundColors) {
         [convertedSelectedBackgroundColors addObject:selectedBackgroundColor.UIColor];
     }
 
@@ -236,19 +200,19 @@
     component.height = self.height;
     component.secure = self.secure;
     component.name = self.name;
-    component.nameFont = convertedNameFont;
-    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont.UIFont;
+    component.nameColor = self.nameColor.UIColor;
     component.description = self.description;
-    component.descriptionFont = convertedDescriptionFont;
-    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont.UIFont;
+    component.descriptionColor = self.descriptionColor.UIColor;
     component.selectable = self.selectable;
     component.selectableName = self.selectableName;
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
     component.backgroundColors = convertedBackgroundColors;
     component.selectedBackgroundColors = convertedSelectedBackgroundColors;
-    component.imageView.image = iconImage;
-    component.imageView.highlightedImage = highlightedIconImage;
+    component.imageView.image = self.icon.UIImage;
+    component.imageView.highlightedImage = self.highlightedIcon.UIImage;
     component.selectableEdit = self.selectableEdit;
     component.defaultValue = self.defaultValue;
     component.clearable = self.clearable;
@@ -286,35 +250,17 @@
     // creates the component
     HMPlainMultilineStringTableViewCell *component = [[[HMPlainMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
-    // retrieves the composite properties
-    HMFont *nameFont = self.nameFont;
-    HMColor *nameColor = self.nameColor;
-    HMFont *descriptionFont = self.descriptionFont;
-    HMColor *descriptionColor = self.descriptionColor;
-    NSArray *backgroundColors = self.backgroundColors;
-    NSArray *selectedBackgroundColors = self.selectedBackgroundColors;
-
-    // converts the composite properties
-    UIImage *iconImage = [UIImage imageNamed:self.icon.imageName];
-    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon.imageName];
-    UIFont *convertedNameFont = [UIFont fontWithName:nameFont.name size:nameFont.size];
-    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
-    UIFont *convertedDescriptionFont = [UIFont fontWithName:descriptionFont.name size:descriptionFont.size];
-    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
-
-    // initializes the converted background colors array
+    // initializes the converted background color arrays
     NSMutableArray *convertedBackgroundColors = [[NSMutableArray alloc] init];
+    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
 
     // converts the background colors
-    for(HMColor *backgroundColor in backgroundColors) {
+    for(HMColor *backgroundColor in self.backgroundColors) {
         [convertedBackgroundColors addObject:backgroundColor.UIColor];
     }
 
-    // initializes the converted selected background colors
-    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
-
     // converts the selected background colors
-    for(HMColor *selectedBackgroundColor in selectedBackgroundColors) {
+    for(HMColor *selectedBackgroundColor in self.selectedBackgroundColors) {
         [convertedSelectedBackgroundColors addObject:selectedBackgroundColor.UIColor];
     }
 
@@ -324,19 +270,19 @@
     component.height = self.height;
     component.secure = self.secure;
     component.name = self.name;
-    component.nameFont = convertedNameFont;
-    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont.UIFont;
+    component.nameColor = self.nameColor.UIColor;
     component.description = self.description;
-    component.descriptionFont = convertedDescriptionFont;
-    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont.UIFont;
+    component.descriptionColor = self.descriptionColor.UIColor;
     component.selectable = self.selectable;
     component.selectableName = self.selectableName;
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
     component.backgroundColors = convertedBackgroundColors;
     component.selectedBackgroundColors = convertedSelectedBackgroundColors;
-    component.imageView.image = iconImage;
-    component.imageView.highlightedImage = highlightedIconImage;
+    component.imageView.image = self.icon.UIImage;
+    component.imageView.highlightedImage = self.highlightedIcon.UIImage;
     component.selectableEdit = self.selectableEdit;
     component.defaultValue = self.defaultValue;
     component.clearable = self.clearable;
@@ -359,7 +305,6 @@
         component.editingAccessoryView = accessoryView;
     }
 
-
     // releases the objects
     [convertedSelectedBackgroundColors release];
     [convertedBackgroundColors release];
@@ -375,35 +320,17 @@
     // creates the component
     HMColumnMultilineStringTableViewCell *component = [[[HMColumnMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
-    // retrieves the composite properties
-    HMFont *nameFont = self.nameFont;
-    HMColor *nameColor = self.nameColor;
-    HMFont *descriptionFont = self.descriptionFont;
-    HMColor *descriptionColor = self.descriptionColor;
-    NSArray *backgroundColors = self.backgroundColors;
-    NSArray *selectedBackgroundColors = self.selectedBackgroundColors;
-
-    // converts the composite properties
-    UIImage *iconImage = [UIImage imageNamed:self.icon.imageName];
-    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon.imageName];
-    UIFont *convertedNameFont = [UIFont fontWithName:nameFont.name size:nameFont.size];
-    UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
-    UIFont *convertedDescriptionFont = [UIFont fontWithName:descriptionFont.name size:descriptionFont.size];
-    UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
-
-    // initializes the converted background colors array
+    // initializes the converted background color arrays
     NSMutableArray *convertedBackgroundColors = [[NSMutableArray alloc] init];
+    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
 
     // converts the background colors
-    for(HMColor *backgroundColor in backgroundColors) {
+    for(HMColor *backgroundColor in self.backgroundColors) {
         [convertedBackgroundColors addObject:backgroundColor.UIColor];
     }
 
-    // initializes the converted selected background colors
-    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
-
     // converts the selected background colors
-    for(HMColor *selectedBackgroundColor in selectedBackgroundColors) {
+    for(HMColor *selectedBackgroundColor in self.selectedBackgroundColors) {
         [convertedSelectedBackgroundColors addObject:selectedBackgroundColor.UIColor];
     }
 
@@ -413,19 +340,19 @@
     component.height = self.height;
     component.secure = self.secure;
     component.name = self.name;
-    component.nameFont = convertedNameFont;
-    component.nameColor = convertedNameColor;
+    component.nameFont = self.nameFont.UIFont;
+    component.nameColor = self.nameColor.UIColor;
     component.description = self.description;
-    component.descriptionFont = convertedDescriptionFont;
-    component.descriptionColor = convertedDescriptionColor;
+    component.descriptionFont = self.descriptionFont.UIFont;
+    component.descriptionColor = self.descriptionColor.UIColor;
     component.selectable = self.selectable;
     component.selectableName = self.selectableName;
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
     component.backgroundColors = convertedBackgroundColors;
     component.selectedBackgroundColors = convertedSelectedBackgroundColors;
-    component.imageView.image = iconImage;
-    component.imageView.highlightedImage = highlightedIconImage;
+    component.imageView.image = self.icon.UIImage;
+    component.imageView.highlightedImage = self.highlightedIcon.UIImage;
     component.selectableEdit = self.selectableEdit;
     component.defaultValue = self.defaultValue;
     component.clearable = self.clearable;

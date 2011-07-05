@@ -48,6 +48,12 @@
 @property (assign) float topCap;
 
 /**
+ * The ui image representation for
+ * this object.
+ */
+@property (readonly) UIImage *UIImage;
+
+/**
  * Creates an image representation.
  *
  * @param imageName: The image's name.

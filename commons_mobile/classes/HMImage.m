@@ -64,4 +64,18 @@
     [super dealloc];
 }
 
+- (UIImage *)UIImage {
+    // creates the ui image object
+    UIImage *image = [UIImage imageNamed:self.imageName];
+
+    // in case the image has caps
+    if(self.leftCap > 0 || self.topCap > 0) {
+        // retrieves a stretchable version of the image
+        image = [image stretchableImageWithLeftCapWidth:self.leftCap topCapHeight:self.topCap];
+    }
+
+    // returns the ui image object
+    return image;
+}
+
 @end

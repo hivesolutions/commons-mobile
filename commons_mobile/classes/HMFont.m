@@ -50,4 +50,12 @@
     [super dealloc];
 }
 
+- (UIFont *)UIFont {
+    // creates the ui font object
+    UIFont *font = [UIFont fontWithName:self.name size:self.size];
+
+    // returns the ui font object
+    return font;
+}
+
 @end

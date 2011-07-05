@@ -41,6 +41,19 @@
  */
 @property (assign) float size;
 
+/**
+ * Returns a ui font object that
+ * represents this object.
+ */
+@property (readonly) UIFont *UIFont;
+
+/**
+ * Retrieves a hm font object.
+ *
+ * @param fontName: The font's name.
+ * @param size: The font's size.
+ * @return: The hm font object.
+ */
 + (id)fontWithName:(NSString *)fontName size:(float)size;
 
 @end

@@ -58,44 +58,26 @@
 
     // in case the normal text color is defined
     if(self.textColorNormal) {
-        // converts the text color normal
-        UIColor *textColorNormal = [UIColor colorWithRed:self.textColorNormal.red green:self.textColorNormal.green blue:self.textColorNormal.blue alpha:self.textColorNormal.alpha];
-
         // sets the text color in the accessory view
-        accessoryView.textColorNormal = textColorNormal;
+        accessoryView.textColorNormal = self.textColorNormal.UIColor;
     }
 
     // in case the normal text color is defined
     if(self.textColorHighlighted) {
-        // converts the text color highlighted
-        UIColor *textColorHighlighted = [UIColor colorWithRed:self.textColorHighlighted.red green:self.textColorHighlighted.green blue:self.textColorHighlighted.blue alpha:self.textColorHighlighted.alpha];
-
         // sets the text color highlighted in the accessory view
-        accessoryView.textColorHighlighted = textColorHighlighted;
+        accessoryView.textColorHighlighted = self.textColorHighlighted.UIColor;
     }
 
     // in case the normal image is defined
     if(self.imageNormal) {
         // sets the normal image in the accessory view
-        accessoryView.imageNormal = [UIImage imageNamed:self.imageNormal.imageName];
-
-        // in case the image has a cap
-        if(self.imageNormal.leftCap > 0 || self.imageNormal.topCap > 0) {
-            // sets the stretchable version of the image
-            accessoryView.imageNormal = [accessoryView.imageNormal stretchableImageWithLeftCapWidth:self.imageNormal.leftCap topCapHeight:self.imageNormal.topCap];
-        }
+        accessoryView.imageNormal = self.imageNormal.UIImage;
     }
 
     // in case the highlighted image is defined
     if(self.imageHighlighted) {
         // sets the highlighted image in the accessory view
-        accessoryView.imageHighlighted = [UIImage imageNamed:self.imageHighlighted.imageName];
-
-        // in case the image has a cap
-        if(self.imageHighlighted.leftCap > 0 || self.imageHighlighted.topCap > 0) {
-            // sets the stretchable version of the image
-            accessoryView.imageHighlighted = [accessoryView.imageHighlighted stretchableImageWithLeftCapWidth:self.imageHighlighted.leftCap topCapHeight:self.imageHighlighted.topCap];
-        }
+        accessoryView.imageHighlighted = self.imageHighlighted.UIImage;
     }
 
     // returns the accessory view
