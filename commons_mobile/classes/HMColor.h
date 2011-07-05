@@ -65,6 +65,11 @@
 + (HMColor *)blackColor;
 
 /**
+ * Retrieves a clear color object.
+ */
++ (HMColor *)clearColor;
+
+/**
  * Constructor of the class.
  *
  * @param red A number from zero to

@@ -50,6 +50,11 @@
     return [HMColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 
++ (id)clearColor{
+    // returns the clear color
+    return [HMColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
+}
+
 - (id)initWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
     // sets the attributes
     self.red = red;
