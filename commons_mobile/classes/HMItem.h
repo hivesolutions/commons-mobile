@@ -60,16 +60,16 @@ typedef enum {
     HMItemState _transientState;
     NSString *_identifier;
     NSString *_name;
+    HMFont *_nameFont;
+    HMColor *_nameColor;
+    HMColor *_nameShadowColor;
     NSString *_description;
+    HMFont *_descriptionFont;
+    HMColor *_descriptionColor;
+    HMColor *_descriptionShadowColor;
     NSString *_defaultValue;
     HMColor *_backgroundColor;
     HMColor *_selectedBackgroundColor;
-    HMColor *_nameColor;
-    HMColor *_descriptionColor;
-    HMColor *_nameShadowColor;
-    HMColor *_descriptionShadowColor;
-    HMFont *_nameFont;
-    HMFont *_descriptionFont;
     float _height;
     BOOL _focusEdit;
     BOOL _mutableParent;
@@ -97,9 +97,39 @@ typedef enum {
 @property (retain) NSString *name;
 
 /**
+ * The item's name font.
+ */
+@property (retain) HMFont *nameFont;
+
+/**
+ * The item's name color.
+ */
+@property (retain) HMColor *nameColor;
+
+/**
+ * The item's name shadow color.
+ */
+@property (retain) HMColor *nameShadowColor;
+
+/**
  * The item's description.
  */
 @property (retain) NSString *description;
+
+/**
+ * The item's description font.
+ */
+@property (retain) HMFont *descriptionFont;
+
+/**
+ * The item's description color.
+ */
+@property (retain) HMColor *descriptionColor;
+
+/**
+ * The item's description shadow color.
+ */
+@property (retain) HMColor *descriptionShadowColor;
 
 /**
  * The item's default value.
@@ -115,36 +145,6 @@ typedef enum {
  * The item's selected background color.
  */
 @property (retain) HMColor *selectedBackgroundColor;
-
-/**
- * The item's name color.
- */
-@property (retain) HMColor *nameColor;
-
-/**
- * The item's name shadow color.
- */
-@property (retain) HMColor *nameShadowColor;
-
-/**
- * The item's description color.
- */
-@property (retain) HMColor *descriptionColor;
-
-/**
- * The item's description shadow color.
- */
-@property (retain) HMColor *descriptionShadowColor;
-
-/**
- * The item's name font.
- */
-@property (retain) HMFont *nameFont;
-
-/**
- * The item's description font.
- */
-@property (retain) HMFont *descriptionFont;
 
 /**
  * The item's height.

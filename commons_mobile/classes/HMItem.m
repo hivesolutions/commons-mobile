@@ -31,16 +31,16 @@
 @synthesize transientState = _transientState;
 @synthesize identifier = _identifier;
 @synthesize name = _name;
+@synthesize nameFont = _nameFont;
+@synthesize nameColor = _nameColor;
+@synthesize nameShadowColor = _nameShadowColor;
 @synthesize description = _description;
+@synthesize descriptionFont = _descriptionFont;
+@synthesize descriptionColor = _descriptionColor;
+@synthesize descriptionShadowColor = _descriptionShadowColor;
 @synthesize defaultValue = _defaultValue;
 @synthesize backgroundColor = _backgroundColor;
 @synthesize selectedBackgroundColor = _selectedBackgroundColor;
-@synthesize nameColor = _nameColor;
-@synthesize nameShadowColor = _nameShadowColor;
-@synthesize descriptionColor = _descriptionColor;
-@synthesize descriptionShadowColor = _descriptionShadowColor;
-@synthesize nameFont = _nameFont;
-@synthesize descriptionFont = _descriptionFont;
 @synthesize height = _height;
 @synthesize focusEdit = _focusEdit;
 @synthesize mutableParent = _mutableParent;
@@ -78,14 +78,8 @@
     // releases the name
     [_name release];
 
-    // releases the description
-    [_description release];
-
-    // releases the default value
-    [_defaultValue release];
-
-    // releases the background color
-    [_backgroundColor release];
+    // releases the name font
+    [_nameFont release];
 
     // releases the name color
     [_nameColor release];
@@ -93,17 +87,23 @@
     // releases the name shadow color
     [_nameShadowColor release];
 
+    // releases the description
+    [_description release];
+
+    // releases the description font
+    [_descriptionFont release];
+
     // releases the description color
     [_descriptionColor release];
 
     // releases the description shadow color
     [_descriptionShadowColor release];
 
-    // releases the name font
-    [_nameFont release];
+    // releases the default value
+    [_defaultValue release];
 
-    // releases the description font
-    [_descriptionFont release];
+    // releases the background color
+    [_backgroundColor release];
 
     // releases the selected background color
     [_selectedBackgroundColor release];
@@ -119,12 +119,12 @@
     // sets the default attributes
     self.state = HMItemStateExistent;
     self.transientState = HMItemStateExistent;
+    self.nameFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_NAME_FONT_SIZE];
+    self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
+    self.descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
+    self.descriptionColor = [HMColor colorWithRed:0 green:0 blue:0 alpha:1.0];
     self.backgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     self.selectedBackgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
-    self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
-    self.descriptionColor = [HMColor colorWithRed:0 green:0 blue:0 alpha:1.0];
-    self.nameFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_NAME_FONT_SIZE];
-    self.descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
     self.height = HM_ITEM_HEIGHT;
     self.focusEdit = NO;
     self.mutableParent = NO;
