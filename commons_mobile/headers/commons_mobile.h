@@ -46,3 +46,6 @@
 #import "../classes/HMTableCellItemCreationDelegate.h"
 #import "../classes/HMSearchItem.h"
 #import "../classes/HMConstantStringTableCellItem.h"
+#import "../classes/HMAccessoryItem.h"
+#import "../classes/HMImage.h"
+#import "../classes/HMFont.h"

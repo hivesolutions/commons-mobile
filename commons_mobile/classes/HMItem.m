@@ -41,8 +41,6 @@
 @synthesize descriptionShadowColor = _descriptionShadowColor;
 @synthesize nameFont = _nameFont;
 @synthesize descriptionFont = _descriptionFont;
-@synthesize nameFontSize = _nameFontSize;
-@synthesize descriptionFontSize = _descriptionFontSize;
 @synthesize height = _height;
 @synthesize focusEdit = _focusEdit;
 @synthesize mutableParent = _mutableParent;
@@ -125,10 +123,8 @@
     self.selectedBackgroundColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
     self.descriptionColor = [HMColor colorWithRed:0 green:0 blue:0 alpha:1.0];
-    self.nameFont = @"Helvetica-Bold";
-    self.descriptionFont = @"Helvetica-Bold";
-    self.nameFontSize = HM_ITEM_NAME_FONT_SIZE;
-    self.descriptionFontSize = HM_ITEM_DESCRIPTION_FONT_SIZE;
+    self.nameFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_NAME_FONT_SIZE];
+    self.descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
     self.height = HM_ITEM_HEIGHT;
     self.focusEdit = NO;
     self.mutableParent = NO;

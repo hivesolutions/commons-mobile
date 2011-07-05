@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46551C1213C31EAB0013B005 /* HMFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 46551C1013C31EAA0013B005 /* HMFont.h */; };
+		46551C1313C31EAB0013B005 /* HMFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 46551C1113C31EAA0013B005 /* HMFont.m */; };
+		4668738813C2261A00FC3531 /* HMAccessoryItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4668738613C2261600FC3531 /* HMAccessoryItem.h */; };
+		4668738913C2261A00FC3531 /* HMAccessoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4668738713C2261800FC3531 /* HMAccessoryItem.m */; };
+		466873AD13C2351400FC3531 /* HMImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 466873AB13C2351000FC3531 /* HMImage.h */; };
+		466873AE13C2351400FC3531 /* HMImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 466873AC13C2351200FC3531 /* HMImage.m */; };
 		56C3A0341358B40300CA92DA /* HMConstantStringTableCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C3A0321358B3FF00CA92DA /* HMConstantStringTableCellItem.h */; };
 		56C3A0351358B40300CA92DA /* HMConstantStringTableCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3A0331358B40100CA92DA /* HMConstantStringTableCellItem.m */; };
 		A57A09A61354B15C0098A56A /* HMTableCellItemCreationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A57A09A51354B15C0098A56A /* HMTableCellItemCreationDelegate.h */; };
@@ -49,6 +55,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46551C1013C31EAA0013B005 /* HMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMFont.h; path = classes/HMFont.h; sourceTree = "<group>"; };
+		46551C1113C31EAA0013B005 /* HMFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMFont.m; path = classes/HMFont.m; sourceTree = "<group>"; };
+		4668738613C2261600FC3531 /* HMAccessoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMAccessoryItem.h; path = classes/HMAccessoryItem.h; sourceTree = "<group>"; };
+		4668738713C2261800FC3531 /* HMAccessoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMAccessoryItem.m; path = classes/HMAccessoryItem.m; sourceTree = "<group>"; };
+		466873AB13C2351000FC3531 /* HMImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMImage.h; path = classes/HMImage.h; sourceTree = "<group>"; };
+		466873AC13C2351200FC3531 /* HMImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMImage.m; path = classes/HMImage.m; sourceTree = "<group>"; };
 		56C3A0321358B3FF00CA92DA /* HMConstantStringTableCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMConstantStringTableCellItem.h; path = classes/HMConstantStringTableCellItem.h; sourceTree = "<group>"; };
 		56C3A0331358B40100CA92DA /* HMConstantStringTableCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMConstantStringTableCellItem.m; path = classes/HMConstantStringTableCellItem.m; sourceTree = "<group>"; };
 		A57A09A51354B15C0098A56A /* HMTableCellItemCreationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMTableCellItemCreationDelegate.h; path = classes/HMTableCellItemCreationDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +127,12 @@
 		C20CDB7B133375B5008A4FE3 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				46551C1013C31EAA0013B005 /* HMFont.h */,
+				46551C1113C31EAA0013B005 /* HMFont.m */,
+				466873AB13C2351000FC3531 /* HMImage.h */,
+				466873AC13C2351200FC3531 /* HMImage.m */,
+				4668738613C2261600FC3531 /* HMAccessoryItem.h */,
+				4668738713C2261800FC3531 /* HMAccessoryItem.m */,
 				56C3A0321358B3FF00CA92DA /* HMConstantStringTableCellItem.h */,
 				56C3A0331358B40100CA92DA /* HMConstantStringTableCellItem.m */,
 				A5AC2ABD1353436C00BF05B9 /* HMTableMutableSectionItemGroup.h */,
@@ -269,6 +287,9 @@
 				C2F3A9B21355F71A00C98F45 /* HMBase64Util.h in Headers */,
 				56C3A0341358B40300CA92DA /* HMConstantStringTableCellItem.h in Headers */,
 				C236181213B2B149007A535B /* HMHexadecimalUtil.h in Headers */,
+				4668738813C2261A00FC3531 /* HMAccessoryItem.h in Headers */,
+				466873AD13C2351400FC3531 /* HMImage.h in Headers */,
+				46551C1213C31EAB0013B005 /* HMFont.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +356,9 @@
 				C2F3A9B31355F71A00C98F45 /* HMBase64Util.m in Sources */,
 				56C3A0351358B40300CA92DA /* HMConstantStringTableCellItem.m in Sources */,
 				C236181513B2B15F007A535B /* HMHexadecimalUtil.m in Sources */,
+				4668738913C2261A00FC3531 /* HMAccessoryItem.m in Sources */,
+				466873AE13C2351400FC3531 /* HMImage.m in Sources */,
+				46551C1313C31EAB0013B005 /* HMFont.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

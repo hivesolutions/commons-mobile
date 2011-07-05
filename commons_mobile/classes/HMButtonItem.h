@@ -26,11 +26,12 @@
 #import "Dependencies.h"
 
 #import "HMItem.h"
+#import "HMImage.h"
 
 @interface HMButtonItem : HMItem {
     @private
-    NSString *_icon;
-    NSString *_highlightedIcon;
+    HMImage *_icon;
+    HMImage *_highlightedIcon;
     BOOL _selectable;
     BOOL _selectableEdit;
     BOOL _selectableName;
@@ -43,12 +44,12 @@
 /**
  * The icon to be drawn in the button.
  */
-@property (retain) NSString *icon;
+@property (retain) HMImage *icon;
 
 /**
  * The color for highlighted button.
  */
-@property (retain) NSString *highlightedIcon;
+@property (retain) HMImage *highlightedIcon;
 
 /**
  * Indicates if the button is

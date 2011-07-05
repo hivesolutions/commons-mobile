@@ -27,6 +27,8 @@
 
 #import "HMButtonItem.h"
 #import "HMEditItem.h"
+#import "HMAccessoryItem.h"
+#import "HMFont.h"
 
 /**
  * Enumeration defining the various
@@ -40,8 +42,7 @@ typedef enum {
 
 @interface HMTableCellItem : HMButtonItem<HMEditItem> {
     @private
-    NSString *_accessoryType;
-    NSString *_accessoryValue;
+    HMAccessoryItem *_accessory;
     BOOL _indentable;
     BOOL _clearable;
     BOOL _insertableRow;
@@ -50,14 +51,9 @@ typedef enum {
 }
 
 /**
- * The accessory type to be used in the table cell.
+ * The table cell's accessory.
  */
-@property (retain) NSString *accessoryType;
-
-/**
- * The value displayed in the accessory.
- */
-@property (retain) NSString *accessoryValue;
+@property (retain) HMAccessoryItem *accessory;
 
 /**
  * Specifies if the cell is indentable.

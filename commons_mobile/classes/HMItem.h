@@ -26,6 +26,7 @@
 #import "Dependencies.h"
 
 #import "HMColor.h"
+#import "HMFont.h"
 
 /**
  * The name font size.
@@ -67,10 +68,8 @@ typedef enum {
     HMColor *_descriptionColor;
     HMColor *_nameShadowColor;
     HMColor *_descriptionShadowColor;
-    NSString *_nameFont;
-    NSString *_descriptionFont;
-    NSUInteger _nameFontSize;
-    NSUInteger _descriptionFontSize;
+    HMFont *_nameFont;
+    HMFont *_descriptionFont;
     float _height;
     BOOL _focusEdit;
     BOOL _mutableParent;
@@ -140,22 +139,12 @@ typedef enum {
 /**
  * The item's name font.
  */
-@property (retain) NSString *nameFont;
+@property (retain) HMFont *nameFont;
 
 /**
  * The item's description font.
  */
-@property (retain) NSString *descriptionFont;
-
-/**
- * The item's name font size.
- */
-@property (assign) NSUInteger nameFontSize;
-
-/**
- * The item's description font size.
- */
-@property (assign) NSUInteger descriptionFontSize;
+@property (retain) HMFont *descriptionFont;
 
 /**
  * The item's height.

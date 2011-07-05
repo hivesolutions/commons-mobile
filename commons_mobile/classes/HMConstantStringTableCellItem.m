@@ -52,14 +52,18 @@
     HMColumnConstantStringTableViewCell *component = [[[HMColumnConstantStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
     // retrieves the composite properties
+    HMFont *nameFont = self.nameFont;
     HMColor *nameColor = self.nameColor;
+    HMFont *descriptionFont = self.descriptionFont;
     HMColor *descriptionColor = self.descriptionColor;
     HMColor *backgroundColor = self.backgroundColor;
 
     // converts the composite properties
-    UIImage *iconImage = [UIImage imageNamed:self.icon];
-    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon];
+    UIImage *iconImage = [UIImage imageNamed:self.icon.imageName];
+    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon.imageName];
+    UIFont *convertedNameFont = [UIFont fontWithName:nameFont.name size:nameFont.size];
     UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIFont *convertedDescriptionFont = [UIFont fontWithName:descriptionFont.name size:descriptionFont.size];
     UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
     UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
 
@@ -68,17 +72,13 @@
     component.data = self.data;
     component.height = self.height;
     component.name = self.name;
+    component.nameFont = convertedNameFont;
     component.nameColor = convertedNameColor;
-    component.nameFont = self.nameFont;
-    component.nameFontSize = self.nameFontSize;
     component.description = self.description;
+    component.descriptionFont = convertedDescriptionFont;
     component.descriptionColor = convertedDescriptionColor;
-    component.descriptionFont = self.descriptionFont;
-    component.descriptionFontSize = self.descriptionFontSize;
     component.selectable = self.selectable;
     component.selectableName = self.selectableName;
-    component.accessoryTypeString = self.accessoryType;
-    component.accessoryValue = self.accessoryValue;
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
     component.backgroundColor = convertedBackgroundColor;
@@ -93,6 +93,16 @@
     component.readNibName = self.readNibName;
     component.editViewController = self.editViewController;
     component.editNibName = self.editNibName;
+
+    // in case the accessory is defined
+    if(self.accessory) {
+        // generates the accessory view
+        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
+
+        // sets the accessory view in the component
+        component.accessoryView = accessoryView;
+        component.editingAccessoryView = accessoryView;
+    }
 
     // returns the component
     return component;
@@ -106,14 +116,18 @@
     HMPlainConstantStringTableViewCell *component = [[[HMPlainConstantStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
     // retrieves the composite properties
+    HMFont *nameFont = self.nameFont;
     HMColor *nameColor = self.nameColor;
+    HMFont *descriptionFont = self.descriptionFont;
     HMColor *descriptionColor = self.descriptionColor;
     HMColor *backgroundColor = self.backgroundColor;
 
     // converts the composite properties
-    UIImage *iconImage = [UIImage imageNamed:self.icon];
-    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon];
+    UIImage *iconImage = [UIImage imageNamed:self.icon.imageName];
+    UIImage *highlightedIconImage = [UIImage imageNamed:self.highlightedIcon.imageName];
+    UIFont *convertedNameFont = [UIFont fontWithName:nameFont.name size:nameFont.size];
     UIColor *convertedNameColor = [UIColor colorWithRed:nameColor.red green:self.nameColor.green blue:nameColor.blue alpha:nameColor.alpha];
+    UIFont *convertedDescriptionFont = [UIFont fontWithName:descriptionFont.name size:descriptionFont.size];
     UIColor *convertedDescriptionColor = [UIColor colorWithRed:descriptionColor.red green:descriptionColor.green blue:descriptionColor.blue alpha:descriptionColor.alpha];
     UIColor *convertedBackgroundColor = [UIColor colorWithRed:backgroundColor.red green:backgroundColor.green blue:backgroundColor.blue alpha:backgroundColor.alpha];
 
@@ -122,17 +136,13 @@
     component.data = self.data;
     component.height = self.height;
     component.name = self.name;
+    component.nameFont = convertedNameFont;
     component.nameColor = convertedNameColor;
-    component.nameFont = self.nameFont;
-    component.nameFontSize = self.nameFontSize;
     component.description = self.description;
+    component.descriptionFont = convertedDescriptionFont;
     component.descriptionColor = convertedDescriptionColor;
-    component.descriptionFont = self.descriptionFont;
-    component.descriptionFontSize = self.descriptionFontSize;
     component.selectable = self.selectable;
     component.selectableName = self.selectableName;
-    component.accessoryTypeString = self.accessoryType;
-    component.accessoryValue = self.accessoryValue;
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
     component.backgroundColor = convertedBackgroundColor;
@@ -147,6 +157,16 @@
     component.readNibName = self.readNibName;
     component.editViewController = self.editViewController;
     component.editNibName = self.editNibName;
+
+    // in case the accessory is defined
+    if(self.accessory) {
+        // generates the accessory view
+        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
+
+        // sets the accessory view in the component
+        component.accessoryView = accessoryView;
+        component.editingAccessoryView = accessoryView;
+    }
 
     // returns the component
     return component;

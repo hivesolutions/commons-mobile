@@ -29,6 +29,7 @@
 #import "HMTableCellItem.h"
 #import "HMTableCellItemCreationDelegate.h"
 #import "HMConstantStringTableCellItem.h"
+#import "HMFont.h"
 
 @interface HMTableMutableSectionItemGroup : HMTableSectionItemGroup {
     @private
