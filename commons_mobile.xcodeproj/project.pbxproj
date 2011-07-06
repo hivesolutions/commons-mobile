@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4629743113C390D100F199DE /* HMPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4629742F13C390D000F199DE /* HMPoint.h */; };
+		4629743213C390D100F199DE /* HMPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4629743013C390D000F199DE /* HMPoint.m */; };
 		46551C1213C31EAB0013B005 /* HMFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 46551C1013C31EAA0013B005 /* HMFont.h */; };
 		46551C1313C31EAB0013B005 /* HMFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 46551C1113C31EAA0013B005 /* HMFont.m */; };
 		4668738813C2261A00FC3531 /* HMAccessoryItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4668738613C2261600FC3531 /* HMAccessoryItem.h */; };
@@ -55,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4629742F13C390D000F199DE /* HMPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMPoint.h; path = classes/HMPoint.h; sourceTree = "<group>"; };
+		4629743013C390D000F199DE /* HMPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMPoint.m; path = classes/HMPoint.m; sourceTree = "<group>"; };
 		46551C1013C31EAA0013B005 /* HMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMFont.h; path = classes/HMFont.h; sourceTree = "<group>"; };
 		46551C1113C31EAA0013B005 /* HMFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMFont.m; path = classes/HMFont.m; sourceTree = "<group>"; };
 		4668738613C2261600FC3531 /* HMAccessoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMAccessoryItem.h; path = classes/HMAccessoryItem.h; sourceTree = "<group>"; };
@@ -116,6 +120,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4629743413C390EE00F199DE /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				A5C27060133A3A3100AF1267 /* HMColor.h */,
+				A5C27061133A3A3200AF1267 /* HMColor.m */,
+				4629742F13C390D000F199DE /* HMPoint.h */,
+				4629743013C390D000F199DE /* HMPoint.m */,
+				46551C1013C31EAA0013B005 /* HMFont.h */,
+				46551C1113C31EAA0013B005 /* HMFont.m */,
+				466873AB13C2351000FC3531 /* HMImage.h */,
+				466873AC13C2351200FC3531 /* HMImage.m */,
+			);
+			name = Attributes;
+			sourceTree = "<group>";
+		};
+		4629743513C3910600F199DE /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				A5C2705B133A2DB000AF1267 /* HMLabelItem.h */,
+				A5C2705C133A2DB100AF1267 /* HMLabelItem.m */,
+				4668738613C2261600FC3531 /* HMAccessoryItem.h */,
+				4668738713C2261800FC3531 /* HMAccessoryItem.m */,
+				A5AC2ABD1353436C00BF05B9 /* HMTableMutableSectionItemGroup.h */,
+				A5AC2ABE1353436C00BF05B9 /* HMTableMutableSectionItemGroup.m */,
+				A5FA27511339056700DD428A /* HMTableSectionItemGroup.h */,
+				A5FA27521339056700DD428A /* HMTableSectionItemGroup.m */,
+				C23B5E581333BD8800CFC9AF /* HMNamedItemGroup.h */,
+				C23B5E591333BD8800CFC9AF /* HMNamedItemGroup.m */,
+				A5B34129132E3866009021FE /* HMItemGroup.h */,
+				A5B3412A132E3866009021FE /* HMItemGroup.m */,
+				56C3A0321358B3FF00CA92DA /* HMConstantStringTableCellItem.h */,
+				56C3A0331358B40100CA92DA /* HMConstantStringTableCellItem.m */,
+				C29E100913339F3800E9F77A /* HMStringTableCellItem.h */,
+				C29E100A13339F3800E9F77A /* HMStringTableCellItem.m */,
+				A5D25F371330EE1B00340936 /* HMTableCellItem.h */,
+				A5D25F381330EE1B00340936 /* HMTableCellItem.m */,
+				C23F3D39132E3411003155EE /* HMButtonItem.h */,
+				C23F3D3A132E3411003155EE /* HMButtonItem.m */,
+				C23F3D2E132E332E003155EE /* HMItem.h */,
+				C23F3D2F132E332E003155EE /* HMItem.m */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
 		C209222213955AB600CDE3F1 /* Extras */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,34 +175,8 @@
 		C20CDB7B133375B5008A4FE3 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
-				46551C1013C31EAA0013B005 /* HMFont.h */,
-				46551C1113C31EAA0013B005 /* HMFont.m */,
-				466873AB13C2351000FC3531 /* HMImage.h */,
-				466873AC13C2351200FC3531 /* HMImage.m */,
-				4668738613C2261600FC3531 /* HMAccessoryItem.h */,
-				4668738713C2261800FC3531 /* HMAccessoryItem.m */,
-				56C3A0321358B3FF00CA92DA /* HMConstantStringTableCellItem.h */,
-				56C3A0331358B40100CA92DA /* HMConstantStringTableCellItem.m */,
-				A5AC2ABD1353436C00BF05B9 /* HMTableMutableSectionItemGroup.h */,
-				A5AC2ABE1353436C00BF05B9 /* HMTableMutableSectionItemGroup.m */,
-				A5C27060133A3A3100AF1267 /* HMColor.h */,
-				A5C27061133A3A3200AF1267 /* HMColor.m */,
-				A5C2705B133A2DB000AF1267 /* HMLabelItem.h */,
-				A5C2705C133A2DB100AF1267 /* HMLabelItem.m */,
-				A5FA27511339056700DD428A /* HMTableSectionItemGroup.h */,
-				A5FA27521339056700DD428A /* HMTableSectionItemGroup.m */,
-				C23B5E581333BD8800CFC9AF /* HMNamedItemGroup.h */,
-				C23B5E591333BD8800CFC9AF /* HMNamedItemGroup.m */,
-				C29E100913339F3800E9F77A /* HMStringTableCellItem.h */,
-				C29E100A13339F3800E9F77A /* HMStringTableCellItem.m */,
-				A5D25F371330EE1B00340936 /* HMTableCellItem.h */,
-				A5D25F381330EE1B00340936 /* HMTableCellItem.m */,
-				A5B34129132E3866009021FE /* HMItemGroup.h */,
-				A5B3412A132E3866009021FE /* HMItemGroup.m */,
-				C23F3D39132E3411003155EE /* HMButtonItem.h */,
-				C23F3D3A132E3411003155EE /* HMButtonItem.m */,
-				C23F3D2E132E332E003155EE /* HMItem.h */,
-				C23F3D2F132E332E003155EE /* HMItem.m */,
+				4629743513C3910600F199DE /* Items */,
+				4629743413C390EE00F199DE /* Attributes */,
 			);
 			name = Structures;
 			sourceTree = "<group>";
@@ -290,6 +312,7 @@
 				4668738813C2261A00FC3531 /* HMAccessoryItem.h in Headers */,
 				466873AD13C2351400FC3531 /* HMImage.h in Headers */,
 				46551C1213C31EAB0013B005 /* HMFont.h in Headers */,
+				4629743113C390D100F199DE /* HMPoint.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +382,7 @@
 				4668738913C2261A00FC3531 /* HMAccessoryItem.m in Sources */,
 				466873AE13C2351400FC3531 /* HMImage.m in Sources */,
 				46551C1313C31EAB0013B005 /* HMFont.m in Sources */,
+				4629743213C390D100F199DE /* HMPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

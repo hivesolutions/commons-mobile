@@ -48,10 +48,16 @@
     // calls the super
     [super initStructures];
 
+    // creates the description color
+    HMColor *descriptionColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
+
+    // creates the description font
+    HMFont *descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:13];
+
     // creates the add table cell item
     HMConstantStringTableCellItem *addTableCellItem = [[HMConstantStringTableCellItem alloc] initWithIdentifier:[NSString stringWithFormat:@"%@_add_item", self.identifier]];
-    addTableCellItem.descriptionColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
-    addTableCellItem.descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:13];
+    addTableCellItem.descriptionColor = descriptionColor;
+    addTableCellItem.descriptionFont = descriptionFont;
     addTableCellItem.selectable = YES;
     addTableCellItem.selectableEdit = YES;
     addTableCellItem.indentable = YES;

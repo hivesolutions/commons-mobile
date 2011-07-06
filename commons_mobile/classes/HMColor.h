@@ -33,10 +33,34 @@
     float _alpha;
 }
 
+/**
+ * The color's red component,
+ * represented from zero to one.
+ */
 @property (assign) float red;
+
+/**
+ * The color's green component,
+ * represented from zero to one.
+ */
 @property (assign) float green;
+
+/**
+ * The color's blue component,
+ * represented from zero to one.
+ */
 @property (assign) float blue;
+
+/**
+ * The color's alpha component,
+ * represented from zero to one.
+ */
 @property (assign) float alpha;
+
+/**
+ * The ui color object that
+ * represents this object.
+ */
 @property (readonly) UIColor *UIColor;
 
 /**
@@ -55,17 +79,17 @@
 + (HMColor *)colorWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
 
 /**
- * Retrieves a white color object.
+ * Creates a white color object.
  */
 + (HMColor *)whiteColor;
 
 /**
- * Retrieves a black color object.
+ * Creates a black color object.
  */
 + (HMColor *)blackColor;
 
 /**
- * Retrieves a clear color object.
+ * Creates a clear color object.
  */
 + (HMColor *)clearColor;
 

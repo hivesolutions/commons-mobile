@@ -27,6 +27,7 @@
 
 #import "HMColor.h"
 #import "HMFont.h"
+#import "HMPoint.h"
 
 /**
  * The name font size.
@@ -54,6 +55,16 @@ typedef enum {
     HMItemStateOld
 } HMItemState;
 
+/**
+ * Enumeration defining the
+ * various text alignments.
+ */
+typedef enum {
+    HMTextAlignmentLeft = 1,
+    HMTextAlignmentCenter,
+    HMTextAlignmentRight
+} HMTextAlignment;
+
 @interface HMItem : NSObject {
     @private
     HMItemState _state;
@@ -63,10 +74,16 @@ typedef enum {
     HMFont *_nameFont;
     HMColor *_nameColor;
     HMColor *_nameShadowColor;
+    NSUInteger _nameNumberLines;
+    HMTextAlignment _nameAlignment;
+    HMPoint *_namePosition;
     NSString *_description;
     HMFont *_descriptionFont;
     HMColor *_descriptionColor;
     HMColor *_descriptionShadowColor;
+    NSUInteger _descriptionNumberLines;
+    HMTextAlignment _descriptionAlignment;
+    HMPoint *_descriptionPosition;
     NSString *_defaultValue;
     HMColor *_borderColor;
     HMColor *_selectedBorderColor;
@@ -114,6 +131,22 @@ typedef enum {
 @property (retain) HMColor *nameShadowColor;
 
 /**
+ * The item name's number of lines,
+ * with zero representing infinite lines.
+ */
+@property (assign) NSUInteger nameNumberLines;
+
+/**
+ * The item name's text alignment.
+ */
+@property (assign) HMTextAlignment nameAlignment;
+
+/**
+ * The item name's position.
+ */
+@property (retain) HMPoint *namePosition;
+
+/**
  * The item's description.
  */
 @property (retain) NSString *description;
@@ -132,6 +165,22 @@ typedef enum {
  * The item's description shadow color.
  */
 @property (retain) HMColor *descriptionShadowColor;
+
+/**
+ * The item description's number of lines,
+ * with zero representing infinite lines.
+ */
+@property (assign) NSUInteger descriptionNumberLines;
+
+/**
+ * The item description's text alignment.
+ */
+@property (assign) HMTextAlignment descriptionAlignment;
+
+/**
+ * The item description's position.
+ */
+@property (retain) HMPoint *descriptionPosition;
 
 /**
  * The item's default value.

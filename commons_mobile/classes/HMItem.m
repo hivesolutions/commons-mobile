@@ -34,10 +34,16 @@
 @synthesize nameFont = _nameFont;
 @synthesize nameColor = _nameColor;
 @synthesize nameShadowColor = _nameShadowColor;
+@synthesize nameNumberLines = _nameNumberLines;
+@synthesize nameAlignment = _nameAlignment;
+@synthesize namePosition = _namePosition;
 @synthesize description = _description;
 @synthesize descriptionFont = _descriptionFont;
 @synthesize descriptionColor = _descriptionColor;
 @synthesize descriptionShadowColor = _descriptionShadowColor;
+@synthesize descriptionNumberLines = _descriptionNumberLines;
+@synthesize descriptionAlignment = _descriptionAlignment;
+@synthesize descriptionPosition = _descriptionPosition;
 @synthesize defaultValue = _defaultValue;
 @synthesize borderColor = _borderColor;
 @synthesize selectedBorderColor = _selectedBorderColor;
@@ -124,9 +130,15 @@
 }
 
 - (void)initStructures {
+    // creates the fonts
+    HMFont *nameFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_NAME_FONT_SIZE];
+    HMFont *descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
+
     // creates the colors
+    HMColor *nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
+    HMColor *descriptionColor = [HMColor blackColor];
+    HMColor *borderColor = [HMColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
     HMColor *lightGrayColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
-    HMColor *darkGrayColor = [HMColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
     HMColor *lightGreenColor = [HMColor colorWithRed:0.66 green:0.85 blue:0.36 alpha:1];
     HMColor *darkGreenColor = [HMColor colorWithRed:0.23 green:0.62 blue:0.27 alpha:1];
 
@@ -137,11 +149,15 @@
     // sets the default attributes
     self.state = HMItemStateExistent;
     self.transientState = HMItemStateExistent;
-    self.nameFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_NAME_FONT_SIZE];
-    self.nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
-    self.descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
-    self.descriptionColor = [HMColor blackColor];
-    self.borderColor = darkGrayColor;
+    self.nameFont = nameFont;
+    self.nameColor = nameColor;
+    self.nameNumberLines = 1;
+    self.nameAlignment = HMTextAlignmentRight;
+    self.descriptionFont = descriptionFont;
+    self.descriptionColor = descriptionColor;
+    self.descriptionNumberLines = 1;
+    self.descriptionAlignment = HMTextAlignmentLeft;
+    self.borderColor = borderColor;
     self.backgroundColors = backgroundColors;
     self.selectedBackgroundColors = selectedBackgroundColors;
     self.height = HM_ITEM_HEIGHT;
