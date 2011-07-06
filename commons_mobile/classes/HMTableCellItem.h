@@ -139,6 +139,16 @@ typedef enum  {
 @property (assign) HMTableCellItemSeparatorStyle selectedBottomSeparatorStyle;
 
 /**
+ * Generates a table view cell component.
+ */
+- (UIView *)generateComponentTableViewCell;
+
+/**
+ * Generates a sub description table view cell component.
+ */
+- (UIView *)generateComponentSubDescriptionTableViewCell;
+
+/**
  * Converts the separator style from the item
  * representation to the component representation.
  *

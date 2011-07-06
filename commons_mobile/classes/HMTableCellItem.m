@@ -81,11 +81,95 @@
 }
 
 - (UIView *)generateComponent {
+    // initializes the component
+    UIView *component = nil;
+
+    // in case the sub description
+    if(self.subDescription) {
+        // generates a sub description table view cell
+        component = [self generateComponentSubDescriptionTableViewCell];
+    } else {
+        // generates a table view cell
+        component = [self generateTableViewCell];
+    }
+
+    // returns the component
+    return component;
+}
+
+- (UIView *)generateComponentTableViewCell {
     // creates the cell identifier
     static NSString *cellIdentifier = @"Cell";
 
     // creates the table view cell
     HMTableViewCell *component = [[[HMTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+
+    // sets the cell's attributes
+    component.item = self;
+    component.data = self.data;
+    component.height = self.height;
+    component.name = self.name;
+    component.nameFont = self.nameFont.UIFont;
+    component.nameColor = self.nameColor.UIColor;
+    component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
+    component.namePosition = [self convertPosition:self.namePosition];
+    component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
+    component.nameVerticalAnchor = [self convertVerticalAnchor:self.nameVerticalAnchor];
+    component.description = self.description;
+    component.descriptionFont = self.descriptionFont.UIFont;
+    component.descriptionColor = self.descriptionColor.UIColor;
+    component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
+    component.descriptionPosition = [self convertPosition:self.descriptionPosition];
+    component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
+    component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
+    component.borderColor = self.borderColor.UIColor;
+    component.backgroundTopSeparatorColor = self.topSeparatorColor.UIColor;
+    component.backgroundBottomSeparatorColor = self.bottomSeparatorColor.UIColor;
+    component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
+    component.selectedBackgroundBottomSeparatorColor = self.selectedBottomSeparatorColor.UIColor;
+    component.backgroundTopSeparatorStyle = [self convertSeparatorStyle:self.topSeparatorStyle];
+    component.backgroundBottomSeparatorStyle = [self convertSeparatorStyle:self.bottomSeparatorStyle];
+    component.selectedBackgroundTopSeparatorStyle = [self convertSeparatorStyle:self.selectedTopSeparatorStyle];
+    component.selectedBackgroundBottomSeparatorStyle = [self convertSeparatorStyle:self.selectedBottomSeparatorStyle];
+    component.selectedBorderColor = self.selectedBorderColor.UIColor;
+    component.backgroundColors = [self convertColors:self.backgroundColors];
+    component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
+    component.selectable = self.selectable;
+    component.selectableName = self.selectableName;
+    component.insertableRow = self.insertableRow;
+    component.deletableRow = self.deletableRow;
+    component.imageView.image = self.icon.UIImage;
+    component.imageView.highlightedImage = self.highlightedIcon.UIImage;
+
+    // in case the accessory is defined
+    if(self.accessory) {
+        // generates the accessory view
+        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
+
+        // sets the accessory view in the component
+        component.accessoryView = accessoryView;
+        component.editingAccessoryView = accessoryView;
+    }
+
+    // for each sub item
+    for(HMItem *subItem in self.subItems) {
+        // generates the sub item's component
+        UIView *subview = [subItem generateComponent];
+
+        // adds the component as a subview
+        [component.contentView addSubview:subview];
+    }
+
+    // returns the component
+    return component;
+}
+
+- (UIView *)generateComponentSubDescriptionTableViewCell {
+    // creates the cell identifier
+    static NSString *cellIdentifier = @"Cell";
+
+    // creates a sub description table view cell
+    HMSubDescriptionTableViewCell *component = [[[HMSubDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
 
     // sets the cell's attributes
     component.item = self;
