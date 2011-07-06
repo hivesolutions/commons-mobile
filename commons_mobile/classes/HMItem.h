@@ -40,6 +40,11 @@
 #define HM_ITEM_DESCRIPTION_FONT_SIZE 15
 
 /**
+ * The sub description font size.
+ */
+#define HM_ITEM_SUB_DESCRIPTION_FONT_SIZE 15
+
+/**
  * The item's height.
  */
 #define HM_ITEM_HEIGHT 50
@@ -65,8 +70,28 @@ typedef enum {
     HMTextAlignmentRight
 } HMTextAlignment;
 
+/**
+ * Enumeration defining the various
+ * horizontal anchors.
+ */
+typedef enum  {
+    HMItemHorizontalAnchorNone = 1,
+    HMItemHorizontalAnchorLeft,
+    HMItemHorizontalAnchorRight
+} HMItemHorizontalAnchor;
+
+/**
+ * Enumeration defining the various
+ * vertical anchors.
+ */
+typedef enum  {
+    HMItemVerticalAnchorNone = 1,
+    HMItemVerticalAnchorTop,
+    HMItemVerticalAnchorBottom
+} HMItemVerticalAnchor;
+
 @interface HMItem : NSObject {
-    @private
+@private
     HMItemState _state;
     HMItemState _transientState;
     NSString *_identifier;
@@ -77,6 +102,8 @@ typedef enum {
     NSUInteger _nameNumberLines;
     HMTextAlignment _nameAlignment;
     HMPoint *_namePosition;
+    HMItemHorizontalAnchor _nameHorizontalAnchor;
+    HMItemVerticalAnchor _nameVerticalAnchor;
     NSString *_description;
     HMFont *_descriptionFont;
     HMColor *_descriptionColor;
@@ -84,6 +111,17 @@ typedef enum {
     NSUInteger _descriptionNumberLines;
     HMTextAlignment _descriptionAlignment;
     HMPoint *_descriptionPosition;
+    HMItemHorizontalAnchor _descriptionHorizontalAnchor;
+    HMItemVerticalAnchor _descriptionVerticalAnchor;
+    NSString *_subDescription;
+    HMFont *_subDescriptionFont;
+    HMColor *_subDescriptionColor;
+    HMColor *_subDescriptionShadowColor;
+    NSUInteger _subDescriptionNumberLines;
+    HMTextAlignment _subDescriptionAlignment;
+    HMPoint *_subDescriptionPosition;
+    HMItemHorizontalAnchor _subDescriptionHorizontalAnchor;
+    HMItemVerticalAnchor _subDescriptionVerticalAnchor;
     NSString *_defaultValue;
     HMColor *_borderColor;
     HMColor *_selectedBorderColor;
@@ -147,6 +185,20 @@ typedef enum {
 @property (retain) HMPoint *namePosition;
 
 /**
+ * The item name's horizontal anchor,
+ * stating the name position's horizontal
+ * origin when it is defined.
+ */
+@property (assign) HMItemHorizontalAnchor nameHorizontalAnchor;
+
+/**
+ * The item name's vertical anchor, stating
+ * the name position's vertical origin when
+ * it is defined.
+ */
+@property (assign) HMItemVerticalAnchor nameVerticalAnchor;
+
+/**
  * The item's description.
  */
 @property (retain) NSString *description;
@@ -178,9 +230,77 @@ typedef enum {
 @property (assign) HMTextAlignment descriptionAlignment;
 
 /**
+ * The item description's horizontal
+ * anchor, stating the description
+ * position's horizontal origin when
+ * it is defined.
+ */
+@property (assign) HMItemHorizontalAnchor descriptionHorizontalAnchor;
+
+/**
+ * The item description's vertical
+ * anchor, stating the description
+ * position's vertical origin when
+ * it is defined.
+ */
+@property (assign) HMItemVerticalAnchor descriptionVerticalAnchor;
+
+/**
  * The item description's position.
  */
 @property (retain) HMPoint *descriptionPosition;
+
+/**
+ * The item's sub description.
+ */
+@property (retain) NSString *subDescription;
+
+/**
+ * The item's sub description font.
+ */
+@property (retain) HMFont *subDescriptionFont;
+
+/**
+ * The item's sub description color.
+ */
+@property (retain) HMColor *subDescriptionColor;
+
+/**
+ * The item's sub description shadow color.
+ */
+@property (retain) HMColor *subDescriptionShadowColor;
+
+/**
+ * The item sub description's number of lines,
+ * with zero representing infinite lines.
+ */
+@property (assign) NSUInteger subDescriptionNumberLines;
+
+/**
+ * The item sub description's text alignment.
+ */
+@property (assign) HMTextAlignment subDescriptionAlignment;
+
+/**
+ * The item sub description's horizontal
+ * anchor, stating the description
+ * position's horizontal origin when
+ * it is defined.
+ */
+@property (assign) HMItemHorizontalAnchor subDescriptionHorizontalAnchor;
+
+/**
+ * The item sub description's vertical
+ * anchor, stating the description
+ * position's vertical origin when
+ * it is defined.
+ */
+@property (assign) HMItemVerticalAnchor subDescriptionVerticalAnchor;
+
+/**
+ * The item sub description's position.
+ */
+@property (retain) HMPoint *subDescriptionPosition;
 
 /**
  * The item's default value.
@@ -252,5 +372,48 @@ typedef enum {
  * that represents this item.
  */
 - (UIView *)generateComponent;
+
+/**
+ * Converts the text alignment from the item
+ * representation to the component representation.
+ *
+ * @param textAlignment: The text alignment.
+ * @return The converted text alignment.
+ */
+- (UITextAlignment)convertTextAlignment:(HMTextAlignment)textAlignment;
+
+/**
+ * Converts the horizontal anchor from the item
+ * representation to the component representation.
+ *
+ * @param horizontalAnchor: The horizontal anchor.
+ * @return The converted horizontal anchor.
+ */
+- (int)convertHorizontalAnchor:(HMItemHorizontalAnchor)horizontalAnchor;
+
+/**
+ * Converts the vertical anchor from the item
+ * representation to the component representation.
+ *
+ * @param horizontalAnchor: The vertical anchor.
+ * @return The converted vertical anchor.
+ */
+- (int)convertVerticalAnchor:(HMItemVerticalAnchor)verticalAnchor;
+
+/**
+ * Converts a list of hm colors to a list of ui colors.
+ *
+ * @param colors: List of hm colors.
+ * @return List of ui colors.
+ */
+- (NSArray *)convertColors:(NSArray *)colors;
+
+/**
+ * Converts an hm point to a ns value with a cg point.
+ *
+ * @param position: The hm point object.
+ * @return The correspondent ns value with cg point.
+ */
+- (NSValue *)convertPosition:(HMPoint *)position;
 
 @end

@@ -37,6 +37,8 @@
 @synthesize nameNumberLines = _nameNumberLines;
 @synthesize nameAlignment = _nameAlignment;
 @synthesize namePosition = _namePosition;
+@synthesize nameHorizontalAnchor = _nameHorizontalAnchor;
+@synthesize nameVerticalAnchor = _nameVerticalAnchor;
 @synthesize description = _description;
 @synthesize descriptionFont = _descriptionFont;
 @synthesize descriptionColor = _descriptionColor;
@@ -44,6 +46,17 @@
 @synthesize descriptionNumberLines = _descriptionNumberLines;
 @synthesize descriptionAlignment = _descriptionAlignment;
 @synthesize descriptionPosition = _descriptionPosition;
+@synthesize descriptionHorizontalAnchor = _descriptionHorizontalAnchor;
+@synthesize descriptionVerticalAnchor = _descriptionVerticalAnchor;
+@synthesize subDescription = _subDescription;
+@synthesize subDescriptionFont = _subDescriptionFont;
+@synthesize subDescriptionColor = _subDescriptionColor;
+@synthesize subDescriptionShadowColor = _subDescriptionShadowColor;
+@synthesize subDescriptionNumberLines = _subDescriptionNumberLines;
+@synthesize subDescriptionAlignment = _subDescriptionAlignment;
+@synthesize subDescriptionPosition = _subDescriptionPosition;
+@synthesize subDescriptionHorizontalAnchor = _subDescriptionHorizontalAnchor;
+@synthesize subDescriptionVerticalAnchor = _subDescriptionVerticalAnchor;
 @synthesize defaultValue = _defaultValue;
 @synthesize borderColor = _borderColor;
 @synthesize selectedBorderColor = _selectedBorderColor;
@@ -107,6 +120,21 @@
     // releases the description shadow color
     [_descriptionShadowColor release];
 
+    // releases the sub description
+    [_subDescription release];
+
+    // releases the sub description font
+    [_subDescriptionFont release];
+
+    // releases the sub description color
+    [_subDescriptionColor release];
+
+    // releases the sub description shadow color
+    [_subDescriptionShadowColor release];
+
+    // releases the sub description position
+    [_subDescriptionPosition release];
+
     // releases the default value
     [_defaultValue release];
 
@@ -133,10 +161,12 @@
     // creates the fonts
     HMFont *nameFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_NAME_FONT_SIZE];
     HMFont *descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
+    HMFont *subDescriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_SUB_DESCRIPTION_FONT_SIZE];
 
     // creates the colors
     HMColor *nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
     HMColor *descriptionColor = [HMColor blackColor];
+    HMColor *subDescriptionColor = [HMColor blackColor];
     HMColor *borderColor = [HMColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
     HMColor *lightGrayColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     HMColor *lightGreenColor = [HMColor colorWithRed:0.66 green:0.85 blue:0.36 alpha:1];
@@ -153,10 +183,20 @@
     self.nameColor = nameColor;
     self.nameNumberLines = 1;
     self.nameAlignment = HMTextAlignmentRight;
+    self.nameHorizontalAnchor = HMItemHorizontalAnchorNone;
+    self.nameVerticalAnchor = HMItemVerticalAnchorNone;
     self.descriptionFont = descriptionFont;
     self.descriptionColor = descriptionColor;
     self.descriptionNumberLines = 1;
     self.descriptionAlignment = HMTextAlignmentLeft;
+    self.descriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
+    self.descriptionVerticalAnchor = HMItemVerticalAnchorNone;
+    self.subDescriptionFont = subDescriptionFont;
+    self.subDescriptionColor = subDescriptionColor;
+    self.subDescriptionNumberLines = 1;
+    self.subDescriptionAlignment = HMTextAlignmentLeft;
+    self.subDescriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
+    self.subDescriptionVerticalAnchor = HMItemVerticalAnchorNone;
     self.borderColor = borderColor;
     self.backgroundColors = backgroundColors;
     self.selectedBackgroundColors = selectedBackgroundColors;
@@ -171,6 +211,106 @@
 
 - (UIView *)generateComponent {
     return nil;
+}
+
+- (UITextAlignment)convertTextAlignment:(HMTextAlignment)textAlignment {
+    // for each text alignment
+    switch (textAlignment) {
+            // in case the alignment is to the left
+        case HMTextAlignmentLeft:
+            // returns the left alignment
+            return UITextAlignmentLeft;
+
+            // in case the alignment is to the right
+        case HMTextAlignmentRight:
+            // returns the right alignment
+            return UITextAlignmentRight;
+
+            // in case the alignment is to the center
+        case HMTextAlignmentCenter:
+            // returns the center alignment
+            return UITextAlignmentCenter;
+    }
+
+    // returns the default alignment
+    return UITextAlignmentLeft;
+}
+
+- (int)convertHorizontalAnchor:(HMItemHorizontalAnchor)horizontalAnchor {
+    // for each horizontal anchor
+    switch (horizontalAnchor) {
+            // in case the anchor is to the left
+        case HMItemHorizontalAnchorLeft:
+            // returns the left anchor
+            return HMTableViewCellHorizontalAnchorLeft;
+
+            // in case the anchor is to the right
+        case HMItemHorizontalAnchorRight:
+            // returns the right anchor
+            return HMTableViewCellHorizontalAnchorRight;
+
+            // in case the anchor is none
+        case HMItemHorizontalAnchorNone:
+            // returns the none anchor
+            return HMTableViewCellHorizontalAnchorNone;
+    }
+
+    // returns the default anchor
+    return HMTableViewCellHorizontalAnchorNone;
+}
+
+- (int)convertVerticalAnchor:(HMItemVerticalAnchor)verticalAnchor {
+    // for each vertical anchor
+    switch (verticalAnchor) {
+            // in case the anchor is to the top
+        case HMItemVerticalAnchorTop:
+            // returns the top anchor
+            return HMTableViewCellVerticalAnchorTop;
+
+            // in case the anchor is to the bottom
+        case HMItemVerticalAnchorBottom:
+            // returns the bottom anchor
+            return HMTableViewCellVerticalAnchorBottom;
+
+            // in case the anchor is none
+        case HMItemVerticalAnchorNone:
+            // returns the none anchor
+            return HMTableViewCellVerticalAnchorNone;
+    }
+
+    // returns the default anchor
+    return HMTableViewCellVerticalAnchorNone;
+}
+
+- (NSArray *)convertColors:(NSArray *)colors {
+    // initializes the converted colors array
+    NSMutableArray *convertedColors = [[[NSMutableArray alloc] init] autorelease];
+
+    // for each color
+    for(HMColor *color in colors) {
+        // converts it and adds it to the array
+        [convertedColors addObject:color.UIColor];
+    }
+
+    // returns the converted colors
+    return convertedColors;
+}
+
+- (NSValue *)convertPosition:(HMPoint *)position {
+    // in case no position was specified
+    if(!position) {
+        // returns nil
+        return nil;
+    }
+
+    // retrieves the position
+    CGPoint positionPoint = position.CGPoint;
+
+    // creates a value with the position
+    NSValue *positionPointValue = [NSValue valueWithCGPoint:positionPoint];
+
+    // returns the position point value
+    return positionPointValue;
 }
 
 @end

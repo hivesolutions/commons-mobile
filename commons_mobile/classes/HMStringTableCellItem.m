@@ -110,78 +110,6 @@
     // creates the component
     HMPlainStringTableViewCell *component = [[[HMPlainStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
-    // initializes the alignments
-    UITextAlignment nameAlignment = UITextAlignmentLeft;
-    UITextAlignment descriptionAlignment = UITextAlignmentLeft;
-
-    // for each name alignment
-    switch (self.nameAlignment) {
-            // in case the alignment is to the left
-        case HMTextAlignmentLeft:
-            // sets the alignment to the left
-            nameAlignment = UITextAlignmentLeft;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the right
-        case HMTextAlignmentRight:
-            // sets the alignment to the right
-            nameAlignment = UITextAlignmentRight;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the center
-        case HMTextAlignmentCenter:
-            // sets the alignment to the center
-            nameAlignment = UITextAlignmentCenter;
-
-            // breaks
-            break;
-    }
-
-    // for each name alignment
-    switch (self.descriptionAlignment) {
-            // in case the alignment is to the left
-        case HMTextAlignmentLeft:
-            // sets the alignment to the left
-            descriptionAlignment = UITextAlignmentLeft;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the right
-        case HMTextAlignmentRight:
-            // sets the alignment to the right
-            descriptionAlignment = UITextAlignmentRight;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the center
-        case HMTextAlignmentCenter:
-            // sets the alignment to the center
-            descriptionAlignment = UITextAlignmentCenter;
-
-            // breaks
-            break;
-    }
-
-    // initializes the converted background color arrays
-    NSMutableArray *convertedBackgroundColors = [[NSMutableArray alloc] init];
-    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
-
-    // converts the background colors
-    for(HMColor *backgroundColor in self.backgroundColors) {
-        [convertedBackgroundColors addObject:backgroundColor.UIColor];
-    }
-
-    // converts the selected background colors
-    for(HMColor *selectedBackgroundColor in self.selectedBackgroundColors) {
-        [convertedSelectedBackgroundColors addObject:selectedBackgroundColor.UIColor];
-    }
-
     // sets the cell's attributes
     component.item = self;
     component.data = self.data;
@@ -190,15 +118,17 @@
     component.name = self.name;
     component.nameFont = self.nameFont.UIFont;
     component.nameColor = self.nameColor.UIColor;
-    component.nameAlignment = nameAlignment;
+    component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
+    component.namePosition = [self convertPosition:self.namePosition];
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
-    component.descriptionAlignment = descriptionAlignment;
+    component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
+    component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.borderColor = self.borderColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
-    component.backgroundColors = convertedBackgroundColors;
-    component.selectedBackgroundColors = convertedSelectedBackgroundColors;
+    component.backgroundColors = [self convertColors:self.backgroundColors];
+    component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.imageView.image = self.icon.UIImage;
     component.imageView.highlightedImage = self.highlightedIcon.UIImage;
     component.selectable = self.selectable;
@@ -217,30 +147,6 @@
     component.editViewController = self.editViewController;
     component.editNibName = self.editNibName;
 
-    // in case the name position is not defined
-    if(self.namePosition) {
-        // retrieves the name position
-        CGPoint namePosition = self.namePosition.CGPoint;
-
-        // creates a value with the name position
-        NSValue *namePositionValue = [NSValue valueWithCGPoint:namePosition];
-
-        // sets the name position in the component
-        component.namePosition = namePositionValue;
-    }
-
-    // in case the description position is not defined
-    if(self.descriptionPosition) {
-        // retrieves the description position
-        CGPoint descriptionPosition = self.descriptionPosition.CGPoint;
-
-        // creates a value with the description position
-        NSValue *descriptionPositionValue = [NSValue valueWithCGPoint:descriptionPosition];
-
-        // sets thedescriptionname position in the component
-        component.descriptionPosition = descriptionPositionValue;
-    }
-
     // in case the accessory is defined
     if(self.accessory) {
         // generates the accessory view
@@ -250,10 +156,6 @@
         component.accessoryView = accessoryView;
         component.editingAccessoryView = accessoryView;
     }
-
-    // releases the objects
-    [convertedSelectedBackgroundColors release];
-    [convertedBackgroundColors release];
 
     // returns the component
     return component;
@@ -266,78 +168,6 @@
     // creates the component
     HMColumnStringTableViewCell *component = [[[HMColumnStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
-    // initializes the alignments
-    UITextAlignment nameAlignment = UITextAlignmentLeft;
-    UITextAlignment descriptionAlignment = UITextAlignmentLeft;
-
-    // for each name alignment
-    switch (self.nameAlignment) {
-            // in case the alignment is to the left
-        case HMTextAlignmentLeft:
-            // sets the alignment to the left
-            nameAlignment = UITextAlignmentLeft;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the right
-        case HMTextAlignmentRight:
-            // sets the alignment to the right
-            nameAlignment = UITextAlignmentRight;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the center
-        case HMTextAlignmentCenter:
-            // sets the alignment to the center
-            nameAlignment = UITextAlignmentCenter;
-
-            // breaks
-            break;
-    }
-
-    // for each name alignment
-    switch (self.descriptionAlignment) {
-            // in case the alignment is to the left
-        case HMTextAlignmentLeft:
-            // sets the alignment to the left
-            descriptionAlignment = UITextAlignmentLeft;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the right
-        case HMTextAlignmentRight:
-            // sets the alignment to the right
-            descriptionAlignment = UITextAlignmentRight;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the center
-        case HMTextAlignmentCenter:
-            // sets the alignment to the center
-            descriptionAlignment = UITextAlignmentCenter;
-
-            // breaks
-            break;
-    }
-
-    // initializes the converted background color arrays
-    NSMutableArray *convertedBackgroundColors = [[NSMutableArray alloc] init];
-    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
-
-    // converts the background colors
-    for(HMColor *backgroundColor in self.backgroundColors) {
-        [convertedBackgroundColors addObject:backgroundColor.UIColor];
-    }
-
-    // converts the selected background colors
-    for(HMColor *selectedBackgroundColor in self.selectedBackgroundColors) {
-        [convertedSelectedBackgroundColors addObject:selectedBackgroundColor.UIColor];
-    }
-
     // sets the cell's attributes
     component.item = self;
     component.data = self.data;
@@ -346,15 +176,17 @@
     component.name = self.name;
     component.nameFont = self.nameFont.UIFont;
     component.nameColor = self.nameColor.UIColor;
-    component.nameAlignment = nameAlignment;
+    component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
+    component.namePosition = [self convertPosition:self.namePosition];
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
-    component.descriptionAlignment = descriptionAlignment;
+    component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
+    component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.borderColor = self.borderColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
-    component.backgroundColors = convertedBackgroundColors;
-    component.selectedBackgroundColors = convertedSelectedBackgroundColors;
+    component.backgroundColors = [self convertColors:self.backgroundColors];
+    component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.imageView.image = self.icon.UIImage;
     component.imageView.highlightedImage = self.highlightedIcon.UIImage;
     component.selectable = self.selectable;
@@ -373,30 +205,6 @@
     component.editViewController = self.editViewController;
     component.editNibName = self.editNibName;
 
-    // in case the name position is not defined
-    if(self.namePosition) {
-        // retrieves the name position
-        CGPoint namePosition = self.namePosition.CGPoint;
-
-        // creates a value with the name position
-        NSValue *namePositionValue = [NSValue valueWithCGPoint:namePosition];
-
-        // sets the name position in the component
-        component.namePosition = namePositionValue;
-    }
-
-    // in case the description position is not defined
-    if(self.descriptionPosition) {
-        // retrieves the description position
-        CGPoint descriptionPosition = self.descriptionPosition.CGPoint;
-
-        // creates a value with the description position
-        NSValue *descriptionPositionValue = [NSValue valueWithCGPoint:descriptionPosition];
-
-        // sets thedescriptionname position in the component
-        component.descriptionPosition = descriptionPositionValue;
-    }
-
     // in case the accessory is defined
     if(self.accessory) {
         // generates the accessory view
@@ -406,10 +214,6 @@
         component.accessoryView = accessoryView;
         component.editingAccessoryView = accessoryView;
     }
-
-    // releases the objects
-    [convertedSelectedBackgroundColors release];
-    [convertedBackgroundColors release];
 
     // returns the component
     return component;
@@ -422,78 +226,6 @@
     // creates the component
     HMPlainMultilineStringTableViewCell *component = [[[HMPlainMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
-    // initializes the alignments
-    UITextAlignment nameAlignment = UITextAlignmentLeft;
-    UITextAlignment descriptionAlignment = UITextAlignmentLeft;
-
-    // for each name alignment
-    switch (self.nameAlignment) {
-            // in case the alignment is to the left
-        case HMTextAlignmentLeft:
-            // sets the alignment to the left
-            nameAlignment = UITextAlignmentLeft;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the right
-        case HMTextAlignmentRight:
-            // sets the alignment to the right
-            nameAlignment = UITextAlignmentRight;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the center
-        case HMTextAlignmentCenter:
-            // sets the alignment to the center
-            nameAlignment = UITextAlignmentCenter;
-
-            // breaks
-            break;
-    }
-
-    // for each name alignment
-    switch (self.descriptionAlignment) {
-            // in case the alignment is to the left
-        case HMTextAlignmentLeft:
-            // sets the alignment to the left
-            descriptionAlignment = UITextAlignmentLeft;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the right
-        case HMTextAlignmentRight:
-            // sets the alignment to the right
-            descriptionAlignment = UITextAlignmentRight;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the center
-        case HMTextAlignmentCenter:
-            // sets the alignment to the center
-            descriptionAlignment = UITextAlignmentCenter;
-
-            // breaks
-            break;
-    }
-
-    // initializes the converted background color arrays
-    NSMutableArray *convertedBackgroundColors = [[NSMutableArray alloc] init];
-    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
-
-    // converts the background colors
-    for(HMColor *backgroundColor in self.backgroundColors) {
-        [convertedBackgroundColors addObject:backgroundColor.UIColor];
-    }
-
-    // converts the selected background colors
-    for(HMColor *selectedBackgroundColor in self.selectedBackgroundColors) {
-        [convertedSelectedBackgroundColors addObject:selectedBackgroundColor.UIColor];
-    }
-
     // sets the cell's attributes
     component.item = self;
     component.data = self.data;
@@ -502,15 +234,17 @@
     component.name = self.name;
     component.nameFont = self.nameFont.UIFont;
     component.nameColor = self.nameColor.UIColor;
-    component.nameAlignment = nameAlignment;
+    component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
+    component.namePosition = [self convertPosition:self.namePosition];
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
-    component.descriptionAlignment = descriptionAlignment;
+    component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
+    component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.borderColor = self.borderColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
-    component.backgroundColors = convertedBackgroundColors;
-    component.selectedBackgroundColors = convertedSelectedBackgroundColors;
+    component.backgroundColors = [self convertColors:self.backgroundColors];
+    component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.imageView.image = self.icon.UIImage;
     component.imageView.highlightedImage = self.highlightedIcon.UIImage;
     component.selectable = self.selectable;
@@ -529,30 +263,6 @@
     component.editViewController = self.editViewController;
     component.editNibName = self.editNibName;
 
-    // in case the name position is not defined
-    if(self.namePosition) {
-        // retrieves the name position
-        CGPoint namePosition = self.namePosition.CGPoint;
-
-        // creates a value with the name position
-        NSValue *namePositionValue = [NSValue valueWithCGPoint:namePosition];
-
-        // sets the name position in the component
-        component.namePosition = namePositionValue;
-    }
-
-    // in case the description position is not defined
-    if(self.descriptionPosition) {
-        // retrieves the description position
-        CGPoint descriptionPosition = self.descriptionPosition.CGPoint;
-
-        // creates a value with the description position
-        NSValue *descriptionPositionValue = [NSValue valueWithCGPoint:descriptionPosition];
-
-        // sets thedescriptionname position in the component
-        component.descriptionPosition = descriptionPositionValue;
-    }
-
     // in case the accessory is defined
     if(self.accessory) {
         // generates the accessory view
@@ -562,10 +272,6 @@
         component.accessoryView = accessoryView;
         component.editingAccessoryView = accessoryView;
     }
-
-    // releases the objects
-    [convertedSelectedBackgroundColors release];
-    [convertedBackgroundColors release];
 
     // returns the component
     return component;
@@ -578,78 +284,6 @@
     // creates the component
     HMColumnMultilineStringTableViewCell *component = [[[HMColumnMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
 
-    // initializes the alignments
-    UITextAlignment nameAlignment = UITextAlignmentLeft;
-    UITextAlignment descriptionAlignment = UITextAlignmentLeft;
-
-    // for each name alignment
-    switch (self.nameAlignment) {
-            // in case the alignment is to the left
-        case HMTextAlignmentLeft:
-            // sets the alignment to the left
-            nameAlignment = UITextAlignmentLeft;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the right
-        case HMTextAlignmentRight:
-            // sets the alignment to the right
-            nameAlignment = UITextAlignmentRight;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the center
-        case HMTextAlignmentCenter:
-            // sets the alignment to the center
-            nameAlignment = UITextAlignmentCenter;
-
-            // breaks
-            break;
-    }
-
-    // for each name alignment
-    switch (self.descriptionAlignment) {
-            // in case the alignment is to the left
-        case HMTextAlignmentLeft:
-            // sets the alignment to the left
-            descriptionAlignment = UITextAlignmentLeft;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the right
-        case HMTextAlignmentRight:
-            // sets the alignment to the right
-            descriptionAlignment = UITextAlignmentRight;
-
-            // breaks
-            break;
-
-            // in case the alignment is to the center
-        case HMTextAlignmentCenter:
-            // sets the alignment to the center
-            descriptionAlignment = UITextAlignmentCenter;
-
-            // breaks
-            break;
-    }
-
-    // initializes the converted background color arrays
-    NSMutableArray *convertedBackgroundColors = [[NSMutableArray alloc] init];
-    NSMutableArray *convertedSelectedBackgroundColors = [[NSMutableArray alloc] init];
-
-    // converts the background colors
-    for(HMColor *backgroundColor in self.backgroundColors) {
-        [convertedBackgroundColors addObject:backgroundColor.UIColor];
-    }
-
-    // converts the selected background colors
-    for(HMColor *selectedBackgroundColor in self.selectedBackgroundColors) {
-        [convertedSelectedBackgroundColors addObject:selectedBackgroundColor.UIColor];
-    }
-
     // sets the cell's attributes
     component.item = self;
     component.data = self.data;
@@ -658,15 +292,17 @@
     component.name = self.name;
     component.nameFont = self.nameFont.UIFont;
     component.nameColor = self.nameColor.UIColor;
-    component.nameAlignment = nameAlignment;
+    component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
+    component.namePosition = [self convertPosition:self.namePosition];
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
-    component.descriptionAlignment = descriptionAlignment;
+    component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
+    component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.borderColor = self.borderColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
-    component.backgroundColors = convertedBackgroundColors;
-    component.selectedBackgroundColors = convertedSelectedBackgroundColors;
+    component.backgroundColors = [self convertColors:self.backgroundColors];
+    component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.imageView.image = self.icon.UIImage;
     component.imageView.highlightedImage = self.highlightedIcon.UIImage;
     component.selectable = self.selectable;
@@ -685,30 +321,6 @@
     component.editViewController = self.editViewController;
     component.editNibName = self.editNibName;
 
-    // in case the name position is not defined
-    if(self.namePosition) {
-        // retrieves the name position
-        CGPoint namePosition = self.namePosition.CGPoint;
-
-        // creates a value with the name position
-        NSValue *namePositionValue = [NSValue valueWithCGPoint:namePosition];
-
-        // sets the name position in the component
-        component.namePosition = namePositionValue;
-    }
-
-    // in case the description position is not defined
-    if(self.descriptionPosition) {
-        // retrieves the description position
-        CGPoint descriptionPosition = self.descriptionPosition.CGPoint;
-
-        // creates a value with the description position
-        NSValue *descriptionPositionValue = [NSValue valueWithCGPoint:descriptionPosition];
-
-        // sets thedescriptionname position in the component
-        component.descriptionPosition = descriptionPositionValue;
-    }
-
     // in case the accessory is defined
     if(self.accessory) {
         // generates the accessory view
@@ -718,10 +330,6 @@
         component.accessoryView = accessoryView;
         component.editingAccessoryView = accessoryView;
     }
-
-    // releases the objects
-    [convertedSelectedBackgroundColors release];
-    [convertedBackgroundColors release];
 
     // returns the component
     return component;
