@@ -90,7 +90,7 @@
         component = [self generateComponentSubDescriptionTableViewCell];
     } else {
         // generates a table view cell
-        component = [self generateTableViewCell];
+        component = [self generateComponentTableViewCell];
     }
 
     // returns the component

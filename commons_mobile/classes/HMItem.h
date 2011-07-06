@@ -134,7 +134,7 @@ typedef enum  {
     BOOL _focusEdit;
     BOOL _mutableParent;
     NSObject *_data;
-    NSArray *_subItems;
+    NSMutableArray *_subItems;
 }
 
 /**
@@ -381,7 +381,7 @@ typedef enum  {
  * This items that hierarchically
  * below this item.
  */
-@property (retain) NSArray *subItems;
+@property (retain) NSMutableArray *subItems;
 
 /**
  * Constructor of the class.
