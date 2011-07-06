@@ -31,9 +31,16 @@
 
 @interface HMAccessoryItem : HMItem {
     @private
+    HMPoint *_margin;
     HMImage *_imageNormal;
     HMImage *_imageHighlighted;
 }
+
+/**
+ * The accessory's margin from the
+ * top and left of the table cell.
+ */
+@property (retain) HMPoint *margin;
 
 /**
  * The accessory's normal image.

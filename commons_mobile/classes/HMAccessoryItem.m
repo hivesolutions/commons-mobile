@@ -27,10 +27,14 @@
 
 @implementation HMAccessoryItem
 
+@synthesize margin = _margin;
 @synthesize imageNormal = _imageNormal;
 @synthesize imageHighlighted = _imageHighlighted;
 
 - (void)dealloc {
+    // releases the margin
+    [_margin release];
+
     // releases the image normal
     [_imageNormal release];
 
@@ -50,6 +54,7 @@
     accessoryView.textColorNormal = self.descriptionColor.UIColor;
     accessoryView.textColorHighlighted = self.descriptionColorHighlighted.UIColor;
     accessoryView.textShadowColor = self.descriptionShadowColor.UIColor;
+    accessoryView.margin = [self convertPosition:self.margin];
 
     // in case the normal image is defined
     if(self.imageNormal) {
