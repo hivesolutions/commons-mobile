@@ -72,11 +72,15 @@
     component.nameColor = self.nameColor.UIColor;
     component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
+    component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
+    component.nameVerticalAnchor = [self convertVerticalAnchor:self.nameVerticalAnchor];
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
     component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
+    component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
+    component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
     component.borderColor = self.borderColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
     component.backgroundColors = [self convertColors:self.backgroundColors];
