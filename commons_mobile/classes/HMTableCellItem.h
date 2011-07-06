@@ -58,10 +58,10 @@ typedef enum  {
     HMTableCellItemDeleteActionType _deleteActionType;
     HMColor *_topSeparatorColor;
     HMColor *_bottomSeparatorColor;
-    HMColor *_selectedTopSeparatorColor;
-    HMColor *_selectedBottomSeparatorColor;
     HMTableCellItemSeparatorStyle _topSeparatorStyle;
     HMTableCellItemSeparatorStyle _bottomSeparatorStyle;
+    HMColor *_selectedTopSeparatorColor;
+    HMColor *_selectedBottomSeparatorColor;
     HMTableCellItemSeparatorStyle _selectedTopSeparatorStyle;
     HMTableCellItemSeparatorStyle _selectedBottomSeparatorStyle;
 }
@@ -109,16 +109,6 @@ typedef enum  {
 @property (retain) HMColor *bottomSeparatorColor;
 
 /**
- * The selected top separator color.
- */
-@property (retain) HMColor *selectedTopSeparatorColor;
-
-/**
- * The selected bottom separator color.
- */
-@property (retain) HMColor *selectedBottomSeparatorColor;
-
-/**
  * The top separator style.
  */
 @property (assign) HMTableCellItemSeparatorStyle topSeparatorStyle;
@@ -127,6 +117,16 @@ typedef enum  {
  * The bottom separator style.
  */
 @property (assign) HMTableCellItemSeparatorStyle bottomSeparatorStyle;
+
+/**
+ * The selected top separator color.
+ */
+@property (retain) HMColor *selectedTopSeparatorColor;
+
+/**
+ * The selected bottom separator color.
+ */
+@property (retain) HMColor *selectedBottomSeparatorColor;
 
 /**
  * The selected top separator style.

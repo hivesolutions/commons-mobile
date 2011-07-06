@@ -35,10 +35,10 @@
 @synthesize deleteActionType = _deleteActionType;
 @synthesize topSeparatorColor = _topSeparatorColor;
 @synthesize bottomSeparatorColor = _bottomSeparatorColor;
-@synthesize selectedTopSeparatorColor = _selectedTopSeparatorColor;
-@synthesize selectedBottomSeparatorColor = _selectedBottomSeparatorColor;
 @synthesize topSeparatorStyle = _topSeparatorStyle;
 @synthesize bottomSeparatorStyle = _bottomSeparatorStyle;
+@synthesize selectedTopSeparatorColor = _selectedTopSeparatorColor;
+@synthesize selectedBottomSeparatorColor = _selectedBottomSeparatorColor;
 @synthesize selectedTopSeparatorStyle = _selectedTopSeparatorStyle;
 @synthesize selectedBottomSeparatorStyle = _selectedBottomSeparatorStyle;
 
