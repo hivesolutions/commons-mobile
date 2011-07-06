@@ -128,7 +128,6 @@ typedef enum  {
     NSString *_defaultValue;
     HMColor *_borderColor;
     HMColor *_selectedBorderColor;
-    NSArray *_backgroundColors;
     NSArray *_selectedBackgroundColors;
     float _height;
     BOOL _focusEdit;
@@ -341,14 +340,6 @@ typedef enum  {
 
 /**
  * List of hm color objects, representing
- * the background colors, when more than
- * one color is present, it represents
- * a gradient.
- */
-@property (retain) NSArray *backgroundColors;
-
-/**
- * List of hm color objects, representing
  * the selected background colors, when
  * more than one color is present, it
  * represents a gradient.
@@ -394,6 +385,11 @@ typedef enum  {
  * Initializes the structures.
  */
 - (void)initStructures;
+
+/**
+ * Constructs the structures.
+ */
+- (void)constructStructures;
 
 /**
  * Generates the component

@@ -48,6 +48,14 @@
     // calls the super
     [super initStructures];
 
+    // sets the attributes
+    self.mutableParent = YES;
+}
+
+- (void)constructStructures {
+    // calls the super
+    [super constructStructures];
+
     // creates the description color
     HMColor *descriptionColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
 
@@ -68,11 +76,18 @@
     [self addItem:addTableCellItem];
 
     // sets the attributes
-    self.mutableParent = YES;
     self.addTableCellItem = addTableCellItem;
 
     // releases the objects
     [addTableCellItem release];
+}
+
+- (void)setSelectedBackgroundColors:(NSArray *)selectedBackgroundColors {
+    // calls the super
+    [super setSelectedBackgroundColors:selectedBackgroundColors];
+
+    // sets the selected background colors in the add table cell item
+    self.addTableCellItem.selectedBackgroundColors = selectedBackgroundColors;
 }
 
 - (Class)addViewController {

@@ -63,7 +63,6 @@
 @synthesize defaultValue = _defaultValue;
 @synthesize borderColor = _borderColor;
 @synthesize selectedBorderColor = _selectedBorderColor;
-@synthesize backgroundColors = _backgroundColors;
 @synthesize selectedBackgroundColors = _selectedBackgroundColors;
 @synthesize height = _height;
 @synthesize focusEdit = _focusEdit;
@@ -78,6 +77,9 @@
     // initializes the structures
     [self initStructures];
 
+    // constructs the structures
+    [self constructStructures];
+
     // returns the instance
     return self;
 }
@@ -91,6 +93,9 @@
 
     // initializes the structures
     [self initStructures];
+
+    // constructs the structures
+    [self constructStructures];
 
     // returns the instance
     return self;
@@ -157,9 +162,6 @@
     // releases the selected border color
     [_selectedBorderColor release];
 
-    // releases the background colors
-    [_backgroundColors release];
-
     // releases the selected background colors
     [_selectedBackgroundColors release];
 
@@ -181,16 +183,13 @@
 
     // creates the colors
     HMColor *nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
-    HMColor *descriptionColor = [HMColor blackColor];
-    HMColor *subDescriptionColor = [HMColor blackColor];
-    HMColor *borderColor = [HMColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
-    HMColor *lightGrayColor = [HMColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
-    HMColor *lightGreenColor = [HMColor colorWithRed:0.66 green:0.85 blue:0.36 alpha:1];
-    HMColor *darkGreenColor = [HMColor colorWithRed:0.23 green:0.62 blue:0.27 alpha:1];
+    HMColor *blackColor = [HMColor blackColor];
+    HMColor *whiteColor = [HMColor whiteColor];
+    HMColor *grayColor = [HMColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
 
     // creates the background colors
-    NSArray *backgroundColors = [[NSArray alloc] initWithObjects:lightGrayColor, nil];
-    NSArray *selectedBackgroundColors = [[NSArray alloc] initWithObjects:lightGreenColor, darkGreenColor, nil];
+    NSArray *backgroundColors = [[NSArray alloc] initWithObjects:whiteColor, nil];
+    NSArray *selectedBackgroundColors = [[NSArray alloc] initWithObjects:grayColor, nil];
 
     // creates the sub items array
     NSMutableArray *subItems = [[NSMutableArray alloc] init];
@@ -206,21 +205,20 @@
     self.nameHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.nameVerticalAnchor = HMItemVerticalAnchorNone;
     self.descriptionFont = descriptionFont;
-    self.descriptionColor = descriptionColor;
-    self.descriptionColorHighlighted = descriptionColor;
+    self.descriptionColor = blackColor;
+    self.descriptionColorHighlighted = blackColor;
     self.descriptionNumberLines = 1;
     self.descriptionAlignment = HMTextAlignmentLeft;
     self.descriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.descriptionVerticalAnchor = HMItemVerticalAnchorNone;
     self.subDescriptionFont = subDescriptionFont;
-    self.subDescriptionColor = subDescriptionColor;
-    self.subDescriptionColorHighlighted = subDescriptionColor;
+    self.subDescriptionColor = blackColor;
+    self.subDescriptionColorHighlighted = blackColor;
     self.subDescriptionNumberLines = 1;
     self.subDescriptionAlignment = HMTextAlignmentLeft;
     self.subDescriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.subDescriptionVerticalAnchor = HMItemVerticalAnchorNone;
-    self.borderColor = borderColor;
-    self.backgroundColors = backgroundColors;
+    self.borderColor = grayColor;
     self.selectedBackgroundColors = selectedBackgroundColors;
     self.height = HM_ITEM_HEIGHT;
     self.focusEdit = NO;
@@ -231,6 +229,9 @@
     [subItems release];
     [selectedBackgroundColors release];
     [backgroundColors release];
+}
+
+- (void)constructStructures {
 }
 
 - (UIView *)generateComponent {
