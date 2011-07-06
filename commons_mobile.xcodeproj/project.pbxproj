@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4618820113C493D20007A623 /* HMChartItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 461881FF13C493D10007A623 /* HMChartItem.h */; };
+		4618820213C493D20007A623 /* HMChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4618820013C493D20007A623 /* HMChartItem.m */; };
 		4629743113C390D100F199DE /* HMPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4629742F13C390D000F199DE /* HMPoint.h */; };
 		4629743213C390D100F199DE /* HMPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4629743013C390D000F199DE /* HMPoint.m */; };
 		46551C1213C31EAB0013B005 /* HMFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 46551C1013C31EAA0013B005 /* HMFont.h */; };
@@ -57,6 +59,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		461881FF13C493D10007A623 /* HMChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMChartItem.h; path = classes/HMChartItem.h; sourceTree = "<group>"; };
+		4618820013C493D20007A623 /* HMChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMChartItem.m; path = classes/HMChartItem.m; sourceTree = "<group>"; };
 		4629742F13C390D000F199DE /* HMPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMPoint.h; path = classes/HMPoint.h; sourceTree = "<group>"; };
 		4629743013C390D000F199DE /* HMPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMPoint.m; path = classes/HMPoint.m; sourceTree = "<group>"; };
 		46551C1013C31EAA0013B005 /* HMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMFont.h; path = classes/HMFont.h; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 		4629743513C3910600F199DE /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				461881FF13C493D10007A623 /* HMChartItem.h */,
+				4618820013C493D20007A623 /* HMChartItem.m */,
 				A5C2705B133A2DB000AF1267 /* HMLabelItem.h */,
 				A5C2705C133A2DB100AF1267 /* HMLabelItem.m */,
 				4668738613C2261600FC3531 /* HMAccessoryItem.h */,
@@ -313,6 +319,7 @@
 				466873AD13C2351400FC3531 /* HMImage.h in Headers */,
 				46551C1213C31EAB0013B005 /* HMFont.h in Headers */,
 				4629743113C390D100F199DE /* HMPoint.h in Headers */,
+				4618820113C493D20007A623 /* HMChartItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +390,7 @@
 				466873AE13C2351400FC3531 /* HMImage.m in Sources */,
 				46551C1313C31EAB0013B005 /* HMFont.m in Sources */,
 				4629743213C390D100F199DE /* HMPoint.m in Sources */,
+				4618820213C493D20007A623 /* HMChartItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

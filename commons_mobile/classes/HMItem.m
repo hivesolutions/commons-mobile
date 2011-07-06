@@ -69,6 +69,7 @@
 @synthesize focusEdit = _focusEdit;
 @synthesize mutableParent = _mutableParent;
 @synthesize data = _data;
+@synthesize subItems = _subItems;
 
 - (id)init {
     // invokes the parent constructor
@@ -164,6 +165,9 @@
 
     // releases the data
     [_data release];
+
+    // releases the sub items
+    [_subItems release];
 
     // calls the super
     [super dealloc];

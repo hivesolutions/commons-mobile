@@ -107,6 +107,15 @@
         component.editingAccessoryView = accessoryView;
     }
 
+    // for each sub item
+    for(HMItem *subItem in self.subItems) {
+        // generates the sub item's component
+        UIView *subview = [subItem generateComponent];
+
+        // adds the component as a subview
+        [component.contentView addSubview:subview];
+    }
+
     // returns the component
     return component;
 }
@@ -172,6 +181,15 @@
         // sets the accessory view in the component
         component.accessoryView = accessoryView;
         component.editingAccessoryView = accessoryView;
+    }
+
+    // for each sub item
+    for(HMItem *subItem in self.subItems) {
+        // generates the sub item's component
+        UIView *subview = [subItem generateComponent];
+
+        // adds the component as a subview
+        [component.contentView addSubview:subview];
     }
 
     // returns the component

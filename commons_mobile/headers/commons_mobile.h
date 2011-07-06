@@ -50,3 +50,4 @@
 #import "../classes/HMImage.h"
 #import "../classes/HMFont.h"
 #import "../classes/HMPoint.h"
+#import "../classes/HMChartItem.h"
