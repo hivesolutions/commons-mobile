@@ -40,6 +40,14 @@ typedef enum {
     HMTableCellItemDeleteActionTypeDelete
 } HMTableCellItemDeleteActionType;
 
+/**
+ * Enumeration defining the various separator styles.
+ */
+typedef enum  {
+    HMTableCellItemSeparatorStylePlain = 1,
+    HMTableCellItemSeparatorStyleDashed
+} HMTableCellItemSeparatorStyle;
+
 @interface HMTableCellItem : HMButtonItem<HMEditItem> {
     @private
     HMAccessoryItem *_accessory;
@@ -48,6 +56,14 @@ typedef enum {
     BOOL _insertableRow;
     BOOL _deletableRow;
     HMTableCellItemDeleteActionType _deleteActionType;
+    HMColor *_topSeparatorColor;
+    HMColor *_bottomSeparatorColor;
+    HMColor *_selectedTopSeparatorColor;
+    HMColor *_selectedBottomSeparatorColor;
+    HMTableCellItemSeparatorStyle _topSeparatorStyle;
+    HMTableCellItemSeparatorStyle _bottomSeparatorStyle;
+    HMTableCellItemSeparatorStyle _selectedTopSeparatorStyle;
+    HMTableCellItemSeparatorStyle _selectedBottomSeparatorStyle;
 }
 
 /**
@@ -81,5 +97,54 @@ typedef enum {
  * is performed over this table cell.
  */
 @property (assign) HMTableCellItemDeleteActionType deleteActionType;
+
+/**
+ * The top separator color.
+ */
+@property (retain) HMColor *topSeparatorColor;
+
+/**
+ * The bottom separator color.
+ */
+@property (retain) HMColor *bottomSeparatorColor;
+
+/**
+ * The selected top separator color.
+ */
+@property (retain) HMColor *selectedTopSeparatorColor;
+
+/**
+ * The selected bottom separator color.
+ */
+@property (retain) HMColor *selectedBottomSeparatorColor;
+
+/**
+ * The top separator style.
+ */
+@property (assign) HMTableCellItemSeparatorStyle topSeparatorStyle;
+
+/**
+ * The bottom separator style.
+ */
+@property (assign) HMTableCellItemSeparatorStyle bottomSeparatorStyle;
+
+/**
+ * The selected top separator style.
+ */
+@property (assign) HMTableCellItemSeparatorStyle selectedTopSeparatorStyle;
+
+/**
+ * The selected bottom separator style.
+ */
+@property (assign) HMTableCellItemSeparatorStyle selectedBottomSeparatorStyle;
+
+/**
+ * Converts the separator style from the item
+ * representation to the component representation.
+ *
+ * @param separatorStyle: The separator style.
+ * @return The converted separator style.
+ */
+- (int)convertSeparatorStyle:(HMTableCellItemSeparatorStyle)separatorStyle;
 
 @end

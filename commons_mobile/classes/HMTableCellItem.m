@@ -33,10 +33,30 @@
 @synthesize insertableRow = _insertableRow;
 @synthesize deletableRow = _deletableRow;
 @synthesize deleteActionType = _deleteActionType;
+@synthesize topSeparatorColor = _topSeparatorColor;
+@synthesize bottomSeparatorColor = _bottomSeparatorColor;
+@synthesize selectedTopSeparatorColor = _selectedTopSeparatorColor;
+@synthesize selectedBottomSeparatorColor = _selectedBottomSeparatorColor;
+@synthesize topSeparatorStyle = _topSeparatorStyle;
+@synthesize bottomSeparatorStyle = _bottomSeparatorStyle;
+@synthesize selectedTopSeparatorStyle = _selectedTopSeparatorStyle;
+@synthesize selectedBottomSeparatorStyle = _selectedBottomSeparatorStyle;
 
 - (void)dealloc {
     // releases the acessory
     [_accessory release];
+
+    // releases the top separator color
+    [_topSeparatorColor release];
+
+    // releases the bottom separator color
+    [_bottomSeparatorColor release];
+
+    // releases the selected top separator color
+    [_selectedTopSeparatorColor release];
+
+    // releases the selected bottom separator color
+    [_selectedBottomSeparatorColor release];
 
     // calls the super
     [super dealloc];
@@ -54,6 +74,10 @@
     self.insertableRow = NO;
     self.deletableRow = NO;
     self.deleteActionType = HMTableCellItemDeleteActionTypeNone;
+    self.topSeparatorStyle = HMTableCellItemSeparatorStylePlain;
+    self.bottomSeparatorStyle = HMTableCellItemSeparatorStylePlain;
+    self.selectedTopSeparatorStyle = HMTableCellItemSeparatorStylePlain;
+    self.selectedBottomSeparatorStyle = HMTableCellItemSeparatorStylePlain;
 }
 
 - (UIView *)generateComponent {
@@ -82,6 +106,14 @@
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
     component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
     component.borderColor = self.borderColor.UIColor;
+    component.backgroundTopSeparatorColor = self.topSeparatorColor.UIColor;
+    component.backgroundBottomSeparatorColor = self.bottomSeparatorColor.UIColor;
+    component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
+    component.selectedBackgroundBottomSeparatorColor = self.selectedBottomSeparatorColor.UIColor;
+    component.backgroundTopSeparatorStyle = [self convertSeparatorStyle:self.topSeparatorStyle];
+    component.backgroundBottomSeparatorStyle = [self convertSeparatorStyle:self.bottomSeparatorStyle];
+    component.selectedBackgroundTopSeparatorStyle = [self convertSeparatorStyle:self.selectedTopSeparatorStyle];
+    component.selectedBackgroundBottomSeparatorStyle = [self convertSeparatorStyle:self.selectedBottomSeparatorStyle];
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
     component.backgroundColors = [self convertColors:self.backgroundColors];
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
@@ -104,6 +136,24 @@
 
     // returns the component
     return component;
+}
+
+- (int)convertSeparatorStyle:(HMTableCellItemSeparatorStyle)separatorStyle {
+    // for each separator style
+    switch (separatorStyle) {
+        // in case the style is plain
+        case HMTableCellItemSeparatorStylePlain:
+            // returns the plain style
+            return HMTableViewCellBackgroundViewSeparatorStylePlain;
+
+        // in case the style is dashed
+        case HMTableCellItemSeparatorStyleDashed:
+            // returns the dashed style
+            return HMTableViewCellBackgroundViewSeparatorStyleDashed;
+    }
+
+    // returns the default style
+    return HMTableViewCellBackgroundViewSeparatorStylePlain;
 }
 
 @end
