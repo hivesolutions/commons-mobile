@@ -192,6 +192,9 @@
     NSArray *backgroundColors = [[NSArray alloc] initWithObjects:lightGrayColor, nil];
     NSArray *selectedBackgroundColors = [[NSArray alloc] initWithObjects:lightGreenColor, darkGreenColor, nil];
 
+    // creates the sub items array
+    NSMutableArray *subItems = [[NSMutableArray alloc] init];
+
     // sets the default attributes
     self.state = HMItemStateExistent;
     self.transientState = HMItemStateExistent;
@@ -222,8 +225,10 @@
     self.height = HM_ITEM_HEIGHT;
     self.focusEdit = NO;
     self.mutableParent = NO;
+    self.subItems = subItems;
 
     // releases the objects
+    [subItems release];
     [selectedBackgroundColors release];
     [backgroundColors release];
 }
