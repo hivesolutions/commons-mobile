@@ -31,21 +31,9 @@
 
 @interface HMAccessoryItem : HMItem {
     @private
-    HMColor *_textColorNormal;
-    HMColor *_textColorHighlighted;
     HMImage *_imageNormal;
     HMImage *_imageHighlighted;
 }
-
-/**
- * The accessory's text color when it's not selected.
- */
-@property (retain) HMColor *textColorNormal;
-
-/**
- * The accessory's text color when it's selected.
- */
-@property (retain) HMColor *textColorHighlighted;
 
 /**
  * The accessory's normal image.

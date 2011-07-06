@@ -98,6 +98,7 @@ typedef enum  {
     NSString *_name;
     HMFont *_nameFont;
     HMColor *_nameColor;
+    HMColor *_nameColorHighlighted;
     HMColor *_nameShadowColor;
     NSUInteger _nameNumberLines;
     HMTextAlignment _nameAlignment;
@@ -107,6 +108,7 @@ typedef enum  {
     NSString *_description;
     HMFont *_descriptionFont;
     HMColor *_descriptionColor;
+    HMColor *_descriptionColorHighlighted;
     HMColor *_descriptionShadowColor;
     NSUInteger _descriptionNumberLines;
     HMTextAlignment _descriptionAlignment;
@@ -116,6 +118,7 @@ typedef enum  {
     NSString *_subDescription;
     HMFont *_subDescriptionFont;
     HMColor *_subDescriptionColor;
+    HMColor *_subDescriptionColorHighlighted;
     HMColor *_subDescriptionShadowColor;
     NSUInteger _subDescriptionNumberLines;
     HMTextAlignment _subDescriptionAlignment;
@@ -162,6 +165,12 @@ typedef enum  {
  * The item's name color.
  */
 @property (retain) HMColor *nameColor;
+
+/**
+ * The item's name color when the
+ * item is highlighted.
+ */
+@property (retain) HMColor *nameColorHighlighted;
 
 /**
  * The item's name shadow color.
@@ -214,6 +223,12 @@ typedef enum  {
 @property (retain) HMColor *descriptionColor;
 
 /**
+ * The item's description color when the
+ * item is highlighted.
+ */
+@property (retain) HMColor *descriptionColorHighlighted;
+
+/**
  * The item's description shadow color.
  */
 @property (retain) HMColor *descriptionShadowColor;
@@ -264,6 +279,12 @@ typedef enum  {
  * The item's sub description color.
  */
 @property (retain) HMColor *subDescriptionColor;
+
+/**
+ * The item's sub description color when the
+ * item is highlighted.
+ */
+@property (retain) HMColor *subDescriptionColorHighlighted;
 
 /**
  * The item's sub description shadow color.

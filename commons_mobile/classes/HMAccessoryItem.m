@@ -27,18 +27,10 @@
 
 @implementation HMAccessoryItem
 
-@synthesize textColorNormal = _textColorNormal;
-@synthesize textColorHighlighted = _textColorHighlighted;
 @synthesize imageNormal = _imageNormal;
 @synthesize imageHighlighted = _imageHighlighted;
 
 - (void)dealloc {
-    // releases the text color normal
-    [_textColorNormal release];
-
-    // releases the text color highlighted
-    [_textColorHighlighted release];
-
     // releases the image normal
     [_imageNormal release];
 
@@ -53,20 +45,11 @@
     // creates the accessory view
     HMAccessoryView *accessoryView = [[[HMAccessoryView alloc] init] autorelease];
 
-    // sets the description in the accessory view
+    // sets the accessory view's text attributes
     accessoryView.text = self.description;
-
-    // in case the normal text color is defined
-    if(self.textColorNormal) {
-        // sets the text color in the accessory view
-        accessoryView.textColorNormal = self.textColorNormal.UIColor;
-    }
-
-    // in case the normal text color is defined
-    if(self.textColorHighlighted) {
-        // sets the text color highlighted in the accessory view
-        accessoryView.textColorHighlighted = self.textColorHighlighted.UIColor;
-    }
+    accessoryView.textColorNormal = self.descriptionColor.UIColor;
+    accessoryView.textColorHighlighted = self.descriptionColorHighlighted.UIColor;
+    accessoryView.textShadowColor = self.descriptionShadowColor.UIColor;
 
     // in case the normal image is defined
     if(self.imageNormal) {

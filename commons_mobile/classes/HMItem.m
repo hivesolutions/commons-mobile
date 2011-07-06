@@ -33,6 +33,7 @@
 @synthesize name = _name;
 @synthesize nameFont = _nameFont;
 @synthesize nameColor = _nameColor;
+@synthesize nameColorHighlighted = _nameColorHighlighted;
 @synthesize nameShadowColor = _nameShadowColor;
 @synthesize nameNumberLines = _nameNumberLines;
 @synthesize nameAlignment = _nameAlignment;
@@ -42,6 +43,7 @@
 @synthesize description = _description;
 @synthesize descriptionFont = _descriptionFont;
 @synthesize descriptionColor = _descriptionColor;
+@synthesize descriptionColorHighlighted = _descriptionColorHighlighted;
 @synthesize descriptionShadowColor = _descriptionShadowColor;
 @synthesize descriptionNumberLines = _descriptionNumberLines;
 @synthesize descriptionAlignment = _descriptionAlignment;
@@ -51,6 +53,7 @@
 @synthesize subDescription = _subDescription;
 @synthesize subDescriptionFont = _subDescriptionFont;
 @synthesize subDescriptionColor = _subDescriptionColor;
+@synthesize subDescriptionColorHighlighted = _subDescriptionColorHighlighted;
 @synthesize subDescriptionShadowColor = _subDescriptionShadowColor;
 @synthesize subDescriptionNumberLines = _subDescriptionNumberLines;
 @synthesize subDescriptionAlignment = _subDescriptionAlignment;
@@ -105,6 +108,9 @@
     // releases the name color
     [_nameColor release];
 
+    // releases the name color highlighted
+    [_nameColorHighlighted release];
+
     // releases the name shadow color
     [_nameShadowColor release];
 
@@ -117,6 +123,9 @@
     // releases the description color
     [_descriptionColor release];
 
+    // releases the description color highlighted
+    [_descriptionColorHighlighted release];
+
     // releases the description shadow color
     [_descriptionShadowColor release];
 
@@ -128,6 +137,9 @@
 
     // releases the sub description color
     [_subDescriptionColor release];
+
+    // releases the sub description color highlighted
+    [_subDescriptionColorHighlighted release];
 
     // releases the sub description shadow color
     [_subDescriptionShadowColor release];
@@ -181,18 +193,21 @@
     self.transientState = HMItemStateExistent;
     self.nameFont = nameFont;
     self.nameColor = nameColor;
+    self.nameColorHighlighted = nameColor;
     self.nameNumberLines = 1;
     self.nameAlignment = HMTextAlignmentRight;
     self.nameHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.nameVerticalAnchor = HMItemVerticalAnchorNone;
     self.descriptionFont = descriptionFont;
     self.descriptionColor = descriptionColor;
+    self.descriptionColorHighlighted = descriptionColor;
     self.descriptionNumberLines = 1;
     self.descriptionAlignment = HMTextAlignmentLeft;
     self.descriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.descriptionVerticalAnchor = HMItemVerticalAnchorNone;
     self.subDescriptionFont = subDescriptionFont;
     self.subDescriptionColor = subDescriptionColor;
+    self.subDescriptionColorHighlighted = subDescriptionColor;
     self.subDescriptionNumberLines = 1;
     self.subDescriptionAlignment = HMTextAlignmentLeft;
     self.subDescriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
