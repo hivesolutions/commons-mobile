@@ -122,6 +122,7 @@
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
     component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
+    component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
@@ -183,6 +184,7 @@
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
     component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
+    component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;

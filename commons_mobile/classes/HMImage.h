@@ -54,6 +54,12 @@
 @property (readonly) UIImage *UIImage;
 
 /**
+ * The ui color representation for
+ * this object.
+ */
+@property (readonly) UIColor *UIColor;
+
+/**
  * Creates an image representation.
  *
  * @param imageName: The image's name.

@@ -78,4 +78,12 @@
     return image;
 }
 
+- (UIColor *)UIColor {
+    // creates the color pattern
+    UIColor *color = [UIColor colorWithPatternImage:self.UIImage];
+
+    // returns the color pattern
+    return color;
+}
+
 @end

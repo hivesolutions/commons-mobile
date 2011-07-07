@@ -28,6 +28,7 @@
 #import "HMColor.h"
 #import "HMFont.h"
 #import "HMPoint.h"
+#import "HMImage.h"
 
 /**
  * The name font size.
@@ -126,7 +127,8 @@ typedef enum  {
     HMItemHorizontalAnchor _subDescriptionHorizontalAnchor;
     HMItemVerticalAnchor _subDescriptionVerticalAnchor;
     NSString *_defaultValue;
-    HMColor *_borderColor;
+    HMColor *_backgroundColor;
+    HMImage *_backgroundPatternImage;
     HMColor *_selectedBorderColor;
     NSArray *_selectedBackgroundColors;
     float _height;
@@ -329,9 +331,15 @@ typedef enum  {
 @property (retain) NSString *defaultValue;
 
 /**
- * The item's border color.
+ * The item's background color.
  */
-@property (retain) HMColor *borderColor;
+@property (retain) HMColor *backgroundColor;
+
+/**
+ * The item's background image, that
+ * will be applied as a pattern.
+ */
+@property (retain) HMImage *backgroundPatternImage;
 
 /**
  * The item's border color when it's selected.

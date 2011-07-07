@@ -61,7 +61,8 @@
 @synthesize subDescriptionHorizontalAnchor = _subDescriptionHorizontalAnchor;
 @synthesize subDescriptionVerticalAnchor = _subDescriptionVerticalAnchor;
 @synthesize defaultValue = _defaultValue;
-@synthesize borderColor = _borderColor;
+@synthesize backgroundColor = _backgroundColor;
+@synthesize backgroundPatternImage = _backgroundPatternImage;
 @synthesize selectedBorderColor = _selectedBorderColor;
 @synthesize selectedBackgroundColors = _selectedBackgroundColors;
 @synthesize height = _height;
@@ -156,8 +157,11 @@
     // releases the default value
     [_defaultValue release];
 
-    // releases the border color
-    [_borderColor release];
+    // releases the background color
+    [_backgroundColor release];
+
+    // releases the background pattern image
+    [_backgroundPatternImage release];
 
     // releases the selected border color
     [_selectedBorderColor release];
@@ -188,7 +192,6 @@
     HMColor *grayColor = [HMColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
 
     // creates the background colors
-    NSArray *backgroundColors = [[NSArray alloc] initWithObjects:whiteColor, nil];
     NSArray *selectedBackgroundColors = [[NSArray alloc] initWithObjects:grayColor, nil];
 
     // creates the sub items array
@@ -218,7 +221,7 @@
     self.subDescriptionAlignment = HMTextAlignmentLeft;
     self.subDescriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.subDescriptionVerticalAnchor = HMItemVerticalAnchorNone;
-    self.borderColor = grayColor;
+    self.backgroundColor = whiteColor;
     self.selectedBackgroundColors = selectedBackgroundColors;
     self.height = HM_ITEM_HEIGHT;
     self.focusEdit = NO;
@@ -228,7 +231,6 @@
     // releases the objects
     [subItems release];
     [selectedBackgroundColors release];
-    [backgroundColors release];
 }
 
 - (void)constructStructures {
