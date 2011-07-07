@@ -30,16 +30,16 @@
 @synthesize name = _name;
 @synthesize size = _size;
 
-+ (id)fontWithName:(NSString *)fontName size:(float)size {
-    // creates the font
-    HMFont *font = [[[HMFont alloc] init] autorelease];
+- (id)initWithFontName:(NSString *)fontName size:(float)size {
+    // calls the super
+    self = [super init];
 
-    // sets the font's attributes
-    font.name = fontName;
-    font.size = size;
+    // sets the attributes
+    self.name = fontName;
+    self.size = size;
 
-    // returns the font
-    return font;
+    // returns the self
+    return self;
 }
 
 - (void)dealloc {

@@ -60,15 +60,15 @@
 @property (readonly) UIColor *UIColor;
 
 /**
- * Creates an image representation.
+ * Constructor of the class.
  *
  * @param imageName: The image's name.
  * @return The hm image instance.
  */
-+ (HMImage *)imageNamed:(NSString *)imageName;
+- (id)initWithImageName:(NSString *)imageName;
 
 /**
- * Creates a stretchable image representation.
+ * Constructor of the class.
  *
  * @param imageName: The image's name.
  * @param leftCap: The width of the image that
@@ -77,6 +77,6 @@
  * doesn't stretch, both on the top and bottom.
  * @return The hm image instance.
  */
-+ (HMImage *)imageNamed:(NSString *)imageName leftCap:(float)leftCap topCap:(float)topCap;
+- (id)initWithImageName:(NSString *)imageName leftCap:(float)leftCap topCap:(float)topCap;
 
 @end

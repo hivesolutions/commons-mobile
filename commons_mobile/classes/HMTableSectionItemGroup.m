@@ -65,8 +65,8 @@
     _headerString = [headerString retain];
 
     // creates the colors
-    HMColor *descriptionColor = [HMColor colorWithRed:0.29 green:0.34 blue:0.42 alpha:1.0];
-    HMColor *descriptionShadowColor = [HMColor whiteColor];
+    HMColor *descriptionColor = [[HMColor alloc] initWithColorRed:0.29 green:0.34 blue:0.42 alpha:1.0];
+    HMColor *descriptionShadowColor = [[HMColor alloc] initWithColorRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 
     // creates the label item
     HMLabelItem *labelItem = [[HMLabelItem alloc] init];
@@ -79,6 +79,8 @@
 
     // releases the objects
     [labelItem release];
+    [descriptionShadowColor release];
+    [descriptionColor release];
 }
 
 - (NSString *)footerString {
@@ -99,11 +101,11 @@
     _footerString = [footerString retain];
 
     // creates the fonts
-    HMFont *descriptionFont = [HMFont fontWithName:@"Helvetica" size:13];
+    HMFont *descriptionFont = [[HMFont alloc] initWithFontName:@"Helvetica" size:13];
 
     // creates the colors
-    HMColor *descriptionColor = [HMColor colorWithRed:0.29 green:0.34 blue:0.42 alpha:1.0];
-    HMColor *descriptionShadowColor = [HMColor whiteColor];
+    HMColor *descriptionColor = [[HMColor alloc] initWithColorRed:0.29 green:0.34 blue:0.42 alpha:1.0];
+    HMColor *descriptionShadowColor = [[HMColor alloc] initWithColorRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 
     // creates the label item
     HMLabelItem *labelItem = [[HMLabelItem alloc] init];
@@ -117,6 +119,9 @@
 
     // releases the objects
     [labelItem release];
+    [descriptionShadowColor release];
+    [descriptionColor release];
+    [descriptionFont release];
 }
 
 @end

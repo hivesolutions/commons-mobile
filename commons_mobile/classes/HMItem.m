@@ -181,15 +181,15 @@
 
 - (void)initStructures {
     // creates the fonts
-    HMFont *nameFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_NAME_FONT_SIZE];
-    HMFont *descriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
-    HMFont *subDescriptionFont = [HMFont fontWithName:@"Helvetica-Bold" size:HM_ITEM_SUB_DESCRIPTION_FONT_SIZE];
+    HMFont *nameFont = [[HMFont alloc] initWithFontName:@"Helvetica-Bold" size:HM_ITEM_NAME_FONT_SIZE];
+    HMFont *descriptionFont = [[HMFont alloc] initWithFontName:@"Helvetica-Bold" size:HM_ITEM_DESCRIPTION_FONT_SIZE];
+    HMFont *subDescriptionFont = [[HMFont alloc] initWithFontName:@"Helvetica-Bold" size:HM_ITEM_SUB_DESCRIPTION_FONT_SIZE];
 
     // creates the colors
-    HMColor *nameColor = [HMColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0];
-    HMColor *blackColor = [HMColor blackColor];
-    HMColor *whiteColor = [HMColor whiteColor];
-    HMColor *grayColor = [HMColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
+    HMColor *blackColor = [[HMColor alloc] initWithColorRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+    HMColor *whiteColor = [[HMColor alloc] initWithColorRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    HMColor *grayColor = [[HMColor alloc] initWithColorRed:0.4 green:0.4 blue:0.4 alpha:1];
+    HMColor *nameColor = [[HMColor alloc] initWithColorRed:0.32 green:0.4 blue:0.57 alpha:1.0];
 
     // creates the background colors
     NSArray *selectedBackgroundColors = [[NSArray alloc] initWithObjects:grayColor, nil];
@@ -231,6 +231,13 @@
     // releases the objects
     [subItems release];
     [selectedBackgroundColors release];
+    [nameColor release];
+    [grayColor release];
+    [whiteColor release];
+    [blackColor release];
+    [subDescriptionFont release];
+    [descriptionFont release];
+    [nameFont release];
 }
 
 - (void)constructStructures {

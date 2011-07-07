@@ -48,12 +48,12 @@
 @property (readonly) CGPoint CGPoint;
 
 /**
- * Creates a point object.
+ * Constructor of the class.
  *
  * @param x: The horizontal coordinate.
  * @param y: The vertical coordinate.
  * @return: The point object.
  */
-+ (id)pointAtX:(NSUInteger)x y:(NSUInteger)y;
+- (id)initWithX:(NSUInteger)x y:(NSUInteger)y;
 
 @end

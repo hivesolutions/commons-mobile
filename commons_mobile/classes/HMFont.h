@@ -48,12 +48,12 @@
 @property (readonly) UIFont *UIFont;
 
 /**
- * Retrieves a hm font object.
+ * Constructor of the class.
  *
  * @param fontName: The font's name.
  * @param size: The font's size.
  * @return: The hm font object.
  */
-+ (id)fontWithName:(NSString *)fontName size:(float)size;
+- (id)initWithFontName:(NSString *)fontName size:(float)size;
 
 @end

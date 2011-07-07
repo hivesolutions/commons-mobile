@@ -32,30 +32,10 @@
 @synthesize blue = _blue;
 @synthesize alpha = _alpha;
 
-+ (id)colorWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
-    // creates the color
-    HMColor *color = [[[HMColor alloc] initWithRed:red green:green blue:blue alpha:alpha] autorelease];
+- (id)initWithColorRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
+    // calls the super
+    self = [super init];
 
-    // returns the color
-    return color;
-}
-
-+ (id)whiteColor {
-    // returns the white color
-    return [HMColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-}
-
-+ (id)blackColor {
-    // returns the black color
-    return [HMColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-}
-
-+ (id)clearColor{
-    // returns the clear color
-    return [HMColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
-}
-
-- (id)initWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
     // sets the attributes
     self.red = red;
     self.green = green;

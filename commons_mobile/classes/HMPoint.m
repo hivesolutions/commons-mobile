@@ -30,16 +30,16 @@
 @synthesize x = _x;
 @synthesize y = _y;
 
-+ (id)pointAtX:(NSUInteger)x y:(NSUInteger)y {
-    // creates the point
-    HMPoint *point = [[[HMPoint alloc] init] autorelease];
+- (id)initWithX:(NSUInteger)x y:(NSUInteger)y {
+    // calls the super
+    self = [super init];
 
-    // sets the point's attributes
-    point.x = x;
-    point.y = y;
+    // sets the attributes
+    self.x = x;
+    self.y = y;
 
-    // returns the point
-    return point;
+    // returns the self
+    return self;
 }
 
 - (CGPoint)CGPoint {

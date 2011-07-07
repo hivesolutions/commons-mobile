@@ -31,29 +31,30 @@
 @synthesize leftCap = _leftCap;
 @synthesize topCap = _topCap;
 
-+ (HMImage *)imageNamed:(NSString *)imageName {
-    // creates the image
-    HMImage *image = [[[HMImage alloc] init] autorelease];
+- (id)initWithImageName:(NSString *)imageName {
+    // calls the super
+    self = [super init];
 
     // sets the attributes
-    image.imageName = imageName;
-    image.topCap = 0;
-    image.leftCap = 0;
+    self.imageName = imageName;
+    self.topCap = 0;
+    self.leftCap = 0;
 
-    // returns the image
-    return image;
+    // returns the self
+    return self;
 }
 
-+ (HMImage *)imageNamed:(NSString *)imageName leftCap:(float)leftCap topCap:(float)topCap {
-    // creates the image
-    HMImage *image = [HMImage imageNamed:imageName];
+- (id)initWithImageName:(NSString *)imageName leftCap:(float)leftCap topCap:(float)topCap {
+    // calls the super
+    self = [super init];
 
     // sets the attributes
-    image.leftCap = leftCap;
-    image.topCap = topCap;
+    self.imageName = imageName;
+    self.topCap = topCap;
+    self.leftCap = leftCap;
 
-    // returns the image
-    return image;
+    // returns the self
+    return self;
 }
 
 - (void)dealloc {
