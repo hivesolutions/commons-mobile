@@ -120,6 +120,7 @@
     component.name = self.name;
     component.nameFont = self.nameFont.UIFont;
     component.nameColor = self.nameColor.UIColor;
+    component.nameNumberLines = self.nameNumberLines;
     component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
@@ -128,6 +129,7 @@
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
+    component.descriptionNumberLines = self.descriptionNumberLines;
     component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
@@ -196,6 +198,7 @@
     component.name = self.name;
     component.nameFont = self.nameFont.UIFont;
     component.nameColor = self.nameColor.UIColor;
+    component.nameNumberLines = self.nameNumberLines;
     component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
@@ -204,6 +207,7 @@
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
+    component.descriptionNumberLines = self.descriptionNumberLines;
     component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
@@ -273,6 +277,7 @@
     component.name = self.name;
     component.nameFont = self.nameFont.UIFont;
     component.nameColor = self.nameColor.UIColor;
+    component.nameNumberLines = self.nameNumberLines;
     component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
@@ -281,6 +286,7 @@
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
+    component.descriptionNumberLines = self.descriptionNumberLines;
     component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
@@ -349,6 +355,7 @@
     component.name = self.name;
     component.nameFont = self.nameFont.UIFont;
     component.nameColor = self.nameColor.UIColor;
+    component.nameNumberLines = self.nameNumberLines;
     component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
@@ -357,6 +364,7 @@
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
+    component.descriptionNumberLines = self.descriptionNumberLines;
     component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];

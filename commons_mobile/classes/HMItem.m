@@ -124,6 +124,9 @@
     // releases the name shadow color
     [_nameShadowColor release];
 
+    // releases the name number lines
+    [_nameNumberLines release];
+
     // releases the name width
     [_nameWidth release];
 
@@ -142,6 +145,9 @@
     // releases the description shadow color
     [_descriptionShadowColor release];
 
+    // releases the description number liness
+    [_descriptionNumberLines release];
+
     // releases the description with
     [_descriptionWidth release];
 
@@ -159,6 +165,9 @@
 
     // releases the sub description shadow color
     [_subDescriptionShadowColor release];
+
+    // releases the sub description number lines
+    [_subDescriptionNumberLines release];
 
     // releases the sub description position
     [_subDescriptionPosition release];
@@ -215,21 +224,18 @@
     self.nameFont = nameFont;
     self.nameColor = nameColor;
     self.nameColorHighlighted = nameColor;
-    self.nameNumberLines = 1;
     self.nameAlignment = HMTextAlignmentLeft;
     self.nameHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.nameVerticalAnchor = HMItemVerticalAnchorNone;
     self.descriptionFont = descriptionFont;
     self.descriptionColor = blackColor;
     self.descriptionColorHighlighted = blackColor;
-    self.descriptionNumberLines = 1;
     self.descriptionAlignment = HMTextAlignmentLeft;
     self.descriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.descriptionVerticalAnchor = HMItemVerticalAnchorNone;
     self.subDescriptionFont = subDescriptionFont;
     self.subDescriptionColor = blackColor;
     self.subDescriptionColorHighlighted = blackColor;
-    self.subDescriptionNumberLines = 1;
     self.subDescriptionAlignment = HMTextAlignmentLeft;
     self.subDescriptionHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.subDescriptionVerticalAnchor = HMItemVerticalAnchorNone;

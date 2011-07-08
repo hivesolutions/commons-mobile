@@ -51,6 +51,7 @@
 
     // sets the accessory view's text attributes
     accessoryView.text = self.description;
+    accessoryView.textFont = self.descriptionFont.UIFont;
     accessoryView.textColorNormal = self.descriptionColor.UIColor;
     accessoryView.textColorHighlighted = self.descriptionColorHighlighted.UIColor;
     accessoryView.textShadowColor = self.descriptionShadowColor.UIColor;

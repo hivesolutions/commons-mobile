@@ -101,7 +101,7 @@ typedef enum  {
     HMColor *_nameColor;
     HMColor *_nameColorHighlighted;
     HMColor *_nameShadowColor;
-    NSUInteger _nameNumberLines;
+    NSNumber *_nameNumberLines;
     HMTextAlignment _nameAlignment;
     HMPoint *_namePosition;
     HMItemHorizontalAnchor _nameHorizontalAnchor;
@@ -112,7 +112,7 @@ typedef enum  {
     HMColor *_descriptionColor;
     HMColor *_descriptionColorHighlighted;
     HMColor *_descriptionShadowColor;
-    NSUInteger _descriptionNumberLines;
+    NSNumber *_descriptionNumberLines;
     HMTextAlignment _descriptionAlignment;
     HMPoint *_descriptionPosition;
     HMItemHorizontalAnchor _descriptionHorizontalAnchor;
@@ -123,7 +123,7 @@ typedef enum  {
     HMColor *_subDescriptionColor;
     HMColor *_subDescriptionColorHighlighted;
     HMColor *_subDescriptionShadowColor;
-    NSUInteger _subDescriptionNumberLines;
+    NSNumber *_subDescriptionNumberLines;
     HMTextAlignment _subDescriptionAlignment;
     HMPoint *_subDescriptionPosition;
     HMItemHorizontalAnchor _subDescriptionHorizontalAnchor;
@@ -186,7 +186,7 @@ typedef enum  {
  * The item name's number of lines,
  * with zero representing infinite lines.
  */
-@property (assign) NSUInteger nameNumberLines;
+@property (retain) NSNumber *nameNumberLines;
 
 /**
  * The item name's text alignment.
@@ -247,7 +247,7 @@ typedef enum  {
  * The item description's number of lines,
  * with zero representing infinite lines.
  */
-@property (assign) NSUInteger descriptionNumberLines;
+@property (retain) NSNumber *descriptionNumberLines;
 
 /**
  * The item description's text alignment.
@@ -310,7 +310,7 @@ typedef enum  {
  * The item sub description's number of lines,
  * with zero representing infinite lines.
  */
-@property (assign) NSUInteger subDescriptionNumberLines;
+@property (retain) NSNumber *subDescriptionNumberLines;
 
 /**
  * The item sub description's text alignment.

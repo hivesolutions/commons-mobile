@@ -29,7 +29,9 @@
 
 - (UIView *)generateComponent {
     // creates the chart view
-    HMChartView *chartView  = [[[HMChartView alloc] init] autorelease];
+    HMChartView *chartView  = [[[HMChartView alloc] initWithFrame:CGRectMake(0, 0, 300, 133)] autorelease];
+    chartView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
+    chartView.backgroundColor = [UIColor clearColor];
 
     // returns the chart view
     return chartView;
