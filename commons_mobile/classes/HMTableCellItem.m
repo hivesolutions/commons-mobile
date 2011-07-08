@@ -81,17 +81,8 @@
 }
 
 - (UIView *)generateComponent {
-    // initializes the component
-    UIView *component = nil;
-
-    // in case the sub description
-    if(self.subDescription) {
-        // generates a sub description table view cell
-        component = [self generateComponentSubDescriptionTableViewCell];
-    } else {
-        // generates a table view cell
-        component = [self generateComponentTableViewCell];
-    }
+    // generates the component
+    UIView *component = [self generateComponentTableViewCell];
 
     // returns the component
     return component;
@@ -109,96 +100,30 @@
     component.data = self.data;
     component.height = self.height;
     component.name = self.name;
-    component.nameFont = self.nameFont.UIFont;
-    component.nameColor = self.nameColor.UIColor;
-    component.nameNumberLines = self.nameNumberLines;
-    component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
+    component.nameLabel.font = self.nameFont.UIFont;
+    component.nameLabel.textColor = self.nameColor.UIColor;
+    component.nameLabel.numberOfLines = self.nameNumberLines ? self.nameNumberLines.intValue : 1;
+    component.nameLabel.textAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
     component.nameVerticalAnchor = [self convertVerticalAnchor:self.nameVerticalAnchor];
     component.nameWidth = self.nameWidth;
     component.description = self.description;
-    component.descriptionFont = self.descriptionFont.UIFont;
-    component.descriptionColor = self.descriptionColor.UIColor;
-    component.descriptionNumberLines = self.descriptionNumberLines;
-    component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
+    component.descriptionLabel.font = self.descriptionFont.UIFont;
+    component.descriptionLabel.textColor = self.descriptionColor.UIColor;
+    component.descriptionLabel.numberOfLines = self.descriptionNumberLines ? self.descriptionNumberLines.intValue : 1;
+    component.descriptionLabel.textAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
     component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
     component.descriptionWidth = self.descriptionWidth;
-    component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
-    component.selectedBorderColor = self.selectedBorderColor.UIColor;
-    component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
-    component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
-    component.selectedBackgroundBottomSeparatorColor = self.selectedBottomSeparatorColor.UIColor;
-    component.selectedBackgroundTopSeparatorStyle = [self convertSeparatorStyle:self.selectedTopSeparatorStyle];
-    component.selectedBackgroundBottomSeparatorStyle = [self convertSeparatorStyle:self.selectedBottomSeparatorStyle];
-    component.selectable = self.selectable;
-    component.selectableName = self.selectableName;
-    component.insertableRow = self.insertableRow;
-    component.deletableRow = self.deletableRow;
-    component.imageView.image = self.icon.UIImage;
-    component.imageView.highlightedImage = self.highlightedIcon.UIImage;
-
-    // in case the accessory is defined
-    if(self.accessory) {
-        // generates the accessory view
-        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
-
-        // sets the accessory view in the component
-        component.accessoryView = accessoryView;
-        component.editingAccessoryView = accessoryView;
-    }
-
-    // for each sub item
-    for(HMItem *subItem in self.subItems) {
-        // generates the sub item's component
-        UIView *subview = [subItem generateComponent];
-
-        // adds the component as a subview
-        [component.contentView addSubview:subview];
-    }
-
-    // returns the component
-    return component;
-}
-
-- (UIView *)generateComponentSubDescriptionTableViewCell {
-    // creates the cell identifier
-    static NSString *cellIdentifier = @"Cell";
-
-    // creates a sub description table view cell
-    HMSubDescriptionTableViewCell *component = [[[HMSubDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
-
-    // sets the cell's attributes
-    component.item = self;
-    component.data = self.data;
-    component.height = self.height;
-    component.name = self.name;
-    component.nameFont = self.nameFont.UIFont;
-    component.nameColor = self.nameColor.UIColor;
-    component.nameNumberLines = self.nameNumberLines;
-    component.nameAlignment = [self convertTextAlignment:self.nameAlignment];
-    component.namePosition = [self convertPosition:self.namePosition];
-    component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
-    component.nameVerticalAnchor = [self convertVerticalAnchor:self.nameVerticalAnchor];
-    component.nameWidth = self.nameWidth;
-    component.description = self.description;
-    component.descriptionFont = self.descriptionFont.UIFont;
-    component.descriptionColor = self.descriptionColor.UIColor;
-    component.descriptionNumberLines = self.descriptionNumberLines;
-    component.descriptionAlignment = [self convertTextAlignment:self.descriptionAlignment];
-    component.descriptionPosition = [self convertPosition:self.descriptionPosition];
-    component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
-    component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
-    component.descriptionWidth = self.descriptionWidth;
-    component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
-    component.subDescriptionLabel.text = self.subDescription;
+    component.subDescription = self.subDescription;
     component.subDescriptionFont = self.subDescriptionFont.UIFont;
     component.subDescriptionLabel.textColor = self.subDescriptionColor.UIColor;
     component.subDescriptionPosition = [self convertPosition:self.subDescriptionPosition];
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
+    component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
