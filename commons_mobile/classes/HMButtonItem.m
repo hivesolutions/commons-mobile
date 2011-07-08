@@ -27,8 +27,8 @@
 
 @implementation HMButtonItem
 
-@synthesize icon = _icon;
-@synthesize highlightedIcon = _highlightedIcon;
+@synthesize iconNormal = _iconNormal;
+@synthesize iconHighlighted = _iconHighlighted;
 @synthesize selectable = _selectable;
 @synthesize selectableEdit = _selectableEdit;
 @synthesize selectableName = _selectableName;
@@ -38,11 +38,11 @@
 @synthesize editNibName = _editNibName;
 
 - (void)dealloc {
-    // releases the icon
-    [_icon release];
+    // releases the normal icon
+    [_iconNormal release];
 
     // releases the highlighted icon
-    [_highlightedIcon release];
+    [_iconHighlighted release];
 
     // releases the read nib name
     [_readNibName release];

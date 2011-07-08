@@ -30,8 +30,8 @@
 
 @interface HMButtonItem : HMItem {
     @private
-    HMImage *_icon;
-    HMImage *_highlightedIcon;
+    HMImage *_iconNormal;
+    HMImage *_iconHighlighted;
     BOOL _selectable;
     BOOL _selectableEdit;
     BOOL _selectableName;
@@ -44,12 +44,12 @@
 /**
  * The icon to be drawn in the button.
  */
-@property (retain) HMImage *icon;
+@property (retain) HMImage *iconNormal;
 
 /**
  * The color for highlighted button.
  */
-@property (retain) HMImage *highlightedIcon;
+@property (retain) HMImage *iconHighlighted;
 
 /**
  * Indicates if the button is

@@ -123,6 +123,7 @@
     component.subDescriptionPosition = [self convertPosition:self.subDescriptionPosition];
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
+    component.subDescriptionWidth = self.subDescriptionWidth;
     component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
@@ -134,8 +135,8 @@
     component.selectableName = self.selectableName;
     component.insertableRow = self.insertableRow;
     component.deletableRow = self.deletableRow;
-    component.imageView.image = self.icon.UIImage;
-    component.imageView.highlightedImage = self.highlightedIcon.UIImage;
+    component.imageView.image = self.iconNormal.UIImage;
+    component.imageView.highlightedImage = self.iconHighlighted.UIImage;
 
     // in case the accessory is defined
     if(self.accessory) {

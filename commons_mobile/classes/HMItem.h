@@ -92,7 +92,7 @@ typedef enum  {
 } HMItemVerticalAnchor;
 
 @interface HMItem : NSObject {
-@private
+    @private
     HMItemState _state;
     HMItemState _transientState;
     NSString *_identifier;
@@ -341,7 +341,7 @@ typedef enum  {
 /**
  * The item sub description's width.
  */
-@property (retain) NSValue *subDescriptionWidth;
+@property (retain) NSNumber *subDescriptionWidth;
 
 /**
  * The item's default value.
