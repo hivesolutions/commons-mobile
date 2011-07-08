@@ -40,6 +40,7 @@
 @synthesize namePosition = _namePosition;
 @synthesize nameHorizontalAnchor = _nameHorizontalAnchor;
 @synthesize nameVerticalAnchor = _nameVerticalAnchor;
+@synthesize nameWidth = _nameWidth;
 @synthesize description = _description;
 @synthesize descriptionFont = _descriptionFont;
 @synthesize descriptionColor = _descriptionColor;
@@ -50,6 +51,7 @@
 @synthesize descriptionPosition = _descriptionPosition;
 @synthesize descriptionHorizontalAnchor = _descriptionHorizontalAnchor;
 @synthesize descriptionVerticalAnchor = _descriptionVerticalAnchor;
+@synthesize descriptionWidth = _descriptionWidth;
 @synthesize subDescription = _subDescription;
 @synthesize subDescriptionFont = _subDescriptionFont;
 @synthesize subDescriptionColor = _subDescriptionColor;
@@ -60,6 +62,7 @@
 @synthesize subDescriptionPosition = _subDescriptionPosition;
 @synthesize subDescriptionHorizontalAnchor = _subDescriptionHorizontalAnchor;
 @synthesize subDescriptionVerticalAnchor = _subDescriptionVerticalAnchor;
+@synthesize subDescriptionWidth = _subDescriptionWidth;
 @synthesize defaultValue = _defaultValue;
 @synthesize backgroundColor = _backgroundColor;
 @synthesize backgroundPatternImage = _backgroundPatternImage;
@@ -121,6 +124,9 @@
     // releases the name shadow color
     [_nameShadowColor release];
 
+    // releases the name width
+    [_nameWidth release];
+
     // releases the description
     [_description release];
 
@@ -135,6 +141,9 @@
 
     // releases the description shadow color
     [_descriptionShadowColor release];
+
+    // releases the description with
+    [_descriptionWidth release];
 
     // releases the sub description
     [_subDescription release];
@@ -153,6 +162,9 @@
 
     // releases the sub description position
     [_subDescriptionPosition release];
+
+    // releases the sub description width
+    [_subDescriptionWidth release];
 
     // releases the default value
     [_defaultValue release];
@@ -204,7 +216,7 @@
     self.nameColor = nameColor;
     self.nameColorHighlighted = nameColor;
     self.nameNumberLines = 1;
-    self.nameAlignment = HMTextAlignmentRight;
+    self.nameAlignment = HMTextAlignmentLeft;
     self.nameHorizontalAnchor = HMItemHorizontalAnchorNone;
     self.nameVerticalAnchor = HMItemVerticalAnchorNone;
     self.descriptionFont = descriptionFont;

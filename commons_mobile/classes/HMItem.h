@@ -106,6 +106,7 @@ typedef enum  {
     HMPoint *_namePosition;
     HMItemHorizontalAnchor _nameHorizontalAnchor;
     HMItemVerticalAnchor _nameVerticalAnchor;
+    NSNumber *_nameWidth;
     NSString *_description;
     HMFont *_descriptionFont;
     HMColor *_descriptionColor;
@@ -116,6 +117,7 @@ typedef enum  {
     HMPoint *_descriptionPosition;
     HMItemHorizontalAnchor _descriptionHorizontalAnchor;
     HMItemVerticalAnchor _descriptionVerticalAnchor;
+    NSNumber *_descriptionWidth;
     NSString *_subDescription;
     HMFont *_subDescriptionFont;
     HMColor *_subDescriptionColor;
@@ -126,6 +128,7 @@ typedef enum  {
     HMPoint *_subDescriptionPosition;
     HMItemHorizontalAnchor _subDescriptionHorizontalAnchor;
     HMItemVerticalAnchor _subDescriptionVerticalAnchor;
+    NSNumber *_subDescriptionWidth;
     NSString *_defaultValue;
     HMColor *_backgroundColor;
     HMImage *_backgroundPatternImage;
@@ -210,6 +213,11 @@ typedef enum  {
 @property (assign) HMItemVerticalAnchor nameVerticalAnchor;
 
 /**
+ * The item name's width.
+ */
+@property (retain) NSNumber *nameWidth;
+
+/**
  * The item's description.
  */
 @property (retain) NSString *description;
@@ -268,6 +276,11 @@ typedef enum  {
 @property (retain) HMPoint *descriptionPosition;
 
 /**
+ * The item description's width.
+ */
+@property (retain) NSNumber *descriptionWidth;
+
+/**
  * The item's sub description.
  */
 @property (retain) NSString *subDescription;
@@ -324,6 +337,11 @@ typedef enum  {
  * The item sub description's position.
  */
 @property (retain) HMPoint *subDescriptionPosition;
+
+/**
+ * The item sub description's width.
+ */
+@property (retain) NSValue *subDescriptionWidth;
 
 /**
  * The item's default value.

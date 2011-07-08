@@ -44,6 +44,7 @@
     NSString *_autocapitalizationType;
     BOOL _returnDisablesEdit;
     BOOL _multipleLines;
+    BOOL _drawColumnSeparator;
 }
 
 /**
@@ -72,6 +73,11 @@
  * multiple lines.
  */
 @property (assign) BOOL multipleLines;
+
+/**
+ * Specifies if the table cell has a column separator.
+ */
+@property (assign) BOOL drawColumnSeparator;
 
 /**
  * Generates a plain string table view cell component.

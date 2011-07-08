@@ -62,6 +62,7 @@
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
     component.nameVerticalAnchor = [self convertVerticalAnchor:self.nameVerticalAnchor];
+    component.nameWidth = self.nameWidth;
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
@@ -69,6 +70,7 @@
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
     component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
+    component.descriptionWidth = self.descriptionWidth;
     component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
@@ -91,6 +93,7 @@
     component.readNibName = self.readNibName;
     component.editViewController = self.editViewController;
     component.editNibName = self.editNibName;
+    component.drawColumnSeparator = self.drawColumnSeparator;
 
     // in case the accessory is defined
     if(self.accessory) {
@@ -133,6 +136,7 @@
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
     component.nameVerticalAnchor = [self convertVerticalAnchor:self.nameVerticalAnchor];
+    component.nameWidth = self.nameWidth;
     component.description = self.description;
     component.descriptionFont = self.descriptionFont.UIFont;
     component.descriptionColor = self.descriptionColor.UIColor;
@@ -140,6 +144,7 @@
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
     component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
+    component.descriptionWidth = self.descriptionWidth;
     component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
     component.selectedBorderColor = self.selectedBorderColor.UIColor;
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
