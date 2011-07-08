@@ -262,17 +262,17 @@
 - (UITextAlignment)convertTextAlignment:(HMTextAlignment)textAlignment {
     // for each text alignment
     switch (textAlignment) {
-            // in case the alignment is to the left
+        // in case the alignment is to the left
         case HMTextAlignmentLeft:
             // returns the left alignment
             return UITextAlignmentLeft;
 
-            // in case the alignment is to the right
+        // in case the alignment is to the right
         case HMTextAlignmentRight:
             // returns the right alignment
             return UITextAlignmentRight;
 
-            // in case the alignment is to the center
+        // in case the alignment is to the center
         case HMTextAlignmentCenter:
             // returns the center alignment
             return UITextAlignmentCenter;
@@ -285,17 +285,17 @@
 - (int)convertHorizontalAnchor:(HMItemHorizontalAnchor)horizontalAnchor {
     // for each horizontal anchor
     switch (horizontalAnchor) {
-            // in case the anchor is to the left
+        // in case the anchor is to the left
         case HMItemHorizontalAnchorLeft:
             // returns the left anchor
             return HMTableViewCellHorizontalAnchorLeft;
 
-            // in case the anchor is to the right
+        // in case the anchor is to the right
         case HMItemHorizontalAnchorRight:
             // returns the right anchor
             return HMTableViewCellHorizontalAnchorRight;
 
-            // in case the anchor is none
+        // in case the anchor is none
         case HMItemHorizontalAnchorNone:
             // returns the none anchor
             return HMTableViewCellHorizontalAnchorNone;
@@ -308,17 +308,17 @@
 - (int)convertVerticalAnchor:(HMItemVerticalAnchor)verticalAnchor {
     // for each vertical anchor
     switch (verticalAnchor) {
-            // in case the anchor is to the top
+        // in case the anchor is to the top
         case HMItemVerticalAnchorTop:
             // returns the top anchor
             return HMTableViewCellVerticalAnchorTop;
 
-            // in case the anchor is to the bottom
+        // in case the anchor is to the bottom
         case HMItemVerticalAnchorBottom:
             // returns the bottom anchor
             return HMTableViewCellVerticalAnchorBottom;
 
-            // in case the anchor is none
+        // in case the anchor is none
         case HMItemVerticalAnchorNone:
             // returns the none anchor
             return HMTableViewCellVerticalAnchorNone;
