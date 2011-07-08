@@ -43,7 +43,6 @@
     NSString *_returnType;
     NSString *_autocapitalizationType;
     BOOL _returnDisablesEdit;
-    BOOL _multipleLines;
     BOOL _drawColumnSeparator;
 }
 
@@ -67,12 +66,6 @@
  * be disabled on return.
  */
 @property (assign) BOOL returnDisablesEdit;
-
-/**
- * Indicates if the cell can hold
- * multiple lines.
- */
-@property (assign) BOOL multipleLines;
 
 /**
  * Specifies if the table cell has a column separator.

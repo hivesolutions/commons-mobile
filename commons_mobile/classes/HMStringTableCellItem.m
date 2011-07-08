@@ -55,21 +55,16 @@
     self.clearable = YES;
     self.secure = NO;
     self.returnDisablesEdit = NO;
-    self.multipleLines = NO;
     self.autocapitalizationType = @"sentences";
     self.drawColumnSeparator = YES;
 }
 
-- (BOOL)multipleLines {
-    return _multipleLines;
-}
-
-- (void)setMultipleLines:(BOOL)multipleLines {
-    // sets the attribute
-    _multipleLines = multipleLines;
+- (void)setDescriptionNumberLines:(NSNumber *)descriptionNumberLines {
+    // calls the super
+    [super setDescriptionNumberLines:descriptionNumberLines];
 
     // sets the cell's height to adapt to the number of lines
-    self.height = multipleLines ? HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT : HM_STRING_TABLE_CELL_ITEM_SINGLE_LINE_HEIGHT;
+    self.height = (descriptionNumberLines && descriptionNumberLines.intValue == 0) ? HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT : HM_STRING_TABLE_CELL_ITEM_SINGLE_LINE_HEIGHT;
 }
 
 - (UIView *)generateComponent {
@@ -77,7 +72,7 @@
     UIView *component = nil;
 
     // in case the item has multiple lines
-    if(self.multipleLines) {
+    if(self.descriptionNumberLines && self.descriptionNumberLines.intValue == 0) {
         // in case the item has a name
         if(self.name) {
             // creates a column multiline string table view cell
