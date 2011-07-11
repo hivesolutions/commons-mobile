@@ -56,16 +56,8 @@
     // calls the super
     [super constructStructures];
 
-    // creates the description font
-    HMFont *descriptionFont = [[HMFont alloc] initWithFontName:@"Helvetica-Bold" size:13];
-
-    // creates the description color
-    HMColor *descriptionColor = [[HMColor alloc] initWithColorRed:0.32 green:0.4 blue:0.57 alpha:1.0];
-
     // creates the add table cell item
     HMConstantStringTableCellItem *addTableCellItem = [[HMConstantStringTableCellItem alloc] initWithIdentifier:[NSString stringWithFormat:@"%@_add_item", self.identifier]];
-    addTableCellItem.descriptionColor = descriptionColor;
-    addTableCellItem.descriptionFont = descriptionFont;
     addTableCellItem.selectable = YES;
     addTableCellItem.selectableEdit = YES;
     addTableCellItem.indentable = YES;
@@ -80,24 +72,6 @@
 
     // releases the objects
     [addTableCellItem release];
-    [descriptionColor release];
-    [descriptionFont release];
-}
-
-- (void)setBackgroundColor:(HMColor *)backgroundColor {
-    // calls the super
-    [super setBackgroundColor:backgroundColor];
-
-    // sets the background color in the add table cell item
-    self.addTableCellItem.backgroundColor = backgroundColor;
-}
-
-- (void)setSelectedBackgroundColors:(NSArray *)selectedBackgroundColors {
-    // calls the super
-    [super setSelectedBackgroundColors:selectedBackgroundColors];
-
-    // sets the selected background colors in the add table cell item
-    self.addTableCellItem.selectedBackgroundColors = selectedBackgroundColors;
 }
 
 - (Class)addViewController {
@@ -140,14 +114,6 @@
 
     // sets the add table cell item's edit nib name
     self.addTableCellItem.editNibName = addNibName;
-}
-
-- (void)setName:(NSString *)name {
-    // calls the super
-    [super setName:name];
-
-    // sets the name in the add table cell item
-    self.addTableCellItem.description = name;
 }
 
 - (NSArray *)dataItems {
