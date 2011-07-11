@@ -120,6 +120,7 @@
     component.name = self.name;
     component.nameLabel.font = self.nameFont.UIFont;
     component.nameLabel.textColor = self.nameColor.UIColor;
+    component.nameLabel.shadowColor = self.nameShadowColor.UIColor;
     component.nameLabel.numberOfLines = self.nameNumberLines ? self.nameNumberLines.intValue : 1;
     component.nameLabel.textAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
@@ -129,6 +130,7 @@
     component.description = self.description;
     component.descriptionLabel.font = self.descriptionFont.UIFont;
     component.descriptionLabel.textColor = self.descriptionColor.UIColor;
+    component.descriptionLabel.shadowColor = self.descriptionShadowColor.UIColor;
     component.descriptionLabel.numberOfLines = self.descriptionNumberLines ? self.descriptionNumberLines.intValue : 1;
     component.descriptionLabel.textAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
@@ -138,6 +140,9 @@
     component.subDescription = self.subDescription;
     component.subDescriptionFont = self.subDescriptionFont.UIFont;
     component.subDescriptionLabel.textColor = self.subDescriptionColor.UIColor;
+    component.subDescriptionLabel.shadowColor = self.subDescriptionShadowColor.UIColor;
+    component.subDescriptionLabel.numberOfLines = self.subDescriptionNumberLines ? self.subDescriptionNumberLines.intValue : 1;
+    component.subDescriptionLabel.textAlignment = [self convertTextAlignment:self.subDescriptionAlignment];
     component.subDescriptionPosition = [self convertPosition:self.subDescriptionPosition];
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
@@ -205,6 +210,7 @@
     component.name = self.name;
     component.nameLabel.font = self.nameFont.UIFont;
     component.nameLabel.textColor = self.nameColor.UIColor;
+    component.nameLabel.shadowColor = self.nameShadowColor.UIColor;
     component.nameLabel.numberOfLines = self.nameNumberLines ? self.nameNumberLines.intValue : 1;
     component.nameLabel.textAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
@@ -214,6 +220,7 @@
     component.description = self.description;
     component.descriptionLabel.font = self.descriptionFont.UIFont;
     component.descriptionLabel.textColor = self.descriptionColor.UIColor;
+    component.descriptionLabel.shadowColor = self.descriptionShadowColor.UIColor;
     component.descriptionLabel.numberOfLines = self.descriptionNumberLines ? self.descriptionNumberLines.intValue : 1;
     component.descriptionLabel.textAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
@@ -223,6 +230,9 @@
     component.subDescription = self.subDescription;
     component.subDescriptionFont = self.subDescriptionFont.UIFont;
     component.subDescriptionLabel.textColor = self.subDescriptionColor.UIColor;
+    component.subDescriptionLabel.shadowColor = self.subDescriptionShadowColor.UIColor;
+    component.subDescriptionLabel.numberOfLines = self.subDescriptionNumberLines ? self.subDescriptionNumberLines.intValue : 1;
+    component.subDescriptionLabel.textAlignment = [self convertTextAlignment:self.subDescriptionAlignment];
     component.subDescriptionPosition = [self convertPosition:self.subDescriptionPosition];
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
@@ -291,6 +301,7 @@
     component.name = self.name;
     component.nameLabel.font = self.nameFont.UIFont;
     component.nameLabel.textColor = self.nameColor.UIColor;
+    component.nameLabel.shadowColor = self.nameShadowColor.UIColor;
     component.nameLabel.numberOfLines = self.nameNumberLines ? self.nameNumberLines.intValue : 1;
     component.nameLabel.textAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
@@ -300,6 +311,7 @@
     component.description = self.description;
     component.descriptionLabel.font = self.descriptionFont.UIFont;
     component.descriptionLabel.textColor = self.descriptionColor.UIColor;
+    component.descriptionLabel.shadowColor = self.descriptionShadowColor.UIColor;
     component.descriptionLabel.numberOfLines = self.descriptionNumberLines ? self.descriptionNumberLines.intValue : 1;
     component.descriptionLabel.textAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
@@ -376,6 +388,7 @@
     component.name = self.name;
     component.nameLabel.font = self.nameFont.UIFont;
     component.nameLabel.textColor = self.nameColor.UIColor;
+    component.nameLabel.shadowColor = self.nameShadowColor.UIColor;
     component.nameLabel.numberOfLines = self.nameNumberLines ? self.nameNumberLines.intValue : 1;
     component.nameLabel.textAlignment = [self convertTextAlignment:self.nameAlignment];
     component.namePosition = [self convertPosition:self.namePosition];
@@ -385,6 +398,7 @@
     component.description = self.description;
     component.descriptionLabel.font = self.descriptionFont.UIFont;
     component.descriptionLabel.textColor = self.descriptionColor.UIColor;
+    component.descriptionLabel.shadowColor = self.descriptionShadowColor.UIColor;
     component.descriptionLabel.numberOfLines = self.descriptionNumberLines ? self.descriptionNumberLines.intValue : 1;
     component.descriptionLabel.textAlignment = [self convertTextAlignment:self.descriptionAlignment];
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
