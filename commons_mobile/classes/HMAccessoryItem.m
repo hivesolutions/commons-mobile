@@ -49,7 +49,7 @@
     // creates the accessory view
     HMAccessoryView *accessoryView = [[[HMAccessoryView alloc] init] autorelease];
 
-    // sets the accessory view's text attributes
+    // sets the accessory view's attributes
     accessoryView.text = self.description;
     accessoryView.textFont = self.descriptionFont.UIFont;
     accessoryView.textColorNormal = self.descriptionColor.UIColor;
