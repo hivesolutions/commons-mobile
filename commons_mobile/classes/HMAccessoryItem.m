@@ -56,18 +56,8 @@
     accessoryView.textColorHighlighted = self.descriptionColorHighlighted.UIColor;
     accessoryView.textShadowColor = self.descriptionShadowColor.UIColor;
     accessoryView.margin = [self convertPosition:self.margin];
-
-    // in case the normal image is defined
-    if(self.imageNormal) {
-        // sets the normal image in the accessory view
-        accessoryView.imageNormal = self.imageNormal.UIImage;
-    }
-
-    // in case the highlighted image is defined
-    if(self.imageHighlighted) {
-        // sets the highlighted image in the accessory view
-        accessoryView.imageHighlighted = self.imageHighlighted.UIImage;
-    }
+    accessoryView.imageNormal = self.imageNormal.UIImage;
+    accessoryView.imageHighlighted = self.imageHighlighted.UIImage;
 
     // returns the accessory view
     return accessoryView;
