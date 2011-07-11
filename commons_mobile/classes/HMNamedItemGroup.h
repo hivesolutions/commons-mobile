@@ -28,11 +28,18 @@
 #import "HMItem.h"
 #import "HMSearchItem.h"
 
+/**
+ * Represents an item group where
+ * items are associated to a name.
+ */
 @interface HMNamedItemGroup : HMItem<HMSearchItem> {
     @private
     NSMutableDictionary *_items;
 }
 
+/**
+ * The group's items.
+ */
 @property (retain) NSMutableDictionary *items;
 
 /**

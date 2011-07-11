@@ -25,9 +25,14 @@
 
 #import "Dependencies.h"
 
-#import "HMStringTableCellItem.h"
 #import "HMItem.h"
+#import "HMStringTableCellItem.h"
 
+/**
+ * Represents a table cell component
+ * that allows displaying and editing
+ * a string value.
+ */
 @interface HMConstantStringTableCellItem : HMStringTableCellItem {
 }
 

@@ -37,6 +37,9 @@ typedef enum {
     HMLabelItemTextAlignmentCenter
 } HMLabelItemTextAlignment;
 
+/**
+ * Represents a label component.
+ */
 @interface HMLabelItem : HMItem {
     @private
     HMLabelItemTextAlignment _textAlignment;

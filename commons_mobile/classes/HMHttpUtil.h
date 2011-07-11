@@ -25,6 +25,9 @@
 
 #import "Dependencies.h"
 
+/**
+ * Provides http related utility methods.
+ */
 @interface HMHttpUtil : NSObject {
 }
 

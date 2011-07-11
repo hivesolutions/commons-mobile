@@ -27,6 +27,9 @@
 
 #import "HMItem.h"
 
+/**
+ * Represents a chart component.
+ */
 @interface HMChartItem : HMItem {
 }
 

@@ -33,6 +33,10 @@
 #import "HMConstantStringTableCellItem.h"
 #import "HMTableCellItemCreationDelegate.h"
 
+/**
+ * Represents a table section whose
+ * item number can change.
+ */
 @interface HMTableMutableSectionItemGroup : HMTableSectionItemGroup {
     @private
     Class _addViewController;

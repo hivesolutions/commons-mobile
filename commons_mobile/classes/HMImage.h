@@ -25,6 +25,9 @@
 
 #import "Dependencies.h"
 
+/**
+ * Represents an image.
+ */
 @interface HMImage : NSObject {
     @private
     NSString *_imageName;

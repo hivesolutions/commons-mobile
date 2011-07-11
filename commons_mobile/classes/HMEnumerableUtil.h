@@ -25,6 +25,9 @@
 
 #import "Dependencies.h"
 
+/**
+ * Provides enumeration related utilities.
+ */
 @interface HMEnumerableUtil : NSObject {
 }
 

@@ -25,6 +25,9 @@
 
 #import "Dependencies.h"
 
+/**
+ * Represents a font.
+ */
 @interface HMFont : NSObject {
     @private
     NSString *_name;

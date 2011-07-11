@@ -28,11 +28,18 @@
 #import "HMItem.h"
 #import "HMSearchItem.h"
 
+/**
+ * Represents a group of items.
+ */
 @interface HMItemGroup : HMItem<HMSearchItem> {
     @private
     NSMutableArray *_items;
 }
 
+/**
+ * The list of items that belong
+ * to the item group.
+ */
 @property (retain) NSMutableArray *items;
 
 /**

@@ -26,9 +26,13 @@
 #import "Dependencies.h"
 
 #import "HMItem.h"
-#import "HMPoint.h"
 #import "HMImage.h"
+#import "HMPoint.h"
 
+/**
+ * Class representing an accessory,
+ * meant to be used in a table cell.
+ */
 @interface HMAccessoryItem : HMItem {
     @private
     HMPoint *_margin;

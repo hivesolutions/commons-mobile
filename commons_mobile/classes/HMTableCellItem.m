@@ -33,10 +33,6 @@
 @synthesize insertableRow = _insertableRow;
 @synthesize deletableRow = _deletableRow;
 @synthesize deleteActionType = _deleteActionType;
-@synthesize topSeparatorColor = _topSeparatorColor;
-@synthesize bottomSeparatorColor = _bottomSeparatorColor;
-@synthesize topSeparatorStyle = _topSeparatorStyle;
-@synthesize bottomSeparatorStyle = _bottomSeparatorStyle;
 @synthesize selectedTopSeparatorColor = _selectedTopSeparatorColor;
 @synthesize selectedBottomSeparatorColor = _selectedBottomSeparatorColor;
 @synthesize selectedTopSeparatorStyle = _selectedTopSeparatorStyle;
@@ -45,12 +41,6 @@
 - (void)dealloc {
     // releases the acessory
     [_accessory release];
-
-    // releases the top separator color
-    [_topSeparatorColor release];
-
-    // releases the bottom separator color
-    [_bottomSeparatorColor release];
 
     // releases the selected top separator color
     [_selectedTopSeparatorColor release];
@@ -74,8 +64,6 @@
     self.insertableRow = NO;
     self.deletableRow = NO;
     self.deleteActionType = HMTableCellItemDeleteActionTypeNone;
-    self.topSeparatorStyle = HMTableCellItemSeparatorStylePlain;
-    self.bottomSeparatorStyle = HMTableCellItemSeparatorStylePlain;
     self.selectedTopSeparatorStyle = HMTableCellItemSeparatorStylePlain;
     self.selectedBottomSeparatorStyle = HMTableCellItemSeparatorStylePlain;
 }

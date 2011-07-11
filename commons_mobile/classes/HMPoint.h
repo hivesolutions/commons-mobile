@@ -25,6 +25,9 @@
 
 #import "Dependencies.h"
 
+/**
+ * Represents a point.
+ */
 @interface HMPoint : NSObject {
     @private
     NSUInteger _x;

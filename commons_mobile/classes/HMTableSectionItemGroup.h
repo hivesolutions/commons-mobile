@@ -28,6 +28,9 @@
 #import "HMItemGroup.h"
 #import "HMLabelItem.h"
 
+/**
+ * Represents a table section.
+ */
 @interface HMTableSectionItemGroup : HMItemGroup {
     @private
     NSString *_headerString;

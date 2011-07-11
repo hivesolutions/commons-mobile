@@ -25,6 +25,9 @@
 
 #import "Dependencies.h"
 
+/**
+ * Represents a color.
+ */
 @interface HMColor : NSObject {
     @private
     float _red;

@@ -25,8 +25,8 @@
 
 #import "Dependencies.h"
 
-#import "HMTableCellItem.h"
 #import "HMItem.h"
+#import "HMTableCellItem.h"
 
 /**
  * The height of a cell with a single line.
@@ -38,6 +38,11 @@
  */
 #define HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT 50
 
+/**
+ * Represents a table cell component
+ * that allows displaying and editing
+ * a string value.
+ */
 @interface HMStringTableCellItem : HMTableCellItem {
     @private
     BOOL _secure;
@@ -49,7 +54,8 @@
 }
 
 /**
- * Indicates if the value should be secured.
+ * Indicates if the value should be
+ * masked from the user's view.
  */
 @property (assign) BOOL secure;
 
@@ -70,13 +76,15 @@
 @property (assign) BOOL returnDisablesEdit;
 
 /**
- * Indicates if the cell can hold
- * multiple lines.
+ * Indicates if the description can
+ * hold multiple lines.
  */
 @property (assign) BOOL multipleLines;
 
 /**
- * Specifies if the table cell has a column separator.
+ * Specifies if the table cell should draw
+ * a column separator between the name and
+ * the description.
  */
 @property (assign) BOOL drawColumnSeparator;
 

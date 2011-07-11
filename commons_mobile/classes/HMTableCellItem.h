@@ -25,10 +25,10 @@
 
 #import "Dependencies.h"
 
-#import "HMButtonItem.h"
-#import "HMEditItem.h"
-#import "HMAccessoryItem.h"
 #import "HMFont.h"
+#import "HMEditItem.h"
+#import "HMButtonItem.h"
+#import "HMAccessoryItem.h"
 
 /**
  * Enumeration defining the various
@@ -48,6 +48,9 @@ typedef enum  {
     HMTableCellItemSeparatorStyleDashed
 } HMTableCellItemSeparatorStyle;
 
+/**
+ * Represents a table cell component.
+ */
 @interface HMTableCellItem : HMButtonItem<HMEditItem> {
     @private
     HMAccessoryItem *_accessory;
@@ -56,10 +59,6 @@ typedef enum  {
     BOOL _insertableRow;
     BOOL _deletableRow;
     HMTableCellItemDeleteActionType _deleteActionType;
-    HMColor *_topSeparatorColor;
-    HMColor *_bottomSeparatorColor;
-    HMTableCellItemSeparatorStyle _topSeparatorStyle;
-    HMTableCellItemSeparatorStyle _bottomSeparatorStyle;
     HMColor *_selectedTopSeparatorColor;
     HMColor *_selectedBottomSeparatorColor;
     HMTableCellItemSeparatorStyle _selectedTopSeparatorStyle;
@@ -67,7 +66,9 @@ typedef enum  {
 }
 
 /**
- * The table cell's accessory.
+ * The table cell's accessory, which
+ * is a component placed that appears
+ * on the right side of the table cell.
  */
 @property (retain) HMAccessoryItem *accessory;
 
@@ -99,42 +100,22 @@ typedef enum  {
 @property (assign) HMTableCellItemDeleteActionType deleteActionType;
 
 /**
- * The top separator color.
- */
-@property (retain) HMColor *topSeparatorColor;
-
-/**
- * The bottom separator color.
- */
-@property (retain) HMColor *bottomSeparatorColor;
-
-/**
- * The top separator style.
- */
-@property (assign) HMTableCellItemSeparatorStyle topSeparatorStyle;
-
-/**
- * The bottom separator style.
- */
-@property (assign) HMTableCellItemSeparatorStyle bottomSeparatorStyle;
-
-/**
- * The selected top separator color.
+ * The top separator color when the table cell is highlighted.
  */
 @property (retain) HMColor *selectedTopSeparatorColor;
 
 /**
- * The selected bottom separator color.
+ * The bottom separator color when the table cell is highlighted.
  */
 @property (retain) HMColor *selectedBottomSeparatorColor;
 
 /**
- * The selected top separator style.
+ * The top separator style when the table cell is highlighted.
  */
 @property (assign) HMTableCellItemSeparatorStyle selectedTopSeparatorStyle;
 
 /**
- * The selected bottom separator style.
+ * The bottom separator style when the table cell is highlighted.
  */
 @property (assign) HMTableCellItemSeparatorStyle selectedBottomSeparatorStyle;
 

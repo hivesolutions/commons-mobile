@@ -25,10 +25,10 @@
 
 #import "Dependencies.h"
 
-#import "HMColor.h"
 #import "HMFont.h"
-#import "HMPoint.h"
+#import "HMColor.h"
 #import "HMImage.h"
+#import "HMPoint.h"
 
 /**
  * The name font size.
@@ -91,6 +91,9 @@ typedef enum  {
     HMItemVerticalAnchorBottom
 } HMItemVerticalAnchor;
 
+/**
+ * Represents a basic visual component.
+ */
 @interface HMItem : NSObject {
     @private
     HMItemState _state;

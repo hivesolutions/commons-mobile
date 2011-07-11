@@ -28,6 +28,9 @@
 #import "HMItem.h"
 #import "HMImage.h"
 
+/**
+ * Represents a clickable visual component.
+ */
 @interface HMButtonItem : HMItem {
     @private
     HMImage *_iconNormal;
@@ -42,12 +45,12 @@
 }
 
 /**
- * The icon to be drawn in the button.
+ * The button's icon.
  */
 @property (retain) HMImage *iconNormal;
 
 /**
- * The color for highlighted button.
+ * The button's icon when it's highlighted.
  */
 @property (retain) HMImage *iconHighlighted;
 
