@@ -38,12 +38,16 @@
 @property (retain) NSString *imageName;
 
 /**
- * The image's left cap.
+ * The horizontal portion of the
+ * image that won't be stretched,
+ * on the left and right sides.
  */
 @property (assign) float leftCap;
 
 /**
- * The image's top cap.
+ * The vertical portion of the
+ * image that won't be stretched
+ * on the top and bottom.
  */
 @property (assign) float topCap;
 
