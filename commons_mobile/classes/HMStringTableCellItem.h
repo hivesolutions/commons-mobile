@@ -26,6 +26,7 @@
 #import "Dependencies.h"
 
 #import "HMTableCellItem.h"
+#import "HMItem.h"
 
 /**
  * The height of a cell with a single line.

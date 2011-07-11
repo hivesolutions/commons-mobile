@@ -25,7 +25,7 @@
 
 #import "Dependencies.h"
 
-#import "HMChartItem.h"
+#import "HMItem.h"
 
 @interface HMChartItem : HMItem {
 }

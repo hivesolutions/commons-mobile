@@ -25,11 +25,13 @@
 
 #import "Dependencies.h"
 
-#import "HMTableSectionItemGroup.h"
-#import "HMTableCellItem.h"
-#import "HMTableCellItemCreationDelegate.h"
-#import "HMConstantStringTableCellItem.h"
 #import "HMFont.h"
+#import "HMItem.h"
+#import "HMColor.h"
+#import "HMTableCellItem.h"
+#import "HMTableSectionItemGroup.h"
+#import "HMConstantStringTableCellItem.h"
+#import "HMTableCellItemCreationDelegate.h"
 
 @interface HMTableMutableSectionItemGroup : HMTableSectionItemGroup {
     @private

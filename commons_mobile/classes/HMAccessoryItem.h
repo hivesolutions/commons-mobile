@@ -26,7 +26,7 @@
 #import "Dependencies.h"
 
 #import "HMItem.h"
-#import "HMColor.h"
+#import "HMPoint.h"
 #import "HMImage.h"
 
 @interface HMAccessoryItem : HMItem {

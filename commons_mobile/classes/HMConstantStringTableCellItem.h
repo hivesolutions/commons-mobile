@@ -26,6 +26,7 @@
 #import "Dependencies.h"
 
 #import "HMStringTableCellItem.h"
+#import "HMItem.h"
 
 @interface HMConstantStringTableCellItem : HMStringTableCellItem {
 }
