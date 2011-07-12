@@ -58,9 +58,9 @@
     component.name = self.name;
     component.nameLabel.font = self.nameFont.UIFont;
     component.nameLabel.textColor = self.nameColor.UIColor;
-    component.nameLabel.shadowColor = self.nameShadowColor.UIColor;
     component.nameLabel.numberOfLines = self.nameNumberLines ? self.nameNumberLines.intValue : 1;
     component.nameLabel.textAlignment = [self convertTextAlignment:self.nameAlignment];
+    component.nameShadowColor = self.nameShadowColor.UIColor;
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
     component.nameVerticalAnchor = [self convertVerticalAnchor:self.nameVerticalAnchor];
@@ -68,9 +68,9 @@
     component.description = self.description;
     component.descriptionLabel.font = self.descriptionFont.UIFont;
     component.descriptionLabel.textColor = self.descriptionColor.UIColor;
-    component.descriptionLabel.shadowColor = self.descriptionShadowColor.UIColor;
     component.descriptionLabel.numberOfLines = self.descriptionNumberLines ? self.descriptionNumberLines.intValue : 1;
     component.descriptionLabel.textAlignment = [self convertTextAlignment:self.descriptionAlignment];
+    component.descriptionShadowColor = self.descriptionShadowColor.UIColor;
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
     component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
@@ -78,9 +78,9 @@
     component.subDescription = self.subDescription;
     component.subDescriptionFont = self.subDescriptionFont.UIFont;
     component.subDescriptionLabel.textColor = self.subDescriptionColor.UIColor;
-    component.subDescriptionLabel.shadowColor = self.subDescriptionShadowColor.UIColor;
     component.subDescriptionLabel.numberOfLines = self.subDescriptionNumberLines ? self.subDescriptionNumberLines.intValue : 1;
     component.subDescriptionLabel.textAlignment = [self convertTextAlignment:self.subDescriptionAlignment];
+    component.subDescriptionShadowColor = self.subDescriptionShadowColor.UIColor;
     component.subDescriptionPosition = [self convertPosition:self.subDescriptionPosition];
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
@@ -89,6 +89,10 @@
     component.borderColor = self.borderColor.UIColor;
     component.backgroundColor = self.backgroundColor.UIColor;
     component.backgroundColors = [self convertColors:self.backgroundColors];
+    component.backgroundTopSeparatorColor = self.topSeparatorColor.UIColor;
+    component.backgroundBottomSeparatorColor = self.bottomSeparatorColor.UIColor;
+    component.backgroundTopSeparatorStyle = [self convertSeparatorStyle:self.topSeparatorStyle];
+    component.backgroundBottomSeparatorStyle = [self convertSeparatorStyle:self.bottomSeparatorStyle];
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
     component.selectedBackgroundBottomSeparatorColor = self.selectedBottomSeparatorColor.UIColor;
@@ -148,9 +152,9 @@
     component.name = self.name;
     component.nameLabel.font = self.nameFont.UIFont;
     component.nameLabel.textColor = self.nameColor.UIColor;
-    component.nameLabel.shadowColor = self.nameShadowColor.UIColor;
     component.nameLabel.numberOfLines = self.nameNumberLines ? self.nameNumberLines.intValue : 1;
     component.nameLabel.textAlignment = [self convertTextAlignment:self.nameAlignment];
+    component.nameShadowColor = self.nameShadowColor.UIColor;
     component.namePosition = [self convertPosition:self.namePosition];
     component.nameHorizontalAnchor = [self convertHorizontalAnchor:self.nameHorizontalAnchor];
     component.nameVerticalAnchor = [self convertVerticalAnchor:self.nameVerticalAnchor];
@@ -159,9 +163,9 @@
     component.description = self.description;
     component.descriptionLabel.font = self.descriptionFont.UIFont;
     component.descriptionLabel.textColor = self.descriptionColor.UIColor;
-    component.descriptionLabel.shadowColor = self.descriptionShadowColor.UIColor;
     component.descriptionLabel.numberOfLines = self.descriptionNumberLines ? self.descriptionNumberLines.intValue : 1;
     component.descriptionLabel.textAlignment = [self convertTextAlignment:self.descriptionAlignment];
+    component.descriptionShadowColor = self.descriptionShadowColor.UIColor;
     component.descriptionPosition = [self convertPosition:self.descriptionPosition];
     component.descriptionHorizontalAnchor = [self convertHorizontalAnchor:self.descriptionHorizontalAnchor];
     component.descriptionVerticalAnchor = [self convertVerticalAnchor:self.descriptionVerticalAnchor];
@@ -169,9 +173,9 @@
     component.subDescription = self.subDescription;
     component.subDescriptionFont = self.subDescriptionFont.UIFont;
     component.subDescriptionLabel.textColor = self.subDescriptionColor.UIColor;
-    component.subDescriptionLabel.shadowColor = self.subDescriptionShadowColor.UIColor;
     component.subDescriptionLabel.numberOfLines = self.subDescriptionNumberLines ? self.subDescriptionNumberLines.intValue : 1;
     component.subDescriptionLabel.textAlignment = [self convertTextAlignment:self.subDescriptionAlignment];
+    component.subDescriptionShadowColor = self.subDescriptionShadowColor.UIColor;
     component.subDescriptionPosition = [self convertPosition:self.subDescriptionPosition];
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
@@ -180,6 +184,10 @@
     component.borderColor = self.borderColor.UIColor;
     component.backgroundColor = self.backgroundColor.UIColor;
     component.backgroundColors = [self convertColors:self.backgroundColors];
+    component.backgroundTopSeparatorColor = self.topSeparatorColor.UIColor;
+    component.backgroundBottomSeparatorColor = self.bottomSeparatorColor.UIColor;
+    component.backgroundTopSeparatorStyle = [self convertSeparatorStyle:self.topSeparatorStyle];
+    component.backgroundBottomSeparatorStyle = [self convertSeparatorStyle:self.bottomSeparatorStyle];
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
     component.selectedBackgroundBottomSeparatorColor = self.selectedBottomSeparatorColor.UIColor;
