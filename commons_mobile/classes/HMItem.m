@@ -68,6 +68,7 @@
 @synthesize backgroundColor = _backgroundColor;
 @synthesize backgroundColors = _backgroundColors;
 @synthesize selectedBackgroundColors = _selectedBackgroundColors;
+@synthesize width = _width;
 @synthesize height = _height;
 @synthesize focusEdit = _focusEdit;
 @synthesize mutableParent = _mutableParent;

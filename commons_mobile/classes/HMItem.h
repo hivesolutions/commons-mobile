@@ -137,6 +137,7 @@ typedef enum  {
     HMColor *_backgroundColor;
     NSArray *_backgroundColors;
     NSArray *_selectedBackgroundColors;
+    float _width;
     float _height;
     BOOL _focusEdit;
     BOOL _mutableParent;
@@ -373,6 +374,11 @@ typedef enum  {
  * represents a gradient.
  */
 @property (retain) NSArray *selectedBackgroundColors;
+
+/**
+ * The item's width.
+ */
+@property (assign) float width;
 
 /**
  * The item's height.
