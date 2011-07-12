@@ -64,9 +64,9 @@
 @synthesize subDescriptionVerticalAnchor = _subDescriptionVerticalAnchor;
 @synthesize subDescriptionWidth = _subDescriptionWidth;
 @synthesize defaultValue = _defaultValue;
+@synthesize borderColor = _borderColor;
 @synthesize backgroundColor = _backgroundColor;
-@synthesize backgroundPatternImage = _backgroundPatternImage;
-@synthesize selectedBorderColor = _selectedBorderColor;
+@synthesize backgroundColors = _backgroundColors;
 @synthesize selectedBackgroundColors = _selectedBackgroundColors;
 @synthesize height = _height;
 @synthesize focusEdit = _focusEdit;
@@ -178,14 +178,14 @@
     // releases the default value
     [_defaultValue release];
 
+    // releases the border color
+    [_borderColor release];
+
     // releases the background color
     [_backgroundColor release];
 
-    // releases the background pattern image
-    [_backgroundPatternImage release];
-
-    // releases the selected border color
-    [_selectedBorderColor release];
+    // releases the background colors
+    [_backgroundColors release];
 
     // releases the selected background colors
     [_selectedBackgroundColors release];
@@ -335,6 +335,12 @@
 }
 
 - (NSArray *)convertColors:(NSArray *)colors {
+    // in case no colors are defined
+    if(!colors) {
+        // returns nil
+        return nil;
+    }
+
     // initializes the converted colors array
     NSMutableArray *convertedColors = [[[NSMutableArray alloc] init] autorelease];
 

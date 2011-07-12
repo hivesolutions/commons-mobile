@@ -31,6 +31,11 @@
 #import "HMAccessoryItem.h"
 
 /**
+ * The table cell item's default corner radius.
+ */
+#define HM_TABLE_CELL_ITEM_DEFAULT_CORNER_RADIUS 10
+
+/**
  * Enumeration defining the various
  * delete action types.
  */
@@ -59,6 +64,11 @@ typedef enum  {
     BOOL _insertableRow;
     BOOL _deletableRow;
     HMTableCellItemDeleteActionType _deleteActionType;
+    float _cornerRadius;
+    HMColor *_topSeparatorColor;
+    HMColor *_bottomSeparatorColor;
+    HMTableCellItemSeparatorStyle _topSeparatorStyle;
+    HMTableCellItemSeparatorStyle _bottomSeparatorStyle;
     HMColor *_selectedTopSeparatorColor;
     HMColor *_selectedBottomSeparatorColor;
     HMTableCellItemSeparatorStyle _selectedTopSeparatorStyle;
@@ -98,6 +108,31 @@ typedef enum  {
  * is performed over this table cell.
  */
 @property (assign) HMTableCellItemDeleteActionType deleteActionType;
+
+/**
+ * The cell's corner radius.
+ */
+@property (assign) float cornerRadius;
+
+/**
+ * The top separator color.
+ */
+@property (retain) HMColor *topSeparatorColor;
+
+/**
+ * The bottom separator color.
+ */
+@property (retain) HMColor *bottomSeparatorColor;
+
+/**
+ * The top separator style.
+ */
+@property (assign) HMTableCellItemSeparatorStyle topSeparatorStyle;
+
+/**
+ * The bottom separator style.
+ */
+@property (assign) HMTableCellItemSeparatorStyle bottomSeparatorStyle;
 
 /**
  * The top separator color when the table cell is highlighted.

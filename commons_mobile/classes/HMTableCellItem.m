@@ -33,6 +33,11 @@
 @synthesize insertableRow = _insertableRow;
 @synthesize deletableRow = _deletableRow;
 @synthesize deleteActionType = _deleteActionType;
+@synthesize cornerRadius = _cornerRadius;
+@synthesize topSeparatorColor = _topSeparatorColor;
+@synthesize bottomSeparatorColor = _bottomSeparatorColor;
+@synthesize topSeparatorStyle = _topSeparatorStyle;
+@synthesize bottomSeparatorStyle = _bottomSeparatorStyle;
 @synthesize selectedTopSeparatorColor = _selectedTopSeparatorColor;
 @synthesize selectedBottomSeparatorColor = _selectedBottomSeparatorColor;
 @synthesize selectedTopSeparatorStyle = _selectedTopSeparatorStyle;
@@ -41,6 +46,12 @@
 - (void)dealloc {
     // releases the acessory
     [_accessory release];
+
+    // releases the top separator color
+    [_topSeparatorColor release];
+
+    // releases the bottom separator color
+    [_bottomSeparatorColor release];
 
     // releases the selected top separator color
     [_selectedTopSeparatorColor release];
@@ -64,6 +75,9 @@
     self.insertableRow = NO;
     self.deletableRow = NO;
     self.deleteActionType = HMTableCellItemDeleteActionTypeNone;
+    self.cornerRadius = HM_TABLE_CELL_ITEM_DEFAULT_CORNER_RADIUS;
+    self.topSeparatorStyle = HMTableCellItemSeparatorStylePlain;
+    self.bottomSeparatorStyle = HMTableCellItemSeparatorStylePlain;
     self.selectedTopSeparatorStyle = HMTableCellItemSeparatorStylePlain;
     self.selectedBottomSeparatorStyle = HMTableCellItemSeparatorStylePlain;
 }
@@ -117,8 +131,10 @@
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
     component.subDescriptionWidth = self.subDescriptionWidth;
-    component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
-    component.selectedBorderColor = self.selectedBorderColor.UIColor;
+    component.cornerRadius = self.cornerRadius;
+    component.borderColor = self.borderColor.UIColor;
+    component.backgroundColor = self.backgroundColor.UIColor;
+    component.backgroundColors = [self convertColors:self.backgroundColors];
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
     component.selectedBackgroundBottomSeparatorColor = self.selectedBottomSeparatorColor.UIColor;

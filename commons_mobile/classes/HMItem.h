@@ -133,9 +133,9 @@ typedef enum  {
     HMItemVerticalAnchor _subDescriptionVerticalAnchor;
     NSNumber *_subDescriptionWidth;
     NSString *_defaultValue;
+    HMColor *_borderColor;
     HMColor *_backgroundColor;
-    HMImage *_backgroundPatternImage;
-    HMColor *_selectedBorderColor;
+    NSArray *_backgroundColors;
     NSArray *_selectedBackgroundColors;
     float _height;
     BOOL _focusEdit;
@@ -352,20 +352,19 @@ typedef enum  {
 @property (retain) NSString *defaultValue;
 
 /**
+ * The item's border color.
+ */
+@property (retain) HMColor *borderColor;
+
+/**
  * The item's background color.
  */
 @property (retain) HMColor *backgroundColor;
 
 /**
- * The item's background image, that
- * will be applied as a pattern.
+ * The item's background colors.
  */
-@property (retain) HMImage *backgroundPatternImage;
-
-/**
- * The item's border color when it's selected.
- */
-@property (retain) HMColor *selectedBorderColor;
+@property (retain) NSArray *backgroundColors;
 
 /**
  * List of hm color objects, representing

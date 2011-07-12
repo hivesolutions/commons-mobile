@@ -85,8 +85,10 @@
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
     component.subDescriptionWidth = self.subDescriptionWidth;
-    component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
-    component.selectedBorderColor = self.selectedBorderColor.UIColor;
+    component.cornerRadius = self.cornerRadius;
+    component.borderColor = self.borderColor.UIColor;
+    component.backgroundColor = self.backgroundColor.UIColor;
+    component.backgroundColors = [self convertColors:self.backgroundColors];
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
     component.selectedBackgroundBottomSeparatorColor = self.selectedBottomSeparatorColor.UIColor;
@@ -174,8 +176,10 @@
     component.subDescriptionHorizontalAnchor = [self convertHorizontalAnchor:self.subDescriptionHorizontalAnchor];
     component.subDescriptionVerticalAnchor = [self convertVerticalAnchor:self.subDescriptionVerticalAnchor];
     component.subDescriptionWidth = self.subDescriptionWidth;
-    component.backgroundColor = self.backgroundPatternImage ? self.backgroundPatternImage.UIColor : self.backgroundColor.UIColor;
-    component.selectedBorderColor = self.selectedBorderColor.UIColor;
+    component.cornerRadius = self.cornerRadius;
+    component.borderColor = self.borderColor.UIColor;
+    component.backgroundColor = self.backgroundColor.UIColor;
+    component.backgroundColors = [self convertColors:self.backgroundColors];
     component.selectedBackgroundColors = [self convertColors:self.selectedBackgroundColors];
     component.selectedBackgroundTopSeparatorColor = self.selectedTopSeparatorColor.UIColor;
     component.selectedBackgroundBottomSeparatorColor = self.selectedBottomSeparatorColor.UIColor;
