@@ -157,7 +157,7 @@ typedef enum  {
 /**
  * Generates a table view cell component.
  */
-- (UIView *)generateComponentTableViewCell;
+- (void)generateComponentTableViewCell;
 
 /**
  * Converts the separator style from the item

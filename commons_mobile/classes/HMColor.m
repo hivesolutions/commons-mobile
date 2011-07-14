@@ -46,12 +46,32 @@
     return self;
 }
 
-- (UIColor *)UIColor {
-    // creates a ui color object
-    UIColor *color = [UIColor colorWithRed:self.red green:self.green blue:self.blue alpha:self.alpha];
+- (void)dealloc {
+    // releases the color
+    [_color release];
 
-    // returns the color object
-    return color;
+    // calls the super
+    [super dealloc];
+}
+
+- (UIColor *)UIColor {
+    // in case the color is defined
+    if(_color) {
+        // returns the color
+        return _color;
+    }
+
+    // creates a ui color object
+    UIColor *color = [[UIColor alloc] initWithRed:self.red green:self.green blue:self.blue alpha:self.alpha];
+
+    // sets the objects
+    _color = [color retain];
+
+    // releases the objects
+    [color release];
+
+    // returns the ui color object
+    return _color;
 }
 
 @end

@@ -143,6 +143,7 @@ typedef enum  {
     BOOL _mutableParent;
     NSObject *_data;
     NSMutableArray *_subItems;
+    UIView *_component;
 }
 
 /**
@@ -409,6 +410,12 @@ typedef enum  {
 @property (retain) NSMutableArray *subItems;
 
 /**
+ * The component that represents
+ * this item.
+ */
+@property (retain) UIView *component;
+
+/**
  * Constructor of the class.
  *
  * @return The constructed instance.
@@ -429,13 +436,13 @@ typedef enum  {
  * Generates the component
  * that represents this item.
  */
-- (UIView *)generateComponent;
+- (void)generateComponent;
 
 /**
  * Converts the text alignment from the item
  * representation to the component representation.
  *
- * @param textAlignment: The text alignment.
+ * @param textAlignment The text alignment.
  * @return The converted text alignment.
  */
 - (UITextAlignment)convertTextAlignment:(HMTextAlignment)textAlignment;
@@ -444,7 +451,7 @@ typedef enum  {
  * Converts the horizontal anchor from the item
  * representation to the component representation.
  *
- * @param horizontalAnchor: The horizontal anchor.
+ * @param horizontalAnchor The horizontal anchor.
  * @return The converted horizontal anchor.
  */
 - (int)convertHorizontalAnchor:(HMItemHorizontalAnchor)horizontalAnchor;
@@ -453,7 +460,7 @@ typedef enum  {
  * Converts the vertical anchor from the item
  * representation to the component representation.
  *
- * @param horizontalAnchor: The vertical anchor.
+ * @param horizontalAnchor The vertical anchor.
  * @return The converted vertical anchor.
  */
 - (int)convertVerticalAnchor:(HMItemVerticalAnchor)verticalAnchor;
@@ -461,7 +468,7 @@ typedef enum  {
 /**
  * Converts a list of hm colors to a list of ui colors.
  *
- * @param colors: List of hm colors.
+ * @param colors List of hm colors.
  * @return List of ui colors.
  */
 - (NSArray *)convertColors:(NSArray *)colors;
@@ -469,7 +476,7 @@ typedef enum  {
 /**
  * Converts an hm point to a ns value with a cg point.
  *
- * @param position: The hm point object.
+ * @param position The hm point object.
  * @return The correspondent ns value with cg point.
  */
 - (NSValue *)convertPosition:(HMPoint *)position;

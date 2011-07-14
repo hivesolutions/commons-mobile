@@ -45,22 +45,25 @@
     [super dealloc];
 }
 
-- (UIView *)generateComponent {
+- (void)generateComponent {
     // creates the accessory view
-    HMAccessoryView *accessoryView = [[[HMAccessoryView alloc] init] autorelease];
+    HMAccessoryView *component = [[HMAccessoryView alloc] init];
 
     // sets the accessory view's attributes
-    accessoryView.text = self.description;
-    accessoryView.textFont = self.descriptionFont.UIFont;
-    accessoryView.textColorNormal = self.descriptionColor.UIColor;
-    accessoryView.textColorHighlighted = self.descriptionColorHighlighted.UIColor;
-    accessoryView.textShadowColor = self.descriptionShadowColor.UIColor;
-    accessoryView.margin = [self convertPosition:self.margin];
-    accessoryView.imageNormal = self.imageNormal.UIImage;
-    accessoryView.imageHighlighted = self.imageHighlighted.UIImage;
+    component.text = self.description;
+    component.textFont = self.descriptionFont.UIFont;
+    component.textColorNormal = self.descriptionColor.UIColor;
+    component.textColorHighlighted = self.descriptionColorHighlighted.UIColor;
+    component.textShadowColor = self.descriptionShadowColor.UIColor;
+    component.margin = [self convertPosition:self.margin];
+    component.imageNormal = self.imageNormal.UIImage;
+    component.imageHighlighted = self.imageHighlighted.UIImage;
 
-    // returns the accessory view
-    return accessoryView;
+    // sets the objects
+    self.component = component;
+
+    // releases the objects
+    [component release];
 }
 
 @end

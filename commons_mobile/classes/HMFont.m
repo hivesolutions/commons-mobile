@@ -51,8 +51,17 @@
 }
 
 - (UIFont *)UIFont {
+    // in case the font is defined
+    if(_font) {
+        // returns the font
+        return _font;
+    }
+
     // creates the ui font object
     UIFont *font = [UIFont fontWithName:self.name size:self.size];
+
+    // stores the font for later reference
+    _font = font;
 
     // returns the ui font object
     return font;

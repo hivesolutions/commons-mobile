@@ -39,11 +39,11 @@
 /**
  * Generates a column constant string table view cell component.
  */
-- (UIView *)generateComponentColumnConstantStringTableViewCell;
+- (void)generateComponentColumnConstantStringTableViewCell;
 
 /**
  * Generates a plain constant string table view cell component.
  */
-- (UIView *)generateComponentPlainConstantStringTableViewCell;
+- (void)generateComponentPlainConstantStringTableViewCell;
 
 @end

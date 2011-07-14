@@ -72,45 +72,39 @@
     self.height = multipleLines ? HM_STRING_TABLE_CELL_ITEM_MULTIPLE_LINES_HEIGHT : HM_STRING_TABLE_CELL_ITEM_SINGLE_LINE_HEIGHT;
 }
 
-- (UIView *)generateComponent {
-    // initializes the component
-    UIView *component = nil;
-
+- (void)generateComponent {
     // in case the item has multiple lines
     if(self.multipleLines) {
         // in case the item has a name
         if(self.name) {
             // creates a column multiline string table view cell
-            component = [self generateComponentColumnMultilineStringTableViewCell];
+            [self generateComponentColumnMultilineStringTableViewCell];
         }
         // in case the item has no name
         else {
             // creates a plain multiline string table view cell
-            component = [self generateComponentPlainMultilineStringTableViewCell];
+            [self generateComponentPlainMultilineStringTableViewCell];
         }
     } else {
         // in case the item has a name
         if(self.name) {
             // creates a column string table view cell
-            component = [self generateComponentColumnStringTableViewCell];
+            [self generateComponentColumnStringTableViewCell];
         }
         // in case the item has no name
         else {
             // creates a plain string table view cell
-            component = [self generateComponentPlainStringTableViewCell];
+            [self generateComponentPlainStringTableViewCell];
         }
     }
-
-    // returns the component
-    return component;
 }
 
-- (UIView *)generateComponentPlainStringTableViewCell {
+- (void)generateComponentPlainStringTableViewCell {
     // creates the cell identifier
     static NSString *cellIdentifier = @"Cell";
 
     // creates the component
-    HMPlainStringTableViewCell *component = [[[HMPlainStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+    HMPlainStringTableViewCell *component = [[HMPlainStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier];
 
     // sets the cell's attributes
     component.item = self;
@@ -180,33 +174,30 @@
 
     // in case the accessory is defined
     if(self.accessory) {
-        // generates the accessory view
-        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
-
         // sets the accessory view in the component
-        component.accessoryView = accessoryView;
-        component.editingAccessoryView = accessoryView;
+        component.accessoryView = self.accessory.component;
+        component.editingAccessoryView = self.accessory.component;
     }
 
     // for each sub item
     for(HMItem *subItem in self.subItems) {
-        // generates the sub item's component
-        UIView *subview = [subItem generateComponent];
-
         // adds the component as a subview
-        [component.contentView addSubview:subview];
+        [component.contentView addSubview:subItem.component];
     }
 
-    // returns the component
-    return component;
+    // sets the objects
+    self.component = component;
+
+    // releases the objects
+    [component release];
 }
 
-- (UIView *)generateComponentColumnStringTableViewCell {
+- (void)generateComponentColumnStringTableViewCell {
     // creates the cell identifier
     static NSString *cellIdentifier = @"Cell";
 
     // creates the component
-    HMColumnStringTableViewCell *component = [[[HMColumnStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+    HMColumnStringTableViewCell *component = [[HMColumnStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier];
 
     // sets the cell's attributes
     component.item = self;
@@ -277,33 +268,30 @@
 
     // in case the accessory is defined
     if(self.accessory) {
-        // generates the accessory view
-        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
-
         // sets the accessory view in the component
-        component.accessoryView = accessoryView;
-        component.editingAccessoryView = accessoryView;
+        component.accessoryView = self.accessory.component;
+        component.editingAccessoryView = self.accessory.component;
     }
 
     // for each sub item
     for(HMItem *subItem in self.subItems) {
-        // generates the sub item's component
-        UIView *subview = [subItem generateComponent];
-
         // adds the component as a subview
-        [component.contentView addSubview:subview];
+        [component.contentView addSubview:subItem.component];
     }
 
-    // returns the component
-    return component;
+    // sets the objects
+    self.component = component;
+
+    // releases the objects
+    [component release];
 }
 
-- (UIView *)generateComponentPlainMultilineStringTableViewCell {
+- (void)generateComponentPlainMultilineStringTableViewCell {
     // creates the cell identifier
     static NSString *cellIdentifier = @"Cell";
 
     // creates the component
-    HMPlainMultilineStringTableViewCell *component = [[[HMPlainMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+    HMPlainMultilineStringTableViewCell *component = [[HMPlainMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier];
 
     // sets the cell's attributes
     component.item = self;
@@ -373,33 +361,30 @@
 
     // in case the accessory is defined
     if(self.accessory) {
-        // generates the accessory view
-        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
-
         // sets the accessory view in the component
-        component.accessoryView = accessoryView;
-        component.editingAccessoryView = accessoryView;
+        component.accessoryView = self.accessory.component;
+        component.editingAccessoryView = self.accessory.component;
     }
 
     // for each sub item
     for(HMItem *subItem in self.subItems) {
-        // generates the sub item's component
-        UIView *subview = [subItem generateComponent];
-
         // adds the component as a subview
-        [component.contentView addSubview:subview];
+        [component.contentView addSubview:subItem.component];
     }
 
-    // returns the component
-    return component;
+    // sets the objects
+    self.component = component;
+
+    // releases the objects
+    [component release];
 }
 
-- (UIView *)generateComponentColumnMultilineStringTableViewCell {
+- (void)generateComponentColumnMultilineStringTableViewCell {
     // creates the cell identifier
     static NSString *cellIdentifier = @"Cell";
 
     // creates the component
-    HMColumnMultilineStringTableViewCell *component = [[[HMColumnMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+    HMColumnMultilineStringTableViewCell *component = [[HMColumnMultilineStringTableViewCell alloc] initWithReuseIdentifier:cellIdentifier];
 
     // sets the cell's attributes
     component.item = self;
@@ -469,25 +454,22 @@
 
     // in case the accessory is defined
     if(self.accessory) {
-        // generates the accessory view
-        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
-
         // sets the accessory view in the component
-        component.accessoryView = accessoryView;
-        component.editingAccessoryView = accessoryView;
+        component.accessoryView = self.accessory.component;
+        component.editingAccessoryView = self.accessory.component;
     }
 
     // for each sub item
     for(HMItem *subItem in self.subItems) {
-        // generates the sub item's component
-        UIView *subview = [subItem generateComponent];
-
         // adds the component as a subview
-        [component.contentView addSubview:subview];
+        [component.contentView addSubview:subItem.component];
     }
 
-    // returns the component
-    return component;
+    // sets the objects
+    self.component = component;
+
+    // releases the objects
+    [component release];
 }
 
 @end

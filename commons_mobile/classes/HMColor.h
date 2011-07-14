@@ -34,6 +34,7 @@
     float _green;
     float _blue;
     float _alpha;
+    UIColor *_color;
 }
 
 /**

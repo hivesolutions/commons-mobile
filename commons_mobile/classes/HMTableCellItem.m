@@ -82,20 +82,17 @@
     self.selectedBottomSeparatorStyle = HMTableCellItemSeparatorStylePlain;
 }
 
-- (UIView *)generateComponent {
+- (void)generateComponent {
     // generates the component
-    UIView *component = [self generateComponentTableViewCell];
-
-    // returns the component
-    return component;
+    [self generateComponentTableViewCell];
 }
 
-- (UIView *)generateComponentTableViewCell {
+- (void)generateComponentTableViewCell {
     // creates the cell identifier
     static NSString *cellIdentifier = @"Cell";
 
     // creates the table view cell
-    HMTableViewCell *component = [[[HMTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+    HMTableViewCell *component = [[HMTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
 
     // sets the cell's attributes
     component.item = self;
@@ -153,25 +150,22 @@
 
     // in case the accessory is defined
     if(self.accessory) {
-        // generates the accessory view
-        HMAccessoryView *accessoryView = (HMAccessoryView *) [self.accessory generateComponent];
-
         // sets the accessory view in the component
-        component.accessoryView = accessoryView;
-        component.editingAccessoryView = accessoryView;
+        component.accessoryView = self.accessory.component;
+        component.editingAccessoryView = self.accessory.component;
     }
 
     // for each sub item
     for(HMItem *subItem in self.subItems) {
-        // generates the sub item's component
-        UIView *subview = [subItem generateComponent];
-
         // adds the component as a subview
-        [component.contentView addSubview:subview];
+        [component.contentView addSubview:subItem.component];
     }
 
-    // returns the component
-    return component;
+    // sets the objects
+    self.component = component;
+
+    // releases the objects
+    [component release];
 }
 
 - (int)convertSeparatorStyle:(HMTableCellItemSeparatorStyle)separatorStyle {

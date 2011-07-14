@@ -74,6 +74,7 @@
 @synthesize mutableParent = _mutableParent;
 @synthesize data = _data;
 @synthesize subItems = _subItems;
+@synthesize component = _component;
 
 - (id)init {
     // invokes the parent constructor
@@ -197,6 +198,9 @@
     // releases the sub items
     [_subItems release];
 
+    // releases the component
+    [_component release];
+
     // calls the super
     [super dealloc];
 }
@@ -262,8 +266,7 @@
 - (void)constructStructures {
 }
 
-- (UIView *)generateComponent {
-    return nil;
+- (void)generateComponent {
 }
 
 - (UITextAlignment)convertTextAlignment:(HMTextAlignment)textAlignment {
@@ -370,6 +373,31 @@
 
     // returns the position point value
     return positionPointValue;
+}
+
+- (UIView *)component {
+    // in case the component is not defined
+    if(!_component) {
+        // generates the component
+        [self generateComponent];
+    }
+
+    // returns the component
+    return _component;
+}
+
+- (void)setComponent:(UIView *)component {
+    // in case the object is the same
+    if(component == _component) {
+        // returns immediately
+        return;
+    }
+
+    // releases the object
+    [_component release];
+
+    // sets and retains the object
+    _component = [component retain];
 }
 
 @end

@@ -32,6 +32,7 @@
     @private
     NSString *_name;
     float _size;
+    UIFont *_font;
 }
 
 /**

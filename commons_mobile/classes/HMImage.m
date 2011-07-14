@@ -61,6 +61,9 @@
     // releases the image name
     [_imageName release];
 
+    // releases the color
+    [_color release];
+
     // calls the super
     [super dealloc];
 }
@@ -80,11 +83,23 @@
 }
 
 - (UIColor *)UIColor {
-    // creates the color pattern
-    UIColor *color = [UIColor colorWithPatternImage:self.UIImage];
+    // in case the color is defined
+    if(_color) {
+        // returns the color
+        return _color;
+    }
 
-    // returns the color pattern
-    return color;
+    // creates the color pattern
+    UIColor *color = [[UIColor alloc] initWithPatternImage:self.UIImage];
+
+    // stores the color for later refernce
+    _color = [color retain];
+
+    // releases the color
+    [color release];
+
+    // returns the ui color object
+    return _color;
 }
 
 @end

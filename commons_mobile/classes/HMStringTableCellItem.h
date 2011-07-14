@@ -91,21 +91,21 @@
 /**
  * Generates a plain string table view cell component.
  */
-- (UIView *)generateComponentPlainStringTableViewCell;
+- (void)generateComponentPlainStringTableViewCell;
 
 /**
  * Generates a column string table view cell component.
  */
-- (UIView *)generateComponentColumnStringTableViewCell;
+- (void)generateComponentColumnStringTableViewCell;
 
 /**
  * Generates a plain multiline string table view cell component.
  */
-- (UIView *)generateComponentPlainMultilineStringTableViewCell;
+- (void)generateComponentPlainMultilineStringTableViewCell;
 
 /**
  * Generates a column multiline string table view cell component.
  */
-- (UIView *)generateComponentColumnMultilineStringTableViewCell;
+- (void)generateComponentColumnMultilineStringTableViewCell;
 
 @end

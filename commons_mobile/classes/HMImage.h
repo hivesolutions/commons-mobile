@@ -33,6 +33,7 @@
     NSString *_imageName;
     float _leftCap;
     float _topCap;
+    UIColor *_color;
 }
 
 /**
@@ -69,7 +70,7 @@
 /**
  * Constructor of the class.
  *
- * @param imageName: The image's name.
+ * @param imageName The image's name.
  * @return The hm image instance.
  */
 - (id)initWithImageName:(NSString *)imageName;
@@ -77,10 +78,10 @@
 /**
  * Constructor of the class.
  *
- * @param imageName: The image's name.
- * @param leftCap: The width of the image that
+ * @param imageName The image's name.
+ * @param leftCap The width of the image that
  * doesn't stretch, both on the left and right side.
- * @param topCap: The height of the image that
+ * @param topCap The height of the image that
  * doesn't stretch, both on the top and bottom.
  * @return The hm image instance.
  */

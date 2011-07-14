@@ -27,15 +27,18 @@
 
 @implementation HMChartItem
 
-- (UIView *)generateComponent {
+- (void)generateComponent {
     // creates the chart view
     CGRect frame = CGRectMake(0, 0, self.width, self.height);
-    HMChartView *chartView  = [[[HMChartView alloc] initWithFrame:frame] autorelease];
-    chartView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
-    chartView.backgroundColor = [UIColor clearColor];
+    HMChartView *component = [[HMChartView alloc] initWithFrame:frame];
+    component.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
+    component.backgroundColor = [UIColor clearColor];
 
-    // returns the chart view
-    return chartView;
+    // sets the objects
+    self.component = component;
+
+    // releases the objects
+    [component release];
 }
 
 @end
