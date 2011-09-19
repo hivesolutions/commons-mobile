@@ -348,6 +348,9 @@
 /* Begin PBXProject section */
 		C295F91B132E265900BC1B93 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = C295F91E132E265900BC1B93 /* Build configuration list for PBXProject "commons_mobile" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
