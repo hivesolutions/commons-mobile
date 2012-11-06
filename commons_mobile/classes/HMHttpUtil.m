@@ -119,10 +119,9 @@
         // casts the object as an array (tuple)
         NSArray *tuple = (NSArray *) object;
 
-        // retrieves the key value
+        // retrieves the key and the value to create
+        // the string tuple value (key value pair)
         NSString *key = [tuple objectAtIndex:0];
-
-        // retrieves the value value
         NSString *value = [tuple objectAtIndex:1];
 
         // in case the value is not defined or it's
