@@ -132,15 +132,11 @@
         }
 
         // in case it's the first iteration
-        if(isFirst) {
-            // unsets the is first flag
-            isFirst = NO;
-        }
+        // must unset the is first flag
+        if(isFirst) { isFirst = NO; }
         // otherwise it must be a different iteration
-        else {
-            // adds the "and" value
-            [stringBuffer addObject:@"&"];
-        }
+        // and must add the "and" character
+        else { [stringBuffer addObject:@"&"]; }
 
         // creates the line value
         NSString *lineValue = [NSString stringWithFormat:@"%@=%@", key, value];
@@ -152,11 +148,13 @@
     // joins the http string buffer retrieving the string
     NSString *httpString = [stringBuffer componentsJoinedByString:@""];
 
-    // escapes the http string
+    // escapes the http string unsing the correct escaping
+    // characters to archieve the purpose
     NSString *escapedHttpString = [httpString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     escapedHttpString = [escapedHttpString stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
 
-    // creates the http data from the http string
+    // creates the http data from the http string encoded
+    // encoded using the default utf8 encoding
     NSData *httpData = [escapedHttpString dataUsingEncoding:NSUTF8StringEncoding];
 
     // releases the objects
