@@ -117,6 +117,7 @@
     // iterates over the remote data
     while((object = [remoteSequenceDataEnumerator nextObject])) {
         // casts the object as an array (tuple)
+        // that should contain both the key and value
         NSArray *tuple = (NSArray *) object;
 
         // retrieves the key and the value to create
